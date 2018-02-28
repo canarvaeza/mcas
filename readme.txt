@@ -2,7 +2,7 @@ This is the Cristian's Thesis, it has the schedule to be finished at final 2018.
 
 Here is the G-Drive Folder with all the info 
 
-<href ="https://drive.google.com/drive/folders/0ByB2FkglF6khOVlQRnZ1d3J0QUE?usp=sharing"></href>
+https://drive.google.com/drive/folders/0ByB2FkglF6khOVlQRnZ1d3J0QUE?usp=sharing
 
 While here is the Sharelatex of the writing
 
