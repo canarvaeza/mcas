@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1519734154049" name="http://www.w3.org/2002/07/owl" uri="context.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1519814030764" name="http://www.semanticweb.org/ontologies/mcontext" uri="mContext.owl"/>
     </group>
 </catalog>

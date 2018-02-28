@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/ontologies/mcontext"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/ontologies/mcontext">
+    <Prefix name="" IRI="http://www.semanticweb.org/ontologies/mcontext"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#ServiceActivity"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#use"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#locatedIn"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Multimedia"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Activity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Time"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Location"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Context"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Emotion"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#makes"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Device"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#describe"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#create"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Person"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Activity"/>
+        <Class IRI="#Context"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Device"/>
+        <Class IRI="#Context"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Emotion"/>
+        <Class IRI="#Context"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Location"/>
+        <Class IRI="#Context"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Multimedia"/>
+        <Class IRI="#Context"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Person"/>
+        <Class IRI="#Context"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ServiceActivity"/>
+        <Class IRI="#Activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Time"/>
+        <Class IRI="#Context"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Activity"/>
+        <Class IRI="#Device"/>
+        <Class IRI="#Emotion"/>
+        <Class IRI="#Location"/>
+        <Class IRI="#Multimedia"/>
+        <Class IRI="#Person"/>
+        <Class IRI="#Time"/>
+    </DisjointClasses>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#create"/>
+        <Class IRI="#Device"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#create"/>
+        <Class IRI="#Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#describe"/>
+        <Class IRI="#Device"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#describe"/>
+        <Class IRI="#Multimedia"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#locatedIn"/>
+        <Class IRI="#Activity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#locatedIn"/>
+        <Class IRI="#Device"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#locatedIn"/>
+        <Class IRI="#Multimedia"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#locatedIn"/>
+        <Class IRI="#Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#makes"/>
+        <Class IRI="#Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#use"/>
+        <Class IRI="#Device"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#use"/>
+        <Class IRI="#Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#create"/>
+        <Class IRI="#Multimedia"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#describe"/>
+        <Class IRI="#Activity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#locatedIn"/>
+        <Class IRI="#Location"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#makes"/>
+        <Class IRI="#Activity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#use"/>
+        <Class IRI="#ServiceActivity"/>
+    </ObjectPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
