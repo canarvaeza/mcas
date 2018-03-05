@@ -21,19 +21,79 @@
         <ObjectProperty IRI="#use"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#ServiceActivity"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#locatedIn"/>
     </Declaration>
     <Declaration>
-        <AnnotationProperty abbreviatedIRI="dc:title"/>
+        <ObjectProperty IRI="#hasSensor"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Multimedia"/>
     </Declaration>
     <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:title"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Activity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DescriptorMultimedia"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RatingMultimedia"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ImageFormat"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TextualDescriptor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#makes"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#describe"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isInvolvedIn"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AudioResource"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ImageResource"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TextFormat"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WeekDay"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HighContextActivity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ComposedResource"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VideoResource"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DayMoment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VideoFormat"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TemporalUnit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VisualDescriptor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TextualResource"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ClosedLocation"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Time"/>
@@ -42,30 +102,171 @@
         <Class IRI="#Location"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Context"/>
+        <Class IRI="#Role"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#makes"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Device"/>
+        <Class IRI="#OpenLocation"/>
     </Declaration>
     <Declaration>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Device"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#create"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#describe"/>
+        <Class IRI="#ResourceMultimedia"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LowContextActivity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FormatMultimedia"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sensor"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Person"/>
     </Declaration>
+    <Declaration>
+        <Class IRI="#AudioDescriptor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AudioFormat"/>
+    </Declaration>
     <SubClassOf>
-        <Class IRI="#ServiceActivity"/>
+        <Class IRI="#AudioDescriptor"/>
+        <Class IRI="#DescriptorMultimedia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AudioFormat"/>
+        <Class IRI="#FormatMultimedia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AudioResource"/>
+        <Class IRI="#ResourceMultimedia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ClosedLocation"/>
+        <Class IRI="#Location"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ComposedResource"/>
+        <Class IRI="#ResourceMultimedia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DayMoment"/>
+        <Class IRI="#Time"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DescriptorMultimedia"/>
+        <Class IRI="#Multimedia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FormatMultimedia"/>
+        <Class IRI="#Multimedia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HighContextActivity"/>
         <Class IRI="#Activity"/>
     </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ImageFormat"/>
+        <Class IRI="#FormatMultimedia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ImageResource"/>
+        <Class IRI="#ResourceMultimedia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LowContextActivity"/>
+        <Class IRI="#Activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OpenLocation"/>
+        <Class IRI="#Location"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RatingMultimedia"/>
+        <Class IRI="#Multimedia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ResourceMultimedia"/>
+        <Class IRI="#Multimedia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TemporalUnit"/>
+        <Class IRI="#Time"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TextFormat"/>
+        <Class IRI="#FormatMultimedia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TextualDescriptor"/>
+        <Class IRI="#DescriptorMultimedia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TextualResource"/>
+        <Class IRI="#ResourceMultimedia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VideoFormat"/>
+        <Class IRI="#FormatMultimedia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VideoResource"/>
+        <Class IRI="#ResourceMultimedia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VisualDescriptor"/>
+        <Class IRI="#DescriptorMultimedia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WeekDay"/>
+        <Class IRI="#Time"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#AudioDescriptor"/>
+        <Class IRI="#TextualDescriptor"/>
+        <Class IRI="#VisualDescriptor"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#AudioFormat"/>
+        <Class IRI="#ImageFormat"/>
+        <Class IRI="#TextFormat"/>
+        <Class IRI="#VideoFormat"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#AudioResource"/>
+        <Class IRI="#ImageResource"/>
+        <Class IRI="#TextualResource"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ClosedLocation"/>
+        <Class IRI="#OpenLocation"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#DayMoment"/>
+        <Class IRI="#WeekDay"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#DescriptorMultimedia"/>
+        <Class IRI="#FormatMultimedia"/>
+        <Class IRI="#RatingMultimedia"/>
+        <Class IRI="#ResourceMultimedia"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#HighContextActivity"/>
+        <Class IRI="#LowContextActivity"/>
+    </DisjointClasses>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isInvolvedIn"/>
+        <ObjectProperty IRI="#makes"/>
+    </SubObjectPropertyOf>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#create"/>
         <Class IRI="#Device"/>
@@ -89,6 +290,10 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#locatedIn"/>
         <Class IRI="#Device"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#locatedIn"/>
+        <Class IRI="#Location"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#locatedIn"/>
@@ -117,6 +322,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#describe"/>
         <Class IRI="#Activity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSensor"/>
+        <Class IRI="#Sensor"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#locatedIn"/>
@@ -125,10 +334,6 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#makes"/>
         <Class IRI="#Activity"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#use"/>
-        <Class IRI="#ServiceActivity"/>
     </ObjectPropertyRange>
 </Ontology>
 
