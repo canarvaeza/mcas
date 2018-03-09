@@ -8,19 +8,12 @@
      ontologyIRI="http://www.semanticweb.org/ontologies/mcontext">
     <Prefix name="" IRI="http://www.semanticweb.org/ontologies/mcontext"/>
     <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
+    <Prefix name="mc" IRI="http://www.semanticweb.org/ontologies/multimedia#"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
-    <Prefix name="role" IRI="http://www.semanticweb.org/ontologies/role#"/>
-    <Prefix name="time" IRI="http://www.semanticweb.org/ontologies/time#"/>
-    <Prefix name="person" IRI="http://www.semanticweb.org/ontologies/person#"/>
-    <Prefix name="sensor" IRI="http://www.semanticweb.org/ontologies/sensor#"/>
-    <Prefix name="activity" IRI="http://www.semanticweb.org/ontologies/activity#"/>
-    <Prefix name="location" IRI="http://www.semanticweb.org/ontologies/location#"/>
-    <Prefix name="mcontext" IRI="http://www.semanticweb.org/ontologies/mcontext#"/>
-    <Prefix name="multimedia" IRI="http://www.semanticweb.org/ontologies/multimedia#"/>
     <Import>http://www.semanticweb.org/ontologies/location</Import>
     <Import>http://www.semanticweb.org/ontologies/role</Import>
     <Import>http://www.semanticweb.org/ontologies/time</Import>
@@ -60,28 +53,28 @@
         <ObjectProperty IRI="#hasTemporalEntity"/>
     </Declaration>
     <SubClassOf>
-        <Class abbreviatedIRI="activity:Activity"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/activity#Activity"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="http://www.geonames.org/ontology#locatedIn"/>
             <Class IRI="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI="activity:Activity"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/activity#Activity"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#hasTemporalEntity"/>
             <Class IRI="http://www.w3.org/2006/time#TemporalEntity"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI="multimedia:Multimedia"/>
+        <Class abbreviatedIRI="mc:Multimedia"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="http://www.w3.org/ns/ma-ont#hasCreator"/>
             <Class IRI="http://www.w3.org/ns/sosa/Platform"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI="multimedia:Multimedia"/>
+        <Class abbreviatedIRI="mc:Multimedia"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="http://www.w3.org/ns/ma-ont#hasCreator"/>
             <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
@@ -98,7 +91,7 @@
         <Class IRI="http://www.w3.org/ns/ma-ont#MediaResource"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#describe"/>
-            <Class abbreviatedIRI="activity:Activity"/>
+            <Class IRI="http://www.semanticweb.org/ontologies/activity#Activity"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -112,7 +105,7 @@
         <Class IRI="http://www.w3.org/ns/sosa/Platform"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#describe"/>
-            <Class abbreviatedIRI="activity:Activity"/>
+            <Class IRI="http://www.semanticweb.org/ontologies/activity#Activity"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -126,7 +119,7 @@
         <Class IRI="http://www.w3.org/ns/sosa/Sensor"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#describe"/>
-            <Class abbreviatedIRI="activity:Activity"/>
+            <Class IRI="http://www.semanticweb.org/ontologies/activity#Activity"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -140,7 +133,7 @@
         <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#isInvolvedIn"/>
-            <Class abbreviatedIRI="activity:Activity"/>
+            <Class IRI="http://www.semanticweb.org/ontologies/activity#Activity"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -160,15 +153,15 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="http://www.w3.org/ns/ma-ont#hasCreator"/>
-        <Class abbreviatedIRI="multimedia:Multimedia"/>
+        <Class abbreviatedIRI="mc:Multimedia"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#describe"/>
-        <Class abbreviatedIRI="activity:Activity"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/activity#Activity"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasRol"/>
-        <Class abbreviatedIRI="role:Role"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/role#Role"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasTemporalEntity"/>
@@ -176,15 +169,11 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isInvolvedIn"/>
-        <Class abbreviatedIRI="activity:Activity"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/activity#Activity"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#use"/>
         <Class IRI="http://www.w3.org/ns/sosa/Platform"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="http://www.w3.org/ns/ma-ont#hasFormat"/>
-        <Class abbreviatedIRI="multimedia:FormatMultimedia"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="http://www.w3.org/ns/ma-ont#isCreationLocationOf"/>

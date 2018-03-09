@@ -1,0 +1,744 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/ontologies/multimedia"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/ontologies/multimedia">
+    <Prefix name="" IRI="http://www.semanticweb.org/ontologies/multimedia"/>
+    <Prefix name="mc" IRI="http://www.semanticweb.org/ontologies/multimedia"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <DataProperty IRI="http://www.w3.org/ns/ma-ont#title"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AudioDescriptor"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.w3.org/ns/ma-ont#alternativeTitle"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.w3.org/ns/ma-ont#samplingRate"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.w3.org/2006/time#hasDuration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.w3.org/ns/ma-ont#MediaResource"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.w3.org/ns/ma-ont#isRatingOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isAudioFragmentOf"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.w3.org/ns/ma-ont#DataTrack"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#containImage"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.w3.org/ns/ma-ont#frameSizeUnit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.w3.org/ns/ma-ont#Rating"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.w3.org/ns/ma-ont#provides"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ImageFormat"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.w3.org/ns/ma-ont#ratingScaleMax"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.w3.org/ns/ma-ont#AudioTrack"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AudioResource"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VideoResource"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VideoFormat"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isVideoFragmentOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#contain"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.w3.org/ns/ma-ont#createdIn"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.w3.org/ns/ma-ont#VideoTrack"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.w3.org/ns/ma-ont#isRelatedTo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AudioFormat"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isFormatOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.w3.org/ns/ma-ont#isLocationRelatedTo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.w3.org/2006/time#Duration"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasMultimediaDescriptor"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.w3.org/ns/ma-ont#averageBitRate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.w3.org/ns/ma-ont#Image"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.w3.org/ns/ma-ont#MediaFragment"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.w3.org/ns/ma-ont#frameRate"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.w3.org/ns/ma-ont#isFragmentOf"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TextualAssetResource"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.w3.org/ns/ma-ont#ratingScaleMin"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.w3.org/ns/ma-ont#hasFormat"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.w3.org/ns/ma-ont#hasRatingSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ComposedResource"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.w3.org/2006/time#hasTemporalDuration"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.w3.org/ns/ma-ont#hasFragment"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.w3.org/ns/ma-ont#description"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasFormat"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.w3.org/ns/ma-ont#isProvidedBy"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.w3.org/ns/ma-ont#frameWidth"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.w3.org/ns/ma-ont#Track"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TextualDescriptor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isMultimediaDescriptor"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.w3.org/ns/ma-ont#ratingValue"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.w3.org/ns/ma-ont#hasCreator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DescriptorMultimedia"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.w3.org/ns/ma-ont#hasRating"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isAnnotatedBy"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.w3.org/ns/ma-ont#mainOriginalTitle"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VisualDescriptor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.w3.org/ns/ma-ont#isCreationLocationOf"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TextFormat"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.w3.org/ns/ma-ont#frameHeight"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isMediaFragmentOf"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FormatMultimedia"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#containVideo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Multimedia"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#AudioDescriptor"/>
+        <Class IRI="#DescriptorMultimedia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AudioFormat"/>
+        <Class IRI="#FormatMultimedia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AudioResource"/>
+        <Class IRI="http://www.w3.org/ns/ma-ont#MediaResource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ComposedResource"/>
+        <Class IRI="http://www.w3.org/ns/ma-ont#MediaResource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DescriptorMultimedia"/>
+        <Class IRI="#Multimedia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FormatMultimedia"/>
+        <Class IRI="#Multimedia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ImageFormat"/>
+        <Class IRI="#FormatMultimedia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TextFormat"/>
+        <Class IRI="#FormatMultimedia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TextualAssetResource"/>
+        <Class IRI="http://www.w3.org/ns/ma-ont#MediaResource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TextualDescriptor"/>
+        <Class IRI="#DescriptorMultimedia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VideoFormat"/>
+        <Class IRI="#FormatMultimedia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VideoResource"/>
+        <Class IRI="http://www.w3.org/ns/ma-ont#MediaResource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VisualDescriptor"/>
+        <Class IRI="#DescriptorMultimedia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.w3.org/ns/ma-ont#AudioTrack"/>
+        <Class IRI="http://www.w3.org/ns/ma-ont#Track"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.w3.org/ns/ma-ont#DataTrack"/>
+        <Class IRI="http://www.w3.org/ns/ma-ont#Track"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.w3.org/ns/ma-ont#Image"/>
+        <Class IRI="http://www.w3.org/ns/ma-ont#MediaResource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.w3.org/ns/ma-ont#MediaFragment"/>
+        <Class IRI="http://www.w3.org/ns/ma-ont#MediaResource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.w3.org/ns/ma-ont#MediaResource"/>
+        <Class IRI="#Multimedia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.w3.org/ns/ma-ont#Rating"/>
+        <Class IRI="#Multimedia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.w3.org/ns/ma-ont#Track"/>
+        <Class IRI="http://www.w3.org/ns/ma-ont#MediaFragment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.w3.org/ns/ma-ont#VideoTrack"/>
+        <Class IRI="http://www.w3.org/ns/ma-ont#Track"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#AudioDescriptor"/>
+        <Class IRI="#TextualDescriptor"/>
+        <Class IRI="#VisualDescriptor"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#AudioFormat"/>
+        <Class IRI="#ImageFormat"/>
+        <Class IRI="#TextFormat"/>
+        <Class IRI="#VideoFormat"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#AudioResource"/>
+        <Class IRI="#TextualAssetResource"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#TextualAssetResource"/>
+        <Class IRI="http://www.w3.org/ns/ma-ont#Image"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.w3.org/ns/ma-ont#AudioTrack"/>
+        <Class IRI="http://www.w3.org/ns/ma-ont#DataTrack"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.w3.org/ns/ma-ont#AudioTrack"/>
+        <Class IRI="http://www.w3.org/ns/ma-ont#VideoTrack"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.w3.org/ns/ma-ont#DataTrack"/>
+        <Class IRI="http://www.w3.org/ns/ma-ont#VideoTrack"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.w3.org/ns/ma-ont#MediaResource"/>
+        <Class IRI="http://www.w3.org/ns/ma-ont#Rating"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.w3.org/ns/ma-ont#MediaResource"/>
+        <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.w3.org/ns/ma-ont#Rating"/>
+        <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
+    </DisjointClasses>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#containImage"/>
+        <ObjectProperty IRI="#contain"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#containVideo"/>
+        <ObjectProperty IRI="#contain"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isAudioFragmentOf"/>
+        <ObjectProperty IRI="#isMediaFragmentOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isVideoFragmentOf"/>
+        <ObjectProperty IRI="#isMediaFragmentOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://www.w3.org/2006/time#hasDuration"/>
+        <ObjectProperty IRI="http://www.w3.org/2006/time#hasTemporalDuration"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasFormat"/>
+        <ObjectProperty IRI="#isFormatOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasMultimediaDescriptor"/>
+        <ObjectProperty IRI="#isMultimediaDescriptor"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://www.w3.org/ns/ma-ont#createdIn"/>
+        <ObjectProperty IRI="http://www.w3.org/ns/ma-ont#isCreationLocationOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://www.w3.org/ns/ma-ont#hasFragment"/>
+        <ObjectProperty IRI="http://www.w3.org/ns/ma-ont#isFragmentOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://www.w3.org/ns/ma-ont#hasRating"/>
+        <ObjectProperty IRI="http://www.w3.org/ns/ma-ont#isRatingOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://www.w3.org/ns/ma-ont#isProvidedBy"/>
+        <ObjectProperty IRI="http://www.w3.org/ns/ma-ont#provides"/>
+    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#contain"/>
+        <Class IRI="#ComposedResource"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasFormat"/>
+        <Class IRI="http://www.w3.org/ns/ma-ont#MediaResource"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasMultimediaDescriptor"/>
+        <Class IRI="http://www.w3.org/ns/ma-ont#MediaResource"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isAnnotatedBy"/>
+        <Class IRI="http://www.w3.org/ns/ma-ont#MediaResource"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isAudioFragmentOf"/>
+        <Class IRI="http://www.w3.org/ns/ma-ont#AudioTrack"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isFormatOf"/>
+        <Class IRI="#FormatMultimedia"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isMultimediaDescriptor"/>
+        <Class IRI="#DescriptorMultimedia"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isVideoFragmentOf"/>
+        <Class IRI="http://www.w3.org/ns/ma-ont#VideoTrack"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.w3.org/2006/time#hasDuration"/>
+        <Class IRI="#AudioResource"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.w3.org/2006/time#hasDuration"/>
+        <Class IRI="#VideoResource"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.w3.org/ns/ma-ont#hasFormat"/>
+        <Class IRI="http://www.w3.org/ns/ma-ont#MediaResource"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.w3.org/ns/ma-ont#hasFragment"/>
+        <Class IRI="http://www.w3.org/ns/ma-ont#MediaResource"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.w3.org/ns/ma-ont#hasRating"/>
+        <Class IRI="http://www.w3.org/ns/ma-ont#MediaResource"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.w3.org/ns/ma-ont#hasRatingSystem"/>
+        <Class IRI="http://www.w3.org/ns/ma-ont#Rating"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.w3.org/ns/ma-ont#isProvidedBy"/>
+        <Class IRI="http://www.w3.org/ns/ma-ont#Rating"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.w3.org/ns/ma-ont#isRelatedTo"/>
+        <Class IRI="http://www.w3.org/ns/ma-ont#MediaResource"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#contain"/>
+        <Class IRI="http://www.w3.org/ns/ma-ont#MediaResource"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#containImage"/>
+        <Class IRI="http://www.w3.org/ns/ma-ont#Image"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasFormat"/>
+        <Class IRI="#FormatMultimedia"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasMultimediaDescriptor"/>
+        <Class IRI="#DescriptorMultimedia"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isAnnotatedBy"/>
+        <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isAudioFragmentOf"/>
+        <Class IRI="#AudioFormat"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isFormatOf"/>
+        <Class IRI="http://www.w3.org/ns/ma-ont#MediaResource"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isMediaFragmentOf"/>
+        <Class IRI="http://www.w3.org/ns/ma-ont#MediaResource"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isMultimediaDescriptor"/>
+        <Class IRI="http://www.w3.org/ns/ma-ont#MediaResource"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isVideoFragmentOf"/>
+        <Class IRI="#VideoFormat"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.w3.org/2006/time#hasDuration"/>
+        <Class IRI="http://www.w3.org/2006/time#Duration"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.w3.org/ns/ma-ont#hasFragment"/>
+        <Class IRI="http://www.w3.org/ns/ma-ont#MediaFragment"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.w3.org/ns/ma-ont#hasRating"/>
+        <Class IRI="http://www.w3.org/ns/ma-ont#Rating"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.w3.org/ns/ma-ont#isProvidedBy"/>
+        <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.w3.org/ns/ma-ont#isRelatedTo"/>
+        <Class IRI="http://www.w3.org/ns/ma-ont#MediaResource"/>
+    </ObjectPropertyRange>
+    <SubDataPropertyOf>
+        <DataProperty IRI="http://www.w3.org/ns/ma-ont#alternativeTitle"/>
+        <DataProperty IRI="http://www.w3.org/ns/ma-ont#title"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="http://www.w3.org/ns/ma-ont#mainOriginalTitle"/>
+        <DataProperty IRI="http://www.w3.org/ns/ma-ont#title"/>
+    </SubDataPropertyOf>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.w3.org/ns/ma-ont#averageBitRate"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://www.w3.org/ns/ma-ont#MediaResource"/>
+            <ObjectComplementOf>
+                <Class IRI="http://www.w3.org/ns/ma-ont#Image"/>
+            </ObjectComplementOf>
+        </ObjectIntersectionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.w3.org/ns/ma-ont#description"/>
+        <Class IRI="http://www.w3.org/ns/ma-ont#MediaResource"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.w3.org/ns/ma-ont#frameHeight"/>
+        <Class IRI="http://www.w3.org/ns/ma-ont#MediaResource"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.w3.org/ns/ma-ont#frameRate"/>
+        <Class IRI="http://www.w3.org/ns/ma-ont#MediaResource"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.w3.org/ns/ma-ont#frameSizeUnit"/>
+        <Class IRI="http://www.w3.org/ns/ma-ont#MediaResource"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.w3.org/ns/ma-ont#frameWidth"/>
+        <Class IRI="http://www.w3.org/ns/ma-ont#MediaResource"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.w3.org/ns/ma-ont#ratingScaleMax"/>
+        <Class IRI="http://www.w3.org/ns/ma-ont#Rating"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.w3.org/ns/ma-ont#ratingScaleMin"/>
+        <Class IRI="http://www.w3.org/ns/ma-ont#Rating"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.w3.org/ns/ma-ont#ratingValue"/>
+        <Class IRI="http://www.w3.org/ns/ma-ont#Rating"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.w3.org/ns/ma-ont#samplingRate"/>
+        <Class IRI="http://www.w3.org/ns/ma-ont#MediaResource"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.w3.org/ns/ma-ont#title"/>
+        <Class IRI="http://www.w3.org/ns/ma-ont#MediaResource"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.w3.org/ns/ma-ont#averageBitRate"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.w3.org/ns/ma-ont#description"/>
+        <Datatype abbreviatedIRI="rdfs:Literal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.w3.org/ns/ma-ont#frameHeight"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.w3.org/ns/ma-ont#frameRate"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.w3.org/ns/ma-ont#frameSizeUnit"/>
+        <Datatype abbreviatedIRI="rdfs:Literal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.w3.org/ns/ma-ont#frameWidth"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.w3.org/ns/ma-ont#ratingScaleMax"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.w3.org/ns/ma-ont#ratingScaleMin"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.w3.org/ns/ma-ont#ratingValue"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.w3.org/ns/ma-ont#samplingRate"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.w3.org/ns/ma-ont#title"/>
+        <Datatype abbreviatedIRI="rdfs:Literal"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.w3.org/2006/time#hasDuration</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Duration of a temporal entity, expressed as a scaled value or nominal value</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.w3.org/2006/time#hasDuration</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">has duration</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>http://www.w3.org/2006/time#hasDuration</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Duration of a temporal entity, event or activity, or thing, expressed as a scaled value</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.w3.org/ns/ma-ont#AudioTrack</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">A specialisation of Track for Audio to provide a link to specific data properties such as sampleRate, etc. Specialisation is defined through object properties.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.w3.org/ns/ma-ont#DataTrack</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Ancillary data track e.g. captioning  in addition to video and audio tracks. Specialisation is made through the use of appropriate object properties.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.w3.org/ns/ma-ont#Image</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">A still image / thumbnail / key frame related to the media resource or being the media resource itself.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.w3.org/ns/ma-ont#MediaFragment</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">A media fragment (spatial, temporal, track...) composing a media resource. In other ontologies fragment is sometimes referred to as a &apos;part&apos; or &apos;segment&apos;.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.w3.org/ns/ma-ont#MediaResource</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">An image or an audiovisual media resource, which can be composed of one or more fragment / track.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.w3.org/ns/ma-ont#Rating</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Information about the rating given to a media resource.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.w3.org/ns/ma-ont#Track</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">A specialisation of MediaFragment for audiovisual content.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.w3.org/ns/ma-ont#VideoTrack</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">A specialisation of Track for Video to provide a link to specific data properties such as frameRate, etc. Signing is another possible example of video track. Specialisation is defined through object properties.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.w3.org/ns/ma-ont#alternativeTitle</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Corresponds to &apos;title.title&apos; in the Ontology for Media Resources with a &apos;title.type&apos; meaning &quot;alternative&quot;.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.w3.org/ns/ma-ont#averageBitRate</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Corresponds to &apos;averageBitRate&apos; in the Ontology for Media Resources, expressed in kilobits/second.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.w3.org/ns/ma-ont#createdIn</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">A subproperty of &apos;hasRelatedLocation&quot; used to specify where material shooting took place.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.w3.org/ns/ma-ont#description</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Corresponds to &apos;description&apos; in the Ontology for Media Resources. This can be specialised by using sub-properties e.g. &apos;summary&apos; or &apos;script&apos;.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.w3.org/ns/ma-ont#frameHeight</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Corresponds to &apos;frameSize.height&apos; in the Ontology for Media Resources, measured in frameSizeUnit.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.w3.org/ns/ma-ont#frameRate</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Corresponds to &apos;frameRate&apos; in the Ontology for Media Resources, in frame per second.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.w3.org/ns/ma-ont#frameSizeUnit</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Corresponds to &apos;frameSize.unit&apos; in the Ontology for Media Resources.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.w3.org/ns/ma-ont#frameWidth</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Corresponds to &apos;frameSize.width&apos; in the Ontology for Media Resources measured in frameSizeUnit.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.w3.org/ns/ma-ont#hasFormat</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Corresponds to &apos;format&apos; in the Ontology for Media Resources.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.w3.org/ns/ma-ont#hasRating</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Corresponds to &apos;rating&apos; in the Ontology for Media Resources.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.w3.org/ns/ma-ont#mainOriginalTitle</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Corresponds to &apos;title.title&apos; in the Ontology for Media Resources with a &apos;title.type&apos; meaning &quot;original&quot;.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.w3.org/ns/ma-ont#ratingScaleMax</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Corresponds to &apos;rating.max&apos; in the Ontology for Media Resources.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.w3.org/ns/ma-ont#ratingScaleMin</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Corresponds to &apos;rating.min&apos; in the Ontology for Media Resources.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.w3.org/ns/ma-ont#ratingValue</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Corresponds to &apos;rating.value&apos; in the Ontology for Media Resources.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.w3.org/ns/ma-ont#samplingRate</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Corresponds to &apos;samplingRate&apos; in the Ontology for Media Resources, in samples per second.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.w3.org/ns/ma-ont#title</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Corresponds to &apos;title.title&apos; in the Ontology for Media Resources. Subproperties can be used to distinguish different values of &apos;title.type&apos;.</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
