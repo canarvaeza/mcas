@@ -13,6 +13,9 @@
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Declaration>
+        <ObjectProperty IRI="#mca:hasActivity"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#HighContextActivity"/>
     </Declaration>
     <Declaration>
@@ -20,9 +23,6 @@
     </Declaration>
     <Declaration>
         <Class IRI="#Activity"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasActivity"/>
     </Declaration>
     <SubClassOf>
         <Class IRI="#HighContextActivity"/>
@@ -37,11 +37,11 @@
         <Class IRI="#LowContextActivity"/>
     </DisjointClasses>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasActivity"/>
+        <ObjectProperty IRI="#mca:hasActivity"/>
         <Class IRI="#HighContextActivity"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasActivity"/>
+        <ObjectProperty IRI="#mca:hasActivity"/>
         <Class IRI="#LowContextActivity"/>
     </ObjectPropertyRange>
 </Ontology>

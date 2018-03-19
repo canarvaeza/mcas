@@ -1,0 +1,252 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/ontologies/domains/alzheimer"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/ontologies/domains/alzheimer">
+    <Prefix name="" IRI="http://www.semanticweb.org/ontologies/domains/alzheimer"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="role" IRI="http://www.semanticweb.org/ontologies/role#"/>
+    <Prefix name="time" IRI="http://www.semanticweb.org/ontologies/time#"/>
+    <Prefix name="person" IRI="http://www.semanticweb.org/ontologies/person#"/>
+    <Prefix name="sensor" IRI="http://www.semanticweb.org/ontologies/sensor#"/>
+    <Prefix name="activity" IRI="http://www.semanticweb.org/ontologies/activity#"/>
+    <Prefix name="location" IRI="http://www.semanticweb.org/ontologies/location#"/>
+    <Prefix name="mcontext" IRI="http://www.semanticweb.org/ontologies/mcontext#"/>
+    <Prefix name="alzheimer" IRI="http://www.semanticweb.org/ontologies/domains/alzheimer#"/>
+    <Prefix name="multimedia" IRI="http://www.semanticweb.org/ontologies/multimedia#"/>
+    <Import>http://www.semanticweb.org/ontologies/mcontext</Import>
+    <Declaration>
+        <ObjectProperty IRI="http://www.geonames.org/ontology#locatedIn"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#u00002"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#A0001"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#User"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="mcontext:isInvolvedIn"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://xmlns.com/foaf/0.1/firstName"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Activity00001"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Father"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CareGiver"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sit"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="role:Role"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="mcontext:hasRol"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/ontologies/activity#mca:hasActivity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Speak"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#OcupationalTherapist"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#u00001"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MedicalRole"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Talk"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FamiliarRole"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SocialRole"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://xmlns.com/foaf/0.1/lastName"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="mcontext:hasTemporalEntity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Son"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="activity:hasActivity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Friend"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Speak"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="activity:HighContextActivity"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="activity:hasActivity"/>
+                <Class IRI="#Sit"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="activity:hasActivity"/>
+                <Class IRI="#Talk"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#FamiliarRole"/>
+        <Class abbreviatedIRI="role:Role"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MedicalRole"/>
+        <Class abbreviatedIRI="role:Role"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sit"/>
+        <Class abbreviatedIRI="activity:LowContextActivity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SocialRole"/>
+        <Class abbreviatedIRI="role:Role"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Talk"/>
+        <Class abbreviatedIRI="activity:LowContextActivity"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#Sit"/>
+        <NamedIndividual IRI="#Activity00001"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Talk"/>
+        <NamedIndividual IRI="#Activity00001"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MedicalRole"/>
+        <NamedIndividual IRI="#CareGiver"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FamiliarRole"/>
+        <NamedIndividual IRI="#Father"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SocialRole"/>
+        <NamedIndividual IRI="#Friend"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MedicalRole"/>
+        <NamedIndividual IRI="#OcupationalTherapist"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FamiliarRole"/>
+        <NamedIndividual IRI="#Son"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="role:Role"/>
+        <NamedIndividual IRI="#User"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
+        <NamedIndividual IRI="#u00001"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
+        <NamedIndividual IRI="#u00002"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="mcontext:hasRol"/>
+        <NamedIndividual IRI="#u00001"/>
+        <NamedIndividual IRI="#User"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="mcontext:isInvolvedIn"/>
+        <NamedIndividual IRI="#u00001"/>
+        <NamedIndividual IRI="#Activity00001"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="mcontext:hasRol"/>
+        <NamedIndividual IRI="#u00002"/>
+        <NamedIndividual IRI="#Friend"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="mcontext:isInvolvedIn"/>
+        <NamedIndividual IRI="#u00002"/>
+        <NamedIndividual IRI="#Activity00001"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://xmlns.com/foaf/0.1/firstName"/>
+        <NamedIndividual IRI="#u00001"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Cristian</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://xmlns.com/foaf/0.1/lastName"/>
+        <NamedIndividual IRI="#u00001"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Narvaez</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://xmlns.com/foaf/0.1/firstName"/>
+        <NamedIndividual IRI="#u00002"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Diana</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://xmlns.com/foaf/0.1/lastName"/>
+        <NamedIndividual IRI="#u00002"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Moreno</Literal>
+    </DataPropertyAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#CareGiver</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">cad:CareGiver</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Father</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">cad:Father</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Friend</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">cad:Friend</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#OcupationalTherapist</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">cad:OcupationalTherapist</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Son</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">cad:Son</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#User</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">cad:User</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

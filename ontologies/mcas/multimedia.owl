@@ -92,9 +92,6 @@
         <Class IRI="#AudioFormat"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#isFormatOf"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="http://www.w3.org/ns/ma-ont#isLocationRelatedTo"/>
     </Declaration>
     <Declaration>
@@ -141,9 +138,6 @@
     </Declaration>
     <Declaration>
         <DataProperty IRI="http://www.w3.org/ns/ma-ont#description"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasFormat"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="http://www.w3.org/ns/ma-ont#isProvidedBy"/>
@@ -197,10 +191,10 @@
         <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#FormatMultimedia"/>
+        <ObjectProperty IRI="#containVideo"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#containVideo"/>
+        <Class IRI="#FormatMultimedia"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Multimedia"/>
@@ -216,6 +210,13 @@
     <SubClassOf>
         <Class IRI="#AudioResource"/>
         <Class IRI="http://www.w3.org/ns/ma-ont#MediaResource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AudioResource"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.w3.org/2006/time#hasDuration"/>
+            <Class IRI="http://www.w3.org/2006/time#Duration"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ComposedResource"/>
@@ -252,6 +253,13 @@
     <SubClassOf>
         <Class IRI="#VideoResource"/>
         <Class IRI="http://www.w3.org/ns/ma-ont#MediaResource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VideoResource"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.w3.org/2006/time#hasDuration"/>
+            <Class IRI="http://www.w3.org/2006/time#Duration"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#VisualDescriptor"/>
@@ -353,10 +361,6 @@
         <ObjectProperty IRI="http://www.w3.org/2006/time#hasTemporalDuration"/>
     </SubObjectPropertyOf>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#hasFormat"/>
-        <ObjectProperty IRI="#isFormatOf"/>
-    </InverseObjectProperties>
-    <InverseObjectProperties>
         <ObjectProperty IRI="#hasMultimediaDescriptor"/>
         <ObjectProperty IRI="#isMultimediaDescriptor"/>
     </InverseObjectProperties>
@@ -381,10 +385,6 @@
         <Class IRI="#ComposedResource"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasFormat"/>
-        <Class IRI="http://www.w3.org/ns/ma-ont#MediaResource"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasMultimediaDescriptor"/>
         <Class IRI="http://www.w3.org/ns/ma-ont#MediaResource"/>
     </ObjectPropertyDomain>
@@ -397,24 +397,12 @@
         <Class IRI="http://www.w3.org/ns/ma-ont#AudioTrack"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isFormatOf"/>
-        <Class IRI="#FormatMultimedia"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="#isMultimediaDescriptor"/>
         <Class IRI="#DescriptorMultimedia"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isVideoFragmentOf"/>
         <Class IRI="http://www.w3.org/ns/ma-ont#VideoTrack"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="http://www.w3.org/2006/time#hasDuration"/>
-        <Class IRI="#AudioResource"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="http://www.w3.org/2006/time#hasDuration"/>
-        <Class IRI="#VideoResource"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="http://www.w3.org/ns/ma-ont#hasFormat"/>
@@ -449,10 +437,6 @@
         <Class IRI="http://www.w3.org/ns/ma-ont#Image"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasFormat"/>
-        <Class IRI="#FormatMultimedia"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasMultimediaDescriptor"/>
         <Class IRI="#DescriptorMultimedia"/>
     </ObjectPropertyRange>
@@ -463,10 +447,6 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isAudioFragmentOf"/>
         <Class IRI="#AudioFormat"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isFormatOf"/>
-        <Class IRI="http://www.w3.org/ns/ma-ont#MediaResource"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isMediaFragmentOf"/>
