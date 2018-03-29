@@ -1,0 +1,34 @@
+{
+  "Ssn": [
+    {
+      "Device": {
+        "Id": "iphone87/35-207306-844818-0",
+        "Sensor": "sensor/35-207306-844818-0/BMP282"
+      },
+      "Sensor": {
+        "Id": "sensor/35-207306-844818-0/BMP282",
+        "Observe": "sensor/35-207306-844818-0/BMP282/atmosphericPressure"
+      }
+    },
+    {
+      "Device": {
+        "Id": "iphone7/52-255515",
+        "Sensor": "sensor/926"
+      },
+      "Sensor": {
+        "Id": "sensor/926",
+        "Observe": "Appartment/134/electricConsumption"
+      }
+    },
+    {
+      "Device": {
+        "Id": "Android/35-207306-844818-0",
+        "Sensor": "sensor/Giros/001"
+      },
+      "Sensor": {
+        "Id": "sensor/Giros/001",
+        "Observe": "sensor/Giros/001/Giroscopio"
+      }
+    }
+  ]
+}

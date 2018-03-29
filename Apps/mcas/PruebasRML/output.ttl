@@ -1,0 +1,19 @@
+
+<http://mcas.com/Person/u001> a <http://xmlns.com/foaf/0.1/Person> ;
+	<http://xmlns.com/foaf/0.1/firstname> "Lisandro" ;
+	<http://xmlns.com/foaf/0.1/lastname> "Narvaez" ;
+	<http://www.semanticweb.org/ontologies/mcontext#hasRol> <http://www.semanticweb.org/ontologies/domains/alzheimer#Son> .
+
+<http://mcas.com/Person/n001> a <http://xmlns.com/foaf/0.1/Person> ;
+	<http://xmlns.com/foaf/0.1/firstname> "Andrea" ;
+	<http://xmlns.com/foaf/0.1/lastname> "Narvaez" ;
+	<http://www.semanticweb.org/ontologies/mcontext#hasRol> <http://www.semanticweb.org/ontologies/domains/alzheimer#Son> .
+
+<http://mcas.com/Person/n002> a <http://xmlns.com/foaf/0.1/Person> ;
+	<http://xmlns.com/foaf/0.1/lastname> "Narvaez" ;
+	<http://www.semanticweb.org/ontologies/mcontext#hasRol> <http://www.semanticweb.org/ontologies/domains/alzheimer#Son> .
+
+<http://mcas.com/Device/iphone7%2F35-207306-844818-0> a <http://www.w3.org/ns/sosa/Platform> ;
+	<http://www.w3.org/ns/sosa/observes> <http://mcas.com/Observation/346344> .
+
+<http://mcas.com/Observation/346344> a <http://www.w3.org/ns/sosa/Observation> .
