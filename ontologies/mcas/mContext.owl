@@ -58,6 +58,9 @@
         <AnnotationProperty abbreviatedIRI="dc:title"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#AVI"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasTemporalEntity"/>
     </Declaration>
     <SubClassOf>
@@ -97,6 +100,13 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="http://www.w3.org/ns/ma-ont#MediaResource"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#describe"/>
+            <Class abbreviatedIRI="activity:Activity"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.w3.org/ns/sosa/Observation"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#describe"/>
             <Class abbreviatedIRI="activity:Activity"/>
@@ -151,6 +161,10 @@
             <Class IRI="http://www.semanticweb.org/ontologies/object#Object"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
+    <ClassAssertion>
+        <Class abbreviatedIRI="multimedia:VideoFormat"/>
+        <NamedIndividual IRI="#AVI"/>
+    </ClassAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#isInvolvedIn"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
@@ -191,6 +205,11 @@
         <ObjectProperty IRI="http://www.w3.org/ns/ma-ont#isCreationLocationOf"/>
         <Class IRI="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
     </ObjectPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#AVI</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">multimedia:avi</Literal>
+    </AnnotationAssertion>
 </Ontology>
 
 

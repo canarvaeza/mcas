@@ -35,6 +35,9 @@
         <NamedIndividual IRI="#User"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Eat"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty abbreviatedIRI="mcontext:isInvolvedIn"/>
     </Declaration>
     <Declaration>
@@ -100,20 +103,10 @@
     <Declaration>
         <NamedIndividual IRI="#Friend"/>
     </Declaration>
-    <EquivalentClasses>
-        <Class IRI="#Speak"/>
-        <ObjectIntersectionOf>
-            <Class abbreviatedIRI="activity:HighContextActivity"/>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty abbreviatedIRI="activity:hasActivity"/>
-                <Class IRI="#Sit"/>
-            </ObjectSomeValuesFrom>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty abbreviatedIRI="activity:hasActivity"/>
-                <Class IRI="#Talk"/>
-            </ObjectSomeValuesFrom>
-        </ObjectIntersectionOf>
-    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Eat"/>
+        <Class abbreviatedIRI="activity:LowContextActivity"/>
+    </SubClassOf>
     <SubClassOf>
         <Class IRI="#FamiliarRole"/>
         <Class abbreviatedIRI="role:Role"/>
@@ -131,15 +124,15 @@
         <Class abbreviatedIRI="role:Role"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Speak"/>
+        <Class abbreviatedIRI="activity:HighContextActivity"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Talk"/>
         <Class abbreviatedIRI="activity:LowContextActivity"/>
     </SubClassOf>
     <ClassAssertion>
-        <Class IRI="#Sit"/>
-        <NamedIndividual IRI="#Activity00001"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Talk"/>
+        <Class IRI="#Eat"/>
         <NamedIndividual IRI="#Activity00001"/>
     </ClassAssertion>
     <ClassAssertion>

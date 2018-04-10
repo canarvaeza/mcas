@@ -1,55 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 
-<http://mcas.com/Person/u001> a <http://xmlns.com/foaf/0.1/Person> ;
-	<http://xmlns.com/foaf/0.1/firstname> "Lisandro" ;
-	<http://xmlns.com/foaf/0.1/lastname> "Narvaez" ;
-	<http://www.semanticweb.org/ontologies/mcontext#hasRol> <http://www.semanticweb.org/ontologies/domains/alzheimer#User> ;
-	<http://www.semanticweb.org/ontologies/mcontext#use> <http://mcas.com/iphone7%2F35-207306-844818-0> .
+<rdf:Description rdf:about="http://mcas.com/Device/iphone7%2F35-207306-844818-0">
+	<rdf:type rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+	<hosts xmlns="http://www.w3.org/ns/sosa/" rdf:resource="http://mcas.com/Device/sensor%2F35-207306-844818-0%2FBMP282"/>
+</rdf:Description>
 
-<http://mcas.com/Person/n001> a <http://xmlns.com/foaf/0.1/Person> ;
-	<http://xmlns.com/foaf/0.1/firstname> "Andrea" ;
-	<http://xmlns.com/foaf/0.1/lastname> "Narvaez" ;
-	<http://www.semanticweb.org/ontologies/mcontext#hasRol> <http://www.semanticweb.org/ontologies/domains/alzheimer#Son> .
+<rdf:Description rdf:about="http://mcas.com/Sensor/sensor%2F35-207306-844818-0%2FBMP282">
+	<rdf:type rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+	<observes xmlns="http://www.w3.org/ns/sosa/" rdf:resource="http://mcas.com/sensor%2F35-207306-844818-0%2FBMP282%2FatmosphericPressure"/>
+</rdf:Description>
 
-<http://mcas.com/Person/n002> a <http://xmlns.com/foaf/0.1/Person> ;
-	<http://xmlns.com/foaf/0.1/lastname> "Narvaez" ;
-	<http://www.semanticweb.org/ontologies/mcontext#hasRol> <http://www.semanticweb.org/ontologies/domains/alzheimer#Son> .
+<rdf:Description rdf:about="http://mcas.com/Sensor/sensor%2F926">
+	<rdf:type rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+	<observes xmlns="http://www.w3.org/ns/sosa/" rdf:resource="http://mcas.com/Appartment%2F134%2FelectricConsumption"/>
+</rdf:Description>
 
-<http://mcas.com/Device/iphone7%2F35-207306-844818-0> a <http://www.w3.org/ns/sosa/Platform> ;
-	<http://www.w3.org/ns/sosa/hosts> <http://mcas.com/Device/sensor%2F35-207306-844818-0%2FBMP282> .
+<rdf:Description rdf:about="http://mcas.com/Sensor/sensor%2FGiros%2F001">
+	<rdf:type rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+	<observes xmlns="http://www.w3.org/ns/sosa/" rdf:resource="http://mcas.com/sensor%2FGiros%2F001%2FGiroscopio"/>
+</rdf:Description>
 
-<http://mcas.com/Sensor/sensor%2F35-207306-844818-0%2FBMP282> a <http://www.w3.org/ns/sosa/Sensor> ;
-	<http://www.w3.org/ns/sosa/observes> <http://mcas.com/sensor%2F35-207306-844818-0%2FBMP282%2FatmosphericPressure> .
+<rdf:Description rdf:about="http://mcas.com/Device/adroid%2FGjJS-58">
+	<rdf:type rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+	<hosts xmlns="http://www.w3.org/ns/sosa/" rdf:resource="http://mcas.com/Device/sensor%2FGiros%2F001"/>
+</rdf:Description>
 
-<http://mcas.com/Sensor/sensor%2F926> a <http://www.w3.org/ns/sosa/Sensor> ;
-	<http://www.w3.org/ns/sosa/observes> <http://mcas.com/Appartment%2F134%2FelectricConsumption> .
+<rdf:Description rdf:about="http://mcas.com/Observation/Observation%2F001">
+	<rdf:type rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+	<hasSimpleResult xmlns="http://www.w3.org/ns/sosa/" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">101936</hasSimpleResult>
+	<resultTime xmlns="http://www.w3.org/ns/sosa/" rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-06T12:36:12Z</resultTime>
+	<madeBySensor xmlns="http://www.w3.org/ns/sosa/" rdf:resource="http://mcas.com/sensor%2F35-207306-844818-0%2FBMP282"/>
+</rdf:Description>
 
-<http://mcas.com/Sensor/sensor%2FGiros%2F001> a <http://www.w3.org/ns/sosa/Sensor> ;
-	<http://www.w3.org/ns/sosa/observes> <http://mcas.com/sensor%2FGiros%2F001%2FGiroscopio> .
+<rdf:Description rdf:about="http://mcas.com/Observation/Observation%2F002">
+	<rdf:type rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+	<hasSimpleResult xmlns="http://www.w3.org/ns/sosa/" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">22.4</hasSimpleResult>
+	<resultTime xmlns="http://www.w3.org/ns/sosa/" rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-06T12:36:12Z</resultTime>
+	<madeBySensor xmlns="http://www.w3.org/ns/sosa/" rdf:resource="http://mcas.com/sensor%2F926"/>
+</rdf:Description>
 
-<http://mcas.com/Device/adroid%2FGjJS-58> a <http://www.w3.org/ns/sosa/Platform> ;
-	<http://www.w3.org/ns/sosa/hosts> <http://mcas.com/Device/sensor%2FGiros%2F001> .
+<rdf:Description rdf:about="http://mcas.com/Observation/Observation%2F003">
+	<rdf:type rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+	<hasSimpleResult xmlns="http://www.w3.org/ns/sosa/" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.60034</hasSimpleResult>
+	<resultTime xmlns="http://www.w3.org/ns/sosa/" rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-06T12:36:12Z</resultTime>
+	<madeBySensor xmlns="http://www.w3.org/ns/sosa/" rdf:resource="http://mcas.com/sensor%2FGiros%2F001"/>
+</rdf:Description>
 
-<http://mcas.com/Observation/1> a <http://www.w3.org/ns/sosa/Observation> ;
-	<http://www.w3.org/ns/sosa/hasSimpleResult> 101936.0 ;
-	<http://www.w3.org/ns/sosa/resultTime> "2017-06-06T12:36:12Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
-	<http://www.w3.org/ns/sosa/madeBySensor> <http://mcas.com/sensor%2F35-207306-844818-0%2FBMP282> .
+<rdf:Description rdf:about="http://mcas.com/Observation/Observation%2F004">
+	<rdf:type rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+	<hasSimpleResult xmlns="http://www.w3.org/ns/sosa/" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.83597</hasSimpleResult>
+	<resultTime xmlns="http://www.w3.org/ns/sosa/" rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-06T12:36:12Z</resultTime>
+	<madeBySensor xmlns="http://www.w3.org/ns/sosa/" rdf:resource="http://mcas.com/sensor%2FGiros%2F001"/>
+</rdf:Description>
 
-<http://mcas.com/Observation/2> a <http://www.w3.org/ns/sosa/Observation> ;
-	<http://www.w3.org/ns/sosa/hasSimpleResult> 22.4 ;
-	<http://www.w3.org/ns/sosa/resultTime> "2017-06-06T12:36:12Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
-	<http://www.w3.org/ns/sosa/madeBySensor> <http://mcas.com/sensor%2F926> .
+<rdf:Description rdf:about="http://mcas.com/Observation/Observation%2F005">
+	<rdf:type rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+	<hasSimpleResult xmlns="http://www.w3.org/ns/sosa/" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.12315</hasSimpleResult>
+	<resultTime xmlns="http://www.w3.org/ns/sosa/" rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-06T12:36:12Z</resultTime>
+	<madeBySensor xmlns="http://www.w3.org/ns/sosa/" rdf:resource="http://mcas.com/sensor%2FGiros%2F001"/>
+</rdf:Description>
 
-<http://mcas.com/Observation/3f> a <http://www.w3.org/ns/sosa/Observation> ;
-	<http://www.w3.org/ns/sosa/hasSimpleResult> 0.60034 ;
-	<http://www.w3.org/ns/sosa/resultTime> "2017-06-06T12:36:12Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
-	<http://www.w3.org/ns/sosa/madeBySensor> <http://mcas.com/sensor%2FGiros%2F001> .
-
-<http://mcas.com/Observation/3v> a <http://www.w3.org/ns/sosa/Observation> ;
-	<http://www.w3.org/ns/sosa/hasSimpleResult> 0.83597 ;
-	<http://www.w3.org/ns/sosa/resultTime> "2017-06-06T12:36:12Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
-	<http://www.w3.org/ns/sosa/madeBySensor> <http://mcas.com/sensor%2FGiros%2F001> .
-
-<http://mcas.com/Observation/3l> a <http://www.w3.org/ns/sosa/Observation> ;
-	<http://www.w3.org/ns/sosa/hasSimpleResult> 0.12315 ;
-	<http://www.w3.org/ns/sosa/resultTime> "2017-06-06T12:36:12Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
-	<http://www.w3.org/ns/sosa/madeBySensor> <http://mcas.com/sensor%2FGiros%2F001> .
+</rdf:RDF>

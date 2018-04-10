@@ -3,26 +3,55 @@
 @prefix crml:       <http://semweb.mmlab.be/ns/crml#> .
 @prefix ql: <http://semweb.mmlab.be/ns/ql#> .
 
-@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+## --------------- DEPENDENCIAS ----------- ###
+
+### ----- MCONTEXT ----- ###
 
 @prefix mcontext: <http://www.semanticweb.org/ontologies/mcontext#>.
 @prefix alzheimer: <http://www.semanticweb.org/ontologies/domains/alzheimer#>.
-@prefix role: <http://www.semanticweb.org/ontologies/role#>.
 
-## ------ SSN -------- ###
-@prefix sosa: <http://www.w3.org/ns/sosa/> .
+### ----- TIME ----- ###
+@prefix time: <http://www.semanticweb.org/ontologies/time>
 
+### ------ ACTIVITIES -------- ###
 
-#<#ActivityMapping>
-#	rml:logicalSource [
-#		rml:source "src/test/resources/propios/input.json";
-#	    rml:referenceFormulation ql:JSONPath;
-#	    rml:iterator "$.Ssn.[*].Device.Sensor.Observation.[*]"
-#   ];
-#    
-#    #define la uri en el sistema
-#    rr:subjectMap [
-#    	rr:template "http://mcas.com/ActividadLC/{Activity}";
-#    	rr:class sosa:Platform
-#    ].
+<#ActivityMapping>
+	rml:logicalSource [
+		rml:source "src/test/resources/propios/input3.json";
+	    rml:referenceFormulation ql:JSONPath;
+	    rml:iterator "$.Activity.[*]"
+    ];
 
+    rr:subjectMap [
+    	rr:template "http://mcas.com/{Id}";
+    ];
+    
+    rr:predicateObjectMap [
+    	rr:predicate rdf:type;
+    	rr:objectMap
+    	[
+    		rr:template "http://{Type}";
+    	]
+    ];
+    
+    ## ----- BASIC ATRIBUTES ----- ##
+    
+    
+    
+    ## ----- EXTERNAL ATRIBUTES ----- ##
+    rr:predicateObjectMap [
+    	rr:predicate time:hasBeginningTime;
+    	rr:objectMap
+    	[
+    		rml:reference "Time.Beginning";
+    		rr:datatype xsd:dateTime
+    	]
+    ],[
+    	rr:predicate time:hasEndingTime;
+    	rr:objectMap
+    	[
+    		rml:reference "Time.Ending";
+    		rr:datatype xsd:dateTime
+    	]
+    ].
+    

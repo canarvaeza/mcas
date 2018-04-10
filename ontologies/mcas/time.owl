@@ -61,6 +61,9 @@
         <DataProperty IRI="http://www.w3.org/2006/time#seconds"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#ownTemporalDurations"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="http://www.w3.org/2006/time#hasEnd"/>
     </Declaration>
     <Declaration>
@@ -127,6 +130,9 @@
         <NamedIndividual IRI="http://www.w3.org/2006/time#Monday"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#hasBeginningTime"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="http://www.w3.org/2006/time#TemporalEntity"/>
     </Declaration>
     <Declaration>
@@ -137,6 +143,9 @@
     </Declaration>
     <Declaration>
         <DataProperty IRI="http://www.w3.org/2006/time#days"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasEndingTime"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="http://www.w3.org/2006/time#Thursday"/>
@@ -376,6 +385,14 @@
         <ObjectProperty IRI="http://www.w3.org/2006/time#hasTime"/>
         <Class IRI="http://www.w3.org/2006/time#TemporalEntity"/>
     </ObjectPropertyRange>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasBeginningTime"/>
+        <DataProperty IRI="#ownTemporalDurations"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasEndingTime"/>
+        <DataProperty IRI="#ownTemporalDurations"/>
+    </SubDataPropertyOf>
     <DataPropertyDomain>
         <DataProperty IRI="http://www.w3.org/2006/time#day"/>
         <Class IRI="http://www.w3.org/2006/time#GeneralDateTimeDescription"/>
@@ -397,6 +414,14 @@
         <Class IRI="http://www.w3.org/2006/time#GeneralDateTimeDescription"/>
     </DataPropertyDomain>
     <DataPropertyRange>
+        <DataProperty IRI="#hasBeginningTime"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasEndingTime"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
         <DataProperty IRI="http://www.w3.org/2006/time#dayOfYear"/>
         <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
     </DataPropertyRange>
@@ -408,6 +433,16 @@
         <DataProperty IRI="http://www.w3.org/2006/time#week"/>
         <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
     </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasBeginningTime</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">mcasTime:hasBeginning</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasEndingTime</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">mcasTime:hasEnding</Literal>
+    </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>http://www.w3.org/2006/time#DayOfWeek</IRI>

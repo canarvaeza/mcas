@@ -3,14 +3,14 @@
 @prefix crml:       <http://semweb.mmlab.be/ns/crml#> .
 @prefix ql: <http://semweb.mmlab.be/ns/ql#> .
 
-@prefix foaf: <http://xmlns.com/foaf/0.1/>.
-
 @prefix mcontext: <http://www.semanticweb.org/ontologies/mcontext#>.
 @prefix alzheimer: <http://www.semanticweb.org/ontologies/domains/alzheimer#>.
-@prefix role: <http://www.semanticweb.org/ontologies/role#>.
 
 ## ------ SSN -------- ###
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
+
+
+## ------ SSN ------ ###
 
 <#DeviceMapping>
 	rml:logicalSource [
@@ -24,6 +24,8 @@
     	rr:template "http://mcas.com/Device/{Id}";
     	rr:class sosa:Platform
     ];
+    
+    ## ----- BASIC ATRIBUTES ----- ##
         
     rr:predicateObjectMap [
     	rr:predicate sosa:hosts;
@@ -32,16 +34,28 @@
     		rr:template "http://mcas.com/Device/{Sensor}";
 
 			#rr:parentTriplesMap <#SensorMapping>;
-] ] .
-
-#    rr:predicateObjectMap [
-#    	rr:predicate mcontext:describe;
-#    	rr:objectMap
-#    	[
-#    		rr:parentTriplesMap <#ActivityMapping>
-#    	]
-#    ].
-
+		] 
+	];
+	
+	## ----- EXTERNAL ATRIBUTES ----- ##
+	
+	rr:predicateObjectMap [
+    	rr:predicate gn:locatedIn;
+    	rr:objectMap
+    	[
+    	
+    		rr:template "http://{Location}";			
+		] 
+	].
+	
+	#[
+	#    rr:predicate mcontext:describe;
+    #	rr:objectMap
+    #	[
+    #		rr:template "http://{RecEntities.[*].Activity}";
+    #	]
+    #].
+	
 <#SensorMapping>
 
 rml:logicalSource [
@@ -56,7 +70,7 @@ rml:logicalSource [
     	rr:class sosa:Sensor
     ];
     
-    ## UTILIZO TEMPLATE PARA QUE PUEDA PONERLO COMO UNA CLASE!
+    ## ----- BASIC ATRIBUTES ----- ##
     
     rr:predicateObjectMap [
     	rr:predicate sosa:observes;
@@ -66,6 +80,16 @@ rml:logicalSource [
     		rr:template "http://mcas.com/{Observe}"
     	]
     ].
+    
+    ## ----- EXTERNAL ATRIBUTES ----- ##
+	
+#	rr:predicateObjectMap [
+#	    rr:predicate mcontext:describe;
+#    	rr:objectMap
+#    	[
+#    		rr:template "http://{RecEntities.[*].Activity}";
+#    	]
+#    ].
 
 
 <#ObservationMapping>
@@ -117,5 +141,12 @@ rml:logicalSource [
     		rml:reference "Time";
     		rr:datatype xsd:dateTime
     	]
+    ];
+    
+    rr:predicateObjectMap [
+	    rr:predicate mcontext:describe;
+    	rr:objectMap
+    	[
+    		rr:template "http://{RecEntities.[*].Activity}";
+    	]
     ].
-

@@ -1,103 +1,85 @@
 {
   "Person": [
     {
-      "Id": "u001",
+      "Id": "User/u001",
       "Role": {
         "Type": "User",
-        "Value": "User"
+        "Value": "www.semanticweb.org/ontologies/domains/alzheimer#User"
       },
-      "Name": "Lisandro",
+      "Name": "Cristian",
       "Last-name": "Narvaez",
       "Device": {
-      	"Id": "iphone7/35-207306-844818-0"
+        "Id": "iphone7/35-207306-844818-0"
+      }
+    }
+  ],
+  "Multimedia": [
+    {
+      "Id": "multimedia/0001",
+      "Format": "AVI",
+      "Type": "http://www.semanticweb.org/ontologies/multimedia#VideoFormat",
+      "Descriptor": {
+      },
+      "RecEntities": [
+        {
+          "Activity": "activity/low/00001"
+        }
+      ],
+      "CreationTime": "2017-06-06T12:36:12Z",
+      "Location": "Location/0001"
+    }
+  ],
+  "Activity": [
+    {
+      "Id": "activity/low/00001",
+      "Type": "http://www.semanticweb.org/ontologies/domains/alzheimer#Eat",
+      "Time": {
+        "Beginning": "2017-06-06T12:36:12Z",
+        "Ending": "2017-06-06T12:38:12Z"
       }
     },
     {
-      "Id": "n001",
-      "Role": {
-        "Type": "FamiliarRole",
-        "Value": "Son"
-      },
-      "Name": "Andrea",
-      "Last-name": "Narvaez"
-    },
-    {
-      "Id": "n002",
-      "Role": {
-        "Type": "FamiliarRole",
-        "Value": "Son"
-      },
-      "Last-name": "Narvaez"
+      "Id": "activity/low/00002",
+      "Type": "http://www.semanticweb.org/ontologies/domains/alzheimer#Sit",
+      "Time": {
+        "Beginning": "2017-06-06T12:36:12Z"
+      }
     }
   ],
   "Ssn": [
     {
       "Device": {
         "Id": "iphone7/35-207306-844818-0",
-        "Sensor": "sensor/35-207306-844818-0/BMP282"
+        "Sensor": "sensor/35-207306-844818-0/BMP282",
+        "Location": "Location/0001"
       },
       "Sensor": {
         "Id": "sensor/35-207306-844818-0/BMP282",
-        "Observe": "sensor/35-207306-844818-0/BMP282/atmosphericPressure"
+        "Observe": "sensor/35-207306-844818-0/BMP282/Gyroscope"
       },
       "Observation": [
         {
-          "Id": "1",
+          "Id": "Observation/001",
           "Sensor": "sensor/35-207306-844818-0/BMP282",
-          "Value": "101936",
-          "Time": "2017-06-06T12:36:12Z"         
-        }
-      ],
-      "Activity": "Sit"
-    },
-    {
-      "Sensor": {
-        "Id": "sensor/926",
-        "Observe": "Appartment/134/electricConsumption"
-      },
-      "Observation": [
-        {
-          "Id": "2",
-          "Sensor": "sensor/926",
-          "Value": "22.4",
-          "Unidad": "qudt-unit-1-1:Kilowatthour",
-          "Time": "2017-06-06T12:36:12Z"
+          "Value": "[0.60034, 0.42556, 0.86662]",
+          "Time": "2017-06-06T12:36:12Z",
+          "RecEntities": [
+            {
+              "Activity": "activity/low/00002"
+            }
+          ]
         }
       ]
-    },
+    }
+  ],
+  "Location": [
     {
-      "Device": {
-        "Id": "adroid/GjJS-58",
-        "Sensor": "sensor/Giros/001"
-      },
-      "Sensor": {
-        "Id": "sensor/Giros/001",
-        "Observe": "sensor/Giros/001/Giroscopio"
-      },
-      "Observation": [
-        {
-          "Id": "3f",
-          "Sensor": "sensor/Giros/001",
-          "Value": "0.60034",
-          "Unidad": "qudt-unit-1-1:Kilowatthour",
-          "Time": "2017-06-06T12:36:12Z"
-        },
-                {
-          "Id": "3v",
-          "Sensor": "sensor/Giros/001",
-          "Value": "0.83597",
-          "Unidad": "qudt-unit-1-1:Kilowatthour",
-          "Time": "2017-06-06T12:36:12Z"
-        },
-                {
-          "Id": "3l",
-          "Sensor": "sensor/Giros/001",
-          "Value": "0.12315",
-          "Unidad": "qudt-unit-1-1:Kilowatthour",
-          "Time": "2017-06-06T12:36:12Z"
-        }
-      ],
-      "Activity": "Sit"
+      "Id": "Location/0001",
+      "Type": "http://www.semanticweb.org/ontologies/location#ClosedLocation",
+      "Coordinates": {
+        "latitude": "40.414",
+        "longitude": "-3.699"
+      }
     }
   ]
 }

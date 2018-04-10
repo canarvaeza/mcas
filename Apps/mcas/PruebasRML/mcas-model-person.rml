@@ -5,17 +5,18 @@
 
 @prefix mcontext: <http://www.semanticweb.org/ontologies/mcontext#>.
 @prefix alzheimer: <http://www.semanticweb.org/ontologies/domains/alzheimer#>.
-@prefix role: <http://www.semanticweb.org/ontologies/role#>.
 
-## ------ PERSON ------ ###
+
+## --------------- DEPENDENCIAS ----------- ###
+
+### ------ PERSON ------ ###
 @prefix foaf: <http://xmlns.com/foaf/0.1/>.
 
+### ------ ROLE ------ ###
+@prefix role: <http://www.semanticweb.org/ontologies/role#>.
 
-## ------ SSN -------- ###
+### ------ SSN -------- ###
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
-
-
-#COMO DEBERÍA PONERLO ENTONCES
 
 
 <#PersonMapping>
@@ -30,6 +31,9 @@
     	rr:template "http://mcas.com/Person/{Id}";
     	rr:class foaf:Person
     ];
+    
+    
+    ## ----- BASIC ATRIBUTES ----- ##
     
     rr:predicateObjectMap [
     	rr:predicate foaf:firstname;
@@ -46,6 +50,8 @@
     		rml:reference "Last-name"
     	]
     ];
+    
+    ## ----- EXTERNAL ATRIBUTES ----- ##
     
     rr:predicateObjectMap [
     	rr:predicate mcontext:hasRol;
@@ -65,14 +71,6 @@
     ];
     
     #define la uri en el sistema
-    # COMO PONERLE LAS SUB CLASES? Tengo que modificar en la ontología y de convertir a clase definida diciendo que todo rol es rol (para que lo reconozca automáticamente
     rr:subjectMap [
-    	rr:template "http://www.semanticweb.org/ontologies/domains/alzheimer#{Value}";
-    	
-    	#crml:booleanCondition[
-    	#	crml:condition "FamiliarRole";
-    	#	rr:class role:FamiliarRole
-    	#];
-    	
-    	#rr:class role:Family
+    	rr:template "http://{Value}";
     ].

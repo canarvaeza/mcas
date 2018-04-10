@@ -1,0 +1,4 @@
+
+<http://mcas.com/Activity%2Flow%2F00001> a <http://http%3A%2F%2Fwww.semanticweb.org%2Fontologies%2Fdomains%2Falzheimer%23Sit> .
+
+<http://mcas.com/Activity%2Flow%2F00002> a <http://http%3A%2F%2Fwww.semanticweb.org%2Fontologies%2Fdomains%2Falzheimer%23Eat> .
