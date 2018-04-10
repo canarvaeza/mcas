@@ -1,0 +1,4 @@
+
+<http://mcas.com/Location/l0001> a <http://http%3A%2F%2Fwww.semanticweb.org%2Fontologies%2Flocation%23ClosedLocation> ;
+	<http://www.w3.org/2003/01/geo/wgs84_pos#long> "-3.699" ;
+	<http://www.w3.org/2003/01/geo/wgs84_pos#lat> "40.414" .

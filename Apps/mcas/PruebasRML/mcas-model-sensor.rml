@@ -1,0 +1,152 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix  rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix crml:       <http://semweb.mmlab.be/ns/crml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+
+@prefix mcontext: <http://www.semanticweb.org/ontologies/mcontext#>.
+@prefix alzheimer: <http://www.semanticweb.org/ontologies/domains/alzheimer#>.
+
+## ------ SSN -------- ###
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+
+
+## ------ SSN ------ ###
+
+<#DeviceMapping>
+	rml:logicalSource [
+		rml:source "src/test/resources/propios/input.json";
+	    rml:referenceFormulation ql:JSONPath;
+	    rml:iterator "$.Ssn.[*].Device"
+    ];
+    
+    #define la uri en el sistema
+    rr:subjectMap [
+    	rr:template "http://mcas.com/Device/{Id}";
+    	rr:class sosa:Platform
+    ];
+    
+    ## ----- BASIC ATRIBUTES ----- ##
+        
+    rr:predicateObjectMap [
+    	rr:predicate sosa:hosts;
+    	rr:objectMap
+    	[
+    		rr:template "http://mcas.com/Device/{Sensor}";
+
+			#rr:parentTriplesMap <#SensorMapping>;
+		] 
+	];
+	
+	## ----- EXTERNAL ATRIBUTES ----- ##
+	
+	rr:predicateObjectMap [
+    	rr:predicate gn:locatedIn;
+    	rr:objectMap
+    	[
+    	
+    		rr:template "http://{Location}";			
+		] 
+	].
+	
+	#[
+	#    rr:predicate mcontext:describe;
+    #	rr:objectMap
+    #	[
+    #		rr:template "http://{RecEntities.[*].Activity}";
+    #	]
+    #].
+	
+<#SensorMapping>
+
+rml:logicalSource [
+		rml:source "src/test/resources/propios/input.json";
+	    rml:referenceFormulation ql:JSONPath;
+	    rml:iterator "$.Ssn.[*].Sensor"
+    ];
+    
+    #define la uri en el sistema
+    rr:subjectMap [
+    	rr:template "http://mcas.com/Sensor/{Id}";
+    	rr:class sosa:Sensor
+    ];
+    
+    ## ----- BASIC ATRIBUTES ----- ##
+    
+    rr:predicateObjectMap [
+    	rr:predicate sosa:observes;
+    	rr:objectMap
+    	[
+    		#rml:reference "Observe"
+    		rr:template "http://mcas.com/{Observe}"
+    	]
+    ].
+    
+    ## ----- EXTERNAL ATRIBUTES ----- ##
+	
+#	rr:predicateObjectMap [
+#	    rr:predicate mcontext:describe;
+#    	rr:objectMap
+#    	[
+#    		rr:template "http://{RecEntities.[*].Activity}";
+#    	]
+#    ].
+
+
+<#ObservationMapping>
+    
+    rml:logicalSource [
+		rml:source "src/test/resources/propios/input.json";
+	    rml:referenceFormulation ql:JSONPath;
+	    rml:iterator "$.Ssn.[*].Observation.[*]"
+    ];
+    
+    #define la uri en el sistema
+    rr:subjectMap [
+    	rr:template "http://mcas.com/Observation/{Id}";
+    	rr:class sosa:Observation
+    ];
+    
+#    rr:predicateObjectMap [
+#    	rr:predicate sosa:observedProperty;
+#    	rr:objectMap
+#    	[
+#    		#rml:reference "Sensor.Observe"
+#    		rr:template "http://mcas.com/{Observe}"
+#    	]
+#    ];
+    
+    rr:predicateObjectMap [
+    	rr:predicate sosa:madeBySensor;
+    	rr:objectMap
+    	[
+    		rr:template "http://mcas.com/{Sensor}"
+    	]
+    ];
+    
+    #VERIFICAR CÓMO TRATAR EL NÚMERO PORQUE NO ME SALE EL TIPO DE DATO
+    
+    rr:predicateObjectMap [
+    	rr:predicate sosa:hasSimpleResult;
+    	rr:objectMap
+    	[
+    		rml:reference "Value";
+    		rr:datatype xsd:decimal
+    	]
+    ];
+    
+    rr:predicateObjectMap [
+    	rr:predicate sosa:resultTime;
+    	rr:objectMap
+    	[
+    		rml:reference "Time";
+    		rr:datatype xsd:dateTime
+    	]
+    ];
+    
+    rr:predicateObjectMap [
+	    rr:predicate mcontext:describe;
+    	rr:objectMap
+    	[
+    		rr:template "http://{RecEntities.[*].Activity}";
+    	]
+    ].

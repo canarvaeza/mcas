@@ -1,0 +1,25 @@
+
+<http://mcas.com/Multimedia/multimedia%2F0001> a <http://http%3A%2F%2Fwww.w3.org%2Fns%2Fma-ont%23Image> ;
+	<http://www.semanticweb.org/ontologies/multimedia#creationDate> "2017-06-06T12:36:12Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/ns/ma-ont#hasFormat> <http://www.semanticweb.org/ontologies/multimedia#PNG> ;
+	<http://www.w3.org/ns/ma-ont#hasMultimediaDescriptor> <http://mcas.com/Descriptor/Descriptor%2F0001> ;
+	<http://www.geonames.org/ontology#locatedIn> <http://Location%2F0001> ;
+	<http://www.semanticweb.org/ontologies/mcontext#describe> <http://activity%2Flow%2F00001> .
+
+<http://mcas.com/Multimedia/multimedia%2F0002> a <http://http%3A%2F%2Fwww.semanticweb.org%2Fontologies%2Fmultimedia%23AudioResource> ;
+	<http://www.semanticweb.org/ontologies/multimedia#creationDate> "2017-06-06T12:36:12Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<http://www.w3.org/ns/ma-ont#hasFormat> <http://www.semanticweb.org/ontologies/multimedia#MP3> ;
+	<http://www.w3.org/ns/ma-ont#hasMultimediaDescriptor> <http://mcas.com/Descriptor/Descriptor%2F0024> ;
+	<http://www.semanticweb.org/ontologies/mcontext#describe> <http://activity%2Flow%2F00002> .
+
+<http://mcas.com/Descriptor/Descriptor%2F0001> <http://www.semanticweb.org/ontologies/multimedia#descriptionText> "Persona: Ana Carolina" , "Persona: Cristian" , "Objeto: Mesa" .
+
+<http://mcas.com/Descriptor/Descriptor%2F0024> <http://www.semanticweb.org/ontologies/multimedia#descriptionText> "Una foto muy linda que tom� con mi familia!" .
+
+<http://mcas.com/Location%2F0001> a <http://http%3A%2F%2Fwww.semanticweb.org%2Fontologies%2Flocation%23ClosedLocation> ;
+	<http://www.w3.org/2003/01/geo/wgs84_pos#long> "-3.699" ;
+	<http://www.w3.org/2003/01/geo/wgs84_pos#lat> "40.414" .
+
+<http://mcas.com/Activity%2Flow%2F00001> a <http://http%3A%2F%2Fwww.semanticweb.org%2Fontologies%2Fdomains%2Falzheimer%23Sit> .
+
+<http://mcas.com/Activity%2Flow%2F00002> a <http://http%3A%2F%2Fwww.semanticweb.org%2Fontologies%2Fdomains%2Falzheimer%23Eat> .

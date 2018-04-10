@@ -1,0 +1,57 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix  rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix crml:       <http://semweb.mmlab.be/ns/crml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+
+## --------------- DEPENDENCIAS ----------- ###
+
+### ----- MCONTEXT ----- ###
+
+@prefix mcontext: <http://www.semanticweb.org/ontologies/mcontext#>.
+@prefix alzheimer: <http://www.semanticweb.org/ontologies/domains/alzheimer#>.
+
+### ----- TIME ----- ###
+@prefix time: <http://www.semanticweb.org/ontologies/time>
+
+### ------ ACTIVITIES -------- ###
+
+<#ActivityMapping>
+	rml:logicalSource [
+		rml:source "src/test/resources/propios/input3.json";
+	    rml:referenceFormulation ql:JSONPath;
+	    rml:iterator "$.Activity.[*]"
+    ];
+
+    rr:subjectMap [
+    	rr:template "http://mcas.com/{Id}";
+    ];
+    
+    rr:predicateObjectMap [
+    	rr:predicate rdf:type;
+    	rr:objectMap
+    	[
+    		rr:template "http://{Type}";
+    	]
+    ];
+    
+    ## ----- BASIC ATRIBUTES ----- ##
+    
+    
+    
+    ## ----- EXTERNAL ATRIBUTES ----- ##
+    rr:predicateObjectMap [
+    	rr:predicate time:hasBeginningTime;
+    	rr:objectMap
+    	[
+    		rml:reference "Time.Beginning";
+    		rr:datatype xsd:dateTime
+    	]
+    ],[
+    	rr:predicate time:hasEndingTime;
+    	rr:objectMap
+    	[
+    		rml:reference "Time.Ending";
+    		rr:datatype xsd:dateTime
+    	]
+    ].
+    

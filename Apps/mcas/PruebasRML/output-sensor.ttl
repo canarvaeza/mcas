@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+<rdf:Description rdf:about="http://mcas.com/Device/iphone7%2F35-207306-844818-0">
+	<rdf:type rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+	<hosts xmlns="http://www.w3.org/ns/sosa/" rdf:resource="http://mcas.com/Device/sensor%2F35-207306-844818-0%2FBMP282"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://mcas.com/Sensor/sensor%2F35-207306-844818-0%2FBMP282">
+	<rdf:type rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+	<observes xmlns="http://www.w3.org/ns/sosa/" rdf:resource="http://mcas.com/sensor%2F35-207306-844818-0%2FBMP282%2FatmosphericPressure"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://mcas.com/Sensor/sensor%2F926">
+	<rdf:type rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+	<observes xmlns="http://www.w3.org/ns/sosa/" rdf:resource="http://mcas.com/Appartment%2F134%2FelectricConsumption"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://mcas.com/Sensor/sensor%2FGiros%2F001">
+	<rdf:type rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+	<observes xmlns="http://www.w3.org/ns/sosa/" rdf:resource="http://mcas.com/sensor%2FGiros%2F001%2FGiroscopio"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://mcas.com/Device/adroid%2FGjJS-58">
+	<rdf:type rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+	<hosts xmlns="http://www.w3.org/ns/sosa/" rdf:resource="http://mcas.com/Device/sensor%2FGiros%2F001"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://mcas.com/Observation/Observation%2F001">
+	<rdf:type rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+	<hasSimpleResult xmlns="http://www.w3.org/ns/sosa/" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">101936</hasSimpleResult>
+	<resultTime xmlns="http://www.w3.org/ns/sosa/" rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-06T12:36:12Z</resultTime>
+	<madeBySensor xmlns="http://www.w3.org/ns/sosa/" rdf:resource="http://mcas.com/sensor%2F35-207306-844818-0%2FBMP282"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://mcas.com/Observation/Observation%2F002">
+	<rdf:type rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+	<hasSimpleResult xmlns="http://www.w3.org/ns/sosa/" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">22.4</hasSimpleResult>
+	<resultTime xmlns="http://www.w3.org/ns/sosa/" rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-06T12:36:12Z</resultTime>
+	<madeBySensor xmlns="http://www.w3.org/ns/sosa/" rdf:resource="http://mcas.com/sensor%2F926"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://mcas.com/Observation/Observation%2F003">
+	<rdf:type rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+	<hasSimpleResult xmlns="http://www.w3.org/ns/sosa/" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.60034</hasSimpleResult>
+	<resultTime xmlns="http://www.w3.org/ns/sosa/" rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-06T12:36:12Z</resultTime>
+	<madeBySensor xmlns="http://www.w3.org/ns/sosa/" rdf:resource="http://mcas.com/sensor%2FGiros%2F001"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://mcas.com/Observation/Observation%2F004">
+	<rdf:type rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+	<hasSimpleResult xmlns="http://www.w3.org/ns/sosa/" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.83597</hasSimpleResult>
+	<resultTime xmlns="http://www.w3.org/ns/sosa/" rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-06T12:36:12Z</resultTime>
+	<madeBySensor xmlns="http://www.w3.org/ns/sosa/" rdf:resource="http://mcas.com/sensor%2FGiros%2F001"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://mcas.com/Observation/Observation%2F005">
+	<rdf:type rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+	<hasSimpleResult xmlns="http://www.w3.org/ns/sosa/" rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.12315</hasSimpleResult>
+	<resultTime xmlns="http://www.w3.org/ns/sosa/" rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-06T12:36:12Z</resultTime>
+	<madeBySensor xmlns="http://www.w3.org/ns/sosa/" rdf:resource="http://mcas.com/sensor%2FGiros%2F001"/>
+</rdf:Description>
+
+</rdf:RDF>
