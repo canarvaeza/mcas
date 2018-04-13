@@ -63,6 +63,9 @@
     <Declaration>
         <ObjectProperty IRI="#hasTemporalEntity"/>
     </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="activity:Activity"/>
+    </Declaration>
     <SubClassOf>
         <Class abbreviatedIRI="activity:Activity"/>
         <ObjectSomeValuesFrom>

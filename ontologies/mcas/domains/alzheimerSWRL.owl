@@ -1,0 +1,3547 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/ontologies/domains/alzheimer"
+     xml:base="http://www.semanticweb.org/ontologies/domains/alzheimer"
+     xmlns:schema="http://schema.org/"
+     xmlns:alzheimer="http://www.semanticweb.org/ontologies/domains/alzheimer#"
+     xmlns:role="http://www.semanticweb.org/ontologies/role#"
+     xmlns:activity="http://www.semanticweb.org/ontologies/activity#"
+     xmlns:ns="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:multimedia="http://www.semanticweb.org/ontologies/multimedia#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:mcontext="http://www.semanticweb.org/ontologies/mcontext#"
+     xmlns:person="http://www.semanticweb.org/ontologies/person#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#"
+     xmlns:sensor="http://www.semanticweb.org/ontologies/sensor#"
+     xmlns:location="http://www.semanticweb.org/ontologies/location#"
+     xmlns:time="http://www.semanticweb.org/ontologies/time#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/ontologies/domains/alzheimer">
+        <owl:imports rdf:resource="http://www.semanticweb.org/ontologies/mcontext"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.geonames.org/ontology#locatedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.geonames.org/ontology#locatedIn">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/location#Location"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.geonames.org/ontology#nearby -->
+
+    <rdf:Description rdf:about="http://www.geonames.org/ontology#nearby">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/location#Location"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/location#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.geonames.org/ontology#neighbour -->
+
+    <rdf:Description rdf:about="http://www.geonames.org/ontology#neighbour">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/location#Location"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/location#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.geonames.org/ontology#parentADM1 -->
+
+    <rdf:Description rdf:about="http://www.geonames.org/ontology#parentADM1">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/location#Location"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+        <rdfs:range rdf:resource="http://www.geonames.org/ontology#Feature"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/location#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.geonames.org/ontology#parentADM2 -->
+
+    <rdf:Description rdf:about="http://www.geonames.org/ontology#parentADM2">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/location#Location"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+        <rdfs:range rdf:resource="http://www.geonames.org/ontology#Feature"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/location#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.geonames.org/ontology#parentADM3 -->
+
+    <rdf:Description rdf:about="http://www.geonames.org/ontology#parentADM3">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/location#Location"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+        <rdfs:range rdf:resource="http://www.geonames.org/ontology#Feature"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/location#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.geonames.org/ontology#parentADM4 -->
+
+    <rdf:Description rdf:about="http://www.geonames.org/ontology#parentADM4">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/location#Location"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+        <rdfs:range rdf:resource="http://www.geonames.org/ontology#Feature"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/location#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.geonames.org/ontology#parentCountry -->
+
+    <rdf:Description rdf:about="http://www.geonames.org/ontology#parentCountry">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/location#Location"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+        <rdfs:range rdf:resource="http://www.geonames.org/ontology#Feature"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/location#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.geonames.org/ontology#parentFeature -->
+
+    <rdf:Description rdf:about="http://www.geonames.org/ontology#parentFeature">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/location#Location"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/location#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/activity#hasActivity -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/activity#hasActivity"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/activity#mca:hasActivity -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/activity#mca:hasActivity">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#hasTemporalEntity"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/mcontext#describe -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/mcontext#describe">
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#hasTemporalEntity"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/mcontext#hasRol -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/mcontext#hasRol">
+        <rdfs:domain rdf:resource="http://schema.org/Person"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/person#Person"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#isInvolvedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#use"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/object#Object"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/mcontext#hasTemporalEntity -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/mcontext#hasTemporalEntity">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/time#Time"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2006/time#Instant"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2006/time#Interval"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/mcontext#isInvolvedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/mcontext#isInvolvedIn">
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#hasTemporalEntity"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#contain -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/multimedia#contain">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#describe"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#describe"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#containImage -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/multimedia#containImage">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/multimedia#ComposedResource"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#describe"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#describe"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#containVideo -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/multimedia#containVideo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/multimedia#ComposedResource"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#describe"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#describe"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#hasMultimediaDescriptor -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/multimedia#hasMultimediaDescriptor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#describe"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#isAnnotatedBy -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/multimedia#isAnnotatedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#describe"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#use"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/object#Object"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://schema.org/Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/person#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#isInvolvedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#use"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/object#Object"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#isAudioFragmentOf -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/multimedia#isAudioFragmentOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/ma-ont#MediaFragment"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/ma-ont#Track"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#describe"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/multimedia#FormatMultimedia"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#isMediaFragmentOf -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/multimedia#isMediaFragmentOf">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#describe"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#isMultimediaDescriptor -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/multimedia#isMultimediaDescriptor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#describe"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#isVideoFragmentOf -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/multimedia#isVideoFragmentOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/ma-ont#MediaFragment"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/ma-ont#Track"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#describe"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/multimedia#FormatMultimedia"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#describe"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/2006/time#after -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2006/time#after">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/time#Time"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2006/time#Instant"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2006/time#Interval"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/time#Time"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2006/time#Instant"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2006/time#Interval"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/2006/time#before -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2006/time#before">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/time#Time"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2006/time#Instant"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2006/time#Interval"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/time#Time"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2006/time#Instant"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2006/time#Interval"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/2006/time#dayOfWeek -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2006/time#dayOfWeek">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/time#Time"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/time#Time"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/2006/time#hasBeginning -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2006/time#hasBeginning">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/time#Time"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2006/time#Instant"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2006/time#Interval"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/time#Time"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/2006/time#hasDuration -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2006/time#hasDuration">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/time#Time"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2006/time#Instant"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2006/time#Interval"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/time#Time"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2006/time#TemporalDuration"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2006/time#unitType"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2006/time#numericDuration"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:range>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/2006/time#hasEnd -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2006/time#hasEnd">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/time#Time"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2006/time#Instant"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2006/time#Interval"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/time#Time"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2006/time#Instant"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2006/time#Interval"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/2006/time#hasTemporalDuration -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2006/time#hasTemporalDuration">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/time#Time"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2006/time#Instant"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2006/time#Interval"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/time#Time"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/2006/time#hasTime -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2006/time#hasTime">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/time#Time"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2006/time#Instant"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2006/time#Interval"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#hasCreator -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/ma-ont#hasCreator">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#hasFormat -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/ma-ont#hasFormat">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#describe"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#hasFragment -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/ma-ont#hasFragment">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#describe"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#describe"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#hasRating -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/ma-ont#hasRating">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#describe"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#hasRatingSystem -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/ma-ont#hasRatingSystem">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#isCreationLocationOf -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/ma-ont#isCreationLocationOf">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/location#Location"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#isProvidedBy -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/ma-ont#isProvidedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://schema.org/Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/person#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#isInvolvedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#use"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/object#Object"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#isRelatedTo -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/ma-ont#isRelatedTo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#describe"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#describe"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.geonames.org/ontology#alternateName -->
+
+    <rdf:Description rdf:about="http://www.geonames.org/ontology#alternateName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/location#Location"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.geonames.org/ontology#name -->
+
+    <rdf:Description rdf:about="http://www.geonames.org/ontology#name">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/location#Location"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#creationDate -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/multimedia#creationDate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#describe"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#descriptionText -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/multimedia#descriptionText">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/multimedia#DescriptorMultimedia"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/2006/time#day -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2006/time#day">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/time#Time"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/2006/time#dayOfYear -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2006/time#dayOfYear">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/time#Time"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/2006/time#numericDuration -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2006/time#numericDuration">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/time#Time"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2006/time#TemporalDuration"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2006/time#unitType"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2006/time#numericDuration"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/2006/time#week -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2006/time#week">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/time#Time"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/2006/time#year -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2006/time#year">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/time#Time"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#alternativeTitle -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/ma-ont#alternativeTitle">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#describe"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#averageBitRate -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/ma-ont#averageBitRate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:complementOf rdf:resource="http://www.w3.org/ns/ma-ont#Image"/>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#describe"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#description -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/ma-ont#description">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#describe"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#frameHeight -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/ma-ont#frameHeight">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#describe"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#frameRate -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/ma-ont#frameRate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#describe"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#frameSizeUnit -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/ma-ont#frameSizeUnit">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#describe"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#frameWidth -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/ma-ont#frameWidth">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#describe"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#mainOriginalTitle -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/ma-ont#mainOriginalTitle">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#describe"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#ratingScaleMax -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/ma-ont#ratingScaleMax">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#ratingScaleMin -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/ma-ont#ratingScaleMin">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#ratingValue -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/ma-ont#ratingValue">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#samplingRate -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/ma-ont#samplingRate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#describe"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#title -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/ma-ont#title">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#describe"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </rdf:Description>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/accountName -->
+
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/accountName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/person#Person"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/age -->
+
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/age">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/person#Person"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/birthday -->
+
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/birthday">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/person#Person"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/familyName -->
+
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/familyName">
+        <rdfs:domain rdf:resource="http://schema.org/Person"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/person#Person"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#isInvolvedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#use"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/object#Object"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </rdf:Description>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/firstName -->
+
+    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/firstName">
+        <rdfs:domain rdf:resource="http://schema.org/Person"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/person#Person"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#isInvolvedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#use"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/object#Object"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/gender -->
+
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/gender">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/person#Person"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/lastName -->
+
+    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/lastName">
+        <rdfs:domain rdf:resource="http://schema.org/Person"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/person#Person"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#isInvolvedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#use"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/object#Object"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.org/Person -->
+
+    <rdf:Description rdf:about="http://schema.org/Person">
+        <owl:equivalentClass rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.geonames.org/ontology#Feature -->
+
+    <rdf:Description rdf:about="http://www.geonames.org/ontology#Feature">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/location#Location"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/activity#HighContextActivity -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/activity#HighContextActivity">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#hasTemporalEntity"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/activity#LowContextActivity -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/activity#LowContextActivity">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#hasTemporalEntity"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/domains/alzheimer#Eat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/domains/alzheimer#Eat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/activity#LowContextActivity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#hasTemporalEntity"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/domains/alzheimer#FamiliarRole -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/domains/alzheimer#FamiliarRole">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/role#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/domains/alzheimer#HavingMeal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/domains/alzheimer#HavingMeal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/activity#HighContextActivity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#hasTemporalEntity"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/domains/alzheimer#MedicalRole -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/domains/alzheimer#MedicalRole">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/role#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/domains/alzheimer#Rest -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/domains/alzheimer#Rest">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/activity#HighContextActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/domains/alzheimer#Sit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/domains/alzheimer#Sit">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/activity#LowContextActivity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#hasTemporalEntity"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/domains/alzheimer#SocialRole -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/domains/alzheimer#SocialRole">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/role#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/domains/alzheimer#Speak -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/domains/alzheimer#Speak">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/activity#HighContextActivity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#hasTemporalEntity"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/domains/alzheimer#Talk -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/domains/alzheimer#Talk">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/activity#LowContextActivity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#hasTemporalEntity"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/location#ClosedLocation -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/location#ClosedLocation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/location#Location"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/location#OpenLocation -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/location#OpenLocation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/location#Location"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#AudioDescriptor -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/multimedia#AudioDescriptor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#AudioFormat -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/multimedia#AudioFormat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#AudioResource -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/multimedia#AudioResource">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#describe"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#ComposedResource -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/multimedia#ComposedResource">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#describe"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#DescriptorMultimedia -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/multimedia#DescriptorMultimedia">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#FormatMultimedia -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/multimedia#FormatMultimedia">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#ImageFormat -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/multimedia#ImageFormat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#TextFormat -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/multimedia#TextFormat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#TextualAssetResource -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/multimedia#TextualAssetResource">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#describe"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#TextualDescriptor -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/multimedia#TextualDescriptor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#VideoFormat -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/multimedia#VideoFormat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#VideoResource -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/multimedia#VideoResource">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#describe"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#VisualDescriptor -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/multimedia#VisualDescriptor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/object#SensorObject -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/object#SensorObject">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/sensor#Ssn"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#describe"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#use"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hosts"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/ssn/System"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/inDeployment"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/ssn/Deployment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/role#Role -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/role#Role"/>
+    
+
+
+    <!-- http://www.w3.org/2000/10/swap/pim/contact#Person -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+    
+
+
+    <!-- http://www.w3.org/2006/time#Duration -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2006/time#Duration">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/time#Time"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/2006/time#TemporalEntity -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2006/time#TemporalEntity">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2006/time#Instant"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2006/time#Interval"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/2006/time#TemporalUnit -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2006/time#TemporalUnit">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/time#Time"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#AudioTrack -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/ma-ont#AudioTrack">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ma-ont#MediaFragment"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#DataTrack -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/ma-ont#DataTrack">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ma-ont#MediaFragment"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#Image -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/ma-ont#Image">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#describe"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#MediaFragment -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/ma-ont#MediaFragment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#describe"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#MediaResource -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/ma-ont#MediaResource">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#Rating -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/ma-ont#Rating">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#Track -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/ma-ont#Track">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#describe"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#VideoTrack -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/ma-ont#VideoTrack">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ma-ont#MediaFragment"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Actuator -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/Actuator">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/sensor#Ssn"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/isHostedBy"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/hasDeployment"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/ssn/Deployment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/hasSubSystem"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/ssn/System"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/implements"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://www.w3.org/ns/ssn/hasSubSystem"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/ssn/System"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Platform -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/Platform">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/object#Object"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/object#SensorObject"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Sample -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/Sample">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/sensor#Ssn"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasSample"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Sample"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/hasProperty"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/ssn/Property"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/hasProperty"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Sampler -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/Sampler">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/sensor#Ssn"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/isHostedBy"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/hasDeployment"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/ssn/Deployment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/hasSubSystem"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/ssn/System"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/implements"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://www.w3.org/ns/ssn/hasSubSystem"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/ssn/System"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Sensor -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/Sensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/sensor#Ssn"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/isHostedBy"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/hasDeployment"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/ssn/Deployment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/hasSubSystem"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/ssn/System"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/implements"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://www.w3.org/ns/ssn/hasSubSystem"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/ssn/System"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/person#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/domains/alzheimer#A0001 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/domains/alzheimer#A0001"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/domains/alzheimer#Activity00001 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/domains/alzheimer#Activity00001">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/activity#LowContextActivity"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/domains/alzheimer#Eat"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#hasTemporalEntity"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+            </owl:Restriction>
+        </rdf:type>
+        <mcontext:isInvolvedIn rdf:resource="http://www.semanticweb.org/ontologies/domains/alzheimer#Activity00002"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/domains/alzheimer#Activity00002 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/domains/alzheimer#Activity00002">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/activity#LowContextActivity"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/domains/alzheimer#Sit"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#hasTemporalEntity"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/domains/alzheimer#CareGiver -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/domains/alzheimer#CareGiver">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/domains/alzheimer#MedicalRole"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/role#Role"/>
+        <rdfs:label>cad:CareGiver</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/domains/alzheimer#Father -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/domains/alzheimer#Father">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/domains/alzheimer#FamiliarRole"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/role#Role"/>
+        <rdfs:label>cad:Father</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/domains/alzheimer#Friend -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/domains/alzheimer#Friend">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/domains/alzheimer#SocialRole"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/role#Role"/>
+        <rdfs:label>cad:Friend</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/domains/alzheimer#HLA00001 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/domains/alzheimer#HLA00001">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/activity#HighContextActivity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/domains/alzheimer#OcupationalTherapist -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/domains/alzheimer#OcupationalTherapist">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/domains/alzheimer#MedicalRole"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/role#Role"/>
+        <rdfs:label>cad:OcupationalTherapist</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/domains/alzheimer#Son -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/domains/alzheimer#Son">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/domains/alzheimer#FamiliarRole"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/role#Role"/>
+        <rdfs:label>cad:Son</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/domains/alzheimer#User -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/domains/alzheimer#User">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/role#Role"/>
+        <rdfs:label>cad:User</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/domains/alzheimer#u00001 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/domains/alzheimer#u00001">
+        <rdf:type rdf:resource="http://schema.org/Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/person#Person"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#isInvolvedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#use"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/object#Object"/>
+            </owl:Restriction>
+        </rdf:type>
+        <mcontext:hasRol rdf:resource="http://www.semanticweb.org/ontologies/domains/alzheimer#User"/>
+        <mcontext:isInvolvedIn rdf:resource="http://www.semanticweb.org/ontologies/domains/alzheimer#Activity00001"/>
+        <mcontext:isInvolvedIn rdf:resource="http://www.semanticweb.org/ontologies/domains/alzheimer#Activity00002"/>
+        <foaf:firstName>Cristian</foaf:firstName>
+        <foaf:lastName>Narvaez</foaf:lastName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/domains/alzheimer#u00002 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/domains/alzheimer#u00002">
+        <rdf:type rdf:resource="http://schema.org/Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/person#Person"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#isInvolvedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#use"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/object#Object"/>
+            </owl:Restriction>
+        </rdf:type>
+        <mcontext:hasRol rdf:resource="http://www.semanticweb.org/ontologies/domains/alzheimer#Friend"/>
+        <mcontext:isInvolvedIn rdf:resource="http://www.semanticweb.org/ontologies/domains/alzheimer#Activity00001"/>
+        <foaf:firstName>Diana</foaf:firstName>
+        <foaf:lastName>Moreno</foaf:lastName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/domains/alzheimer#u00003 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/domains/alzheimer#u00003">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/person#Person"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/mcontext#AVI -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/mcontext#AVI">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/multimedia#FormatMultimedia"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdf:type>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#MP3 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/multimedia#MP3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/multimedia#FormatMultimedia"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdf:type>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#PNG -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/multimedia#PNG">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/multimedia#FormatMultimedia"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdf:type>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#TXT -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/multimedia#TXT">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/multimedia#FormatMultimedia"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ma-ont#hasCreator"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            </owl:Restriction>
+        </rdf:type>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/person#u00001 -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/person#u00001">
+        <rdf:type rdf:resource="http://schema.org/Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/person#Person"/>
+        <rdf:type rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#isInvolvedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#use"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/object#Object"/>
+            </owl:Restriction>
+        </rdf:type>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/2006/time#Friday -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2006/time#Friday">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/time#Time"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/2006/time#Monday -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2006/time#Monday">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/time#Time"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/2006/time#Saturday -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2006/time#Saturday">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/time#Time"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/2006/time#Sunday -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2006/time#Sunday">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/time#Time"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/2006/time#Thursday -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2006/time#Thursday">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/time#Time"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/2006/time#Tuesday -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2006/time#Tuesday">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/time#Time"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/2006/time#Wednesday -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2006/time#Wednesday">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/time#Time"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/2006/time#unitDay -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2006/time#unitDay">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/time#Time"/>
+        <rdf:type rdf:resource="http://www.w3.org/2006/time#TemporalDuration"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/2006/time#unitHour -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2006/time#unitHour">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/time#Time"/>
+        <rdf:type rdf:resource="http://www.w3.org/2006/time#TemporalDuration"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.w3.org/ns/ma-ont#MediaResource"/>
+            <owl:Class>
+                <owl:complementOf rdf:resource="http://www.w3.org/ns/ma-ont#Image"/>
+            </owl:Class>
+        </owl:intersectionOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+    </owl:Class>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.w3.org/ns/ma-ont#MediaResource"/>
+            <owl:Class>
+                <owl:complementOf rdf:resource="http://www.w3.org/ns/ma-ont#Image"/>
+            </owl:Class>
+        </owl:intersectionOf>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
+    </owl:Class>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.w3.org/ns/ma-ont#MediaResource"/>
+            <owl:Class>
+                <owl:complementOf rdf:resource="http://www.w3.org/ns/ma-ont#Image"/>
+            </owl:Class>
+        </owl:intersectionOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:complementOf rdf:resource="http://www.w3.org/ns/ma-ont#Image"/>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.w3.org/ns/ma-ont#MediaResource"/>
+            <owl:Class>
+                <owl:complementOf rdf:resource="http://www.w3.org/ns/ma-ont#Image"/>
+            </owl:Class>
+        </owl:intersectionOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#locatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.w3.org/ns/ma-ont#MediaResource"/>
+            <owl:Class>
+                <owl:complementOf rdf:resource="http://www.w3.org/ns/ma-ont#Image"/>
+            </owl:Class>
+        </owl:intersectionOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#describe"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/activity#Activity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.w3.org/2006/time#Instant"/>
+            <rdf:Description rdf:about="http://www.w3.org/2006/time#Interval"/>
+        </owl:unionOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/time#Time"/>
+    </owl:Class>
+    <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.w3.org/2006/time#Instant"/>
+            <rdf:Description rdf:about="http://www.w3.org/2006/time#Interval"/>
+        </owl:unionOf>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+    </owl:Class>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#use"/>
+        <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/mcontext#use"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/object#Object"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Restriction>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="#p">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#A1">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#A2">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#HA">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S1</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+                        <swrl:argument1 rdf:resource="#p"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/ontologies/domains/alzheimer#Sit"/>
+                                <swrl:argument1 rdf:resource="#A1"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/ontologies/domains/alzheimer#Eat"/>
+                                        <swrl:argument1 rdf:resource="#A2"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ontologies/mcontext#isInvolvedIn"/>
+                                                <swrl:argument1 rdf:resource="#p"/>
+                                                <swrl:argument2 rdf:resource="#A1"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ontologies/mcontext#isInvolvedIn"/>
+                                                        <swrl:argument1 rdf:resource="#p"/>
+                                                        <swrl:argument2 rdf:resource="#A2"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/ontologies/activity#HighContextActivity"/>
+                                                                <swrl:argument1 rdf:resource="#HA"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/ontologies/domains/alzheimer#HavingMeal"/>
+                        <swrl:argument1 rdf:resource="#HA"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ontologies/mcontext#isInvolvedIn"/>
+                                <swrl:argument1 rdf:resource="#p"/>
+                                <swrl:argument2 rdf:resource="#HA"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">debugS1</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+                        <swrl:argument1 rdf:resource="#p"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/ontologies/domains/alzheimer#Sit"/>
+                                <swrl:argument1 rdf:resource="#A1"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/ontologies/domains/alzheimer#Eat"/>
+                                        <swrl:argument1 rdf:resource="#A2"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ontologies/mcontext#isInvolvedIn"/>
+                                                <swrl:argument1 rdf:resource="#p"/>
+                                                <swrl:argument2 rdf:resource="#A1"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ontologies/mcontext#isInvolvedIn"/>
+                                                        <swrl:argument1 rdf:resource="#p"/>
+                                                        <swrl:argument2 rdf:resource="#A2"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/ontologies/activity#HighContextActivity"/>
+                                                                <swrl:argument1 rdf:resource="#HA"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/ontologies/domains/alzheimer#HavingMeal"/>
+                        <swrl:argument1 rdf:resource="#HA"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ontologies/mcontext#isInvolvedIn"/>
+                                <swrl:argument1 rdf:resource="#p"/>
+                                <swrl:argument2 rdf:resource="#HA"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select"/>
+                                        <swrl:arguments rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="#p"/>
+                                            <rdf:Description rdf:about="#A1"/>
+                                            <rdf:Description rdf:about="#A2"/>
+                                            <rdf:Description rdf:about="#HA"/>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S2</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+                        <swrl:argument1 rdf:resource="#p"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/ontologies/domains/alzheimer#Sit"/>
+                                <swrl:argument1 rdf:resource="#A1"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ontologies/mcontext#isInvolvedIn"/>
+                                        <swrl:argument1 rdf:resource="#p"/>
+                                        <swrl:argument2 rdf:resource="#A1"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/ontologies/activity#HighContextActivity"/>
+                                                <swrl:argument1 rdf:resource="#HA"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/ontologies/domains/alzheimer#Rest"/>
+                        <swrl:argument1 rdf:resource="#HA"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ontologies/mcontext#isInvolvedIn"/>
+                                <swrl:argument1 rdf:resource="#p"/>
+                                <swrl:argument2 rdf:resource="#HA"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
