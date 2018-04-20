@@ -1,0 +1,24 @@
+{
+	"mcontext": {
+		"Rules": [
+			{
+				"Type": "SQWRL",
+				"Name": "Rest",
+				"Predicate": "contextswrl:Person(?person) ^ contextswrl:Sit(?A1) ^ contextswrl:isInvolvedIn(?person, ?A1) ^ contextswrl:LowContextActivity(?llca) ^ contextswrl:isInvolvedIn(?person, ?llca) -> sqwrl:select(?person) ^ sqwrl:count(?llca) ^ sqwrl:columnNames(\"Person\", \"NumberLLCActivities\")",
+				"Conclution": "contextswrl:Rest(-*ReplaceActivityIndividual*-) ^ contextswrl:isInvolvedIn(-*ReplacePersonIndividual*-, -*ReplaceActivityIndividual*-)",
+				"Id": "2",
+				"Description": "Discovery of the having meal activity.",
+				"State": "Stable"
+			},
+			{
+				"Type": "SQWRL",
+				"Name": "Conversation",
+				"Predicate": "contextswrl:Person(?person) ^ contextswrl:Talk(?A1) ^ contextswrl:isInvolvedIn(?person, ?A1) ^ contextswrl:LowContextActivity(?llca) ^ contextswrl:isInvolvedIn(?person, ?llca) -> sqwrl:select(?person) ^ sqwrl:count(?llca) ^ sqwrl:columnNames(\"Person\", \"NumberLLCActivities\")",
+				"Conclution": "contextswrl:Rest(-*ReplaceActivityIndividual*-) ^ contextswrl:isInvolvedIn(-*ReplacePersonIndividual*-, -*ReplaceActivityIndividual*-)",
+				"Id": "2",
+				"Description": "Discovery of the having meal activity.",
+				"State": "Stable"
+			}
+		]
+	}
+}
