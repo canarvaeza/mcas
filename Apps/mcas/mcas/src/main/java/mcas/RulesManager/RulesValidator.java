@@ -13,15 +13,22 @@ import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.model.OWLOntologyStorageException;
+import org.swrlapi.core.SWRLAPIRule;
 import org.swrlapi.core.SWRLRuleEngine;
 import org.swrlapi.exceptions.LiteralException;
+import org.swrlapi.exceptions.SWRLBuiltInException;
 import org.swrlapi.factory.SWRLAPIFactory;
 import org.swrlapi.parser.SWRLParseException;
 import org.swrlapi.sqwrl.SQWRLQueryEngine;
 import org.swrlapi.sqwrl.SQWRLResult;
 import org.swrlapi.sqwrl.exceptions.SQWRLException;
+import org.swrlapi.sqwrl.values.SQWRLLiteralResultValue;
+import org.swrlapi.sqwrl.values.SQWRLNamedIndividualResultValue;
+import org.swrlapi.sqwrl.values.SQWRLResultValue;
 
 import com.jayway.jsonpath.JsonPath;
+
+import mcas.Ontology.OntologyManager;
 
 public class RulesValidator {
 	// public static void main(String[] args) {
@@ -42,42 +49,61 @@ public class RulesValidator {
 			// System.out.println(lists);
 
 			Iterator<JsonPath> reglas = lists.iterator();
+			int indivIndex = 1;
 
 			while (reglas.hasNext()) {
 
 				Map<String, Object> thing = (Map<String, Object>) reglas.next();
 				// String type = JsonPath.parse(thing).read("$.Type");
+
 				String conclution = JsonPath.parse(thing).read("$.Conclution");
+				SQWRLResult result = executeSQWRLRules(ontology, JsonPath.parse(thing).read("$.Name").toString(),
+						JsonPath.parse(thing).read("$.Predicate").toString(),
+						JsonPath.parse(thing).read("$.Conclution").toString());
 
-				if (JsonPath.parse(thing). read("$.Type").equals("SQWRL")) {
-					SQWRLResult result = executeSQWRLRules(ontology, JsonPath.parse(thing).read("$.Name").toString(),
-							JsonPath.parse(thing).read("$.Predicate").toString(),
-							JsonPath.parse(thing).read("$.Conclution").toString());
+				System.out.println(result);
 
-					if (result.getNumberOfRows() != 0) {
-						System.out.println("entro a dif 0");
-						
-						// TERMINAR DE ESCRIBIR ESTA ´PARTE DE CÓDIGO
-						
-						
-						for (int i = 0; i < result.getNumberOfRows(); i++) {
-							System.out.println("Entro a ciclo");
-							System.out.println(result.getValue(i, 0));
+				System.out.println(indivIndex);
 
-							if (result.getValue(i, 1).equals("1")) { // CORREGIR
-								System.out.println("Entro a igual a 1");
-								conclution = conclution.replace("-*ReplaceActivityIndividual*-",
-										JsonPath.parse(thing).read("$.Name").toString());
-								conclution = conclution.replace("-*ReplacePersonIndividual*-", result.getValue(i, 0).toString());
+				while (result.next()) {
 
-								System.out.println(conclution);
+					if (JsonPath.parse(thing).read("$.Type").equals("Unique")) {
 
-							}
+						if (result.getLiteral("NumberLLCActivities").getInt() == 1) {
 
+							String invidivualIRI = result.getNamedIndividual("Person").getPrefixedName();
+							String activityName = "h" + Integer.toString(indivIndex++);
+
+							ontology = OntologyManager.createIndividualInClass(ontology,
+									JsonPath.parse(thing).read("$.Name").toString(), activityName);
+
+							conclution = conclution.replace("-*ReplaceActivityIndividual*-", activityName);
+							conclution = conclution.replace("-*ReplacePersonIndividual*-", invidivualIRI);
+
+							System.out.println(conclution);
+
+							ontology = executeSWRLRules(ontology,
+									JsonPath.parse(thing).read("$.Name").toString() + "IndividualCreator", conclution);
 						}
 
-					}
+					} else {
 
+						String invidivualIRI = result.getNamedIndividual("Person").getPrefixedName();
+						String activityName = "h" + Integer.toString(indivIndex++);
+
+						ontology = OntologyManager.createIndividualInClass(ontology,
+								JsonPath.parse(thing).read("$.Name").toString(), activityName);
+
+						conclution = conclution.replace("-*ReplaceActivityIndividual*-", activityName);
+						conclution = conclution.replace("-*ReplacePersonIndividual*-", invidivualIRI);
+
+						System.out.println(conclution);
+
+						ontology = executeSWRLRules(ontology,
+								JsonPath.parse(thing).read("$.Name").toString() + "IndividualCreator", conclution);
+
+					}
+					// OntologyManager.saveOntology(root, "ont/salidaSujetoPrueba.owl", ontology);
 				}
 
 			}
@@ -95,28 +121,16 @@ public class RulesValidator {
 		return contenido;
 	}
 
-	public static void executeSWRLRules(String root) {
+	public static OWLOntology executeSWRLRules(OWLOntology ontology, String ruleName, String ruleContent) {
+
+		// Create OWLOntology instance using the OWLAPI
+		OWLOntologyManager ontologyManager = ontology.getOWLOntologyManager();
+
+		// Create a SWRL rule engine using the SWRLAPI
+		SWRLRuleEngine ruleEngine = SWRLAPIFactory.createSWRLRuleEngine(ontology);
+
 		try {
-			// Create OWLOntology instance using the OWLAPI
-			OWLOntologyManager ontologyManager = OWLManager.createOWLOntologyManager();
-			OWLOntology ontology;
-			ontology = ontologyManager.loadOntologyFromOntologyDocument(new File(root + "ont/contextSWRL.owl"));
-
-			String ontologyBase = ontology.getOntologyID().getOntologyIRI().get().toString();
-			// Create a SWRL rule engine using the SWRLAPI
-			SWRLRuleEngine ruleEngine = SWRLAPIFactory.createSWRLRuleEngine(ontology);
-
-			// GET SOME ONTOLOGY INFO
-
-			// System.out.println(ontology.getClassesInSignature());
-			// System.out.println(ontology.getDataPropertiesInSignature());
-			// System.out.println(ontology.getOntologyID().getOntologyIRI().get());
-			// System.out.println(ontologyManager.getOntologyFormat(ontology).asPrefixOWLOntologyFormat().getDefaultPrefix());
-
-			// CHANGE THE PREFIX
-			// ontologyManager.getOntologyFormat(ontology).asPrefixOWLOntologyFormat().setDefaultPrefix(ontologyBase
-			// + "#");
-			// System.out.println(ontologyManager.getOntologyFormat(ontology).asPrefixOWLOntologyFormat().getDefaultPrefix());
+			SWRLAPIRule rule = ruleEngine.createSWRLRule(ruleName, ruleContent);
 
 			// NO LA PONGO PORQUE ME ESTÁ CREANDO LAS REGLAS EN LA ONTOLOGÍA, NO SOLO LAS
 			// EVALÚA
@@ -136,28 +150,16 @@ public class RulesValidator {
 			// Run the rule engine
 			ruleEngine.infer();
 			System.out.println("Finalizado");
-			ontologyManager.saveOntology(ontology, IRI.create(new File(root + "/ont/OntR.owl")));
 
-		} catch (OWLOntologyCreationException e) {
+		} catch (SWRLParseException e) {
 			// TODO Auto-generated catch block
-			System.err.println("Error creating OWL ontology: " + e.getMessage());
-			System.exit(-1);
 			e.printStackTrace();
-
-			// }catch (SWRLParseException e) {
-			// System.err.println("Error parsing SWRL rule or SQWRL query: " +
-			// e.getMessage());
-			// e.printStackTrace();
-			// System.exit(-1);
-			// } catch (SWRLBuiltInException e) {
-			// System.err.println("Error building SWRL rule or SQWRL query: " +
-			// e.getMessage());
-			// System.exit(-1);
-		} catch (OWLOntologyStorageException e) {
+		} catch (SWRLBuiltInException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
+		return ontology;
 	}
 
 	public static SQWRLResult executeSQWRLRules(OWLOntology ontology, String queryName, String queryPredicate,
@@ -171,12 +173,6 @@ public class RulesValidator {
 
 			// Create and execute a SQWRL query
 			result = queryEngine.runSQWRLQuery(queryName, queryPredicate);
-
-			System.out.println("Ended");
-
-			// } catch (OWLOntologyCreationException e) {
-			// // TODO Auto-generated catch block
-			// e.printStackTrace();
 		} catch (SQWRLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -184,8 +180,7 @@ public class RulesValidator {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-		System.out.println(result);
+		// System.out.println(result);
 		return result;
 	}
 
