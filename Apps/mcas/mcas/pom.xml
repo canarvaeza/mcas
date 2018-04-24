@@ -115,6 +115,21 @@
 			<version>2.4.0</version>
 		</dependency>
 
+		<!-- Drools -->
+		<dependency>
+			<groupId>org.kie</groupId>
+			<artifactId>kie-ci</artifactId>
+			<version>7.1.0.Beta1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.drools</groupId>
+			<artifactId>drools-decisiontables</artifactId>
+			<version>7.1.0.Beta1</version>
+		</dependency>
+		
+		<!-- RML -->
+		<!-- NOTE: there is a dependence to the RML jar located in resources/lib/RML-Processor-0.3-shaded.jar (not possible to set it as MAVEN dependence) -->
+		
 
 	</dependencies>
 

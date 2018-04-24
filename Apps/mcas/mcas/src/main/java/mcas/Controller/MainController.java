@@ -4,6 +4,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.nio.file.Paths;
 import java.util.Iterator;
 import java.util.List;
 
@@ -33,21 +34,27 @@ import com.jayway.jsonpath.DocumentContext;
 import com.jayway.jsonpath.JsonPath;
 
 import mcas.Ontology.OntologyManager;
-//import mcas.RulesManager.RulesValidator;
 import mcas.RulesManager.RulesValidator;
+import mcas.DataTransformation.ToRDF;
 
 public class MainController {
 
 	public static String root = "C:/Users/dev/Documents/GitHub/mcas/Apps/mcas/mcas/src/main/resources/";
 
 	public static void main(String[] args) {
-
+		
+		
+		
+		ToRDF.data2RDF(root + "transformation/", "mcas-model.rml", "salida.rdf");
+		
+		
+		
 		// ------- NOTA --------
 		// Puedo usar la merge o puedo usar solo el flujo de datos. De cualquier forma
 		// debo tratar de tener la clase representada en algún lugar.
 		// ---------------------
 
-		OWLOntology ontology = OntologyManager.loadOntology(root, "ont/contextSWRL.owl");
+//		OWLOntology ontology = OntologyManager.loadOntology(root, "ont/contextSWRL.owl");
 
 		// CREO QUE YA PUEDO DEJAR SOLO UNA FUNCIÓN
 		// OWLOntology rdfInput = OntologyManager.loadStream(root,
@@ -68,10 +75,16 @@ public class MainController {
 		// contextswrl:isInvolvedIn(-*ReplacePersonIndividual*-,
 		// -*ReplaceActivityIndividual*-)");
 
-		 RulesValidator.getRulesList(ontology, root);
+		
+		
+		
+//		 RulesValidator.getRulesList(ontology, root);
 
 
 //		OntologyManager.saveOntology(root, "ont/salidaNuevoSujeto.owl", ontology);
+		
+		
+		
 
 
 		
