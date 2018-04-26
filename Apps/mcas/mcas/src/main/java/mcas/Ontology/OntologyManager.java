@@ -2,6 +2,8 @@ package mcas.Ontology;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.InputStream;
+import java.util.Map;
 
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.formats.OWLXMLDocumentFormat;
@@ -16,10 +18,11 @@ import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.model.OWLOntologyStorageException;
 import org.semanticweb.owlapi.util.OWLOntologyMerger;
+import org.semanticweb.owlapi.vocab.PrefixOWLOntologyFormat;
 import org.swrlapi.sqwrl.SQWRLResult;
 import org.swrlapi.sqwrl.exceptions.SQWRLException;
 
-import mcas.RulesManager.RulesValidator;
+import mcas.RulesManager.OwlRules;
 
 public class OntologyManager {
 
@@ -28,7 +31,11 @@ public class OntologyManager {
 	public static void getOntologyInfo(OWLOntology ontology) {
 
 		System.out.println("-------------------------------------------------");
+		try {
 		System.out.println("IRI: " + ontology.getOntologyID().getOntologyIRI().get());
+		} catch (Throwable e) {
+			System.out.println("No contiene IRI");
+		}
 		System.out.println("Classes: " + ontology.getClassesInSignature());
 		System.out.println("Object Properties: " + ontology.getObjectPropertiesInSignature());
 		System.out.println("Data Properties: " + ontology.getDataPropertiesInSignature());
@@ -82,17 +89,56 @@ public class OntologyManager {
 	 * Auto-generated catch block e.printStackTrace(); } }
 	 */
 
+	
+	public static OWLOntology loadOntology(InputStream rdfFlux) {
+		SQWRLResult result = null;
+		// Create OWLOntology instance using the OWLAPI
+		OWLOntologyManager ontologyManager = OWLManager.createOWLOntologyManager();
+		OWLOntology ontology = null;
+		try {
+
+			ontology = ontologyManager.loadOntologyFromOntologyDocument(rdfFlux);
+//			mergedOntologyManager.loadOntologyFromOntologyDocument(new File(root + ontologyName));
+			
+//			PrefixOWLOntologyFormat pm = (PrefixOWLOntologyFormat) ontologyManager.getOntologyFormat(ontology);
+//			Map<String, String> prefixName2PrefixMap = pm.getPrefixName2PrefixMap();
+//			System.out.println(prefixName2PrefixMap);
+			
+
+//			ontologyManager.getOntologyFormat(ontology).asPrefixOWLOntologyFormat()
+//					.setDefaultPrefix(ontology.getOntologyID().getOntologyIRI().get() + "#"); // Lo retiro porque da error con el flujo
+
+			// System.out.println(ontologyManager.getOntologyFormat(ontology).asPrefixOWLOntologyFormat().getDefaultPrefix());
+			
+			
+		} catch (OWLOntologyCreationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return ontology;
+	}
+	
+	
+	
 	public static OWLOntology loadOntology(String root, String ontologyName) {
 		SQWRLResult result = null;
 		// Create OWLOntology instance using the OWLAPI
 		OWLOntologyManager ontologyManager = OWLManager.createOWLOntologyManager();
 		OWLOntology ontology = null;
 		try {
+			
 			ontology = ontologyManager.loadOntologyFromOntologyDocument(new File(root + ontologyName));
 			mergedOntologyManager.loadOntologyFromOntologyDocument(new File(root + ontologyName));
+			
+			PrefixOWLOntologyFormat pm = (PrefixOWLOntologyFormat) ontologyManager.getOntologyFormat(ontology);
+			Map<String, String> prefixName2PrefixMap = pm.getPrefixName2PrefixMap();
+			System.out.println(prefixName2PrefixMap);
+			
 
-			ontologyManager.getOntologyFormat(ontology).asPrefixOWLOntologyFormat()
-					.setDefaultPrefix(ontology.getOntologyID().getOntologyIRI().get() + "#");
+//			ontologyManager.getOntologyFormat(ontology).asPrefixOWLOntologyFormat()
+//					.setDefaultPrefix(ontology.getOntologyID().getOntologyIRI().get() + "#"); // Lo retiro porque da error con el flujo
+
 			// System.out.println(ontologyManager.getOntologyFormat(ontology).asPrefixOWLOntologyFormat().getDefaultPrefix());
 		} catch (OWLOntologyCreationException e) {
 			// TODO Auto-generated catch block

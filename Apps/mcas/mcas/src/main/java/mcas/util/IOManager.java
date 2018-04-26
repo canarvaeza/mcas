@@ -1,11 +1,13 @@
 package mcas.util;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 
 import org.apache.commons.io.FileUtils;
 import org.json.JSONArray;
@@ -14,8 +16,24 @@ import org.json.JSONObject;
 
 public class IOManager {
 
-	static String root = "C:/Users/dev/Documents/GitHub/mcas/Apps/mcas/mcas/src/main/resources/";
+//	static String root = "C:/Users/dev/Documents/GitHub/mcas/Apps/mcas/mcas/src/main/resources/";
 
+	public static String loadFile (String root, String dir) {
+		File file = new File(root + dir);
+		String content = null;
+		try {
+			content = FileUtils.readFileToString(file, "utf-8");			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return content;
+	}
+	
+	
+	
+	
 	// TODO Json path https://github.com/json-path/JsonPath
 
 	// public static void main(String[] args) {
@@ -30,6 +48,7 @@ public class IOManager {
 	// }
 	// }
 
+	/*
 	public static List<String> getRules(String dir, String value, String status) {
 
 		JSONObject Json;
@@ -116,5 +135,5 @@ public class IOManager {
 		}
 		return list;
 	}
-
+*/
 }

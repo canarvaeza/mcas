@@ -1,0 +1,10 @@
+package mcas
+
+import com.Model.Service
+
+rule "Emergencia"
+	when
+		Service (name == "Emergencia")
+	then
+		System.out.println("llamando usuario");
+end

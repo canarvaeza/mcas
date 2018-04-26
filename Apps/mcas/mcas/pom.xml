@@ -14,6 +14,7 @@
 		<swrlapi.drools.version>2.0.5</swrlapi.drools.version>
 		<owlapi.version>4.2.8</owlapi.version>
 		<slf4j.version>1.7.25</slf4j.version>
+		<runtime.version>7.0.0.Final</runtime.version><!-- Drools -->
 	</properties>
 
 	<build>
@@ -118,18 +119,30 @@
 		<!-- Drools -->
 		<dependency>
 			<groupId>org.kie</groupId>
-			<artifactId>kie-ci</artifactId>
-			<version>7.1.0.Beta1</version>
+			<artifactId>kie-api</artifactId>
+			<version>${runtime.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.drools</groupId>
+			<artifactId>drools-core</artifactId>
+			<version>${runtime.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.drools</groupId>
 			<artifactId>drools-decisiontables</artifactId>
-			<version>7.1.0.Beta1</version>
+			<version>${runtime.version}</version>
 		</dependency>
-		
+
+		<dependency>
+			<groupId>org.jbpm</groupId>
+			<artifactId>jbpm-test</artifactId>
+			<version>${runtime.version}</version>
+		</dependency>
+
 		<!-- RML -->
-		<!-- NOTE: there is a dependence to the RML jar located in resources/lib/RML-Processor-0.3-shaded.jar (not possible to set it as MAVEN dependence) -->
-		
+		<!-- NOTE: there is a dependence to the RML jar located in resources/lib/RML-Processor-0.3-shaded.jar 
+			(not possible to set it as MAVEN dependence) -->
+
 
 	</dependencies>
 

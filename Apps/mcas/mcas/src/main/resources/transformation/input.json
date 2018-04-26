@@ -1,37 +1,37 @@
 {
   "Person": [
     {
-      "Id": "User/u001",
+      "Id": "xmlns.com/foaf/0.1/User/u001",
       "Role": {
         "Type": "User",
-        "Value": "www.semanticweb.org/ontologies/domains/alzheimer#User"
+        "Value": "www.semanticweb.org/ontologies/domains/alzheimer#"
       },
       "Name": "Cristian",
       "Last-name": "Narvaez",
       "Device": {
-        "Id": "iphone7/35-207306-844818-0"
+        "Id": "www.w3.org/ns/sosa/iphone7/35-207306-844818-0"
       }
     }
   ],
   "Multimedia": [
     {
-      "Id": "multimedia/0001",
+      "Id": "www.semanticweb.org/ontologies/multimedia#multimedia/0001",
       "Format": "AVI",
       "Type": "www.semanticweb.org/ontologies/multimedia#VideoFormat",
       "Descriptor": {
       },
       "RecEntities": [
         {
-          "Activity": "activity/low/00001"
+          "Activity": "www.semanticweb.org/ontologies/activity#activity/low/00001"
         }
       ],
       "CreationTime": "2017-06-06T12:36:12Z",
-      "Location": "Location/0001"
+      "Location": "www.semanticweb.org/ontologies/location#Location/0001"
     }
   ],
   "Activity": [
     {
-      "Id": "activity/low/00001",
+      "Id": "www.semanticweb.org/ontologies/activity#activity/low/00001",
       "Type": "www.semanticweb.org/ontologies/domains/alzheimer#Eat",
       "Time": {
         "Beginning": "2017-06-06T12:36:12Z",
@@ -39,7 +39,7 @@
       }
     },
     {
-      "Id": "activity/low/00002",
+      "Id": "www.semanticweb.org/ontologies/activity#activity/low/00002",
       "Type": "www.semanticweb.org/ontologies/domains/alzheimer#Sit",
       "Time": {
         "Beginning": "2017-06-06T12:36:12Z"
@@ -49,23 +49,23 @@
   "Ssn": [
     {
       "Device": {
-        "Id": "iphone7/35-207306-844818-0",
-        "Sensor": "sensor/35-207306-844818-0/BMP282",
-        "Location": "Location/0001"
+        "Id": "www.w3.org/ns/sosa/iphone7/35-207306-844818-0",
+        "Sensor": "www.w3.org/ns/sosa/sensor/35-207306-844818-0/BMP282",
+        "Location": "www.semanticweb.org/ontologies/location#Location/0001"
       },
       "Sensor": {
-        "Id": "sensor/35-207306-844818-0/BMP282",
-        "Observe": "sensor/35-207306-844818-0/BMP282/Gyroscope"
+        "Id": "www.w3.org/ns/sosa/sensor/35-207306-844818-0/BMP282",
+        "Observe": "www.w3.org/ns/sosa/sensor/35-207306-844818-0/BMP282/Gyroscope"
       },
       "Observation": [
         {
-          "Id": "Observation/001",
-          "Sensor": "sensor/35-207306-844818-0/BMP282",
+          "Id": "www.w3.org/ns/sosa/Observation/001",
+          "Sensor": "www.w3.org/ns/sosa/sensor/35-207306-844818-0/BMP282",
           "Value": "[0.60034, 0.42556, 0.86662]",
           "Time": "2017-06-06T12:36:12Z",
           "RecEntities": [
             {
-              "Activity": "activity/low/00002"
+              "Activity": "www.semanticweb.org/ontologies/activity#activity/low/00002"
             }
           ]
         }
@@ -74,7 +74,7 @@
   ],
   "Location": [
     {
-      "Id": "Location/0001",
+      "Id": "www.semanticweb.org/ontologies/location#Location/0001",
       "Type": "www.semanticweb.org/ontologies/location#ClosedLocation",
       "Coordinates": {
         "latitude": "40.414",

@@ -45,10 +45,14 @@
 @prefix wgs84_pos: <http://www.w3.org/2003/01/geo/wgs84_pos#>.
 @prefix schema: <http://schema.org/>.
 @prefix gn: <http://www.geonames.org/ontology#>.
+@prefix location: <http://www.semanticweb.org/ontologies/location#> .
 
 ### ------ MULTIMEDIA -------- ###
 @prefix multimedia: <http://www.semanticweb.org/ontologies/multimedia#> .
 @prefix ma: <http://www.w3.org/ns/ma-ont#>.
+
+### ----- ACTIVITY ----- ###
+@prefix activity: <http://www.semanticweb.org/ontologies/activity#>.
 
 ### ----- TIME ----- ###
 @prefix time: <http://www.semanticweb.org/ontologies/time>.
@@ -68,7 +72,7 @@
     
     #define la uri en el sistema
     rr:subjectMap [
-    	rr:template "http://mcas.com/Person/{Id}";
+    	rr:template "http://{Id}";
     	rr:class foaf:Person
     ];
     
@@ -132,7 +136,7 @@
     
     #define la uri en el sistema
     rr:subjectMap [
-    	rr:template "http://mcas.com/Device/{Id}";
+    	rr:template "http://{Id}";
     	rr:class sosa:Platform
     ];
     
@@ -142,7 +146,7 @@
     	rr:predicate sosa:hosts;
     	rr:objectMap
     	[
-    		rr:template "http://mcas.com/Device/{Sensor}";
+    		rr:template "http://{Sensor}";
 
 			#rr:parentTriplesMap <#SensorMapping>;
 		] 
@@ -177,7 +181,7 @@ rml:logicalSource [
     
     #define la uri en el sistema
     rr:subjectMap [
-    	rr:template "http://mcas.com/Sensor/{Id}";
+    	rr:template "http://{Id}";
     	rr:class sosa:Sensor
     ];
     
@@ -188,7 +192,7 @@ rml:logicalSource [
     	rr:objectMap
     	[
     		#rml:reference "Observe"
-    		rr:template "http://mcas.com/{Observe}"
+    		rr:template "http://{Observe}"
     	]
     ].
     
@@ -213,7 +217,7 @@ rml:logicalSource [
     
     #define la uri en el sistema
     rr:subjectMap [
-    	rr:template "http://mcas.com/Observation/{Id}";
+    	rr:template "http://{Id}";
     	rr:class sosa:Observation
     ];
     
@@ -222,7 +226,7 @@ rml:logicalSource [
 #    	rr:objectMap
 #    	[
 #    		#rml:reference "Sensor.Observe"
-#    		rr:template "http://mcas.com/{Observe}"
+#    		rr:template "http://{Observe}"
 #    	]
 #    ];
     
@@ -230,7 +234,7 @@ rml:logicalSource [
     	rr:predicate sosa:madeBySensor;
     	rr:objectMap
     	[
-    		rr:template "http://mcas.com/{Sensor}"
+    		rr:template "http://{Sensor}"
     	]
     ];
     
@@ -276,7 +280,7 @@ rml:logicalSource [
     
     #define la uri en el sistema
     rr:subjectMap [
-    	rr:template "http://mcas.com/Multimedia/{Id}";
+    	rr:template "http://{Id}";
     ];
         
         
@@ -294,7 +298,7 @@ rml:logicalSource [
     	rr:predicate ma:hasFormat;
     	rr:objectMap
     	[
-    		rr:template "http://www.semanticweb.org/ontologies/multimedia#{Format}";
+    		rr:template "http://{Format}";
 
 			#rr:parentTriplesMap <#SensorMapping>;
 		] 
@@ -338,7 +342,7 @@ rml:logicalSource [
 	];
 
 	rr:subjectMap [ 
-	  rr:template "http://mcas.com/Descriptor/{Id}"
+	  rr:template "http://{Id}"
 	];
 	
 	rr:predicateObjectMap [ 
@@ -363,7 +367,7 @@ rml:logicalSource [
     
     #define la uri en el sistema
     rr:subjectMap [
-    	rr:template "http://mcas.com/{Id}";
+    	rr:template "http://{Id}";
     ];
     
     rr:predicateObjectMap [
@@ -402,7 +406,7 @@ rml:logicalSource [
     ];
 
     rr:subjectMap [
-    	rr:template "http://mcas.com/{Id}";
+    	rr:template "http://{Id}";
     ];
     
     rr:predicateObjectMap [
