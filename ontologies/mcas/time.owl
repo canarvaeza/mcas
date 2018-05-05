@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <Ontology xmlns="http://www.w3.org/2002/07/owl#"
-     xml:base="http://www.semanticweb.org/ontologies/time"
+     xml:base="http://purl.org/m-context/ontologies/time"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     ontologyIRI="http://www.semanticweb.org/ontologies/time">
+     ontologyIRI="http://purl.org/m-context/ontologies/time">
     <Prefix name="" IRI="http://www.semanticweb.org/ontologies/time"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
@@ -61,7 +61,7 @@
         <DataProperty IRI="http://www.w3.org/2006/time#seconds"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#ownTemporalDurations"/>
+        <DataProperty IRI="http://www.semanticweb.org/ontologies/time#ownTemporalDurations"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="http://www.w3.org/2006/time#hasEnd"/>
@@ -115,7 +115,7 @@
         <DataProperty IRI="http://www.w3.org/2006/time#week"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Time"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/time#Time"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="http://www.w3.org/2006/time#numericDuration"/>
@@ -130,7 +130,7 @@
         <NamedIndividual IRI="http://www.w3.org/2006/time#Monday"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#hasBeginningTime"/>
+        <DataProperty IRI="http://www.semanticweb.org/ontologies/time#hasBeginningTime"/>
     </Declaration>
     <Declaration>
         <Class IRI="http://www.w3.org/2006/time#TemporalEntity"/>
@@ -145,7 +145,7 @@
         <DataProperty IRI="http://www.w3.org/2006/time#days"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#hasEndingTime"/>
+        <DataProperty IRI="http://www.semanticweb.org/ontologies/time#hasEndingTime"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="http://www.w3.org/2006/time#Thursday"/>
@@ -162,7 +162,7 @@
     </EquivalentClasses>
     <SubClassOf>
         <Class IRI="http://www.w3.org/2006/time#DayOfWeek"/>
-        <Class IRI="#Time"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/time#Time"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="http://www.w3.org/2006/time#Duration"/>
@@ -182,23 +182,23 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="http://www.w3.org/2006/time#GeneralDateTimeDescription"/>
-        <Class IRI="#Time"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/time#Time"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="http://www.w3.org/2006/time#Instant"/>
-        <Class IRI="#Time"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/time#Time"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="http://www.w3.org/2006/time#Interval"/>
-        <Class IRI="#Time"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/time#Time"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="http://www.w3.org/2006/time#TemporalDuration"/>
-        <Class IRI="#Time"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/time#Time"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="http://www.w3.org/2006/time#TemporalEntity"/>
-        <Class IRI="#Time"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/time#Time"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="http://www.w3.org/2006/time#TemporalUnit"/>
@@ -386,12 +386,12 @@
         <Class IRI="http://www.w3.org/2006/time#TemporalEntity"/>
     </ObjectPropertyRange>
     <SubDataPropertyOf>
-        <DataProperty IRI="#hasBeginningTime"/>
-        <DataProperty IRI="#ownTemporalDurations"/>
+        <DataProperty IRI="http://www.semanticweb.org/ontologies/time#hasBeginningTime"/>
+        <DataProperty IRI="http://www.semanticweb.org/ontologies/time#ownTemporalDurations"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
-        <DataProperty IRI="#hasEndingTime"/>
-        <DataProperty IRI="#ownTemporalDurations"/>
+        <DataProperty IRI="http://www.semanticweb.org/ontologies/time#hasEndingTime"/>
+        <DataProperty IRI="http://www.semanticweb.org/ontologies/time#ownTemporalDurations"/>
     </SubDataPropertyOf>
     <DataPropertyDomain>
         <DataProperty IRI="http://www.w3.org/2006/time#day"/>
@@ -414,11 +414,11 @@
         <Class IRI="http://www.w3.org/2006/time#GeneralDateTimeDescription"/>
     </DataPropertyDomain>
     <DataPropertyRange>
-        <DataProperty IRI="#hasBeginningTime"/>
+        <DataProperty IRI="http://www.semanticweb.org/ontologies/time#hasBeginningTime"/>
         <Datatype abbreviatedIRI="xsd:dateTime"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#hasEndingTime"/>
+        <DataProperty IRI="http://www.semanticweb.org/ontologies/time#hasEndingTime"/>
         <Datatype abbreviatedIRI="xsd:dateTime"/>
     </DataPropertyRange>
     <DataPropertyRange>
@@ -435,12 +435,12 @@
     </DataPropertyRange>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#hasBeginningTime</IRI>
+        <IRI>http://www.semanticweb.org/ontologies/time#hasBeginningTime</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">mcasTime:hasBeginning</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#hasEndingTime</IRI>
+        <IRI>http://www.semanticweb.org/ontologies/time#hasEndingTime</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">mcasTime:hasEnding</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>

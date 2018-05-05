@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <Ontology xmlns="http://www.w3.org/2002/07/owl#"
-     xml:base="http://www.semanticweb.org/ontologies/location"
+     xml:base="http://purl.org/m-context/ontologies/location"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     ontologyIRI="http://www.semanticweb.org/ontologies/location">
+     ontologyIRI="http://purl.org/m-context/ontologies/location">
     <Prefix name="" IRI="http://www.semanticweb.org/ontologies/location"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
@@ -16,7 +16,7 @@
         <ObjectProperty IRI="http://www.geonames.org/ontology#locatedIn"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#OpenLocation"/>
+        <Class IRI="#ClosedLocation"/>
     </Declaration>
     <Declaration>
         <AnnotationProperty IRI="http://www.w3.org/2003/01/geo/wgs84_pos#lat"/>
@@ -52,19 +52,16 @@
         <NamedIndividual IRI="http://www.geonames.org/ontology#A.ADM2"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#OpenLocation"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="http://purl.org/dc/terms/identifier"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="http://www.geonames.org/ontology#A.ADM4"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#ClosedLocation"/>
-    </Declaration>
-    <Declaration>
         <DataProperty IRI="http://www.geonames.org/ontology#name"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Location"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="http://www.geonames.org/ontology#parentFeature"/>
@@ -80,6 +77,9 @@
     </Declaration>
     <Declaration>
         <DataProperty IRI="http://www.w3.org/2004/02/skos/core#altLabel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Location"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="http://www.geonames.org/ontology#A.ADM1"/>
@@ -100,16 +100,16 @@
         <ObjectProperty IRI="http://www.geonames.org/ontology#neighbour"/>
     </Declaration>
     <SubClassOf>
-        <Class IRI="http://www.geonames.org/ontology#Feature"/>
-        <Class IRI="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#ClosedLocation"/>
         <Class IRI="http://www.geonames.org/ontology#Feature"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#OpenLocation"/>
         <Class IRI="http://www.geonames.org/ontology#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.geonames.org/ontology#Feature"/>
+        <Class IRI="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>

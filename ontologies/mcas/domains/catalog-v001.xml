@@ -2,19 +2,19 @@
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     <uri id="User Entered Import Resolution" name="http://www.semanticweb.org/ontologies/mcontext" uri="file:/C:/Users/dev/Documents/GitHub/mcas/ontologies/mcas/mContext.owl"/>
     <group id="Folder Repository, directory=file:/C:/Users/dev/Documents/GitHub/mcas/ontologies/mcas/, recursive=false, Auto-Update=true, version=2" prefer="public" xml:base="file:/C:/Users/dev/Documents/GitHub/mcas/ontologies/mcas/">
-        <uri id="Automatically generated entry, Timestamp=1523474940419" name="http://www.semanticweb.org/ontologies/activity" uri="activity.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1523474940419" name="http://www.semanticweb.org/ontologies/location" uri="location.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1523474940419" name="duplicate:http://www.semanticweb.org/ontologies/mcontext" uri="mContext.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1523474940419" name="duplicate:http://www.semanticweb.org/ontologies/mcontext" uri="mContextRDF.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1523474940419" name="http://www.semanticweb.org/ontologies/multimedia" uri="multimedia.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1523474940419" name="http://www.semanticweb.org/ontologies/object" uri="object.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1523474940419" name="http://www.semanticweb.org/ontologies/person" uri="person.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1523474940419" name="http://www.semanticweb.org/ontologies/role" uri="role.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1523474940419" name="http://www.semanticweb.org/ontologies/sensor" uri="sensor.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1523474940419" name="http://www.semanticweb.org/ontologies/time" uri="time.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1525005451154" name="http://www.semanticweb.org/ontologies/activity" uri="activity.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1525005451154" name="http://www.semanticweb.org/ontologies/location" uri="location.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1525005451154" name="duplicate:http://www.semanticweb.org/ontologies/mcontext" uri="mContext.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1525005451154" name="duplicate:http://www.semanticweb.org/ontologies/mcontext" uri="mContextRDF.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1525005451154" name="http://www.semanticweb.org/ontologies/multimedia" uri="multimedia.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1525005451154" name="http://www.semanticweb.org/ontologies/object" uri="object.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1525005451154" name="http://www.semanticweb.org/ontologies/person" uri="person.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1525005451154" name="http://www.semanticweb.org/ontologies/role" uri="role.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1525005451154" name="http://www.semanticweb.org/ontologies/sensor" uri="sensor.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1525005451154" name="http://www.semanticweb.org/ontologies/time" uri="time.owl"/>
     </group>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1523527075160" name="duplicate:http://www.semanticweb.org/ontologies/domains/alzheimer" uri="alzheimer.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1523527075160" name="duplicate:http://www.semanticweb.org/ontologies/domains/alzheimer" uri="alzheimerSWRL.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1525006890857" name="duplicate:http://www.semanticweb.org/ontologies/domains/alzheimer" uri="alzheimer.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1525006890857" name="duplicate:http://www.semanticweb.org/ontologies/domains/alzheimer" uri="alzheimerSWRL.owl"/>
     </group>
 </catalog>
