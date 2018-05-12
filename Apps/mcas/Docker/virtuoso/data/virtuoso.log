@@ -78,3 +78,62 @@
 09:53:33 Server received signal 15
 09:53:33 Initiating quick shutdown
 09:53:33 Server shutdown complete
+
+		Wed May 09 2018
+19:57:13 OpenLink Virtuoso Universal Server
+19:57:13 Version 07.20.3217-pthreads for Linux as of Jan 26 2018
+19:57:13 uses parts of OpenSSL, PCRE, Html Tidy
+19:57:14 Database version 3126
+19:57:14 SQL Optimizer enabled (max 1000 layouts)
+19:57:16 Compiler unit is timed at 0.000896 msec
+19:57:21 Roll forward started
+19:57:21     28 transactions, 8513 bytes replayed (100 %)
+19:57:21 Roll forward complete
+19:57:21 Server received signal 15
+19:57:21 Server shutdown is pending
+19:57:23 Server exiting
+
+		Thu May 10 2018
+16:26:27 OpenLink Virtuoso Universal Server
+16:26:27 Version 07.20.3217-pthreads for Linux as of Jan 26 2018
+16:26:27 uses parts of OpenSSL, PCRE, Html Tidy
+16:26:27 Database version 3126
+16:26:27 SQL Optimizer enabled (max 1000 layouts)
+16:26:30 Compiler unit is timed at 0.000373 msec
+16:26:34 Roll forward started
+16:26:34     28 transactions, 8513 bytes replayed (100 %)
+16:26:34 Roll forward complete
+16:26:35 Checkpoint started
+16:26:35 Checkpoint finished, log reused
+16:26:35 HTTP/WebDAV server online at 8890
+16:26:35 Server online at 1111 (pid 1)
+18:08:02 Checkpoint started
+18:08:05 Checkpoint finished, log reused
+19:08:06 Checkpoint started
+19:08:06 Checkpoint finished, log reused
+20:08:08 Checkpoint started
+20:08:09 Checkpoint finished, log reused
+
+		Fri May 11 2018
+22:23:37 OpenLink Virtuoso Universal Server
+22:23:37 Version 07.20.3217-pthreads for Linux as of Jan 26 2018
+22:23:37 uses parts of OpenSSL, PCRE, Html Tidy
+22:23:37 Database version 3126
+22:23:38 SQL Optimizer enabled (max 1000 layouts)
+22:23:39 Compiler unit is timed at 0.000263 msec
+22:23:41 Roll forward started
+22:23:41     63 transactions, 5373 bytes replayed (100 %)
+22:23:41 Roll forward complete
+22:23:43 Checkpoint started
+22:23:43 Checkpoint finished, log reused
+22:23:43 HTTP/WebDAV server online at 8890
+22:23:43 Server online at 1111 (pid 1)
+23:23:43 Checkpoint started
+23:23:43 Checkpoint finished, log reused
+
+		Sat May 12 2018
+00:23:45 Checkpoint started
+00:23:45 Checkpoint finished, log reused
+00:29:25 Server received signal 15
+00:29:25 Initiating quick shutdown
+00:29:25 Server shutdown complete

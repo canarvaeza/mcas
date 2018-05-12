@@ -1,0 +1,24 @@
+{
+	"mcontext": {
+		"Rules": [
+			{
+				"Type": "Unique",
+				"Name": "Rest",
+				"Predicate": "foaf:Person(?person) ^ alzheimer:Sit(?A1) ^ mcontext:isInvolvedIn(?person, ?A1) ^ activity:LowContextActivity(?llca) ^ mcontext:isInvolvedIn(?person, ?llca) -> sqwrl:select(?person) ^ sqwrl:count(?llca) ^ sqwrl:columnNames(\"Person\", \"NumberLLCActivities\")",
+				"Conclution": "alzheimer:Rest(-*ReplaceActivityIndividual*-) ^ foaf:Person(-*ReplacePersonIndividual*-) -> mcontext:isInvolvedIn(-*ReplacePersonIndividual*-, -*ReplaceActivityIndividual*-)",
+				"Id":"1",
+				"Description": "Discovery of Resting activity",
+				"State": "Stable"
+			},
+			{
+				"Type": "Multiple",
+				"Name": "HavingMeal",
+				"Predicate": "foaf:Person(?p) ^ alzheimer:Sit(?A1) ^ alzheimer:Eat(?A2) ^ mcontext:isInvolvedIn(?p, ?A1) ^ mcontext:isInvolvedIn(?p, ?A2) -> sqwrl:select(?p) ^ sqwrl:columnNames(\"Person\")",
+				"Conclution": "alzheimer:HavingMeal(-*ReplaceActivityIndividual*-) ^ foaf:Person(-*ReplacePersonIndividual*-) -> mcontext:isInvolvedIn(-*ReplacePersonIndividual*-, -*ReplaceActivityIndividual*-)",
+				"Id": "2",
+				"Description": "Discovery of the having meal activity.",
+				"State": "Stable"
+			}
+		]
+	}
+}

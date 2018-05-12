@@ -1,0 +1,221 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/ontologies/mcontext"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/ontologies/mcontext">
+    <Prefix name="" IRI="http://www.semanticweb.org/ontologies/mcontext"/>
+    <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="role" IRI="http://www.semanticweb.org/ontologies/role#"/>
+    <Prefix name="time" IRI="http://www.semanticweb.org/ontologies/time#"/>
+    <Prefix name="person" IRI="http://www.semanticweb.org/ontologies/person#"/>
+    <Prefix name="sensor" IRI="http://www.semanticweb.org/ontologies/sensor#"/>
+    <Prefix name="activity" IRI="http://www.semanticweb.org/ontologies/activity#"/>
+    <Prefix name="location" IRI="http://www.semanticweb.org/ontologies/location#"/>
+    <Prefix name="mcontext" IRI="http://www.semanticweb.org/ontologies/mcontext#"/>
+    <Prefix name="multimedia" IRI="http://www.semanticweb.org/ontologies/multimedia#"/>
+    <Import>http://www.semanticweb.org/ontologies/location</Import>
+    <Import>http://www.semanticweb.org/ontologies/role</Import>
+    <Import>http://www.semanticweb.org/ontologies/time</Import>
+    <Import>http://www.semanticweb.org/ontologies/person</Import>
+    <Import>http://www.semanticweb.org/ontologies/multimedia</Import>
+    <Import>http://www.semanticweb.org/ontologies/object</Import>
+    <Import>http://www.semanticweb.org/ontologies/sensor</Import>
+    <Import>http://www.semanticweb.org/ontologies/activity</Import>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:title"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Multimedia Context ontology (mContext)</Literal>
+    </Annotation>
+    <Declaration>
+        <ObjectProperty IRI="#use"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasRol"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#makes"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isInvolvedIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#describe"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSensor"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:title"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AVI"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTemporalEntity"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="activity:Activity"/>
+    </Declaration>
+    <SubClassOf>
+        <Class abbreviatedIRI="activity:Activity"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.geonames.org/ontology#locatedIn"/>
+            <Class IRI="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="activity:Activity"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasTemporalEntity"/>
+            <Class IRI="http://www.w3.org/2006/time#TemporalEntity"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="multimedia:Multimedia"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.w3.org/ns/ma-ont#hasCreator"/>
+            <Class IRI="http://www.w3.org/ns/sosa/Platform"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="multimedia:Multimedia"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.w3.org/ns/ma-ont#hasCreator"/>
+            <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.w3.org/ns/ma-ont#MediaResource"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.geonames.org/ontology#locatedIn"/>
+            <Class IRI="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.w3.org/ns/ma-ont#MediaResource"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#describe"/>
+            <Class abbreviatedIRI="activity:Activity"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.w3.org/ns/sosa/Observation"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#describe"/>
+            <Class abbreviatedIRI="activity:Activity"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.w3.org/ns/sosa/Platform"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.geonames.org/ontology#locatedIn"/>
+            <Class IRI="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.w3.org/ns/sosa/Platform"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#describe"/>
+            <Class abbreviatedIRI="activity:Activity"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.w3.org/ns/sosa/Platform"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#use"/>
+            <Class IRI="http://www.w3.org/ns/sosa/Platform"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.w3.org/ns/sosa/Sensor"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#describe"/>
+            <Class abbreviatedIRI="activity:Activity"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.geonames.org/ontology#locatedIn"/>
+            <Class IRI="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isInvolvedIn"/>
+            <Class abbreviatedIRI="activity:Activity"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#use"/>
+            <Class IRI="http://www.semanticweb.org/ontologies/object#Object"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class abbreviatedIRI="multimedia:VideoFormat"/>
+        <NamedIndividual IRI="#AVI"/>
+    </ClassAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isInvolvedIn"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasRol"/>
+        <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.w3.org/ns/ma-ont#hasCreator"/>
+        <Class abbreviatedIRI="multimedia:Multimedia"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#describe"/>
+        <Class abbreviatedIRI="activity:Activity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasRol"/>
+        <Class abbreviatedIRI="role:Role"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTemporalEntity"/>
+        <Class IRI="http://www.w3.org/2006/time#TemporalEntity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isInvolvedIn"/>
+        <Class abbreviatedIRI="activity:Activity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#use"/>
+        <Class IRI="http://www.semanticweb.org/ontologies/object#Object"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.w3.org/ns/ma-ont#hasFormat"/>
+        <Class abbreviatedIRI="multimedia:FormatMultimedia"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.w3.org/ns/ma-ont#isCreationLocationOf"/>
+        <Class IRI="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+    </ObjectPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#AVI</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">multimedia:avi</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

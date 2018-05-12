@@ -117,7 +117,7 @@
 		</dependency>
 
 		<!-- Drools -->
-		<dependency>
+		<!--<dependency>
 			<groupId>org.kie</groupId>
 			<artifactId>kie-api</artifactId>
 			<version>${runtime.version}</version>
@@ -137,7 +137,7 @@
 			<groupId>org.jbpm</groupId>
 			<artifactId>jbpm-test</artifactId>
 			<version>${runtime.version}</version>
-		</dependency>
+		</dependency>-->
 
 		<!-- RML -->
 		<!-- NOTE: there is a dependence to the RML jar located in resources/lib/RML-Processor-0.3-shaded.jar 

@@ -33,11 +33,11 @@ import mcas.Ontology.OntologyManager;
 public class OwlRules {
 	// public static void main(String[] args) {
 
-	public static String getRulesList(OWLOntology ontology, String root) {
+	public static String getRulesList(OWLOntology ontology, String root, String rulesFileName) {
 
 		String contenido = null;
 
-		File file = new File(root + "ont/rules.json");
+		File file = new File(root + rulesFileName);
 		String content;
 		try {
 			content = FileUtils.readFileToString(file, "utf-8");
@@ -57,6 +57,11 @@ public class OwlRules {
 				// String type = JsonPath.parse(thing).read("$.Type");
 
 				String conclution = JsonPath.parse(thing).read("$.Conclution");
+
+//				SQWRLResult result =  executeSQWRLRules(ontology, "Hola", "foaf:Person(?person) -> sqwrl:select(?person)", "");
+				
+				System.out.println(JsonPath.parse(thing).read("$.Name").toString());
+				
 				SQWRLResult result = executeSQWRLRules(ontology, JsonPath.parse(thing).read("$.Name").toString(),
 						JsonPath.parse(thing).read("$.Predicate").toString(),
 						JsonPath.parse(thing).read("$.Conclution").toString());
@@ -64,7 +69,7 @@ public class OwlRules {
 				System.out.println(result);
 
 				System.out.println(indivIndex);
-
+				
 				while (result.next()) {
 
 					if (JsonPath.parse(thing).read("$.Type").equals("Unique")) {

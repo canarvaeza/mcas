@@ -26,10 +26,22 @@
         <ObjectProperty IRI="http://www.geonames.org/ontology#locatedIn"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="http://xmlns.com/foaf/0.1/User/u001"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#u00002"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/activity#activity/low/00001"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#A0001"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.w3.org/ns/sosa/iphone7/35-207306-844818-0"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/location#Location/0001"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#User"/>
@@ -47,6 +59,9 @@
         <NamedIndividual IRI="#Activity00001"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/multimedia#multimedia/0001"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Father"/>
     </Declaration>
     <Declaration>
@@ -59,6 +74,9 @@
         <Class abbreviatedIRI="role:Role"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="http://xmlns.com/foaf/0.1/u00025"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty abbreviatedIRI="mcontext:hasRol"/>
     </Declaration>
     <Declaration>
@@ -66,6 +84,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#Speak"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.w3.org/ns/sosa/sensor/35-207306-844818-0/BMP282"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#OcupationalTherapist"/>
@@ -77,19 +98,25 @@
         <Class IRI="#MedicalRole"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/activity#activity/low/00002"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Talk"/>
     </Declaration>
     <Declaration>
         <Class IRI="#FamiliarRole"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#SocialRole"/>
-    </Declaration>
-    <Declaration>
         <DataProperty IRI="http://xmlns.com/foaf/0.1/lastName"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#SocialRole"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.w3.org/ns/sosa/Observation/001"/>
     </Declaration>
     <Declaration>
         <ObjectProperty abbreviatedIRI="mcontext:hasTemporalEntity"/>
@@ -98,10 +125,46 @@
         <NamedIndividual IRI="#Son"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Friend"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty abbreviatedIRI="activity:hasActivity"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#Friend"/>
+        <AnnotationProperty IRI="http://www.w3.org/ns/sosa/resultTime"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://www.w3.org/ns/ma-ont#hasFormat"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://www.semanticweb.org/ontologies/timehasBeginningTime"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://xmlns.com/foaf/0.1/lastname"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://www.w3.org/ns/sosa/hasSimpleResult"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="multimedia:creationDate"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://www.w3.org/ns/sosa/madeBySensor"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://xmlns.com/foaf/0.1/firstname"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://www.w3.org/ns/sosa/hosts"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://www.semanticweb.org/ontologies/timehasEndingTime"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://www.w3.org/ns/sosa/observes"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="mcontext:describe"/>
     </Declaration>
     <SubClassOf>
         <Class IRI="#Eat"/>
@@ -133,6 +196,14 @@
     </SubClassOf>
     <ClassAssertion>
         <Class IRI="#Eat"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/activity#activity/low/00001"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Sit"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/activity#activity/low/00002"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Eat"/>
         <NamedIndividual IRI="#Activity00001"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -167,6 +238,34 @@
         <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
         <NamedIndividual IRI="#u00002"/>
     </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="location:ClosedLocation"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/location#Location/0001"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="multimedia:VideoFormat"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/multimedia#multimedia/0001"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.w3.org/ns/sosa/Observation"/>
+        <NamedIndividual IRI="http://www.w3.org/ns/sosa/Observation/001"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.w3.org/ns/sosa/Platform"/>
+        <NamedIndividual IRI="http://www.w3.org/ns/sosa/iphone7/35-207306-844818-0"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.w3.org/ns/sosa/Sensor"/>
+        <NamedIndividual IRI="http://www.w3.org/ns/sosa/sensor/35-207306-844818-0/BMP282"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
+        <NamedIndividual IRI="http://xmlns.com/foaf/0.1/u00025"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
+        <NamedIndividual IRI="http://xmlns.com/foaf/0.1/User/u001"/>
+    </ClassAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty abbreviatedIRI="mcontext:hasRol"/>
         <NamedIndividual IRI="#u00001"/>
@@ -186,6 +285,21 @@
         <ObjectProperty abbreviatedIRI="mcontext:isInvolvedIn"/>
         <NamedIndividual IRI="#u00002"/>
         <NamedIndividual IRI="#Activity00001"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="mcontext:isInvolvedIn"/>
+        <NamedIndividual IRI="http://xmlns.com/foaf/0.1/u00025"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/activity#activity/low/00002"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="mcontext:isInvolvedIn"/>
+        <NamedIndividual IRI="http://xmlns.com/foaf/0.1/User/u001"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/activity#activity/low/00001"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="mcontext:isInvolvedIn"/>
+        <NamedIndividual IRI="http://xmlns.com/foaf/0.1/User/u001"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/activity#activity/low/00002"/>
     </ObjectPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="http://xmlns.com/foaf/0.1/firstName"/>
@@ -207,6 +321,21 @@
         <NamedIndividual IRI="#u00002"/>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Moreno</Literal>
     </DataPropertyAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.semanticweb.org/ontologies/timehasBeginningTime"/>
+        <IRI>http://www.semanticweb.org/ontologies/activity#activity/low/00001</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-06T12:36:12Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.semanticweb.org/ontologies/timehasEndingTime"/>
+        <IRI>http://www.semanticweb.org/ontologies/activity#activity/low/00001</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-06T12:38:12Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.semanticweb.org/ontologies/timehasBeginningTime"/>
+        <IRI>http://www.semanticweb.org/ontologies/activity#activity/low/00002</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-06T12:36:12Z</Literal>
+    </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#CareGiver</IRI>
@@ -236,6 +365,86 @@
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#User</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">cad:User</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2003/01/geo/wgs84_pos#lat"/>
+        <IRI>http://www.semanticweb.org/ontologies/location#Location/0001</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">40.414</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2003/01/geo/wgs84_pos#long"/>
+        <IRI>http://www.semanticweb.org/ontologies/location#Location/0001</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">-3.699</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.geonames.org/ontology#locatedIn"/>
+        <IRI>http://www.semanticweb.org/ontologies/multimedia#multimedia/0001</IRI>
+        <IRI>http://www.semanticweb.org/ontologies/location#Location/0001</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="mcontext:describe"/>
+        <IRI>http://www.semanticweb.org/ontologies/multimedia#multimedia/0001</IRI>
+        <IRI>http://www.semanticweb.org/ontologies/activity#activity/low/00001</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="multimedia:creationDate"/>
+        <IRI>http://www.semanticweb.org/ontologies/multimedia#multimedia/0001</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-06T12:36:12Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/ns/ma-ont#hasFormat"/>
+        <IRI>http://www.semanticweb.org/ontologies/multimedia#multimedia/0001</IRI>
+        <IRI>http://AVI</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="mcontext:describe"/>
+        <IRI>http://www.w3.org/ns/sosa/Observation/001</IRI>
+        <IRI>http://www.semanticweb.org/ontologies/activity#activity/low/00002</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/ns/sosa/hasSimpleResult"/>
+        <IRI>http://www.w3.org/ns/sosa/Observation/001</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">[0.60034, 0.42556, 0.86662]</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/ns/sosa/madeBySensor"/>
+        <IRI>http://www.w3.org/ns/sosa/Observation/001</IRI>
+        <IRI>http://www.w3.org/ns/sosa/sensor/35-207306-844818-0/BMP282</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/ns/sosa/resultTime"/>
+        <IRI>http://www.w3.org/ns/sosa/Observation/001</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-06T12:36:12Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.geonames.org/ontology#locatedIn"/>
+        <IRI>http://www.w3.org/ns/sosa/iphone7/35-207306-844818-0</IRI>
+        <IRI>http://www.semanticweb.org/ontologies/location#Location/0001</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/ns/sosa/hosts"/>
+        <IRI>http://www.w3.org/ns/sosa/iphone7/35-207306-844818-0</IRI>
+        <IRI>http://www.w3.org/ns/sosa/sensor/35-207306-844818-0/BMP282</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/ns/sosa/observes"/>
+        <IRI>http://www.w3.org/ns/sosa/sensor/35-207306-844818-0/BMP282</IRI>
+        <IRI>http://www.w3.org/ns/sosa/sensor/35-207306-844818-0/BMP282/Gyroscope</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="mcontext:hasRol"/>
+        <IRI>http://xmlns.com/foaf/0.1/User/u001</IRI>
+        <IRI>#</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://xmlns.com/foaf/0.1/firstname"/>
+        <IRI>http://xmlns.com/foaf/0.1/User/u001</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Cristian</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://xmlns.com/foaf/0.1/lastname"/>
+        <IRI>http://xmlns.com/foaf/0.1/User/u001</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Narvaez</Literal>
     </AnnotationAssertion>
 </Ontology>
 

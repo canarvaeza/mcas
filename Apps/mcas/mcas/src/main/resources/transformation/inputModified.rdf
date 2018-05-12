@@ -1,0 +1,336 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:schema="http://schema.org/"
+     xmlns:alzheimer="http://www.semanticweb.org/ontologies/domains/alzheimer#"
+     xmlns:role="http://www.semanticweb.org/ontologies/role#"
+     xmlns:activity="http://www.semanticweb.org/ontologies/activity#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:gn="http://www.geonames.org/ontology#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:multimedia="http://www.semanticweb.org/ontologies/multimedia#"
+     xmlns:ma="http://www.w3.org/ns/ma-ont#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:mcontext="http://www.semanticweb.org/ontologies/mcontext#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#"
+     xmlns:location="http://www.semanticweb.org/ontologies/location#"
+     xmlns:time="http://www.semanticweb.org/ontologies/time"
+     xmlns:ontologies="http://www.semanticweb.org/ontologies/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:sosa="http://www.w3.org/ns/sosa/">
+    <Ontology/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- http://www.geonames.org/ontology#locatedIn -->
+
+    <AnnotationProperty rdf:about="http://www.geonames.org/ontology#locatedIn"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/timehasBeginningTime -->
+
+    <AnnotationProperty rdf:about="http://www.semanticweb.org/ontologies/timehasBeginningTime"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/timehasEndingTime -->
+
+    <AnnotationProperty rdf:about="http://www.semanticweb.org/ontologies/timehasEndingTime"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/mcontext#describe -->
+
+    <AnnotationProperty rdf:about="http://www.semanticweb.org/ontologies/mcontext#describe"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/mcontext#hasRol -->
+
+    <AnnotationProperty rdf:about="http://www.semanticweb.org/ontologies/mcontext#hasRol"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#creationDate -->
+
+    <AnnotationProperty rdf:about="http://www.semanticweb.org/ontologies/multimedia#creationDate"/>
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#lat -->
+
+    <AnnotationProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#lat"/>
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#long -->
+
+    <AnnotationProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#long"/>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#hasFormat -->
+
+    <AnnotationProperty rdf:about="http://www.w3.org/ns/ma-ont#hasFormat"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/hasSimpleResult -->
+
+    <AnnotationProperty rdf:about="http://www.w3.org/ns/sosa/hasSimpleResult"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/hosts -->
+
+    <AnnotationProperty rdf:about="http://www.w3.org/ns/sosa/hosts"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/madeBySensor -->
+
+    <AnnotationProperty rdf:about="http://www.w3.org/ns/sosa/madeBySensor"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/observes -->
+
+    <AnnotationProperty rdf:about="http://www.w3.org/ns/sosa/observes"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/resultTime -->
+
+    <AnnotationProperty rdf:about="http://www.w3.org/ns/sosa/resultTime"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/firstname -->
+
+    <AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/firstname"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/lastname -->
+
+    <AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/lastname"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/mcontext#isInvolvedIn -->
+
+    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/mcontext#isInvolvedIn"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/activity#LowContextActivity -->
+
+    <Class rdf:about="http://www.semanticweb.org/ontologies/activity#LowContextActivity"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/domains/alzheimer#Eat -->
+
+    <Class rdf:about="http://www.semanticweb.org/ontologies/domains/alzheimer#Eat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/activity#LowContextActivity"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/domains/alzheimer#Sit -->
+
+    <Class rdf:about="http://www.semanticweb.org/ontologies/domains/alzheimer#Sit">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/activity#LowContextActivity"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/location#ClosedLocation -->
+
+    <Class rdf:about="http://www.semanticweb.org/ontologies/location#ClosedLocation"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#VideoFormat -->
+
+    <Class rdf:about="http://www.semanticweb.org/ontologies/multimedia#VideoFormat"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Observation -->
+
+    <Class rdf:about="http://www.w3.org/ns/sosa/Observation"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Platform -->
+
+    <Class rdf:about="http://www.w3.org/ns/sosa/Platform"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Sensor -->
+
+    <Class rdf:about="http://www.w3.org/ns/sosa/Sensor"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+    <Class rdf:about="http://xmlns.com/foaf/0.1/Person"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/activity#activity/low/00001 -->
+
+    <NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/activity#activity/low/00001">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/domains/alzheimer#Eat"/>
+        <ontologies:timehasBeginningTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-06T12:36:12Z</ontologies:timehasBeginningTime>
+        <ontologies:timehasEndingTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-06T12:38:12Z</ontologies:timehasEndingTime>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/activity#activity/low/00002 -->
+
+    <NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/activity#activity/low/00002">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/domains/alzheimer#Sit"/>
+        <ontologies:timehasBeginningTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-06T12:36:12Z</ontologies:timehasBeginningTime>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/location#Location/0001 -->
+
+    <NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/location#Location/0001">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/location#ClosedLocation"/>
+        <wgs84_pos:lat>40.414</wgs84_pos:lat>
+        <wgs84_pos:long>-3.699</wgs84_pos:long>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#multimedia/0001 -->
+
+    <NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/multimedia#multimedia/0001">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/multimedia#VideoFormat"/>
+        <gn:locatedIn rdf:resource="http://www.semanticweb.org/ontologies/location#Location/0001"/>
+        <mcontext:describe rdf:resource="http://www.semanticweb.org/ontologies/activity#activity/low/00001"/>
+        <multimedia:creationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-06T12:36:12Z</multimedia:creationDate>
+        <ma:hasFormat rdf:resource="http://AVI"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Observation/001 -->
+
+    <NamedIndividual rdf:about="http://www.w3.org/ns/sosa/Observation/001">
+        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+        <mcontext:describe rdf:resource="http://www.semanticweb.org/ontologies/activity#activity/low/00002"/>
+        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">[0.60034, 0.42556, 0.86662]</sosa:hasSimpleResult>
+        <sosa:madeBySensor rdf:resource="http://www.w3.org/ns/sosa/sensor/35-207306-844818-0/BMP282"/>
+        <sosa:resultTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-06T12:36:12Z</sosa:resultTime>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/iphone7/35-207306-844818-0 -->
+
+    <NamedIndividual rdf:about="http://www.w3.org/ns/sosa/iphone7/35-207306-844818-0">
+        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+        <gn:locatedIn rdf:resource="http://www.semanticweb.org/ontologies/location#Location/0001"/>
+        <sosa:hosts rdf:resource="http://www.w3.org/ns/sosa/sensor/35-207306-844818-0/BMP282"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/sensor/35-207306-844818-0/BMP282 -->
+
+    <NamedIndividual rdf:about="http://www.w3.org/ns/sosa/sensor/35-207306-844818-0/BMP282">
+        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+        <sosa:observes rdf:resource="http://www.w3.org/ns/sosa/sensor/35-207306-844818-0/BMP282/Gyroscope"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/u00025 -->
+
+    <NamedIndividual rdf:about="http://xmlns.com/foaf/0.1/u00025">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <mcontext:isInvolvedIn rdf:resource="http://www.semanticweb.org/ontologies/activity#activity/low/00002"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/User/u001 -->
+
+    <NamedIndividual rdf:about="http://xmlns.com/foaf/0.1/User/u001">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <mcontext:isInvolvedIn rdf:resource="http://www.semanticweb.org/ontologies/activity#activity/low/00001"/>
+        <mcontext:isInvolvedIn rdf:resource="http://www.semanticweb.org/ontologies/activity#activity/low/00002"/>
+        <mcontext:hasRol rdf:resource="http://www.semanticweb.org/ontologies/domains/alzheimer#"/>
+        <foaf:firstname>Cristian</foaf:firstname>
+        <foaf:lastname>Narvaez</foaf:lastname>
+    </NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

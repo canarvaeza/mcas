@@ -16,180 +16,196 @@
 @prefix alzheimer: <http://www.semanticweb.org/ontologies/domains/alzheimer#> .
 @prefix wgs84_pos: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix multimedia: <http://www.semanticweb.org/ontologies/multimedia#> .
+@base <http://www.w3.org/2002/07/owl#> .
 
-_:genid1 a owl:Ontology .
-# 
-# 
-# #################################################################
-# #
-# #    Annotation properties
-# #
-# #################################################################
-# 
-# 
-# http://www.geonames.org/ontology#locatedIn
+[ rdf:type owl:Ontology
+ ] .
 
-gn:locatedIn a owl:AnnotationProperty .
-# 
-# http://www.semanticweb.org/ontologies/timehasBeginningTime
+#################################################################
+#    Annotation properties
+#################################################################
 
-<http://www.semanticweb.org/ontologies/timehasBeginningTime> a owl:AnnotationProperty .
-# 
-# http://www.semanticweb.org/ontologies/timehasEndingTime
+###  http://www.geonames.org/ontology#locatedIn
+gn:locatedIn rdf:type owl:AnnotationProperty .
 
-<http://www.semanticweb.org/ontologies/timehasEndingTime> a owl:AnnotationProperty .
-# 
-# http://www.semanticweb.org/ontologies/mcontext#describe
 
-mcontext:describe a owl:AnnotationProperty .
-# 
-# http://www.semanticweb.org/ontologies/mcontext#hasRol
+###  http://www.semanticweb.org/ontologies/timehasBeginningTime
+time:hasBeginningTime rdf:type owl:AnnotationProperty .
 
-mcontext:hasRol a owl:AnnotationProperty .
-# 
-# http://www.semanticweb.org/ontologies/multimedia#creationDate
 
-multimedia:creationDate a owl:AnnotationProperty .
-# 
-# http://www.w3.org/2003/01/geo/wgs84_pos#lat
+###  http://www.semanticweb.org/ontologies/timehasEndingTime
+time:hasEndingTime rdf:type owl:AnnotationProperty .
 
-wgs84_pos:lat a owl:AnnotationProperty .
-# 
-# http://www.w3.org/2003/01/geo/wgs84_pos#long
 
-wgs84_pos:long a owl:AnnotationProperty .
-# 
-# http://www.w3.org/ns/ma-ont#hasFormat
+###  http://www.semanticweb.org/ontologies/mcontext#describe
+mcontext:describe rdf:type owl:AnnotationProperty .
 
-ma:hasFormat a owl:AnnotationProperty .
-# 
-# http://www.w3.org/ns/sosa/hasSimpleResult
 
-sosa:hasSimpleResult a owl:AnnotationProperty .
-# 
-# http://www.w3.org/ns/sosa/hosts
+###  http://www.semanticweb.org/ontologies/mcontext#hasRol
+mcontext:hasRol rdf:type owl:AnnotationProperty .
 
-sosa:hosts a owl:AnnotationProperty .
-# 
-# http://www.w3.org/ns/sosa/madeBySensor
 
-sosa:madeBySensor a owl:AnnotationProperty .
-# 
-# http://www.w3.org/ns/sosa/observes
+###  http://www.semanticweb.org/ontologies/mcontext#isInvolvedIn
+mcontext:isInvolvedIn rdf:type owl:AnnotationProperty .
 
-sosa:observes a owl:AnnotationProperty .
-# 
-# http://www.w3.org/ns/sosa/resultTime
 
-sosa:resultTime a owl:AnnotationProperty .
-# 
-# http://xmlns.com/foaf/0.1/firstname
+###  http://www.semanticweb.org/ontologies/multimedia#creationDate
+multimedia:creationDate rdf:type owl:AnnotationProperty .
 
-foaf:firstname a owl:AnnotationProperty .
-# 
-# http://xmlns.com/foaf/0.1/lastname
 
-foaf:lastname a owl:AnnotationProperty .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Classes
-# #
-# #################################################################
-# 
-# 
-# http://www.semanticweb.org/ontologies/domains/alzheimer#Eat
+###  http://www.w3.org/2003/01/geo/wgs84_pos#lat
+wgs84_pos:lat rdf:type owl:AnnotationProperty .
 
-alzheimer:Eat a owl:Class .
-# 
-# http://www.semanticweb.org/ontologies/domains/alzheimer#Sit
 
-alzheimer:Sit a owl:Class .
-# 
-# http://www.semanticweb.org/ontologies/location#ClosedLocation
+###  http://www.w3.org/2003/01/geo/wgs84_pos#long
+wgs84_pos:long rdf:type owl:AnnotationProperty .
 
-location:ClosedLocation a owl:Class .
-# 
-# http://www.semanticweb.org/ontologies/multimedia#VideoFormat
 
-multimedia:VideoFormat a owl:Class .
-# 
-# http://www.w3.org/ns/sosa/Observation
+###  http://www.w3.org/ns/ma-ont#hasFormat
+ma:hasFormat rdf:type owl:AnnotationProperty .
 
-sosa:Observation a owl:Class .
-# 
-# http://www.w3.org/ns/sosa/Platform
 
-sosa:Platform a owl:Class .
-# 
-# http://www.w3.org/ns/sosa/Sensor
+###  http://www.w3.org/ns/sosa/hasSimpleResult
+sosa:hasSimpleResult rdf:type owl:AnnotationProperty .
 
-sosa:Sensor a owl:Class .
-# 
-# http://xmlns.com/foaf/0.1/Person
 
-foaf:Person a owl:Class .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Individuals
-# #
-# #################################################################
-# 
-# 
-# http://www.semanticweb.org/ontologies/activity#activity/low/00001
+###  http://www.w3.org/ns/sosa/hosts
+sosa:hosts rdf:type owl:AnnotationProperty .
 
-<http://www.semanticweb.org/ontologies/activity#activity/low/00001> a owl:NamedIndividual , alzheimer:Eat ;
-	<http://www.semanticweb.org/ontologies/timehasBeginningTime> "2017-06-06T12:36:12Z"^^xsd:dateTime ;
-	<http://www.semanticweb.org/ontologies/timehasEndingTime> "2017-06-06T12:38:12Z"^^xsd:dateTime .
-# 
-# http://www.semanticweb.org/ontologies/activity#activity/low/00002
 
-<http://www.semanticweb.org/ontologies/activity#activity/low/00002> a owl:NamedIndividual , alzheimer:Sit ;
-	<http://www.semanticweb.org/ontologies/timehasBeginningTime> "2017-06-06T12:36:12Z"^^xsd:dateTime .
-# 
-# http://www.semanticweb.org/ontologies/location#Location/0001
+###  http://www.w3.org/ns/sosa/madeBySensor
+sosa:madeBySensor rdf:type owl:AnnotationProperty .
 
-<http://www.semanticweb.org/ontologies/location#Location/0001> a owl:NamedIndividual , location:ClosedLocation ;
-	wgs84_pos:lat "40.414" ;
-	wgs84_pos:long "-3.699" .
-# 
-# http://www.semanticweb.org/ontologies/multimedia#multimedia/0001
 
-<http://www.semanticweb.org/ontologies/multimedia#multimedia/0001> a owl:NamedIndividual , multimedia:VideoFormat ;
-	gn:locatedIn <http://www.semanticweb.org/ontologies/location#Location/0001> ;
-	mcontext:describe <http://www.semanticweb.org/ontologies/activity#activity/low/00001> ;
-	multimedia:creationDate "2017-06-06T12:36:12Z"^^xsd:dateTime ;
-	ma:hasFormat <http://AVI> .
-# 
-# http://www.w3.org/ns/sosa/Observation/001
+###  http://www.w3.org/ns/sosa/observes
+sosa:observes rdf:type owl:AnnotationProperty .
 
-<http://www.w3.org/ns/sosa/Observation/001> a owl:NamedIndividual , sosa:Observation ;
-	mcontext:describe <http://www.semanticweb.org/ontologies/activity#activity/low/00002> ;
-	sosa:hasSimpleResult "[0.60034, 0.42556, 0.86662]"^^xsd:decimal ;
-	sosa:madeBySensor <http://www.w3.org/ns/sosa/sensor/35-207306-844818-0/BMP282> ;
-	sosa:resultTime "2017-06-06T12:36:12Z"^^xsd:dateTime .
-# 
-# http://www.w3.org/ns/sosa/iphone7/35-207306-844818-0
 
-<http://www.w3.org/ns/sosa/iphone7/35-207306-844818-0> a owl:NamedIndividual , sosa:Platform ;
-	gn:locatedIn <http://www.semanticweb.org/ontologies/location#Location/0001> ;
-	sosa:hosts <http://www.w3.org/ns/sosa/sensor/35-207306-844818-0/BMP282> .
-# 
-# http://www.w3.org/ns/sosa/sensor/35-207306-844818-0/BMP282
+###  http://www.w3.org/ns/sosa/resultTime
+sosa:resultTime rdf:type owl:AnnotationProperty .
 
-<http://www.w3.org/ns/sosa/sensor/35-207306-844818-0/BMP282> a owl:NamedIndividual , sosa:Sensor ;
-	sosa:observes <http://www.w3.org/ns/sosa/sensor/35-207306-844818-0/BMP282/Gyroscope> .
-# 
-# http://xmlns.com/foaf/0.1/User/u001
 
-<http://xmlns.com/foaf/0.1/User/u001> a owl:NamedIndividual , foaf:Person ;
-	mcontext:hasRol <http://www.semanticweb.org/ontologies/domains/alzheimer#> ;
-	foaf:firstname "Cristian" ;
-	foaf:lastname "Narvaez" .
-# 
-# Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi
+###  http://xmlns.com/foaf/0.1/firstname
+foaf:firstname rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/lastname
+foaf:lastname rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/ontologies/mcontext#isInvolvedIn
+mcontext:isInvolvedIn rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/ontologies/activity#LowContextActivity
+activity:LowContextActivity rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ontologies/domains/alzheimer#Eat
+alzheimer:Eat rdf:type owl:Class ;
+              rdfs:subClassOf activity:LowContextActivity .
+
+
+###  http://www.semanticweb.org/ontologies/domains/alzheimer#Sit
+alzheimer:Sit rdf:type owl:Class ;
+              rdfs:subClassOf activity:LowContextActivity .
+
+
+###  http://www.semanticweb.org/ontologies/location#ClosedLocation
+location:ClosedLocation rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ontologies/multimedia#VideoFormat
+multimedia:VideoFormat rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/sosa/Observation
+sosa:Observation rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/sosa/Platform
+sosa:Platform rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/sosa/Sensor
+sosa:Sensor rdf:type owl:Class .
+
+
+###  http://xmlns.com/foaf/0.1/Person
+foaf:Person rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/ontologies/activity#activity/low/00001
+<http://www.semanticweb.org/ontologies/activity#activity/low/00001> rdf:type owl:NamedIndividual ,
+                                                                             alzheimer:Eat ;
+                                                                    time:hasBeginningTime "2017-06-06T12:36:12Z"^^xsd:dateTime ;
+                                                                    time:hasEndingTime "2017-06-06T12:38:12Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/ontologies/activity#activity/low/00002
+<http://www.semanticweb.org/ontologies/activity#activity/low/00002> rdf:type owl:NamedIndividual ,
+                                                                             alzheimer:Sit ;
+                                                                    time:hasBeginningTime "2017-06-06T12:36:12Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/ontologies/location#Location/0001
+<http://www.semanticweb.org/ontologies/location#Location/0001> rdf:type owl:NamedIndividual ,
+                                                                        location:ClosedLocation ;
+                                                               wgs84_pos:lat "40.414" ;
+                                                               wgs84_pos:long "-3.699" .
+
+
+###  http://www.semanticweb.org/ontologies/multimedia#multimedia/0001
+<http://www.semanticweb.org/ontologies/multimedia#multimedia/0001> rdf:type owl:NamedIndividual ,
+                                                                            multimedia:VideoFormat ;
+                                                                   gn:locatedIn <http://www.semanticweb.org/ontologies/location#Location/0001> ;
+                                                                   mcontext:describe <http://www.semanticweb.org/ontologies/activity#activity/low/00001> ;
+                                                                   multimedia:creationDate "2017-06-06T12:36:12Z"^^xsd:dateTime ;
+                                                                   ma:hasFormat <http://AVI> .
+
+
+###  http://www.w3.org/ns/sosa/Observation/001
+<http://www.w3.org/ns/sosa/Observation/001> rdf:type owl:NamedIndividual ,
+                                                     sosa:Observation ;
+                                            mcontext:describe <http://www.semanticweb.org/ontologies/activity#activity/low/00002> ;
+                                            sosa:hasSimpleResult [0.60034, 0.42556, 0.86662] ;
+                                            sosa:madeBySensor <http://www.w3.org/ns/sosa/sensor/35-207306-844818-0/BMP282> ;
+                                            sosa:resultTime "2017-06-06T12:36:12Z"^^xsd:dateTime .
+
+
+###  http://www.w3.org/ns/sosa/iphone7/35-207306-844818-0
+<http://www.w3.org/ns/sosa/iphone7/35-207306-844818-0> rdf:type owl:NamedIndividual ,
+                                                                sosa:Platform ;
+                                                       gn:locatedIn <http://www.semanticweb.org/ontologies/location#Location/0001> ;
+                                                       sosa:hosts <http://www.w3.org/ns/sosa/sensor/35-207306-844818-0/BMP282> .
+
+
+###  http://www.w3.org/ns/sosa/sensor/35-207306-844818-0/BMP282
+<http://www.w3.org/ns/sosa/sensor/35-207306-844818-0/BMP282> rdf:type owl:NamedIndividual ,
+                                                                      sosa:Sensor ;
+                                                             sosa:observes <http://www.w3.org/ns/sosa/sensor/35-207306-844818-0/BMP282/Gyroscope> .
+
+
+###  http://xmlns.com/foaf/0.1/User/u001
+<http://xmlns.com/foaf/0.1/User/u001> rdf:type owl:NamedIndividual ,
+                                               foaf:Person ;
+                                      mcontext:isInvolvedIn <http://www.semanticweb.org/ontologies/activity#activity/low/00001> ,
+                                                            <http://www.semanticweb.org/ontologies/activity#activity/low/00002> ;
+                                      mcontext:hasRol alzheimer: ;
+                                      foaf:firstname "Cristian" ;
+                                      foaf:lastname "Narvaez" .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi

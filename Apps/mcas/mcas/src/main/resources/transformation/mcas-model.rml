@@ -103,6 +103,13 @@
     	[
     		rr:parentTriplesMap <#RolMapping> ;
     	]
+    ],[
+	    rr:predicate mcontext:isInvolvedIn;
+    	rr:objectMap
+    	[
+    		#rr:template "http://{Activity.[*].Id}";
+    		rr:parentTriplesMap <#ActivityMapping>
+    	]
     ].
 
 

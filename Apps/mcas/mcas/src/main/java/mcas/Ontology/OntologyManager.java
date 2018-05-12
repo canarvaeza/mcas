@@ -5,9 +5,12 @@ import java.io.File;
 import java.io.InputStream;
 import java.util.Map;
 
+import javax.naming.ldap.ManageReferralControl;
+
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.formats.OWLXMLDocumentFormat;
 import org.semanticweb.owlapi.io.StreamDocumentTarget;
+import org.semanticweb.owlapi.io.StringDocumentSource;
 import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLClass;
@@ -17,6 +20,7 @@ import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.model.OWLOntologyStorageException;
+import org.semanticweb.owlapi.util.AutoIRIMapper;
 import org.semanticweb.owlapi.util.OWLOntologyMerger;
 import org.semanticweb.owlapi.vocab.PrefixOWLOntologyFormat;
 import org.swrlapi.sqwrl.SQWRLResult;
@@ -32,7 +36,7 @@ public class OntologyManager {
 
 		System.out.println("-------------------------------------------------");
 		try {
-		System.out.println("IRI: " + ontology.getOntologyID().getOntologyIRI().get());
+			System.out.println("IRI: " + ontology.getOntologyID().getOntologyIRI().get());
 		} catch (Throwable e) {
 			System.out.println("No contiene IRI");
 		}
@@ -89,28 +93,34 @@ public class OntologyManager {
 	 * Auto-generated catch block e.printStackTrace(); } }
 	 */
 
-	
-	public static OWLOntology loadOntology(InputStream rdfFlux) {
+	public static OWLOntology loadOntology(String rdfFlux) {
 		SQWRLResult result = null;
 		// Create OWLOntology instance using the OWLAPI
 		OWLOntologyManager ontologyManager = OWLManager.createOWLOntologyManager();
 		OWLOntology ontology = null;
 		try {
 
-			ontology = ontologyManager.loadOntologyFromOntologyDocument(rdfFlux);
-//			mergedOntologyManager.loadOntologyFromOntologyDocument(new File(root + ontologyName));
-			
-//			PrefixOWLOntologyFormat pm = (PrefixOWLOntologyFormat) ontologyManager.getOntologyFormat(ontology);
-//			Map<String, String> prefixName2PrefixMap = pm.getPrefixName2PrefixMap();
-//			System.out.println(prefixName2PrefixMap);
-			
+			ontology = ontologyManager.loadOntologyFromOntologyDocument(new StringDocumentSource(rdfFlux));
+			// mergedOntologyManager.loadOntologyFromOntologyDocument(new File(root +
+			// ontologyName));
 
-//			ontologyManager.getOntologyFormat(ontology).asPrefixOWLOntologyFormat()
-//					.setDefaultPrefix(ontology.getOntologyID().getOntologyIRI().get() + "#"); // Lo retiro porque da error con el flujo
+			// PrefixOWLOntologyFormat pm = (PrefixOWLOntologyFormat)
+			// ontologyManager.getOntologyFormat(ontology);
+			// Map<String, String> prefixName2PrefixMap = pm.getPrefixName2PrefixMap();
+			// System.out.println(prefixName2PrefixMap);
 
-			// System.out.println(ontologyManager.getOntologyFormat(ontology).asPrefixOWLOntologyFormat().getDefaultPrefix());
-			
-			
+			try {
+				ontologyManager.getOntologyFormat(ontology).asPrefixOWLOntologyFormat()
+						.setDefaultPrefix(ontology.getOntologyID().getOntologyIRI().get() + "#"); // Lo retiro porque da
+																									// error con el
+																									// flujo
+
+				System.out.println(
+						ontologyManager.getOntologyFormat(ontology).asPrefixOWLOntologyFormat().getDefaultPrefix());
+			} catch (Throwable e) {
+				System.out.println("Don't have IRI");
+			}
+
 		} catch (OWLOntologyCreationException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -118,26 +128,32 @@ public class OntologyManager {
 
 		return ontology;
 	}
-	
-	
-	
+
 	public static OWLOntology loadOntology(String root, String ontologyName) {
+		
+		
+		
 		SQWRLResult result = null;
 		// Create OWLOntology instance using the OWLAPI
 		OWLOntologyManager ontologyManager = OWLManager.createOWLOntologyManager();
+		
+		AutoIRIMapper mapper =  new AutoIRIMapper(new File(root+"ont/mcas"), true);
+		ontologyManager.getIRIMappers().add(mapper);
+		
+//		TRATANDO DE PONER EL MAPPER, POR ESO PUSE LA ONTOLOGÍA ARRIBA.
+	
+		System.out.println(new File(root+"ont/mcas"));
+		System.out.println(ontologyManager.getIRIMappers().toString());
+		
 		OWLOntology ontology = null;
 		try {
-			
+
 			ontology = ontologyManager.loadOntologyFromOntologyDocument(new File(root + ontologyName));
 			mergedOntologyManager.loadOntologyFromOntologyDocument(new File(root + ontologyName));
-			
-			PrefixOWLOntologyFormat pm = (PrefixOWLOntologyFormat) ontologyManager.getOntologyFormat(ontology);
-			Map<String, String> prefixName2PrefixMap = pm.getPrefixName2PrefixMap();
-			System.out.println(prefixName2PrefixMap);
-			
 
-//			ontologyManager.getOntologyFormat(ontology).asPrefixOWLOntologyFormat()
-//					.setDefaultPrefix(ontology.getOntologyID().getOntologyIRI().get() + "#"); // Lo retiro porque da error con el flujo
+			// ontologyManager.getOntologyFormat(ontology).asPrefixOWLOntologyFormat()
+			// .setDefaultPrefix(ontology.getOntologyID().getOntologyIRI().get() + "#"); //
+			// Lo retiro porque da error con el flujo
 
 			// System.out.println(ontologyManager.getOntologyFormat(ontology).asPrefixOWLOntologyFormat().getDefaultPrefix());
 		} catch (OWLOntologyCreationException e) {
@@ -147,12 +163,9 @@ public class OntologyManager {
 
 		return ontology;
 	}
-	
 
 	/*
-	 * root - file location
-	 * name - file name
-	 * ontology - ontology
+	 * root - file location name - file name ontology - ontology
 	 */
 	public static boolean saveOntology(String root, String name, OWLOntology ontology) {
 		try {
