@@ -6,7 +6,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://purl.org/m-context/ontologies/sensor">
-    <Prefix name="" IRI="http://www.semanticweb.org/ontologies/sensor"/>
+    <Prefix name="" IRI="http://purl.org/m-context/ontologies/sensor"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
@@ -37,6 +37,9 @@
         <ObjectProperty IRI="http://www.w3.org/ns/sosa/madeSampling"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Device"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="http://www.w3.org/ns/sosa/Sampler"/>
     </Declaration>
     <Declaration>
@@ -55,19 +58,19 @@
         <Class IRI="http://www.w3.org/ns/sosa/Sample"/>
     </Declaration>
     <Declaration>
-        <Class IRI="http://www.w3.org/ns/sosa/Procedure"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="http://www.w3.org/ns/sosa/madeObservation"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="http://www.w3.org/ns/sosa/usedProcedure"/>
+        <Class IRI="http://www.w3.org/ns/sosa/Procedure"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Ssn"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="http://www.w3.org/ns/sosa/madeBySensor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.w3.org/ns/sosa/usedProcedure"/>
     </Declaration>
     <Declaration>
         <Class IRI="http://www.w3.org/ns/sosa/Observation"/>
@@ -115,10 +118,10 @@
         <Class IRI="http://www.w3.org/ns/sosa/Sampling"/>
     </Declaration>
     <Declaration>
-        <Class IRI="http://www.w3.org/ns/sosa/Actuation"/>
+        <Class IRI="http://www.w3.org/ns/ssn/System"/>
     </Declaration>
     <Declaration>
-        <Class IRI="http://www.w3.org/ns/ssn/System"/>
+        <Class IRI="http://www.w3.org/ns/sosa/Actuation"/>
     </Declaration>
     <Declaration>
         <Class IRI="http://www.w3.org/ns/sosa/Sensor"/>
@@ -159,6 +162,25 @@
     <Declaration>
         <ObjectProperty IRI="http://www.w3.org/ns/ssn/wasOriginatedBy"/>
     </Declaration>
+    <Declaration>
+        <Class IRI="#Sensor"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Device"/>
+        <Class IRI="http://www.w3.org/ns/sosa/Platform"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Sensor"/>
+        <Class IRI="http://www.w3.org/ns/sosa/Sensor"/>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Device"/>
+        <Class IRI="#Ssn"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sensor"/>
+        <Class IRI="#Ssn"/>
+    </SubClassOf>
     <SubClassOf>
         <Class IRI="http://www.w3.org/ns/sosa/ActuatableProperty"/>
         <Class IRI="#Ssn"/>
@@ -492,6 +514,16 @@
         <DataProperty IRI="http://www.w3.org/ns/sosa/resultTime"/>
         <Datatype abbreviatedIRI="xsd:dateTime"/>
     </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Device</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">mContext-Device</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Sensor</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">mContext-sensor</Literal>
+    </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>http://www.w3.org/ns/sosa/Actuator</IRI>
