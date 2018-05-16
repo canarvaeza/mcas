@@ -40,10 +40,17 @@ public class OntologyManager {
 		} catch (Throwable e) {
 			System.out.println("No contiene IRI");
 		}
+		try {
+			System.out.println("Imports: " + ontology.getImportsDeclarations().toString());
+		} catch (Throwable e) {
+			System.out.println("No contiene Imports");
+		}
 		System.out.println("Classes: " + ontology.getClassesInSignature());
 		System.out.println("Object Properties: " + ontology.getObjectPropertiesInSignature());
 		System.out.println("Data Properties: " + ontology.getDataPropertiesInSignature());
 		System.out.println("Individuals: " + ontology.getIndividualsInSignature());
+		System.out.println("Imports: " + ontology.getImports().toString());
+		
 		System.out.println("-------------------------------------------------");
 
 	}
@@ -79,20 +86,9 @@ public class OntologyManager {
 	}
 
 	/*
-	 * public static void createContent(OWLOntology ontology) {
-	 * 
-	 * SQWRLResult result = RulesValidator.executeSQWRLRules(ontology);
-	 * 
-	 * OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
-	 * OWLDataFactory factory = manager.getOWLDataFactory();
-	 * 
-	 * try { while (result.next()) { System.out.println(result.getColumnName(1) +
-	 * ": " + result.getNamedIndividual(0).getIRI());
-	 * System.out.println(result.getColumnName(1) + ": " +
-	 * result.getLiteral(1).getInteger()); } } catch (SQWRLException e) { // TODO
-	 * Auto-generated catch block e.printStackTrace(); } }
+	 * load from streamflux
 	 */
-
+	
 	public static OWLOntology loadOntology(String rdfFlux) {
 		SQWRLResult result = null;
 		// Create OWLOntology instance using the OWLAPI
@@ -128,23 +124,27 @@ public class OntologyManager {
 
 		return ontology;
 	}
+	
+	/*
+	 * load from local
+	 * root - path on pc
+	 * ontology name - name.owl
+	 */
 
 	public static OWLOntology loadOntology(String root, String ontologyName) {
-		
-		
-		
+
 		SQWRLResult result = null;
 		// Create OWLOntology instance using the OWLAPI
 		OWLOntologyManager ontologyManager = OWLManager.createOWLOntologyManager();
-		
-		AutoIRIMapper mapper =  new AutoIRIMapper(new File(root+"ont/mcas"), true);
+
+		AutoIRIMapper mapper = new AutoIRIMapper(new File(root + "ont/mcas"), true);
 		ontologyManager.getIRIMappers().add(mapper);
-		
-//		TRATANDO DE PONER EL MAPPER, POR ESO PUSE LA ONTOLOGÍA ARRIBA.
-	
-		System.out.println(new File(root+"ont/mcas"));
+
+		// TRATANDO DE PONER EL MAPPER, POR ESO PUSE LA ONTOLOGÍA ARRIBA.
+
+		System.out.println(new File(root + "ont/mcas"));
 		System.out.println(ontologyManager.getIRIMappers().toString());
-		
+
 		OWLOntology ontology = null;
 		try {
 
@@ -156,6 +156,30 @@ public class OntologyManager {
 			// Lo retiro porque da error con el flujo
 
 			// System.out.println(ontologyManager.getOntologyFormat(ontology).asPrefixOWLOntologyFormat().getDefaultPrefix());
+		} catch (OWLOntologyCreationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return ontology;
+	}
+
+	/*
+	 * load from web IRI - online dir
+	 */
+
+	public static OWLOntology loadOntologyFromInternet(String dir) {
+
+		IRI ontologyIRI = IRI.create(dir);
+
+		// Create OWLOntology instance using the OWLAPI
+		OWLOntologyManager ontologyManager = OWLManager.createOWLOntologyManager();
+		OWLOntology ontology = null;
+
+		try {
+
+			ontology = ontologyManager.loadOntology(ontologyIRI);
+
 		} catch (OWLOntologyCreationException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
