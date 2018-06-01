@@ -25,6 +25,7 @@
 @prefix  rml: <http://semweb.mmlab.be/ns/rml#> .
 @prefix crml:       <http://semweb.mmlab.be/ns/crml#> .
 @prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@base <http://example.com> .
 
 ## --------------- DEPENDENCIES ----------- ###
 
@@ -65,9 +66,9 @@
 
 <#PersonMapping>
 	rml:logicalSource [
-		rml:source "{direction}input.json";
+		rml:source "C:/Users/dev/Documents/GitHub/mcas/Apps/mcas/mcas/src/main/resources/transformation/input.json";
 	    rml:referenceFormulation ql:JSONPath;
-	    rml:iterator "$.Person.[*]"
+	    rml:iterator "$.Person[*]"
     ];
     
     #define la uri en el sistema
@@ -107,7 +108,7 @@
 	    rr:predicate mcontext:isInvolvedIn;
     	rr:objectMap
     	[
-    		#rr:template "http://{Activity.[*].Id}";
+    		#rr:template "http://{Activity[*].Id}";
     		rr:parentTriplesMap <#ActivityMapping>
     	]
     ].
@@ -119,9 +120,9 @@
 
 <#RolMapping>
 	rml:logicalSource [
-		rml:source "{direction}input.json";
+		rml:source "C:/Users/dev/Documents/GitHub/mcas/Apps/mcas/mcas/src/main/resources/transformation/input.json";
 	    rml:referenceFormulation ql:JSONPath;
-	    rml:iterator "$.Person.[*].Role"
+	    rml:iterator "$.Person[*].Role"
     ];
     
     #define la uri en el sistema
@@ -136,9 +137,9 @@
 
 <#DeviceMapping>
 	rml:logicalSource [
-		rml:source "{direction}input.json";
+		rml:source "C:/Users/dev/Documents/GitHub/mcas/Apps/mcas/mcas/src/main/resources/transformation/input.json";
 	    rml:referenceFormulation ql:JSONPath;
-	    rml:iterator "$.Ssn.[*].Device"
+	    rml:iterator "$.Ssn[*].Device"
     ];
     
     #define la uri en el sistema
@@ -174,16 +175,16 @@
 	#    rr:predicate mcontext:describe;
     #	rr:objectMap
     #	[
-    #		rr:template "http://{RecEntities.[*].Activity}";
+    #		rr:template "http://{RecEntities[*].Activity}";
     #	]
     #].
 	
 <#SensorMapping>
 
 rml:logicalSource [
-		rml:source "{direction}input.json";
+		rml:source "C:/Users/dev/Documents/GitHub/mcas/Apps/mcas/mcas/src/main/resources/transformation/input.json";
 	    rml:referenceFormulation ql:JSONPath;
-	    rml:iterator "$.Ssn.[*].Sensor"
+	    rml:iterator "$.Ssn[*].Sensor"
     ];
     
     #define la uri en el sistema
@@ -209,7 +210,7 @@ rml:logicalSource [
 #	    rr:predicate mcontext:describe;
 #    	rr:objectMap
 #    	[
-#    		rr:template "http://{RecEntities.[*].Activity}";
+#    		rr:template "http://{RecEntities[*].Activity}";
 #    	]
 #    ].
 
@@ -217,9 +218,9 @@ rml:logicalSource [
 <#ObservationMapping>
     
     rml:logicalSource [
-		rml:source "{direction}input.json";
+		rml:source "C:/Users/dev/Documents/GitHub/mcas/Apps/mcas/mcas/src/main/resources/transformation/input.json";
 	    rml:referenceFormulation ql:JSONPath;
-	    rml:iterator "$.Ssn.[*].Observation.[*]"
+	    rml:iterator "$.Ssn[*].Observation[*]"
     ];
     
     #define la uri en el sistema
@@ -269,7 +270,7 @@ rml:logicalSource [
 	    rr:predicate mcontext:describe;
     	rr:objectMap
     	[
-    		rr:template "http://{RecEntities.[*].Activity}";
+    		rr:template "http://{RecEntities[*].Activity}";
     	]
     ].
 
@@ -280,9 +281,9 @@ rml:logicalSource [
 
 <#MultimediaMapping>
 	rml:logicalSource [
-		rml:source "{direction}input.json";
+		rml:source "C:/Users/dev/Documents/GitHub/mcas/Apps/mcas/mcas/src/main/resources/transformation/input.json";
 	    rml:referenceFormulation ql:JSONPath;
-	    rml:iterator "$.Multimedia.[*]"
+	    rml:iterator "$.Multimedia[*]"
     ];
     
     #define la uri en el sistema
@@ -330,7 +331,7 @@ rml:logicalSource [
 	    rr:predicate mcontext:describe;
     	rr:objectMap
     	[
-    		rr:template "http://{RecEntities.[*].Activity}";
+    		rr:template "http://{RecEntities[*].Activity}";
     	]
     ],[
     	rr:predicate gn:locatedIn;
@@ -343,9 +344,9 @@ rml:logicalSource [
     
 <#DescriptorMapping>
 	rml:logicalSource [
-		rml:source "{direction}input.json";
+		rml:source "C:/Users/dev/Documents/GitHub/mcas/Apps/mcas/mcas/src/main/resources/transformation/input.json";
 	    rml:referenceFormulation ql:JSONPath;
-	    rml:iterator "$.Multimedia.[*].Descriptor"
+	    rml:iterator "$.Multimedia[*].Descriptor"
 	];
 
 	rr:subjectMap [ 
@@ -367,9 +368,9 @@ rml:logicalSource [
 ### ----- LOCATION ----- ###
 <#LocationMapping>
 	rml:logicalSource [
-		rml:source "{direction}input.json";
+		rml:source "C:/Users/dev/Documents/GitHub/mcas/Apps/mcas/mcas/src/main/resources/transformation/input.json";
 	    rml:referenceFormulation ql:JSONPath;
-	    rml:iterator "$.Location.[*]"
+	    rml:iterator "$.Location[*]"
     ];
     
     #define la uri en el sistema
@@ -407,9 +408,9 @@ rml:logicalSource [
 
 <#ActivityMapping>
 	rml:logicalSource [
-		rml:source "{direction}input.json";
+		rml:source "C:/Users/dev/Documents/GitHub/mcas/Apps/mcas/mcas/src/main/resources/transformation/input.json";
 	    rml:referenceFormulation ql:JSONPath;
-	    rml:iterator "$.Activity.[*]"
+	    rml:iterator "$.Activity[*]"
     ];
 
     rr:subjectMap [

@@ -19,6 +19,26 @@
           "Id": "www.semanticweb.org/ontologies/activity#activity/low/00002"
         }
       ]
+    },
+    {
+      "Id": "xmlns.com/foaf/0.1/User/u002",
+      "Role": {
+        "Type": "User",
+        "Value": "www.semanticweb.org/ontologies/domains/alzheimer#"
+      },
+      "Name": "Cristian",
+      "Last-name": "Narvaez",
+      "Device": {
+        "Id": "www.w3.org/ns/sosa/iphone7/35-207306-844818-0"
+      },
+      "Activity": [
+        {
+          "Id": "www.semanticweb.org/ontologies/activity#activity/low/00005"
+        },
+        {
+          "Id": "www.semanticweb.org/ontologies/activity#activity/low/000010"
+        }
+      ]
     }
   ],
   "Multimedia": [

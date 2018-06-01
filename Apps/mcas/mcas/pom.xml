@@ -9,7 +9,6 @@
 	<name>Multimedia Context Awareness System</name>
 
 	<properties>
-
 		<swrlapi.version>2.0.5</swrlapi.version>
 		<swrlapi.drools.version>2.0.5</swrlapi.drools.version>
 		<owlapi.version>4.2.8</owlapi.version>

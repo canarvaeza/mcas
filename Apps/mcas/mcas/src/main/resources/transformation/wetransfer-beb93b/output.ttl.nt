@@ -1,0 +1,14 @@
+<http://xmlns.com/foaf/0.1/User/u001> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person>.
+<http://xmlns.com/foaf/0.1/User/u001> <http://xmlns.com/foaf/0.1/firstname> "Cristian".
+<http://xmlns.com/foaf/0.1/User/u001> <http://xmlns.com/foaf/0.1/lastname> "Narvaez".
+<http://xmlns.com/foaf/0.1/User/u001> <http://www.semanticweb.org/ontologies/mcontext#hasRol> <http://www.semanticweb.org/ontologies/domains/alzheimer#>.
+<http://xmlns.com/foaf/0.1/User/u001> <http://www.semanticweb.org/ontologies/mcontext#hasRol> <http://www.semanticweb.org/ontologies/domains/alzheimer#>.
+<http://xmlns.com/foaf/0.1/User/u001> <http://www.semanticweb.org/ontologies/mcontext#isInvolvedIn> <http://www.semanticweb.org/ontologies/activity#activity/low/00001>.
+<http://xmlns.com/foaf/0.1/User/u001> <http://www.semanticweb.org/ontologies/mcontext#isInvolvedIn> <http://www.semanticweb.org/ontologies/activity#activity/low/00002>.
+<http://xmlns.com/foaf/0.1/User/u002> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person>.
+<http://xmlns.com/foaf/0.1/User/u002> <http://xmlns.com/foaf/0.1/firstname> "Cristian".
+<http://xmlns.com/foaf/0.1/User/u002> <http://xmlns.com/foaf/0.1/lastname> "Narvaez".
+<http://xmlns.com/foaf/0.1/User/u002> <http://www.semanticweb.org/ontologies/mcontext#hasRol> <http://www.semanticweb.org/ontologies/domains/alzheimer#>.
+<http://xmlns.com/foaf/0.1/User/u002> <http://www.semanticweb.org/ontologies/mcontext#hasRol> <http://www.semanticweb.org/ontologies/domains/alzheimer#>.
+<http://xmlns.com/foaf/0.1/User/u002> <http://www.semanticweb.org/ontologies/mcontext#isInvolvedIn> <http://www.semanticweb.org/ontologies/activity#activity/low/00003>.
+<http://xmlns.com/foaf/0.1/User/u002> <http://www.semanticweb.org/ontologies/mcontext#isInvolvedIn> <http://www.semanticweb.org/ontologies/activity#activity/low/00004>.

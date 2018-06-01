@@ -1,0 +1,706 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://purl.org/m-context/ontologies/multimedia#"
+     xml:base="http://purl.org/m-context/ontologies/multimedia"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://purl.org/m-context/ontologies/multimedia"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#definition -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#contain -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/multimedia#contain">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/multimedia#ComposedResource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#containImage -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/multimedia#containImage">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/multimedia#contain"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/ma-ont#Image"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#containVideo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/multimedia#containVideo">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/multimedia#contain"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#hasMultimediaDescriptor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/multimedia#hasMultimediaDescriptor">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/multimedia#isMultimediaDescriptor"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/multimedia#DescriptorMultimedia"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#isAnnotatedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/multimedia#isAnnotatedBy">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#isAudioFragmentOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/multimedia#isAudioFragmentOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/multimedia#isMediaFragmentOf"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/ma-ont#AudioTrack"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/multimedia#AudioFormat"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#isMediaFragmentOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/multimedia#isMediaFragmentOf">
+        <rdfs:range rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#isMultimediaDescriptor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/multimedia#isMultimediaDescriptor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/multimedia#DescriptorMultimedia"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#isVideoFragmentOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/multimedia#isVideoFragmentOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/multimedia#isMediaFragmentOf"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/ma-ont#VideoTrack"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/multimedia#VideoFormat"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/time#hasDuration -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2006/time#hasDuration">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2006/time#hasTemporalDuration"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2006/time#Duration"/>
+        <rdfs:comment xml:lang="en">Duration of a temporal entity, expressed as a scaled value or nominal value</rdfs:comment>
+        <rdfs:label xml:lang="en">has duration</rdfs:label>
+        <skos:definition xml:lang="en">Duration of a temporal entity, event or activity, or thing, expressed as a scaled value</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/time#hasTemporalDuration -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2006/time#hasTemporalDuration"/>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#createdIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/ma-ont#createdIn">
+        <owl:inverseOf rdf:resource="http://www.w3.org/ns/ma-ont#isCreationLocationOf"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A subproperty of &apos;hasRelatedLocation&quot; used to specify where material shooting took place.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#hasCreator -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/ma-ont#hasCreator"/>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#hasFormat -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/ma-ont#hasFormat">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Corresponds to &apos;format&apos; in the Ontology for Media Resources.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#hasFragment -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/ma-ont#hasFragment">
+        <owl:inverseOf rdf:resource="http://www.w3.org/ns/ma-ont#isFragmentOf"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/ma-ont#MediaFragment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#hasRating -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/ma-ont#hasRating">
+        <owl:inverseOf rdf:resource="http://www.w3.org/ns/ma-ont#isRatingOf"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/ma-ont#Rating"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Corresponds to &apos;rating&apos; in the Ontology for Media Resources.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#hasRatingSystem -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/ma-ont#hasRatingSystem">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/ma-ont#Rating"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#isCreationLocationOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/ma-ont#isCreationLocationOf"/>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#isFragmentOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/ma-ont#isFragmentOf"/>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#isLocationRelatedTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/ma-ont#isLocationRelatedTo"/>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#isProvidedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/ma-ont#isProvidedBy">
+        <owl:inverseOf rdf:resource="http://www.w3.org/ns/ma-ont#provides"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/ma-ont#Rating"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#isRatingOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/ma-ont#isRatingOf"/>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#isRelatedTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/ma-ont#isRelatedTo">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#provides -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/ma-ont#provides"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#creationDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/multimedia#creationDate">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label>multimedia:creationDate</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#descriptionText -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/multimedia#descriptionText">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/multimedia#TextualDescriptor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>multimedia:descriptionText</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#alternativeTitle -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/ma-ont#alternativeTitle">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/ma-ont#title"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Corresponds to &apos;title.title&apos; in the Ontology for Media Resources with a &apos;title.type&apos; meaning &quot;alternative&quot;.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#averageBitRate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/ma-ont#averageBitRate">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/ns/ma-ont#MediaResource"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="http://www.w3.org/ns/ma-ont#Image"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Corresponds to &apos;averageBitRate&apos; in the Ontology for Media Resources, expressed in kilobits/second.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#description -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/ma-ont#description">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Corresponds to &apos;description&apos; in the Ontology for Media Resources. This can be specialised by using sub-properties e.g. &apos;summary&apos; or &apos;script&apos;.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#frameHeight -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/ma-ont#frameHeight">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Corresponds to &apos;frameSize.height&apos; in the Ontology for Media Resources, measured in frameSizeUnit.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#frameRate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/ma-ont#frameRate">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Corresponds to &apos;frameRate&apos; in the Ontology for Media Resources, in frame per second.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#frameSizeUnit -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/ma-ont#frameSizeUnit">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Corresponds to &apos;frameSize.unit&apos; in the Ontology for Media Resources.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#frameWidth -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/ma-ont#frameWidth">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Corresponds to &apos;frameSize.width&apos; in the Ontology for Media Resources measured in frameSizeUnit.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#mainOriginalTitle -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/ma-ont#mainOriginalTitle">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/ma-ont#title"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Corresponds to &apos;title.title&apos; in the Ontology for Media Resources with a &apos;title.type&apos; meaning &quot;original&quot;.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#ratingScaleMax -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/ma-ont#ratingScaleMax">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/ma-ont#Rating"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Corresponds to &apos;rating.max&apos; in the Ontology for Media Resources.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#ratingScaleMin -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/ma-ont#ratingScaleMin">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/ma-ont#Rating"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Corresponds to &apos;rating.min&apos; in the Ontology for Media Resources.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#ratingValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/ma-ont#ratingValue">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/ma-ont#Rating"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Corresponds to &apos;rating.value&apos; in the Ontology for Media Resources.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#samplingRate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/ma-ont#samplingRate">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Corresponds to &apos;samplingRate&apos; in the Ontology for Media Resources, in samples per second.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#title -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/ma-ont#title">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Corresponds to &apos;title.title&apos; in the Ontology for Media Resources. Subproperties can be used to distinguish different values of &apos;title.type&apos;.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#AudioDescriptor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/multimedia#AudioDescriptor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/multimedia#DescriptorMultimedia"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#AudioFormat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/multimedia#AudioFormat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/multimedia#FormatMultimedia"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#AudioResource -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/multimedia#AudioResource">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2006/time#hasDuration"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2006/time#Duration"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/ontologies/multimedia#TextualAssetResource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#ComposedResource -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/multimedia#ComposedResource">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#DescriptorMultimedia -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/multimedia#DescriptorMultimedia">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#FormatMultimedia -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/multimedia#FormatMultimedia">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:comment>Ejemplo: JPEG, MP4, txt</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#ImageFormat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/multimedia#ImageFormat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/multimedia#FormatMultimedia"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#Multimedia -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#TextFormat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/multimedia#TextFormat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/multimedia#FormatMultimedia"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#TextualAssetResource -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/multimedia#TextualAssetResource">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/ns/ma-ont#Image"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#TextualDescriptor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/multimedia#TextualDescriptor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/multimedia#DescriptorMultimedia"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#VideoFormat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/multimedia#VideoFormat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/multimedia#FormatMultimedia"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#VideoResource -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/multimedia#VideoResource">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2006/time#hasDuration"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2006/time#Duration"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#VisualDescriptor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/multimedia#VisualDescriptor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/multimedia#DescriptorMultimedia"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2006/time#Duration -->
+
+    <owl:Class rdf:about="http://www.w3.org/2006/time#Duration"/>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#AudioTrack -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/ma-ont#AudioTrack">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ma-ont#Track"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/ns/ma-ont#DataTrack"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/ns/ma-ont#VideoTrack"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A specialisation of Track for Audio to provide a link to specific data properties such as sampleRate, etc. Specialisation is defined through object properties.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#DataTrack -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/ma-ont#DataTrack">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ma-ont#Track"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/ns/ma-ont#VideoTrack"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ancillary data track e.g. captioning  in addition to video and audio tracks. Specialisation is made through the use of appropriate object properties.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#Image -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/ma-ont#Image">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A still image / thumbnail / key frame related to the media resource or being the media resource itself.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#MediaFragment -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/ma-ont#MediaFragment">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A media fragment (spatial, temporal, track...) composing a media resource. In other ontologies fragment is sometimes referred to as a &apos;part&apos; or &apos;segment&apos;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#MediaResource -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/ma-ont#MediaResource">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/ns/ma-ont#Rating"/>
+        <owl:disjointWith rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An image or an audiovisual media resource, which can be composed of one or more fragment / track.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#Rating -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/ma-ont#Rating">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <owl:disjointWith rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Information about the rating given to a media resource.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#Track -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/ma-ont#Track">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ma-ont#MediaFragment"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A specialisation of MediaFragment for audiovisual content.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#VideoTrack -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/ma-ont#VideoTrack">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ma-ont#Track"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A specialisation of Track for Video to provide a link to specific data properties such as frameRate, etc. Signing is another possible example of video track. Specialisation is defined through object properties.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#MP3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/multimedia#MP3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/multimedia#AudioFormat"/>
+        <rdfs:label>multimedia:mp3</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#PNG -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/multimedia#PNG">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/multimedia#ImageFormat"/>
+        <rdfs:label>multimedia:png</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/multimedia#TXT -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/multimedia#TXT">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/multimedia#TextFormat"/>
+        <rdfs:label>multimedia:txt</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/multimedia#AudioDescriptor"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/multimedia#TextualDescriptor"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/multimedia#VisualDescriptor"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/multimedia#AudioFormat"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/multimedia#ImageFormat"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/multimedia#TextFormat"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/multimedia#VideoFormat"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
