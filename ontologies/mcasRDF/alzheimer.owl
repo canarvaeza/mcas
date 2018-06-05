@@ -37,89 +37,6 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
-    // Annotation properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/timehasBeginningTime -->
-
-    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/ontologies/timehasBeginningTime"/>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/timehasEndingTime -->
-
-    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/ontologies/timehasEndingTime"/>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/mcontext#describe -->
-
-    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/ontologies/mcontext#describe"/>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/multimedia#creationDate -->
-
-    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/ontologies/multimedia#creationDate"/>
-    
-
-
-    <!-- http://www.w3.org/ns/ma-ont#hasFormat -->
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/ma-ont#hasFormat"/>
-    
-
-
-    <!-- http://www.w3.org/ns/sosa/hasSimpleResult -->
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/sosa/hasSimpleResult"/>
-    
-
-
-    <!-- http://www.w3.org/ns/sosa/hosts -->
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/sosa/hosts"/>
-    
-
-
-    <!-- http://www.w3.org/ns/sosa/madeBySensor -->
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/sosa/madeBySensor"/>
-    
-
-
-    <!-- http://www.w3.org/ns/sosa/observes -->
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/sosa/observes"/>
-    
-
-
-    <!-- http://www.w3.org/ns/sosa/resultTime -->
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/sosa/resultTime"/>
-    
-
-
-    <!-- http://xmlns.com/foaf/0.1/firstname -->
-
-    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/firstname"/>
-    
-
-
-    <!-- http://xmlns.com/foaf/0.1/lastname -->
-
-    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/lastname"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
     // Object Properties
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -131,36 +48,6 @@
     <!-- http://www.geonames.org/ontology#locatedIn -->
 
     <owl:ObjectProperty rdf:about="http://www.geonames.org/ontology#locatedIn"/>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/activity#hasActivity -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/activity#hasActivity"/>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/activity#mca:hasActivity -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/activity#mca:hasActivity"/>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/mcontext#hasRol -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/mcontext#hasRol"/>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/mcontext#hasTemporalEntity -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/mcontext#hasTemporalEntity"/>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/mcontext#isInvolvedIn -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/mcontext#isInvolvedIn"/>
     
 
 
@@ -209,7 +96,7 @@
     <!-- http://purl.org/m-context/ontologies/domains/alzheimer#FamiliarRole -->
 
     <owl:Class rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#FamiliarRole">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/role#Role"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/m-context/ontologies/role#Role"/>
     </owl:Class>
     
 
@@ -217,7 +104,7 @@
     <!-- http://purl.org/m-context/ontologies/domains/alzheimer#MedicalRole -->
 
     <owl:Class rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#MedicalRole">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/role#Role"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/m-context/ontologies/role#Role"/>
     </owl:Class>
     
 
@@ -233,7 +120,7 @@
     <!-- http://purl.org/m-context/ontologies/domains/alzheimer#SocialRole -->
 
     <owl:Class rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#SocialRole">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/role#Role"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/m-context/ontologies/role#Role"/>
     </owl:Class>
     
 
@@ -254,18 +141,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/location#ClosedLocation -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/location#ClosedLocation"/>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/role#Role -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/role#Role"/>
-    
-
-
     <!-- http://xmlns.com/foaf/0.1/Person -->
 
     <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person"/>
@@ -283,19 +158,11 @@
     
 
 
-    <!-- http://purl.org/m-context/ontologies/domains/alzheimer#Activity00001 -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#Activity00001">
-        <rdf:type rdf:resource="http://purl.org/m-context/ontologies/domains/alzheimer#Eat"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://purl.org/m-context/ontologies/domains/alzheimer#CareGiver -->
 
     <owl:NamedIndividual rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#CareGiver">
         <rdf:type rdf:resource="http://purl.org/m-context/ontologies/domains/alzheimer#MedicalRole"/>
-        <rdfs:label>cad:CareGiver</rdfs:label>
+        <rdfs:label>alz_role:CareGiver</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -304,7 +171,7 @@
 
     <owl:NamedIndividual rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#Father">
         <rdf:type rdf:resource="http://purl.org/m-context/ontologies/domains/alzheimer#FamiliarRole"/>
-        <rdfs:label>cad:Father</rdfs:label>
+        <rdfs:label>alz_role:Father</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -313,7 +180,7 @@
 
     <owl:NamedIndividual rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#Friend">
         <rdf:type rdf:resource="http://purl.org/m-context/ontologies/domains/alzheimer#SocialRole"/>
-        <rdfs:label>cad:Friend</rdfs:label>
+        <rdfs:label>alz_role:Friend</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -322,7 +189,7 @@
 
     <owl:NamedIndividual rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#OcupationalTherapist">
         <rdf:type rdf:resource="http://purl.org/m-context/ontologies/domains/alzheimer#MedicalRole"/>
-        <rdfs:label>cad:OcupationalTherapist</rdfs:label>
+        <rdfs:label>alz_role:OcupationalTherapist</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -331,7 +198,7 @@
 
     <owl:NamedIndividual rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#Son">
         <rdf:type rdf:resource="http://purl.org/m-context/ontologies/domains/alzheimer#FamiliarRole"/>
-        <rdfs:label>cad:Son</rdfs:label>
+        <rdfs:label>alz_role:Son</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -339,73 +206,7 @@
     <!-- http://purl.org/m-context/ontologies/domains/alzheimer#User -->
 
     <owl:NamedIndividual rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#User">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/role#Role"/>
-        <rdfs:label>cad:User</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/m-context/ontologies/domains/alzheimer#u00001 -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#u00001">
-        <rdf:type rdf:resource="http://purl.org/m-context/ontologies/person#PersonMCAS"/>
-        <mcontext1:hasRol rdf:resource="http://purl.org/m-context/ontologies/domains/alzheimer#User"/>
-        <mcontext1:isInvolvedIn rdf:resource="http://purl.org/m-context/ontologies/domains/alzheimer#Activity00001"/>
-        <foaf:firstName>Cristian</foaf:firstName>
-        <foaf:lastName>Narvaez</foaf:lastName>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/m-context/ontologies/domains/alzheimer#u00002 -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#u00002">
-        <rdf:type rdf:resource="http://purl.org/m-context/ontologies/person#PersonMCAS"/>
-        <mcontext1:hasRol rdf:resource="http://purl.org/m-context/ontologies/domains/alzheimer#Friend"/>
-        <mcontext1:isInvolvedIn rdf:resource="http://purl.org/m-context/ontologies/domains/alzheimer#Activity00001"/>
-        <foaf:firstName>Diana</foaf:firstName>
-        <foaf:lastName>Moreno</foaf:lastName>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/activity#activity/low/00001 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/activity#activity/low/00001">
-        <rdf:type rdf:resource="http://purl.org/m-context/ontologies/domains/alzheimer#Eat"/>
-        <ontologies:timehasBeginningTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-06T12:36:12Z</ontologies:timehasBeginningTime>
-        <ontologies:timehasEndingTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-06T12:38:12Z</ontologies:timehasEndingTime>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/activity#activity/low/00002 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/activity#activity/low/00002">
-        <rdf:type rdf:resource="http://purl.org/m-context/ontologies/domains/alzheimer#Sit"/>
-        <ontologies:timehasBeginningTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-06T12:36:12Z</ontologies:timehasBeginningTime>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/location#Location/0001 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/location#Location/0001">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/location#ClosedLocation"/>
-        <wgs84_pos:lat>40.414</wgs84_pos:lat>
-        <wgs84_pos:long>-3.699</wgs84_pos:long>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/multimedia#multimedia/0001 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/multimedia#multimedia/0001">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/multimedia#VideoFormat"/>
-        <ontology:locatedIn rdf:resource="http://www.semanticweb.org/ontologies/location#Location/0001"/>
-        <mcontext1:describe rdf:resource="http://www.semanticweb.org/ontologies/activity#activity/low/00001"/>
-        <multimedia2:creationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-06-06T12:36:12Z</multimedia2:creationDate>
-        <ma-ont:hasFormat rdf:resource="http://AVI"/>
+        <rdfs:label>alz_role:User</rdfs:label>
     </owl:NamedIndividual>
 </rdf:RDF>
 

@@ -39,84 +39,84 @@
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/multimedia#contain -->
+    <!-- http://purl.org/m-context/ontologies/multimedia#contain -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/multimedia#contain">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/multimedia#ComposedResource"/>
+    <owl:ObjectProperty rdf:about="http://purl.org/m-context/ontologies/multimedia#contain">
+        <rdfs:domain rdf:resource="http://purl.org/m-context/ontologies/multimedia#ComposedResource"/>
         <rdfs:range rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/multimedia#containImage -->
+    <!-- http://purl.org/m-context/ontologies/multimedia#containImage -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/multimedia#containImage">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/multimedia#contain"/>
+    <owl:ObjectProperty rdf:about="http://purl.org/m-context/ontologies/multimedia#containImage">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/m-context/ontologies/multimedia#contain"/>
         <rdfs:range rdf:resource="http://www.w3.org/ns/ma-ont#Image"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/multimedia#containVideo -->
+    <!-- http://purl.org/m-context/ontologies/multimedia#containVideo -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/multimedia#containVideo">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/multimedia#contain"/>
+    <owl:ObjectProperty rdf:about="http://purl.org/m-context/ontologies/multimedia#containVideo">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/m-context/ontologies/multimedia#contain"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/multimedia#hasMultimediaDescriptor -->
+    <!-- http://purl.org/m-context/ontologies/multimedia#hasMultimediaDescriptor -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/multimedia#hasMultimediaDescriptor">
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/multimedia#isMultimediaDescriptor"/>
+    <owl:ObjectProperty rdf:about="http://purl.org/m-context/ontologies/multimedia#hasMultimediaDescriptor">
+        <owl:inverseOf rdf:resource="http://purl.org/m-context/ontologies/multimedia#isMultimediaDescriptor"/>
         <rdfs:domain rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/multimedia#DescriptorMultimedia"/>
+        <rdfs:range rdf:resource="http://purl.org/m-context/ontologies/multimedia#DescriptorMultimedia"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/multimedia#isAnnotatedBy -->
+    <!-- http://purl.org/m-context/ontologies/multimedia#isAnnotatedBy -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/multimedia#isAnnotatedBy">
+    <owl:ObjectProperty rdf:about="http://purl.org/m-context/ontologies/multimedia#isAnnotatedBy">
         <rdfs:domain rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
         <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/multimedia#isAudioFragmentOf -->
+    <!-- http://purl.org/m-context/ontologies/multimedia#isAudioFragmentOf -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/multimedia#isAudioFragmentOf">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/multimedia#isMediaFragmentOf"/>
+    <owl:ObjectProperty rdf:about="http://purl.org/m-context/ontologies/multimedia#isAudioFragmentOf">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/m-context/ontologies/multimedia#isMediaFragmentOf"/>
         <rdfs:domain rdf:resource="http://www.w3.org/ns/ma-ont#AudioTrack"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/multimedia#AudioFormat"/>
+        <rdfs:range rdf:resource="http://purl.org/m-context/ontologies/multimedia#AudioFormat"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/multimedia#isMediaFragmentOf -->
+    <!-- http://purl.org/m-context/ontologies/multimedia#isMediaFragmentOf -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/multimedia#isMediaFragmentOf">
+    <owl:ObjectProperty rdf:about="http://purl.org/m-context/ontologies/multimedia#isMediaFragmentOf">
         <rdfs:range rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/multimedia#isMultimediaDescriptor -->
+    <!-- http://purl.org/m-context/ontologies/multimedia#isMultimediaDescriptor -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/multimedia#isMultimediaDescriptor">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/multimedia#DescriptorMultimedia"/>
+    <owl:ObjectProperty rdf:about="http://purl.org/m-context/ontologies/multimedia#isMultimediaDescriptor">
+        <rdfs:domain rdf:resource="http://purl.org/m-context/ontologies/multimedia#DescriptorMultimedia"/>
         <rdfs:range rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/multimedia#isVideoFragmentOf -->
+    <!-- http://purl.org/m-context/ontologies/multimedia#isVideoFragmentOf -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/multimedia#isVideoFragmentOf">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/multimedia#isMediaFragmentOf"/>
+    <owl:ObjectProperty rdf:about="http://purl.org/m-context/ontologies/multimedia#isVideoFragmentOf">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/m-context/ontologies/multimedia#isMediaFragmentOf"/>
         <rdfs:domain rdf:resource="http://www.w3.org/ns/ma-ont#VideoTrack"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/multimedia#VideoFormat"/>
+        <rdfs:range rdf:resource="http://purl.org/m-context/ontologies/multimedia#VideoFormat"/>
     </owl:ObjectProperty>
     
 
@@ -158,7 +158,6 @@
 
     <owl:ObjectProperty rdf:about="http://www.w3.org/ns/ma-ont#hasFormat">
         <rdfs:domain rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Corresponds to &apos;format&apos; in the Ontology for Media Resources.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -252,9 +251,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/multimedia#creationDate -->
+    <!-- http://purl.org/m-context/ontologies/multimedia#creationDate -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/multimedia#creationDate">
+    <owl:DatatypeProperty rdf:about="http://purl.org/m-context/ontologies/multimedia#creationDate">
         <rdfs:domain rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:label>multimedia:creationDate</rdfs:label>
@@ -262,10 +261,10 @@
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/multimedia#descriptionText -->
+    <!-- http://purl.org/m-context/ontologies/multimedia#descriptionText -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/multimedia#descriptionText">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/multimedia#TextualDescriptor"/>
+    <owl:DatatypeProperty rdf:about="http://purl.org/m-context/ontologies/multimedia#descriptionText">
+        <rdfs:domain rdf:resource="http://purl.org/m-context/ontologies/multimedia#TextualDescriptor"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:label>multimedia:descriptionText</rdfs:label>
     </owl:DatatypeProperty>
@@ -420,25 +419,25 @@
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/multimedia#AudioDescriptor -->
+    <!-- http://purl.org/m-context/ontologies/multimedia#AudioDescriptor -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/multimedia#AudioDescriptor">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/multimedia#DescriptorMultimedia"/>
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/multimedia#AudioDescriptor">
+        <rdfs:subClassOf rdf:resource="http://purl.org/m-context/ontologies/multimedia#DescriptorMultimedia"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/multimedia#AudioFormat -->
+    <!-- http://purl.org/m-context/ontologies/multimedia#AudioFormat -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/multimedia#AudioFormat">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/multimedia#FormatMultimedia"/>
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/multimedia#AudioFormat">
+        <rdfs:subClassOf rdf:resource="http://purl.org/m-context/ontologies/multimedia#FormatMultimedia"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/multimedia#AudioResource -->
+    <!-- http://purl.org/m-context/ontologies/multimedia#AudioResource -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/multimedia#AudioResource">
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/multimedia#AudioResource">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -446,86 +445,86 @@
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2006/time#Duration"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/ontologies/multimedia#TextualAssetResource"/>
+        <owl:disjointWith rdf:resource="http://purl.org/m-context/ontologies/multimedia#TextualAssetResource"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/multimedia#ComposedResource -->
+    <!-- http://purl.org/m-context/ontologies/multimedia#ComposedResource -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/multimedia#ComposedResource">
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/multimedia#ComposedResource">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/multimedia#DescriptorMultimedia -->
+    <!-- http://purl.org/m-context/ontologies/multimedia#DescriptorMultimedia -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/multimedia#DescriptorMultimedia">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/multimedia#DescriptorMultimedia">
+        <rdfs:subClassOf rdf:resource="http://purl.org/m-context/ontologies/multimedia#Multimedia"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/multimedia#FormatMultimedia -->
+    <!-- http://purl.org/m-context/ontologies/multimedia#FormatMultimedia -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/multimedia#FormatMultimedia">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/multimedia#FormatMultimedia">
+        <rdfs:subClassOf rdf:resource="http://purl.org/m-context/ontologies/multimedia#Multimedia"/>
         <rdfs:comment>Ejemplo: JPEG, MP4, txt</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/multimedia#ImageFormat -->
+    <!-- http://purl.org/m-context/ontologies/multimedia#ImageFormat -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/multimedia#ImageFormat">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/multimedia#FormatMultimedia"/>
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/multimedia#ImageFormat">
+        <rdfs:subClassOf rdf:resource="http://purl.org/m-context/ontologies/multimedia#FormatMultimedia"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/multimedia#Multimedia -->
+    <!-- http://purl.org/m-context/ontologies/multimedia#Multimedia -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/multimedia#Multimedia"/>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/multimedia#TextFormat -->
+    <!-- http://purl.org/m-context/ontologies/multimedia#TextFormat -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/multimedia#TextFormat">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/multimedia#FormatMultimedia"/>
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/multimedia#TextFormat">
+        <rdfs:subClassOf rdf:resource="http://purl.org/m-context/ontologies/multimedia#FormatMultimedia"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/multimedia#TextualAssetResource -->
+    <!-- http://purl.org/m-context/ontologies/multimedia#TextualAssetResource -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/multimedia#TextualAssetResource">
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/multimedia#TextualAssetResource">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
         <owl:disjointWith rdf:resource="http://www.w3.org/ns/ma-ont#Image"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/multimedia#TextualDescriptor -->
+    <!-- http://purl.org/m-context/ontologies/multimedia#TextualDescriptor -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/multimedia#TextualDescriptor">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/multimedia#DescriptorMultimedia"/>
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/multimedia#TextualDescriptor">
+        <rdfs:subClassOf rdf:resource="http://purl.org/m-context/ontologies/multimedia#DescriptorMultimedia"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/multimedia#VideoFormat -->
+    <!-- http://purl.org/m-context/ontologies/multimedia#VideoFormat -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/multimedia#VideoFormat">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/multimedia#FormatMultimedia"/>
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/multimedia#VideoFormat">
+        <rdfs:subClassOf rdf:resource="http://purl.org/m-context/ontologies/multimedia#FormatMultimedia"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/multimedia#VideoResource -->
+    <!-- http://purl.org/m-context/ontologies/multimedia#VideoResource -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/multimedia#VideoResource">
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/multimedia#VideoResource">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ma-ont#MediaResource"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -537,10 +536,10 @@
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/multimedia#VisualDescriptor -->
+    <!-- http://purl.org/m-context/ontologies/multimedia#VisualDescriptor -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/multimedia#VisualDescriptor">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/multimedia#DescriptorMultimedia"/>
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/multimedia#VisualDescriptor">
+        <rdfs:subClassOf rdf:resource="http://purl.org/m-context/ontologies/multimedia#DescriptorMultimedia"/>
     </owl:Class>
     
 
@@ -593,7 +592,7 @@
     <!-- http://www.w3.org/ns/ma-ont#MediaResource -->
 
     <owl:Class rdf:about="http://www.w3.org/ns/ma-ont#MediaResource">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/m-context/ontologies/multimedia#Multimedia"/>
         <owl:disjointWith rdf:resource="http://www.w3.org/ns/ma-ont#Rating"/>
         <owl:disjointWith rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An image or an audiovisual media resource, which can be composed of one or more fragment / track.</rdfs:comment>
@@ -604,7 +603,7 @@
     <!-- http://www.w3.org/ns/ma-ont#Rating -->
 
     <owl:Class rdf:about="http://www.w3.org/ns/ma-ont#Rating">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/multimedia#Multimedia"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/m-context/ontologies/multimedia#Multimedia"/>
         <owl:disjointWith rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Information about the rating given to a media resource.</rdfs:comment>
     </owl:Class>
@@ -646,29 +645,38 @@
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/multimedia#MP3 -->
+    <!-- http://purl.org/m-context/ontologies/multimedia#MP3 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/multimedia#MP3">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/multimedia#AudioFormat"/>
+    <owl:NamedIndividual rdf:about="http://purl.org/m-context/ontologies/multimedia#MP3">
+        <rdf:type rdf:resource="http://purl.org/m-context/ontologies/multimedia#AudioFormat"/>
         <rdfs:label>multimedia:mp3</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/multimedia#PNG -->
+    <!-- http://purl.org/m-context/ontologies/multimedia#PNG -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/multimedia#PNG">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/multimedia#ImageFormat"/>
+    <owl:NamedIndividual rdf:about="http://purl.org/m-context/ontologies/multimedia#PNG">
+        <rdf:type rdf:resource="http://purl.org/m-context/ontologies/multimedia#ImageFormat"/>
         <rdfs:label>multimedia:png</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/multimedia#TXT -->
+    <!-- http://purl.org/m-context/ontologies/multimedia#TXT -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/multimedia#TXT">
-        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/multimedia#TextFormat"/>
+    <owl:NamedIndividual rdf:about="http://purl.org/m-context/ontologies/multimedia#TXT">
+        <rdf:type rdf:resource="http://purl.org/m-context/ontologies/multimedia#TextFormat"/>
         <rdfs:label>multimedia:txt</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/m-context/ontologies/multimedia#avi -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/m-context/ontologies/multimedia#avi">
+        <rdf:type rdf:resource="http://purl.org/m-context/ontologies/multimedia#VideoFormat"/>
+        <rdfs:label>multimedia:avi</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -684,18 +692,18 @@
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/multimedia#AudioDescriptor"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/multimedia#TextualDescriptor"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/multimedia#VisualDescriptor"/>
+            <rdf:Description rdf:about="http://purl.org/m-context/ontologies/multimedia#AudioDescriptor"/>
+            <rdf:Description rdf:about="http://purl.org/m-context/ontologies/multimedia#TextualDescriptor"/>
+            <rdf:Description rdf:about="http://purl.org/m-context/ontologies/multimedia#VisualDescriptor"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/multimedia#AudioFormat"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/multimedia#ImageFormat"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/multimedia#TextFormat"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/multimedia#VideoFormat"/>
+            <rdf:Description rdf:about="http://purl.org/m-context/ontologies/multimedia#AudioFormat"/>
+            <rdf:Description rdf:about="http://purl.org/m-context/ontologies/multimedia#ImageFormat"/>
+            <rdf:Description rdf:about="http://purl.org/m-context/ontologies/multimedia#TextFormat"/>
+            <rdf:Description rdf:about="http://purl.org/m-context/ontologies/multimedia#VideoFormat"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>
