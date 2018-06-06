@@ -48,7 +48,9 @@ public class MainController {
 	
 	public static void main(String[] args) throws Exception {
 
-		String rdfFlux = ToRDF.directData2RDF(root + "lib/", root + "transformation/", "mcas-model.rml");
+//		String rdfFlux = ToRDF.directData2RDF(root + "lib/", root + "transformation/", "mcas-model.rml");
+
+		String rdfFlux = ToRDF.data2RDF(root + "transformation/", "mcas-model.rml.ttl", "salida.ttl");
 		
 		System.out.println(rdfFlux);
 

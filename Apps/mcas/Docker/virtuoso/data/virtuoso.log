@@ -325,3 +325,41 @@
 20:20:04 Checkpoint finished, log reused
 21:20:06 Checkpoint started
 21:20:06 Checkpoint finished, log reused
+22:04:33 Server received signal 15
+22:04:33 Initiating quick shutdown
+22:04:33 Server shutdown complete
+
+		Tue Jun 05 2018
+18:40:44 OpenLink Virtuoso Universal Server
+18:40:44 Version 07.20.3217-pthreads for Linux as of Jan 26 2018
+18:40:44 uses parts of OpenSSL, PCRE, Html Tidy
+18:40:44 Database version 3126
+18:40:45 SQL Optimizer enabled (max 1000 layouts)
+18:40:51 Compiler unit is timed at 0.001546 msec
+18:41:06 Roll forward started
+18:41:06     91 transactions, 12068 bytes replayed (100 %)
+18:41:06 Roll forward complete
+18:41:08 Checkpoint started
+18:41:08 Checkpoint finished, log reused
+18:41:08 HTTP/WebDAV server online at 8890
+18:41:08 Server online at 1111 (pid 1)
+19:41:09 Checkpoint started
+19:41:09 Checkpoint finished, log reused
+20:41:11 Checkpoint started
+20:41:11 Checkpoint finished, log reused
+
+		Wed Jun 06 2018
+15:22:54 Checkpoint started
+15:23:14 Checkpoint finished, log reused
+16:23:15 Checkpoint started
+16:23:15 Checkpoint finished, log reused
+17:23:18 Checkpoint started
+17:23:19 Checkpoint finished, log reused
+18:23:21 Checkpoint started
+18:23:21 Checkpoint finished, log reused
+19:23:21 Checkpoint started
+19:23:21 Checkpoint finished, log reused
+20:23:23 Checkpoint started
+20:23:23 Checkpoint finished, log reused
+21:23:24 Checkpoint started
+21:23:24 Checkpoint finished, log reused

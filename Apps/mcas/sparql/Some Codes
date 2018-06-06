@@ -1,0 +1,136 @@
+# RESOURCES
+# https://es.slideshare.net/LeeFeigenbaum/sparql-cheat-sheet
+# https://semanticarts.com/blog/sparql-change-instance-uris/
+# http://vos.openlinksw.com/owiki/wiki/VOS/VirtTipsAndTricksSPARQL11Insert
+# https://www.youtube.com/watch?v=FvGndkpa4K0
+
+
+CLEAR GRAPH <http://localhost:8890/pruebaMCAS>
+
+
+insert data
+{
+ graph <http://localhost:8890/pruebaMCAS>
+{
+<#book1> <#price> 42 
+}
+}
+
+insert data
+{
+ graph <http://localhost:8890/pruebaMCAS>
+{
+<http://localhost:8890/pruebaMCAS#u000001> a <http://purl.org/m-context/ontologies/person#PersonMCAS>;
+foaf:firstName "Cristian";
+foaf:lastName "Narvaez";
+foaf:gender "male";
+foaf:firstName "Cristian";
+foaf:age 24.
+}
+}
+
+
+http://purl.org/m-context/ontologies/person#PersonMCAS
+
+
+select *
+from <http://localhost:8890/pruebaMCAS>
+where {
+?s ?p ?o
+}
+
+# los que conocen a u1
+select *
+from <http://localhost:8890/pruebaMCAS>
+where {
+?s foaf:knows <http://localhost:8890/pruebaMCAS#u000001>;
+foaf:name ?n;
+foaf:knows ?ln.
+}
+
+
+select distinct ?s ?class
+
+from <http://localhost:8890/pruebaMCAS>
+
+where {
+?s mContext:isInvolvedIn ?p.
+  {
+    select ?p ?class where{
+      ?p a ?class.
+    }
+  }
+}
+
+
+# ------ to create the new instances
+
+
+prefix : <http://localhost:8890/pruebaMCAS#>
+select distinct ?p ?new ?new2
+
+where {
+?s mContext:isInvolvedIn ?p.
+  {
+    select ?p ?class ?new ?new2 where{
+      ?p a ?class.
+      FILTER (?class = alzheimer:Talk || ?class = alzheimer:Sit).
+      BIND (?p as ?new).
+      BIND (URI(CONCAT(?new, ?p)) as ?new2).
+      #BIND (STRAFTER(str(?p), str(:)) as ?new)
+      #BIND (URI(CONCAT(?new, ?p)) as ?new2)
+    }
+  }
+}
+
+# --- working sending the activities
+
+prefix : <http://localhost:8890/pruebaMCAS#>
+
+construct{
+ ?new a alzheimer:Speak.
+ ?user mContext:isInvolvedIn ?new.
+}
+
+where {
+
+BIND(<http://localhost:8890/pruebaMCAS#u00001> as ?user).
+
+?a mContext:isInvolvedIn ?p.
+?p a ?c.
+<http://localhost:8890/pruebaMCAS#act00001> a alzheimer:Talk.
+<http://localhost:8890/pruebaMCAS#act00002> a alzheimer:Sit.
+      BIND (URI(CONCAT(
+str(:), 
+STRAFTER(str(<http://localhost:8890/pruebaMCAS#act00001>), str(:))
+,"_", 
+STRAFTER(str(<http://localhost:8890/pruebaMCAS#act00002>), str(:))
+)) as ?new).
+FILTER(NOT EXISTS {?new a [] .})  
+}
+
+
+prefix : <http://localhost:8890/pruebaMCAS#>
+
+INSERT INTO <http://localhost:8890/pruebaMCAS> {
+ ?new a alzheimer:Speak.
+ ?user mContext:isInvolvedIn ?new.
+}
+
+where {
+
+BIND(<http://localhost:8890/pruebaMCAS#u00001> as ?user).
+
+?a mContext:isInvolvedIn ?p.
+?p a ?c.
+<http://localhost:8890/pruebaMCAS#act00001> a alzheimer:Talk.
+<http://localhost:8890/pruebaMCAS#act00002> a alzheimer:Sit.
+      BIND (URI(CONCAT(
+str(:), 
+STRAFTER(str(<http://localhost:8890/pruebaMCAS#act00001>), str(:))
+,"_", 
+STRAFTER(str(<http://localhost:8890/pruebaMCAS#act00002>), str(:))
+)) as ?new).
+FILTER(NOT EXISTS {?new a [] .})  
+}
+

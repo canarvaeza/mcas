@@ -17,6 +17,8 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javax.rmi.CORBA.UtilDelegate;
+
 /*
  * RML VERSION 3.0 
 
@@ -47,6 +49,7 @@ import org.eclipse.rdf4j.rio.UnsupportedRDFormatException;
 
 import be.ugent.rml.DataFetcher;
 import be.ugent.rml.Executor;
+import be.ugent.rml.Utils;
 import be.ugent.rml.records.RecordsFactory;
 import be.ugent.rml.store.RDF4JStore;
 import be.ugent.rml.store.QuadStore;
@@ -68,13 +71,13 @@ public class ToRDF {
 		InputStream mappingStream;
 		try {
 			mappingStream = new FileInputStream(mappingFile);
-			Model model = Rio.parse(mappingStream, "", RDFFormat.RDFXML);
+			Model model = Rio.parse(mappingStream, "", RDFFormat.TURTLE);
 			RDF4JStore rmlStore = new RDF4JStore(model);
 			
 			Executor executor = new Executor(rmlStore, new RecordsFactory(new DataFetcher(cwd, rmlStore)));
 			QuadStore result = executor.execute(triplesMaps, removeDuplicates);
 			
-			rdfFlux = result.toSortedString();
+			rdfFlux = Utils.toNTriples(result.getQuads("", "", ""));
 			
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
