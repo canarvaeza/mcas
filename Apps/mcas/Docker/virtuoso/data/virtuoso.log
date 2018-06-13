@@ -363,3 +363,128 @@
 20:23:23 Checkpoint finished, log reused
 21:23:24 Checkpoint started
 21:23:24 Checkpoint finished, log reused
+22:23:26 Checkpoint started
+22:23:26 Checkpoint finished, log reused
+22:36:03 Server received signal 15
+22:36:03 Initiating quick shutdown
+22:36:03 Server shutdown complete
+
+		Thu Jun 07 2018
+18:20:42 OpenLink Virtuoso Universal Server
+18:20:42 Version 07.20.3217-pthreads for Linux as of Jan 26 2018
+18:20:42 uses parts of OpenSSL, PCRE, Html Tidy
+18:20:42 Database version 3126
+18:20:43 SQL Optimizer enabled (max 1000 layouts)
+18:20:45 Compiler unit is timed at 0.000644 msec
+18:20:49 Roll forward started
+18:20:49     18 transactions, 1512 bytes replayed (100 %)
+18:20:49 Roll forward complete
+18:20:51 Checkpoint started
+18:20:51 Checkpoint finished, log reused
+18:20:51 HTTP/WebDAV server online at 8890
+18:20:51 Server online at 1111 (pid 1)
+19:20:53 Checkpoint started
+19:20:53 Checkpoint finished, log reused
+20:20:54 Checkpoint started
+20:20:54 Checkpoint finished, log reused
+21:20:56 Checkpoint started
+21:20:56 Checkpoint finished, log reused
+21:49:37 Server received signal 15
+21:49:37 Initiating quick shutdown
+21:49:37 Server shutdown complete
+
+		Tue Jun 12 2018
+22:06:52 OpenLink Virtuoso Universal Server
+22:06:52 Version 07.20.3217-pthreads for Linux as of Jan 26 2018
+22:06:52 uses parts of OpenSSL, PCRE, Html Tidy
+22:06:52 Database version 3126
+22:06:53 SQL Optimizer enabled (max 1000 layouts)
+22:06:54 Compiler unit is timed at 0.000723 msec
+22:07:00 Roll forward started
+22:07:00     48 transactions, 4166 bytes replayed (100 %)
+22:07:00 Roll forward complete
+22:07:02 Checkpoint started
+22:07:02 Checkpoint finished, log reused
+22:07:02 HTTP/WebDAV server online at 8890
+22:07:02 Server online at 1111 (pid 1)
+22:07:11 Malformed data received from IP [192.168.99.1] : Bad incoming tag 71. Disconnecting the client
+22:07:11 Malformed data received from IP [192.168.99.1] : Bad incoming tag 71. Disconnecting the client
+22:07:11 Malformed data received from IP [192.168.99.1] : Bad incoming tag 71. Disconnecting the client
+22:07:11 Malformed data received from IP [192.168.99.1] : Bad incoming tag 71. Disconnecting the client
+22:07:11 Malformed data received from IP [192.168.99.1] : Bad incoming tag 71. Disconnecting the client
+22:07:11 Malformed data received from IP [192.168.99.1] : Bad incoming tag 71. Disconnecting the client
+22:07:11 Malformed data received from IP [192.168.99.1] : Bad incoming tag 71. Disconnecting the client
+22:07:11 Malformed data received from IP [192.168.99.1] : Bad incoming tag 71. Disconnecting the client
+22:07:11 Malformed data received from IP [192.168.99.1] : Bad incoming tag 71. Disconnecting the client
+22:07:11 Malformed data received from IP [192.168.99.1] : Bad incoming tag 71. Disconnecting the client
+23:07:04 Checkpoint started
+23:07:04 Checkpoint finished, log reused
+
+		Wed Jun 13 2018
+00:07:05 Checkpoint started
+00:07:05 Checkpoint finished, log reused
+01:07:06 Checkpoint started
+01:07:06 Checkpoint finished, log reused
+02:33:05 Checkpoint started
+02:33:07 Checkpoint finished, log reused
+02:37:32 Server received signal 15
+02:37:32 Initiating quick shutdown
+02:37:32 Server shutdown complete
+
+		Wed Jun 13 2018
+15:26:41 OpenLink Virtuoso Universal Server
+15:26:41 Version 07.20.3217-pthreads for Linux as of Jan 26 2018
+15:26:41 uses parts of OpenSSL, PCRE, Html Tidy
+15:26:41 Database version 3126
+15:26:41 SQL Optimizer enabled (max 1000 layouts)
+15:26:43 Compiler unit is timed at 0.000713 msec
+15:26:47 Roll forward started
+15:26:47     18 transactions, 1512 bytes replayed (100 %)
+15:26:47 Roll forward complete
+15:26:49 Checkpoint started
+15:26:49 Checkpoint finished, log reused
+15:26:49 HTTP/WebDAV server online at 8890
+15:26:49 Server online at 1111 (pid 1)
+
+		Wed Jun 13 2018
+15:27:10 OpenLink Virtuoso Universal Server
+15:27:10 Version 07.20.3217-pthreads for Linux as of Jan 26 2018
+15:27:10 uses parts of OpenSSL, PCRE, Html Tidy
+15:27:11 Database version 3126
+15:27:11 SQL Optimizer enabled (max 1000 layouts)
+15:27:12 Compiler unit is timed at 0.000677 msec
+
+		Wed Jun 13 2018
+15:27:19 OpenLink Virtuoso Universal Server
+15:27:19 Version 07.20.3217-pthreads for Linux as of Jan 26 2018
+15:27:19 uses parts of OpenSSL, PCRE, Html Tidy
+15:27:19 Database version 3126
+15:27:19 SQL Optimizer enabled (max 1000 layouts)
+15:27:21 Compiler unit is timed at 0.000693 msec
+15:27:24 Roll forward started
+15:27:24     3 transactions, 185 bytes replayed (100 %)
+15:27:24 Roll forward complete
+15:27:25 Checkpoint started
+15:27:26 Checkpoint finished, log reused
+15:27:26 HTTP/WebDAV server online at 8890
+15:27:26 Server online at 1111 (pid 1)
+15:28:30 Malformed data received from IP [192.168.99.1] : Bad incoming tag 71. Disconnecting the client
+15:28:30 Malformed data received from IP [192.168.99.1] : Bad incoming tag 71. Disconnecting the client
+15:28:30 Malformed data received from IP [192.168.99.1] : Bad incoming tag 71. Disconnecting the client
+15:28:30 Malformed data received from IP [192.168.99.1] : Bad incoming tag 71. Disconnecting the client
+15:28:30 Malformed data received from IP [192.168.99.1] : Bad incoming tag 71. Disconnecting the client
+15:28:30 Malformed data received from IP [192.168.99.1] : Bad incoming tag 71. Disconnecting the client
+15:28:30 Malformed data received from IP [192.168.99.1] : Bad incoming tag 71. Disconnecting the client
+15:28:30 Malformed data received from IP [192.168.99.1] : Bad incoming tag 71. Disconnecting the client
+15:28:30 Malformed data received from IP [192.168.99.1] : Bad incoming tag 71. Disconnecting the client
+15:28:30 Malformed data received from IP [192.168.99.1] : Bad incoming tag 71. Disconnecting the client
+15:28:37 Malformed data received from IP [192.168.99.1] : Bad incoming tag 71. Disconnecting the client
+15:28:37 Malformed data received from IP [192.168.99.1] : Bad incoming tag 71. Disconnecting the client
+15:28:38 Malformed data received from IP [192.168.99.1] : Bad incoming tag 71. Disconnecting the client
+15:28:38 Malformed data received from IP [192.168.99.1] : Bad incoming tag 71. Disconnecting the client
+15:28:38 Malformed data received from IP [192.168.99.1] : Bad incoming tag 71. Disconnecting the client
+15:28:38 Malformed data received from IP [192.168.99.1] : Bad incoming tag 71. Disconnecting the client
+15:28:38 Malformed data received from IP [192.168.99.1] : Bad incoming tag 71. Disconnecting the client
+15:28:38 Malformed data received from IP [192.168.99.1] : Bad incoming tag 71. Disconnecting the client
+15:28:38 Malformed data received from IP [192.168.99.1] : Bad incoming tag 71. Disconnecting the client
+15:28:38 Malformed data received from IP [192.168.99.1] : Bad incoming tag 71. Disconnecting the client

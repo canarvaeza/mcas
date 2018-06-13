@@ -284,6 +284,16 @@
     
 
 
+    <!-- http://purl.org/m-context/ontologies/sensor#Observation -->
+
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/sensor#Observation">
+        <owl:equivalentClass rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/m-context/ontologies/sensor#Ssn"/>
+        <rdfs:label>mcontext-Observation</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.org/m-context/ontologies/sensor#Sensor -->
 
     <owl:Class rdf:about="http://purl.org/m-context/ontologies/sensor#Sensor">

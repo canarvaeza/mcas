@@ -4,8 +4,24 @@
 # http://vos.openlinksw.com/owiki/wiki/VOS/VirtTipsAndTricksSPARQL11Insert
 # https://www.youtube.com/watch?v=FvGndkpa4K0
 
+# tutorial
+# https://virtuoso.openlinksw.com/tutorials/sparql/
+
 
 CLEAR GRAPH <http://localhost:8890/pruebaMCAS>
+
+
+delete data
+
+WITH <http://localhost:8890/mcas/activity#>
+DELETE
+ { 
+   <http://localhost:8890/mcas/activity#a000002> ?p ?v 
+ }
+WHERE
+ { 
+   <http://localhost:8890/mcas/activity#a000002> ?p ?v .
+ }   
 
 
 insert data
