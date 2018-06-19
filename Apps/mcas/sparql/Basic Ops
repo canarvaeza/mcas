@@ -1,0 +1,78 @@
+# --- INSERT ---
+
+## insert data
+
+
+insert data
+{
+ graph <http://localhost:8890/pruebaMCAS>
+{
+<http://localhost:8890/pruebaMCAS#u000001> a <http://purl.org/m-context/ontologies/person#PersonMCAS>;
+foaf:firstName "Cristian";
+foaf:lastName "Narvaez";
+foaf:gender "male";
+foaf:firstName "Cristian";
+foaf:age 24.
+}
+}
+
+
+# --- DELETE ----
+
+## --- Create an delete graphs
+
+CREATE GRAPH <qq>
+CLEAR GRAPH <http://localhost:8890/pruebaMCAS>
+
+
+# --- Delete principal and related relations ---
+
+WITH <http://localhost:8890/mcas/activity#>
+
+delete
+ { 
+   ?act ?p ?v.
+   ?others <http://purl.org/m-context/ontologies/mContext#isSubActivity> ?act.
+ }
+WHERE
+ { 
+   BIND (<http://localhost:8890/mcas/activity#act/00002_00001> as ?act)
+   ?act ?p ?v .
+   ?others <http://purl.org/m-context/ontologies/mContext#isSubActivity> ?act
+ }   
+
+# --- UPDATE ---
+
+## UPDATE URI -> first try with construct and filter
+
+#CONSTRUCT {?newURI ?p ?o}
+
+#select *
+
+delete {?oldURI ?p ?o}
+insert {?newURI ?p ?o}
+
+where {
+
+?oldURI rdf:type <http://purl.org/m-context/ontologies/person#PersonMCAS>.
+?oldURI ?p ?o.
+#FILTER (?oldURI in (<http://localhost:8890/mcas/person#per/000001>))
+BIND (URI(CONCAT ("http://localhost:8890/mcas/person#per/", STRAFTER (STR(?oldURI), "#per/0"))) AS ?newURI)
+
+}
+
+##change one element URI
+
+#CONSTRUCT {?s mContext:isInvolvedIn ?newActivity}
+
+#select *
+
+delete {?s mContext:isInvolvedIn ?oldActivity}
+insert {?s mContext:isInvolvedIn ?newActivity}
+
+where {
+?s mContext:isInvolvedIn ?oldActivity.
+#FILTER (?oldActivity in (<http://localhost:8890/mcas/activity#a000001>))
+BIND (URI(CONCAT ("http://localhost:8890/mcas/activity#act/", STRAFTER (STR(?oldActivity), "activity#a0"))) AS ?newActivity)
+
+}

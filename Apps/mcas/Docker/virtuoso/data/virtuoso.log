@@ -488,3 +488,72 @@
 15:28:38 Malformed data received from IP [192.168.99.1] : Bad incoming tag 71. Disconnecting the client
 15:28:38 Malformed data received from IP [192.168.99.1] : Bad incoming tag 71. Disconnecting the client
 15:28:38 Malformed data received from IP [192.168.99.1] : Bad incoming tag 71. Disconnecting the client
+16:27:27 Checkpoint started
+16:27:27 Checkpoint finished, log reused
+17:27:28 Checkpoint started
+17:27:29 Checkpoint finished, log reused
+21:48:33 Checkpoint started
+21:48:36 Checkpoint finished, log reused
+22:48:39 Checkpoint started
+22:48:39 Checkpoint finished, log reused
+23:48:40 Checkpoint started
+23:48:40 Checkpoint finished, log reused
+23:58:37 Server received signal 15
+23:58:37 Initiating quick shutdown
+23:58:37 Server shutdown complete
+
+		Mon Jun 18 2018
+16:14:53 OpenLink Virtuoso Universal Server
+16:14:53 Version 07.20.3217-pthreads for Linux as of Jan 26 2018
+16:14:53 uses parts of OpenSSL, PCRE, Html Tidy
+16:14:53 Database version 3126
+16:14:53 SQL Optimizer enabled (max 1000 layouts)
+16:14:55 Compiler unit is timed at 0.000826 msec
+16:15:00 Roll forward started
+16:15:00     37 transactions, 6528 bytes replayed (100 %)
+16:15:00 Roll forward complete
+16:15:02 Checkpoint started
+16:15:03 Checkpoint finished, log reused
+16:15:03 HTTP/WebDAV server online at 8890
+16:15:03 Server online at 1111 (pid 1)
+17:15:03 Checkpoint started
+17:15:03 Checkpoint finished, log reused
+19:11:55 Checkpoint started
+19:11:55 Checkpoint finished, log reused
+20:11:57 Checkpoint started
+20:11:57 Checkpoint finished, log reused
+21:11:59 Checkpoint started
+21:11:59 Checkpoint finished, log reused
+21:55:21 Server received signal 15
+21:55:21 Initiating quick shutdown
+21:55:21 Server shutdown complete
+
+		Tue Jun 19 2018
+13:49:20 OpenLink Virtuoso Universal Server
+13:49:20 Version 07.20.3217-pthreads for Linux as of Jan 26 2018
+13:49:20 uses parts of OpenSSL, PCRE, Html Tidy
+13:49:20 Database version 3126
+13:49:20 SQL Optimizer enabled (max 1000 layouts)
+13:49:23 Compiler unit is timed at 0.000674 msec
+13:49:27 Roll forward started
+13:49:27     85 transactions, 8315 bytes replayed (100 %)
+13:49:27 Roll forward complete
+13:49:29 Checkpoint started
+13:49:29 Checkpoint finished, log reused
+13:49:29 HTTP/WebDAV server online at 8890
+13:49:29 Server online at 1111 (pid 1)
+14:49:31 Checkpoint started
+14:49:31 Checkpoint finished, log reused
+15:49:31 Checkpoint started
+15:49:31 Checkpoint finished, log reused
+17:51:34 Checkpoint started
+17:51:36 Checkpoint finished, log reused
+19:18:14 Checkpoint started
+19:18:15 Checkpoint finished, log reused
+20:18:16 Checkpoint started
+20:18:16 Checkpoint finished, log reused
+21:18:16 Checkpoint started
+21:18:16 Checkpoint finished, log reused
+21:52:28 Server received signal 15
+21:52:28 Initiating quick shutdown
+21:52:28 Server shutdown complete

@@ -2,7 +2,7 @@
 
   "Multimedia": [
     {
-      "Id": "localhost:8890/mcas/multimedia#multimedia/0001",
+      "Id": "localhost:8890/mcas/multimedia#mul/00001",
       "Format": "AVI",
       "Type": "www.semanticweb.org/ontologies/multimedia#VideoFormat",
       "Descriptor": {},
@@ -20,7 +20,7 @@
       "Id": "localhost:8890/mcas/activity#act/00001",
       "Type": "purl.org/m-context/ontologies/domains/alzheimer#Eat",
       "Time": {
-        "Beginning": "2017-06-06T12:36:12Z",
+        "Beginning": "2017-06-06T12:32:12Z",
         "Ending": "2017-06-06T12:38:12Z"
       },
       "Person": [
@@ -40,7 +40,8 @@
       "Id": "localhost:8890/mcas/activity#act/00002",
       "Type": "purl.org/m-context/ontologies/domains/alzheimer#Sit",
       "Time": {
-        "Beginning": "2017-06-06T12:36:12Z"
+        "Beginning": "2017-06-06T12:30:12Z",
+        "Ending": "2017-06-06T12:40:12Z"
       }
     }
   ],
@@ -48,7 +49,7 @@
     {
       "Observation": [
         {
-          "Id": "localhost:8890/mcas/sensor#Obs/00001",
+          "Id": "localhost:8890/mcas/sensor#obs/00001",
           "Sensor": "localhost:8890/mcas/sensor#sen/35-207306-844818-0/BMP282",
           "Value": "[0.60034, 0.42556, 0.86662]",
           "Time": "2017-06-06T12:36:12Z",

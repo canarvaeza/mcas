@@ -2,13 +2,14 @@
 @prefix  rml: <http://semweb.mmlab.be/ns/rml#> .
 @prefix crml:       <http://semweb.mmlab.be/ns/crml#> .
 @prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @base <http://example.com> .
 
 ## --------------- DEPENDENCIES ----------- ###
 
 ### ----- MCONTEXT ----- ###
-@prefix mcontext: <http://www.semanticweb.org/ontologies/mcontext#>.
-#@prefix alzheimer: <http://www.semanticweb.org/ontologies/domains/alzheimer#>.
+@prefix mcontext: <http://purl.org/m-context/ontologies/mContext#>.
+#@prefix alzheimer: <http://purl.org/m-context/ontologies/alzheimer#>.
 
 
 ### ------ SENSOR -------- ###
@@ -18,17 +19,17 @@
 @prefix wgs84_pos: <http://www.w3.org/2003/01/geo/wgs84_pos#>.
 #@prefix schema: <http://schema.org/>.
 @prefix gn: <http://www.geonames.org/ontology#>.
-@prefix location: <http://www.semanticweb.org/ontologies/location#> .
+@prefix location: <http://purl.org/m-context/ontologies/location#> .
 
 ### ------ MULTIMEDIA -------- ###
-@prefix multimedia: <http://www.semanticweb.org/ontologies/multimedia#> .
+@prefix multimedia: <http://purl.org/m-context/ontologies/multimedia#> .
 @prefix ma: <http://www.w3.org/ns/ma-ont#>.
 
 ### ----- ACTIVITY ----- ###
-@prefix activity: <http://www.semanticweb.org/ontologies/activity#>.
+@prefix activity: <http://purl.org/m-context/ontologies/activity#>.
 
 ### ----- TIME ----- ###
-@prefix time: <http://www.semanticweb.org/ontologies/time#>.
+@prefix time: <http://purl.org/m-context/ontologies/time#>.
 
 ## ------------------------------------------###
 

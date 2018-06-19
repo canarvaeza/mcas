@@ -1,0 +1,51 @@
+## ---- BASIC
+
+select *
+from <http://localhost:8890/mcas/activity#>
+where {
+  ?s ?p ?o.
+  FILTER (?s in <uri>)
+}
+
+
+## ---- filter by date
+
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+select *
+
+from <http://localhost:8890/mcas/activity#>
+where {
+ ?s a ?o.
+ #?s ?p ?o.
+ optional{
+ ?s <http://www.semanticweb.org/ontologies/timehasBeginningTime> ?beginning.
+ }.
+ optional{ 
+ ?s <http://www.semanticweb.org/ontologies/timehasEndingTime> ?ending.
+ }.
+# FILTER (?beginning > "2017-05-23T10:20:13z"^^xsd:dateTime)
+# FILTER (contains (?beginning, ?ending, "2017-05-23T10:20:13z"^^xsd:dateTime
+}
+
+
+## ---- Jump between graphs
+
+
+select distinct *
+from <http://localhost:8890/mcas/person#>
+from <http://localhost:8890/mcas/activity#>
+from <http://localhost:8890/mcas/multimedia#>
+from <http://localhost:8890/mcas/sensor#>
+
+where {
+
+ ?s rdf:type <http://purl.org/m-context/ontologies/person#PersonMCAS>;
+ mContext:isInvolvedIn ?a.
+ FILTER( ?s in (<http://localhost:8890/mcas/person#per/00001>))
+ ?a <http://www.semanticweb.org/ontologies/mcontext#isDescribedBy> ?d.
+ OPTIONAL {
+  
+  ?d a ?type
+ }
+
+}

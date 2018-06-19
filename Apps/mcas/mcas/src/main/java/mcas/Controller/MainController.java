@@ -1,46 +1,9 @@
 package mcas.Controller;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Paths;
-import java.util.Iterator;
-import java.util.List;
-
-import org.apache.commons.io.FileUtils;
-import org.semanticweb.owlapi.apibinding.OWLManager;
-import org.semanticweb.owlapi.formats.OWLXMLDocumentFormat;
-import org.semanticweb.owlapi.io.OWLXMLOntologyFormat;
-import org.semanticweb.owlapi.io.StreamDocumentTarget;
-import org.semanticweb.owlapi.model.IRI;
-import org.semanticweb.owlapi.model.OWLAxiom;
-import org.semanticweb.owlapi.model.OWLClass;
-import org.semanticweb.owlapi.model.OWLDataFactory;
-import org.semanticweb.owlapi.model.OWLIndividual;
-import org.semanticweb.owlapi.model.OWLNamedIndividual;
-import org.semanticweb.owlapi.model.OWLOntology;
-import org.semanticweb.owlapi.model.OWLOntologyCreationException;
-import org.semanticweb.owlapi.model.OWLOntologyFormat;
-import org.semanticweb.owlapi.model.OWLOntologyManager;
-import org.semanticweb.owlapi.model.OWLOntologyStorageException;
-import org.semanticweb.owlapi.util.OWLOntologyMerger;
-import org.swrlapi.exceptions.LiteralException;
-import org.swrlapi.sqwrl.SQWRLResult;
-import org.swrlapi.sqwrl.exceptions.SQWRLException;
-
-import com.google.common.base.Optional;
-import com.jayway.jsonpath.DocumentContext;
-import com.jayway.jsonpath.JsonPath;
-
-import mcas.Ontology.OntologyManager;
-import mcas.RulesManager.OwlRules;
-import mcas.util.IOManager;
-import mcas.DataTransformation.TestToRDF2;
 import mcas.DataTransformation.ToRDF;
+
+
+import java.util.UUID;
 
 public class MainController {
 	
@@ -53,7 +16,15 @@ public class MainController {
 		String rdfFlux = ToRDF.data2RDF(root + "transformation/", "mcas-model-03.rml.ttl", "salida.ttl");
 		
 		System.out.println(rdfFlux);
-
+		
+		
+		 //generate random UUIDs
+	    /*UUID idOne = UUID.randomUUID();
+	    UUID idTwo = UUID.randomUUID();
+	    System.out.println("UUID One: " + idOne);
+	    System.out.println("UUID Two: " + idTwo);
+	     */
+		
 //
 //	public static OWLOntology domainOntology = OntologyManager
 //			.loadOntologyFromInternet("http://purl.org/m-context/ontologies/mContext");
