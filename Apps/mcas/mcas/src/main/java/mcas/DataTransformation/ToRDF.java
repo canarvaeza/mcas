@@ -78,6 +78,8 @@ public class ToRDF {
 			QuadStore result = executor.execute(triplesMaps, removeDuplicates);
 			
 			rdfFlux = Utils.toNTriples(result.getQuads("", "", ""));
+			rdfFlux = rdfFlux.replace("%2F", "/").replace("%23", "#"); // Because is coming without format
+			rdfFlux = rdfFlux.replaceAll("\\^\\^(.*)\\.", "^^<$1>."); // Because is not a prefix
 			
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block

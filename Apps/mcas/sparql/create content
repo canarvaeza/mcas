@@ -119,7 +119,7 @@ STRAFTER(str(?act1), str(activity:))
 ,"_", 
 STRAFTER(str(?act2), str(activity:))
 )) as ?new).
-#FILTER(NOT EXISTS {?new a [] .})  
+FILTER(NOT EXISTS {?new a [] .})  
 
 }
 
@@ -188,6 +188,57 @@ STRAFTER(str(?act1), str(activity:))
 ,"_", 
 STRAFTER(str(?act2), str(activity:))
 )) as ?new).
-#FILTER(NOT EXISTS {?new a [] .})  
+FILTER(NOT EXISTS {?new a [] .})  
 
 }
+
+# --- CREATE FOR ISOLATED ACTIVITY ---
+
+prefix : <http://purl.org/m-context/ontologies/mContext#>
+prefix activity: <http://localhost:8890/mcas/activity#act/>
+prefix time: <http://purl.org/m-context/ontologies/time#>
+
+#select *
+
+#construct{
+INSERT INTO <http://localhost:8890/mcas/activity#> {
+ ?new a alzheimer:Rest;
+   :hasActor ?user;
+   time:hasBeginningTime ?bt1;
+   time:hasEndingTime ?et1;
+   :hasSubActivity ?act1;
+}
+
+
+from <http://localhost:8890/mcas/person#>
+from <http://localhost:8890/mcas/activity#>
+
+where {
+
+
+  BIND ("2017-06-06"^^xsd:dateTime as ?day).
+
+ ?act1 a <http://purl.org/m-context/ontologies/domains/alzheimer#Sit>;
+  time:hasBeginningTime ?bt1;
+  time:hasEndingTime ?et1.
+ FILTER(month(?bt1) = month(?day) && month(?bt1) = month(?day))
+ 
+MINUS {
+
+ ?act2 time:hasBeginningTime ?bt2;
+       time:hasEndingTime ?et2;
+       a ?class.
+ FILTER(month(?bt2) = month(?day) && month(?bt2) = month(?day))
+ FILTER(?bt1 < ?bt2 && ?et1 > ?et2)
+
+  optional {
+  ?act1 :hasActor ?user.
+ }
+}
+
+BIND (URI(CONCAT(str(activity:), "only_", STRAFTER(str(?act1), str(activity:)))) as ?new).
+FILTER(NOT EXISTS {?new a [] .})
+
+}
+
+order by ?act1

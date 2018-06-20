@@ -49,3 +49,75 @@ where {
  }
 
 }
+
+
+## --- QUE ACTIVIDADES ESTÁN DENTRO DE OTRA --- #
+
+prefix : <http://purl.org/m-context/ontologies/mContext#>
+prefix activity: <http://localhost:8890/mcas/activity#act/>
+prefix time: <http://purl.org/m-context/ontologies/time#>
+
+select *
+
+from <http://localhost:8890/mcas/person#>
+from <http://localhost:8890/mcas/activity#>
+
+where {
+
+{ select *
+  where {
+  BIND ("2017-06-06"^^xsd:dateTime as ?day).
+
+ ?act1 a <http://purl.org/m-context/ontologies/domains/alzheimer#Sit>;
+  time:hasBeginningTime ?bt1;
+  time:hasEndingTime ?et1.
+ FILTER(month(?bt1) = month(?day) && month(?bt1) = month(?day))
+ }
+}
+
+
+ ?act2 time:hasBeginningTime ?bt2;
+       time:hasEndingTime ?et2;
+       a ?class.
+ FILTER(month(?bt2) = month(?day) && month(?bt2) = month(?day))
+ FILTER(?bt1 < ?bt2 && ?et1 > ?et2)
+
+
+}
+order by ?act1
+
+
+
+## --- ACTIVIDADES ÚNICAS
+
+prefix : <http://purl.org/m-context/ontologies/mContext#>
+prefix activity: <http://localhost:8890/mcas/activity#act/>
+prefix time: <http://purl.org/m-context/ontologies/time#>
+
+select *
+
+from <http://localhost:8890/mcas/person#>
+from <http://localhost:8890/mcas/activity#>
+
+where {
+
+
+  BIND ("2017-06-06"^^xsd:dateTime as ?day).
+
+ ?act1 a <http://purl.org/m-context/ontologies/domains/alzheimer#Sit>;
+  time:hasBeginningTime ?bt1;
+  time:hasEndingTime ?et1.
+ FILTER(month(?bt1) = month(?day) && month(?bt1) = month(?day))
+ 
+MINUS {
+
+ ?act2 time:hasBeginningTime ?bt2;
+       time:hasEndingTime ?et2;
+       a ?class.
+ FILTER(month(?bt2) = month(?day) && month(?bt2) = month(?day))
+ FILTER(?bt1 < ?bt2 && ?et1 > ?et2)
+}
+
+}
+
+order by ?act1
