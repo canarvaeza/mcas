@@ -201,12 +201,17 @@ prefix time: <http://purl.org/m-context/ontologies/time#>
 #select *
 
 #construct{
-INSERT INTO <http://localhost:8890/mcas/activity#> {
+INSERT  {
+GRAPH <http://localhost:8890/mcas/activity#> {
  ?new a alzheimer:Rest;
    :hasActor ?user;
    time:hasBeginningTime ?bt1;
    time:hasEndingTime ?et1;
-   :hasSubActivity ?act1;
+   :hasSubActivity ?act1.
+}
+  GRAPH  <http://localhost:8890/mcas/person#> {
+    ?user :isInvolvedIn ?new.
+  }
 }
 
 
@@ -230,14 +235,12 @@ MINUS {
        a ?class.
  FILTER(month(?bt2) = month(?day) && month(?bt2) = month(?day))
  FILTER(?bt1 < ?bt2 && ?et1 > ?et2)
-
+}
   optional {
   ?act1 :hasActor ?user.
  }
-}
-
 BIND (URI(CONCAT(str(activity:), "only_", STRAFTER(str(?act1), str(activity:)))) as ?new).
-FILTER(NOT EXISTS {?new a [] .})
+#FILTER(NOT EXISTS {?new a [] .})
 
 }
 

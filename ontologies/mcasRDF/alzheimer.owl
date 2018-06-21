@@ -85,6 +85,14 @@
     
 
 
+    <!-- http://purl.org/m-context/ontologies/domains/alzheimer#Cook -->
+
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#Cook">
+        <rdfs:subClassOf rdf:resource="http://purl.org/m-context/ontologies/activity#HighContextActivity"/>
+    </owl:Class>
+    
+
+
     <!-- http://purl.org/m-context/ontologies/domains/alzheimer#Eat -->
 
     <owl:Class rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#Eat">
@@ -101,6 +109,38 @@
     
 
 
+    <!-- http://purl.org/m-context/ontologies/domains/alzheimer#HavingAMeal -->
+
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#HavingAMeal">
+        <rdfs:subClassOf rdf:resource="http://purl.org/m-context/ontologies/activity#HighContextActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/m-context/ontologies/domains/alzheimer#Hike -->
+
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#Hike">
+        <rdfs:subClassOf rdf:resource="http://purl.org/m-context/ontologies/activity#LowContextActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/m-context/ontologies/domains/alzheimer#Jump -->
+
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#Jump">
+        <rdfs:subClassOf rdf:resource="http://purl.org/m-context/ontologies/activity#LowContextActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/m-context/ontologies/domains/alzheimer#LieDown -->
+
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#LieDown">
+        <rdfs:subClassOf rdf:resource="http://purl.org/m-context/ontologies/activity#LowContextActivity"/>
+    </owl:Class>
+    
+
+
     <!-- http://purl.org/m-context/ontologies/domains/alzheimer#MedicalRole -->
 
     <owl:Class rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#MedicalRole">
@@ -109,10 +149,34 @@
     
 
 
+    <!-- http://purl.org/m-context/ontologies/domains/alzheimer#Rest -->
+
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#Rest">
+        <rdfs:subClassOf rdf:resource="http://purl.org/m-context/ontologies/activity#HighContextActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/m-context/ontologies/domains/alzheimer#Run -->
+
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#Run">
+        <rdfs:subClassOf rdf:resource="http://purl.org/m-context/ontologies/activity#LowContextActivity"/>
+    </owl:Class>
+    
+
+
     <!-- http://purl.org/m-context/ontologies/domains/alzheimer#Sit -->
 
     <owl:Class rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#Sit">
         <rdfs:subClassOf rdf:resource="http://purl.org/m-context/ontologies/activity#LowContextActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/m-context/ontologies/domains/alzheimer#Sleep -->
+
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#Sleep">
+        <rdfs:subClassOf rdf:resource="http://purl.org/m-context/ontologies/activity#HighContextActivity"/>
     </owl:Class>
     
 
@@ -133,10 +197,26 @@
     
 
 
+    <!-- http://purl.org/m-context/ontologies/domains/alzheimer#Standing -->
+
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#Standing">
+        <rdfs:subClassOf rdf:resource="http://purl.org/m-context/ontologies/activity#LowContextActivity"/>
+    </owl:Class>
+    
+
+
     <!-- http://purl.org/m-context/ontologies/domains/alzheimer#Talk -->
 
     <owl:Class rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#Talk">
         <rdfs:subClassOf rdf:resource="http://purl.org/m-context/ontologies/activity#LowContextActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/m-context/ontologies/domains/alzheimer#WatchTv -->
+
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#WatchTv">
+        <rdfs:subClassOf rdf:resource="http://purl.org/m-context/ontologies/activity#HighContextActivity"/>
     </owl:Class>
     
 
@@ -208,6 +288,30 @@
     <owl:NamedIndividual rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#User">
         <rdfs:label>alz_role:User</rdfs:label>
     </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#Eat"/>
+            <rdf:Description rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#Hike"/>
+            <rdf:Description rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#Jump"/>
+            <rdf:Description rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#LieDown"/>
+            <rdf:Description rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#Run"/>
+            <rdf:Description rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#Sit"/>
+            <rdf:Description rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#Standing"/>
+            <rdf:Description rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#Talk"/>
+        </owl:members>
+    </rdf:Description>
 </rdf:RDF>
 
 

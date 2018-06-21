@@ -1,3 +1,15 @@
+# --- GRAPHS ---
+
+
+## --- Create an delete graphs
+
+CREATE GRAPH <qq>
+CLEAR GRAPH <http://localhost:8890/pruebaMCAS>
+
+## desde el ISQL
+sparql clear graph <http://vocab.org/relationship/>;
+sparql load <http://vocab.org/relationship/rel-vocab-20100607.rdf> into <http://vocab.org/relationship/>;
+
 # --- INSERT ---
 
 ## insert data
@@ -18,12 +30,6 @@ foaf:age 24.
 
 
 # --- DELETE ----
-
-## --- Create an delete graphs
-
-CREATE GRAPH <qq>
-CLEAR GRAPH <http://localhost:8890/pruebaMCAS>
-
 
 # --- Delete principal and related relations ---
 

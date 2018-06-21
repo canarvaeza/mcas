@@ -7,7 +7,13 @@
 # tutorial
 # https://virtuoso.openlinksw.com/tutorials/sparql/
 
+# RULES
+## http://vos.openlinksw.com/owiki/wiki/VOS/VirtSPARQLReasoningTutorial
+## https://www.mail-archive.com/virtuoso-users@lists.sourceforge.net/msg05523.html
 
+sparql clear graph <http://vocab.org/relationship/>;
+sparql load <http://vocab.org/relationship/rel-vocab-20100607.rdf> into <http://vocab.org/relationship/>;
 
+rdfs_rule_set ('urn:owl:inference:rules:tests', 'http://vocab.org/relationship/') ;
 
 
