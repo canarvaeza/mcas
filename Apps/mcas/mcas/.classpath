@@ -33,5 +33,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="src/main/resources/lib/rmlmapper-1.2.0.jar"/>
+	<classpathentry kind="lib" path="src/main/resources/lib/virt_jena3.jar"/>
+	<classpathentry kind="lib" path="src/main/resources/lib/virtjdbc4-7.1.0.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

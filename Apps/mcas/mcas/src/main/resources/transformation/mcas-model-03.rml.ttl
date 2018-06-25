@@ -41,7 +41,7 @@
 
 <#ActivityMapping>
     rml:logicalSource [
-        rml:source "C:/Users/dev/Documents/GitHub/mcas/Apps/mcas/mcas/src/main/resources/transformation/input1.json";
+        rml:source "C:/Users/dev/Documents/GitHub/mcas/Apps/mcas/mcas/src/main/resources/transformation/input3.json";
         rml:referenceFormulation ql:JSONPath;
         rml:iterator "$.Activity[*]"
     ];
@@ -97,7 +97,7 @@
 <#ObservationMapping>
     
     rml:logicalSource [
-		rml:source "C:/Users/dev/Documents/GitHub/mcas/Apps/mcas/mcas/src/main/resources/transformation/input1.json";
+		rml:source "C:/Users/dev/Documents/GitHub/mcas/Apps/mcas/mcas/src/main/resources/transformation/input3.json";
 	    rml:referenceFormulation ql:JSONPath;
 	    rml:iterator "$.Ssn[*].Observation[*]"
     ];
@@ -159,7 +159,7 @@
 
 <#MultimediaMapping>
 	rml:logicalSource [
-		rml:source "C:/Users/dev/Documents/GitHub/mcas/Apps/mcas/mcas/src/main/resources/transformation/input1.json";
+		rml:source "C:/Users/dev/Documents/GitHub/mcas/Apps/mcas/mcas/src/main/resources/transformation/input3.json";
 	    rml:referenceFormulation ql:JSONPath;
 	    rml:iterator "$.Multimedia[*]"
     ];
@@ -221,7 +221,7 @@
     
 <#DescriptorMapping>
 	rml:logicalSource [
-		rml:source "C:/Users/dev/Documents/GitHub/mcas/Apps/mcas/mcas/src/main/resources/transformation/input1.json";
+		rml:source "C:/Users/dev/Documents/GitHub/mcas/Apps/mcas/mcas/src/main/resources/transformation/input3.json";
 	    rml:referenceFormulation ql:JSONPath;
 	    rml:iterator "$.Multimedia[*].Descriptor"
 	];
@@ -245,7 +245,7 @@
 ### ----- LOCATION ----- ###
 <#LocationMapping>
 	rml:logicalSource [
-		rml:source "C:/Users/dev/Documents/GitHub/mcas/Apps/mcas/mcas/src/main/resources/transformation/input1.json";
+		rml:source "C:/Users/dev/Documents/GitHub/mcas/Apps/mcas/mcas/src/main/resources/transformation/input3.json";
 	    rml:referenceFormulation ql:JSONPath;
 	    rml:iterator "$.Location[*]"
     ];

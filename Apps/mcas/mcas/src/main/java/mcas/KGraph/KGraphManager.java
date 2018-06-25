@@ -8,15 +8,26 @@ import org.apache.jena.query.*;
 import org.apache.jena.rdf.model.Literal;
 import org.apache.jena.rdf.model.RDFNode;
 
-public class KGraphManager {
+import virtuoso.jena.driver.*;
 
+import mcas.KGraph.QueryConf;
+
+
+public class KGraphManager {
+	
 	public static Map<String, String> map = new HashMap<String, String>() {
 		{
 			put("insert", "graph <*graph*>\r\n" + "	{\r\n" + "<*content*>\r\n" + "	}");
 		}
 	};
-
-	public static void insertIntoKG(String stream) {
+	
+	public static boolean insertPerson(VirtGraph vGraph, String queryContent) {
+		String graphToUpdate = QueryConf.graphsBases.get("person");
+		Queries.insertNonConnectedData(vGraph, graphToUpdate, queryContent);
+		return true;
+	}
+	
+	public static boolean insertConnectedData(VirtGraph vGraph, String stream) {
 		String output = "";
 
 		try (Scanner scanner = new Scanner(stream)) {
@@ -38,50 +49,28 @@ public class KGraphManager {
 			}
 		}
 		
-		executeQuery("insert", output);
-		 //System.out.println(output);
-
+		System.out.println(output);
+		 
+		Queries.insertConnectedData(vGraph, output);
+		return true;
+	}
+	
+	public static String getPerson(VirtGraph vGraph, String id) {
+		String graphToConsult = QueryConf.graphsBases.get("person");
+		String subToConsult = graphToConsult + "per/" + id;
+		String response = Queries.getGraphData(vGraph, graphToConsult, subToConsult, null);
+		return response;
+	}
+	
+	public static String getAllGraph(VirtGraph vGraph, String graphToConsult) {
+		String response = Queries.getGraphData(vGraph, QueryConf.graphsBases.get(graphToConsult), null);
+		return response;
 	}
 
 	public static String createQuery(String type, String graph, String content) {
-
 		String query = map.get(type);
 		query = query.replace("<*graph*>", getBeforeString("#", graph) + "#>").replace("<*content*>", content);
 		return query;
-	}
-
-	public static void executeQuery(String type, String queryContent) {
-
-		//queryContent = "\r\n" + "select distinct * from <http://localhost:8890/mcas/person#> where {?s ?p ?o.} LIMIT 100";
-        
-		queryContent = "insert data\r\n" + 
-				"{" +
-				queryContent +
-				"}";
-		
-		String endPoint = "http://192.168.99.100:8890/sparql";
-
-		Query query = QueryFactory.create(queryContent);
-
-		QueryExecution queryExec = QueryExecutionFactory.sparqlService(endPoint, query);
-
-		try {
-			ResultSet results = queryExec.execSelect();
-			ResultSetFormatter.out(System.out, results, query);
-
-			for (; results.hasNext();) {
-				QuerySolution soln = results.nextSolution();
-				RDFNode ontUri = soln.get("ont");
-				Literal name = soln.getLiteral("name");
-				Literal acr = soln.getLiteral("acr");
-				System.out.println(ontUri + " ---- " + name + " ---- " + acr);
-			}
-
-		} catch (Exception ex) {
-			System.out.println(ex.getMessage());
-		} finally {
-			queryExec.close();
-		}
 	}
 
 	static String getBeforeString(String value, String stream) {

@@ -606,3 +606,42 @@
 20:30:08 Checkpoint finished, log reused
 21:30:08 Checkpoint started
 21:30:09 Checkpoint finished, log reused
+
+		Fri Jun 22 2018
+14:43:15 Checkpoint started
+14:43:17 Checkpoint finished, log reused
+16:50:28 Checkpoint started
+16:50:30 Checkpoint finished, log reused
+19:54:25 Checkpoint started
+19:54:33 Checkpoint finished, log reused
+                                                                                                        
+		Mon Jun 25 2018
+15:34:50 OpenLink Virtuoso Universal Server
+15:34:50 Version 07.20.3217-pthreads for Linux as of Jan 26 2018
+15:34:50 uses parts of OpenSSL, PCRE, Html Tidy
+15:34:50 Database version 3126
+15:34:51 SQL Optimizer enabled (max 1000 layouts)
+15:34:54 Compiler unit is timed at 0.002937 msec
+15:35:18 Roll forward started
+15:35:18     21 transactions, 2709 bytes replayed (100 %)
+15:35:18 Roll forward complete
+15:35:26 Checkpoint started
+15:35:26 Checkpoint finished, log reused
+15:35:28 HTTP/WebDAV server online at 8890
+15:35:28 Server online at 1111 (pid 1)
+16:02:05 Malformed data received from IP [192.168.99.1] : Bad incoming tag 71. Disconnecting the client
+16:02:05 Malformed data received from IP [192.168.99.1] : Bad incoming tag 71. Disconnecting the client
+16:02:06 Malformed data received from IP [192.168.99.1] : Bad incoming tag 71. Disconnecting the client
+16:02:06 Malformed data received from IP [192.168.99.1] : Bad incoming tag 71. Disconnecting the client
+16:02:06 Malformed data received from IP [192.168.99.1] : Bad incoming tag 71. Disconnecting the client
+16:02:06 Malformed data received from IP [192.168.99.1] : Bad incoming tag 71. Disconnecting the client
+16:02:06 Malformed data received from IP [192.168.99.1] : Bad incoming tag 71. Disconnecting the client
+16:02:06 Malformed data received from IP [192.168.99.1] : Bad incoming tag 71. Disconnecting the client
+16:02:06 Malformed data received from IP [192.168.99.1] : Bad incoming tag 71. Disconnecting the client
+16:02:06 Malformed data received from IP [192.168.99.1] : Bad incoming tag 71. Disconnecting the client
+16:35:27 Checkpoint started
+16:35:27 Checkpoint finished, log reused
+17:35:28 Checkpoint started
+17:35:28 Checkpoint finished, log reused
+18:35:30 Checkpoint started
+18:35:30 Checkpoint finished, log reused
