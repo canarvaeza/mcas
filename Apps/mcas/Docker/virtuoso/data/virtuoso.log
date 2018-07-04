@@ -645,3 +645,8 @@
 17:35:28 Checkpoint finished, log reused
 18:35:30 Checkpoint started
 18:35:30 Checkpoint finished, log reused
+23:17:07 Checkpoint started
+23:17:12 Checkpoint finished, log reused
+23:27:07 Server received signal 15
+23:27:07 Initiating quick shutdown
+23:27:07 Server shutdown complete

@@ -16,7 +16,8 @@ sparql load <http://vocab.org/relationship/rel-vocab-20100607.rdf> into <http://
 
 rdfs_rule_set ('urn:owl:inference:rules:tests', 'http://vocab.org/relationship/') ;
 
-
+# jena virtuoso example
+https://www.programcreek.com/java-api-examples/?code=YourDataStories/harvesters/harvesters-master/DiavgeiaGeneralHarvester/src/organizations/Queries.java#
 
 
 
