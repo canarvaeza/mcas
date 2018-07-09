@@ -1,0 +1,40 @@
+# ---- RULES GENERATION ----
+
+prefix : <http://purl.org/rules/activities#>
+prefix alzheimer: <http://purl.org/m-context/ontologies/domains/alzheimer#>
+
+insert data
+{
+ graph <http://purl.org/rules/activities#>
+	{
+<http://purl.org/rules/activities#rule/00006> a :Rule;
+:hasTrigger <http://purl.org/m-context/ontologies/domains/alzheimer#Eat>;
+:hasTrigger <http://purl.org/m-context/ontologies/domains/alzheimer#Sit>;
+:hasResult <alzheimer:HavingAMeal>;
+:hasPreferenceValue 5;
+:hasConstructor "I'm a constructor";
+:hasSelect "I'm a select".
+	}
+}
+
+# ---- RULES QUERY ----
+
+select distinct ?o, ?c
+from <http://purl.org/rules/activities#>
+where{
+{
+# HERE IS WHERE I GET ALL DAY ACTIVITIES
+select distinct ?s
+from <http://localhost:8890/mcas/activity#>
+where {
+?o a ?s.
+#<http://purl.org/m-context/ontologies/time#hasEndingTime> ?bt.
+#FILTER (?bt < "2017-06-06"^^xsd:dateTime)
+}
+}
+
+?o <http://purl.org/rules/activities#hasTrigger> ?s.
+?o <http://purl.org/rules/activities#hasConstructor> ?c.
+
+}
+order by ?s

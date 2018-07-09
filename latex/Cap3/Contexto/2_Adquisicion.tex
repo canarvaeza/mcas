@@ -8,7 +8,21 @@ En esta capa se obtienen los datos que serán analizados para encontrar el conte
     \item \textbf{Datos Externos}: Este grupo corresponde a la descripción de Sensores Lógicos presentados por \cite{Perera2014}, con este grupo se asegura el uso de información proveniente de servicios web que puede modificar o complementar el contexto de un usuario. Un ejemplo es el registro del clima en el lugar de interés de un turista, o el listado de eventos sociales que se desarrollan un fin de semana (incluyendo costos y horarios).
 \end{itemize}
 
-El pre-procesamiento de los datos sigue los parámetros presentados en la Arquitectura General \ref{sec:Prop_Arquitectura} (O CITAR EL COMPONENTE DE LA ARQUITECTURA GENERAL).
+\subsection{Pre-procesamiento de los datos}
+\label{subsubsec:Prop_Adqui_PrePro}
 
-\subsection{Datos de Sensores y Multimedia}
-\label{subsubsec:Prop_Adqui_Datos}
+De acuerdo al ciclo de vida de los sistemas sensibles al contexto es necesario realizar procesos de filtrado de información, este proceso asegura la eliminación de datos fuera de orden, la unión de mediciones ocurridas en periodos iguales de tiempo y también la identificación del contexto de bajo nivel por medio de la identificación de actividades de forma automática.
+El pre-procesamiento de los datos dependerá de las tecnologías pertinentes al sistema al desarrollar, en este trabajo se propone una arquitectura de tres capas con las siguientes características, Fig  \ref{fig:Diagrama_preprocesa}:
+\textbf{\textit{(i)}} fuentes de contexto, 
+\textbf{\textit{(ii)}} tipos de dato producidos por las fuentes de contexto,
+\textbf{\textit{(iii)}} algoritmos de procesamiento,
+\textbf{\textit{(iv)}} uso de estándares para el etiquetado de actividades reconocidas.
+\begin{figure}[ht]
+    \centering%
+    \includegraphics[width=\textwidth]{https://docs.google.com/drawings/d/1pNA08-j5f8h--PJIRJZafjfwxJ1rQbj0zHwOFvc57LA/edit     Cap3/Images/Diagrama_Contexto_v2}%
+    \caption{Arquitectura de contexto MCARS.} \label{fig:Diagrama_preprocesa}
+\end{figure}
+    
+
+
+sigue los parámetros presentados en la Arquitectura General \ref{sec:Prop_Arquitectura} (O CITAR EL COMPONENTE DE LA ARQUITECTURA GENERAL).

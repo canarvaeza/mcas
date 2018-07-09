@@ -3,6 +3,9 @@
 
 
 \subsubsection{MODIFICACIÓN}
+
+CAMBIARÁ RADICALMENTE
+
 Se propone el uso de SPARQL como en el artículo \cite{Meditskos2013, Meditskos2016}
 Hay una nueva versión pero aún no está soportada.
 
@@ -105,3 +108,38 @@ to benefit from both data- and knowledge-driven computing paradigms.
 
 
 % \cite{Wang}Presenta la creación de una ontología de contexto a partir de la caracterización de entidades como localización, usuario, actividad y computador. Dentro de esta propuesta se presenta también un ejemplo dónde se puede evidenciar el uso de reglas de razonamiento para encontrar contexto a partir de datos de entrada. (leer bien)  
+
+Dadas las problematicas encontradas en el uso de SWRL entre las cuales se encuentra
+\textbf{\textit{(i)}} tiempos largos de ejecución del paquete de reglas.
+\textbf{\textit{(ii)}} falta de una característica que permita generar instancias en la ontología de forma automática.
+Es claro que estas desventajas pueden darse debido al proceso generado para la ejecución de reglas en dos fragmentos.
+
+\subsection{Ontología de Reglas}
+\label{subsec:Prop_Razonamiento_Rules_Ont}
+
+\begin{figure}[!ht]
+    \centering%
+    \includegraphics[width=0.3\textwidth]{Cap3/Images/Contexto_Razonamiento_Ont_Rules}%
+    \caption{Ontología de Reglas.} \label{fig:Contexto_Razonamiento_Ont_Rules}
+\end{figure}
+
+Se crea una ontología, \ref{fig:Contexto_Razonamiento_Ont_Rules} que busca relacionar las actividades de contexto de alto y bajo nivel, presentadas en la ontología de la sección \ref{subsubsec:Prop_Mod_mContext}, con las reglas del dominio.
+
+\subsection{Reglas SPARQL}
+\label{subsec:Prop_Razonamiento_SPARQL}
+
+Teniendo en cuenta el rendimiento ofrecido por las reglas SWRL se opta por una alternativa con SPARQL. En la figura \ref{fig:Flujo_reglas_sparql} se puede observar el flujo de aplicación de reglas el cual sigue los siguientes pasos:
+
+\begin{itemize}
+    \item 1) Se obtienen las actividades generadas en a un rango específico de tiempo, pueden ser las actividades de un día o las actividades de una hora determinada.
+    \item 2) Se busca en el grafo de reglas aquellas instancias que tienen una relación con las actividades por medio de la propiedad isTrigger de la ontología de reglas \ref{subsec:Prop_Razonamiento_Rules_Ont}.
+    \item 3) Se extraen los comandos construct y select que conformarán los queries SPARQL a ejecutar en el siguiente paso.
+    \item 4) Se ejecutan las reglas y se generan las instancias y propiedades pertinentes.
+\end{itemize}
+
+Esta propuesta trata aspectos que no son mencionados por \cite{Meditskos2013} como:
+\textbf{\textit{(i)}} manejo de un gran número de reglas en la bd de grafos - en el trabajo no es claro como se realiza la ejecución de cada una de las reglas en el sistema, si se ejecutan todas las posibles o se realiza algún tipo de filtrado.
+\textbf{\textit{(ii)}} representación de las reglas en un grafo para la recuperación eficiente de acuerdo a diferentes elementos de la ontología del dominio.
+\textbf{\textit{(iii)}} es posible agregar mas componentes a las reglas como lugar o acompañante.
+
+\todo{TABLA DE COMPARACIÓN ENTRE EL USO DE REGLAS CON SWRL Y SPARQL}

@@ -650,3 +650,29 @@
 23:27:07 Server received signal 15
 23:27:07 Initiating quick shutdown
 23:27:07 Server shutdown complete
+
+		Fri Jul 06 2018
+14:35:14 OpenLink Virtuoso Universal Server
+14:35:14 Version 07.20.3217-pthreads for Linux as of Jan 26 2018
+14:35:14 uses parts of OpenSSL, PCRE, Html Tidy
+14:35:14 Database version 3126
+14:35:14 SQL Optimizer enabled (max 1000 layouts)
+14:35:16 Compiler unit is timed at 0.000230 msec
+14:35:18 Roll forward started
+14:35:18     20 transactions, 1684 bytes replayed (100 %)
+14:35:18 Roll forward complete
+14:35:19 Checkpoint started
+14:35:19 Checkpoint finished, log reused
+14:35:19 HTTP/WebDAV server online at 8890
+14:35:19 Server online at 1111 (pid 1)
+14:36:37 The function gethostbyname returned error 2 for host "purl.org".
+15:35:19 Checkpoint started
+15:35:19 Checkpoint finished, log reused
+16:35:21 Checkpoint started
+16:35:21 Checkpoint finished, log reused
+17:35:23 Checkpoint started
+17:35:23 Checkpoint finished, log reused
+18:38:45 Checkpoint started
+18:38:46 Checkpoint finished, log reused
+19:38:47 Checkpoint started
+19:38:47 Checkpoint finished, log reused
