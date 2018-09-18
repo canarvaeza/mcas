@@ -36,31 +36,22 @@ public class Queries {
 
 		return true;
 	}
-	
-	
 
 	public static boolean insertConnectedData(VirtGraph vGraph, String queryContent) {
 
-		//queryContent = "\r\n" + "select distinct * from <http://localhost:8890/mcas/person#> where {?s ?p ?o.} LIMIT 100";
-        
+		// queryContent = "\r\n" + "select distinct * from
+		// <http://localhost:8890/mcas/person#> where {?s ?p ?o.} LIMIT 100";
+
 		System.out.println(queryContent);
 		System.out.println("\n creating content...");
-		String str = "insert data\r\n" + 
-				"{" +
-				queryContent +
-				"}";
-		
+		String str = "insert data\r\n" + "{" + queryContent + "}";
+
 		VirtuosoUpdateRequest vur = VirtuosoUpdateFactory.create(str, vGraph);
 		vur.exec();
-		
+
 		return true;
 	}
-	
-	
-	
-	
-	
-	
+
 	/**
 	 * 
 	 * @param vGraph
@@ -87,7 +78,7 @@ public class Queries {
 			RDFNode s = result.get("s");
 			RDFNode p = result.get("p");
 			RDFNode o = result.get("o");
-			System.out.println(s + " " + p + " " + o );
+			System.out.println(s + " " + p + " " + o);
 		}
 
 		System.out.println("executed");
@@ -105,10 +96,11 @@ public class Queries {
 	 * @return specific data from a graph
 	 */
 	public static String getGraphData(VirtGraph vGraph, String graphToConsult, String subToConsult, Long limit) {
-		
+
 		String response = "";
-		
-		Query sparql = QueryFactory.create("SELECT * FROM <" + graphToConsult + "> WHERE { <" + subToConsult + "> ?p ?o }");
+
+		Query sparql = QueryFactory
+				.create("SELECT * FROM <" + graphToConsult + "> WHERE { <" + subToConsult + "> ?p ?o }");
 		if (limit != null) {
 			System.out.println("Is not null");
 			sparql.setLimit(limit);
@@ -122,18 +114,44 @@ public class Queries {
 		while (results.hasNext()) {
 			QuerySolution result = results.nextSolution();
 			RDFNode graphName = result.get("graph");
-			//RDFNode s = result.get("s");
+			// RDFNode s = result.get("s");
 			RDFNode p = result.get("p");
 			RDFNode o = result.get("o");
-			response += "<" + subToConsult + ">" + " " + p + " " + o + ".\n"; 
-//			System.out.println(s + " " + p + " " + o );
+			response += "<" + subToConsult + ">" + " " + p + " " + o + ".\n";
+			// System.out.println(s + " " + p + " " + o );
 		}
 
 		System.out.println("executed");
 		return response;
 
 	}
-	
-	
-	
+
+	public static String getDataInRange(VirtGraph vGraph, String graphToConsult, Long limit, String range) {
+		range = "Filter(?o > xsd:date(\"2017-06-05\") && ?o < xsd:date(\"2017-06-07\"))";
+		Query sparql = QueryFactory.create("SELECT * FROM <" + graphToConsult + "> WHERE { ?s ?p ?o"+ range +" }");
+		if (limit != null) {
+			System.out.println("Is not null");
+			sparql.setLimit(limit);
+		}
+
+		System.out.println("query created");
+		VirtuosoQueryExecution vqe = VirtuosoQueryExecutionFactory.create(sparql, vGraph);
+		System.out.println("query executed");
+
+		ResultSet results = vqe.execSelect();
+		while (results.hasNext()) {
+			QuerySolution result = results.nextSolution();
+			RDFNode graphName = result.get("graph");
+			RDFNode s = result.get("s");
+			RDFNode p = result.get("p");
+			RDFNode o = result.get("o");
+			System.out.println(s + " " + p + " " + o);
+		}
+
+		System.out.println("executed");
+
+		// http://localhost:8890/mcas/person#
+		return "";
+	}
+
 }
