@@ -1,11 +1,27 @@
 {
   "Activity": [
     {
-      "Id": "localhost:8890/mcas/activity#act/00004",
-      "Type": "purl.org/m-context/ontologies/domains/alzheimer#Run",
+      "Id": "localhost:8890/mcas/activity#act/00005",
+      "Type": "purl.org/m-context/ontologies/domains/alzheimer#WakeUp",
       "Time": {
-        "Beginning": "2017-06-06T16:00:00Z",
-        "Ending": "2017-06-06T16:50:00Z"
+        "Beginning": "2017-06-07T03:00:00Z",
+        "Ending": "2017-06-07T03:20:00Z"
+      },
+      "Person": [
+        {
+          "Id": "localhost:8890/mcas/person#per/00002"
+        }
+      ],
+      "Descriptor":[
+        {"Id": "localhost:8890/mcas/sensor#obs/00052"}
+      ]
+    },
+    {
+      "Id": "localhost:8890/mcas/activity#act/00006",
+      "Type": "purl.org/m-context/ontologies/domains/alzheimer#Bathroom",
+      "Time": {
+        "Beginning": "2017-06-07T03:05:00Z",
+        "Ending": "2017-06-07T03:08:00Z"
       },
       "Person": [
         {

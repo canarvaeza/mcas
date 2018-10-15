@@ -18,14 +18,13 @@ sparql load <http://vocab.org/relationship/rel-vocab-20100607.rdf> into <http://
 insert data
 {
  graph <http://localhost:8890/pruebaMCAS>
-{
-<http://localhost:8890/pruebaMCAS#u000001> a <http://purl.org/m-context/ontologies/person#PersonMCAS>;
-foaf:firstName "Cristian";
-foaf:lastName "Narvaez";
-foaf:gender "male";
-foaf:firstName "Cristian";
-foaf:age 24.
-}
+	{
+		<http://localhost:8890/pruebaMCAS#u000001> a <http://purl.org/m-context/ontologies/person#PersonMCAS>;
+		foaf:firstName "Cristian";
+		foaf:lastName "Narvaez";
+		foaf:gender "male";
+		foaf:age 24.
+	}
 }
 
 

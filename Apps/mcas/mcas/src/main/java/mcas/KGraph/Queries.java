@@ -126,6 +126,80 @@ public class Queries {
 
 	}
 
+	
+	/**
+	 * 
+	 * @param vGraph
+	 * @param graphToConsult
+	 * @param subToConsult
+	 * @param limit
+	 * @return specific data from a graph
+	 */
+	public static String getSpecificGraphData(VirtGraph vGraph, String returnParameters, String graphToConsult, String subToConsult, Long limit) {
+
+		String response = "";
+		//String lowActivities = "";
+		Query sparql = QueryFactory
+				//.create("SELECT" + returnParameters +" FROM <" + graphToConsult + "> WHERE { " + subToConsult + "} order by ?s");
+				.create("prefix xsd:<http://www.w3.org/2001/XMLSchema#>\r\n" + 
+						"prefix mcas:<http://localhost:8890/mcas/>\r\n" + 
+						"select distinct ?rule ?constructor ?select ?lowActivity\r\n" + 
+						"\r\n" + 
+						"from <http://localhost:8890/mcas/rules#>\r\n" + 
+						"from named <http://localhost:8890/mcas/activity#>\r\n" + 
+						"WHERE\r\n" + 
+						"	{\r\n" + 
+						"\r\n" + 
+						"    ?rule  <http://purl.org/rules/activities#hasTrigger>  ?trigger;\r\n" + 
+						"<http://purl.org/rules/activities#hasConstructor> ?constructor;\r\n" + 
+						"<http://purl.org/rules/activities#hasSelect> ?select\r\n" + 
+						"\r\n" + 
+						"GRAPH <http://localhost:8890/mcas/activity#> { \r\n" + 
+						"\r\n" + 
+						"		SELECT DISTINCT  *\r\n" + 
+						"		WHERE\r\n" + 
+						"			{\r\n" + 
+						"\r\n" + 
+						"				?lowActivity  a   ?trigger;\r\n" + 
+						"					<http://purl.org/m-context/ontologies/time#hasBeginningTime> ?begTime.\r\n" + 
+						"\r\n" + 
+						"				BIND (\"2017-06-07\"^^xsd:dateTime as ?day).\r\n" + 
+						"				BIND (bif:datediff ('day',  ?day, ?begTime) as ?dayDifference).\r\n" + 
+						"				FILTER (?dayDifference = 0)\r\n" + 
+						"\r\n" + 
+						"			}\r\n" + 
+						"    	}\r\n" + 
+						"	}\r\n" + 
+						"ORDER BY ?lowActivity");
+		if (limit != null) {
+			System.out.println("Is not null");
+			sparql.setLimit(limit);
+		}
+
+		System.out.println("query created");
+		VirtuosoQueryExecution vqe = VirtuosoQueryExecutionFactory.create(sparql, vGraph);
+		System.out.println("query executed");
+
+		ResultSet results = vqe.execSelect();
+		while (results.hasNext()) {
+			QuerySolution result = results.nextSolution();
+			RDFNode graphName = result.get("graph");
+			// RDFNode s = result.get("s");
+			RDFNode rule = result.get("rule");
+			RDFNode constructor =result.get("constructor");
+			RDFNode select = result.get("select");
+			response +=  rule + "\n" + constructor + "\n" + select + "\n";
+			System.out.println(rule + "\n" + constructor + "\n" + select + "\n");
+		}
+
+		System.out.println("executed");
+		return response;
+
+	}
+	
+	
+	
+	
 	public static String getDataInRange(VirtGraph vGraph, String graphToConsult, Long limit, String range) {
 		range = "Filter(?o > xsd:date(\"2017-06-05\") && ?o < xsd:date(\"2017-06-07\"))";
 		Query sparql = QueryFactory.create("SELECT * FROM <" + graphToConsult + "> WHERE { ?s ?p ?o"+ range +" }");

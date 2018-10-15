@@ -1,0 +1,17 @@
+desde ISQL
+
+Creating a backup
+A virtuoso backup can be created by executing the appropriate commands via the ISQL interface.
+
+docker exec -i virtuoso_container mkdir -p backups
+docker exec -i virtuoso_container isql-v <<EOF
+    exec('checkpoint');
+        backup_context_clear();
+        backup_online('backup_',30000,0,vector('backups'));
+        exit;
+
+Restoring a backup
+To restore a backup, stop the running container and restore the database using a new container.
+
+docker run --rm  -it -v path-to-your-database:/data tenforce/virtuoso virtuoso-t +restore-backup backups/backup_ +configfile /data/virtuoso.ini
+The new container will exit once the backup has been restored, you can then restart the original db container.

@@ -42,7 +42,10 @@ public class MainController {
 		// QueryConf.queryGraphBase + "person#" first If I want to use specific graph
 		VirtGraph graph = new VirtGraph(QueryConf.connectionString, QueryConf.userName, QueryConf.passWord);
 
-		KGraphManager.insertConnectedData(graph, rdfFlux);
+//		KGraphManager.insertConnectedData(graph, rdfFlux);
+		
+		KGraphManager.getRules(graph);
+		
 
 		//
 		// public static OWLOntology domainOntology = OntologyManager

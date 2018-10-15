@@ -1,5 +1,5 @@
 docker run --name mcas_virtuoso \
-    -p 8890:8890 -p 1111:1111 \
+    -p <docker-machine ip>:8890 -p <docker-machine ip>:1111 \
     -e DBA_PASSWORD=123456 \
     -e SPARQL_UPDATE=true \
     -e DEFAULT_GRAPH=http://www.example.com/my-graph \

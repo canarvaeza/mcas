@@ -1,40 +1,344 @@
-# ---- RULES GENERATION ----
+# ---- PROBAR ESTE NUEVO SELECT PARA LOS QUERY .----- 
 
-prefix : <http://purl.org/rules/activities#>
+prefix : <http://purl.org/m-context/ontologies/mContext#>
+prefix activity: <http://localhost:8890/mcas/activity#act/>
+prefix time: <http://purl.org/m-context/ontologies/time#>
+
+select *
+
+from <http://localhost:8890/mcas/person#>
+from <http://localhost:8890/mcas/activity#>
+
+where {
+
+	?act1 a <http://purl.org/m-context/ontologies/domains/alzheimer#WakeUp>;
+	time:hasBeginningTime ?b1;
+	time:hasEndingTime ?e1.
+	FILTER (xsd:date("2017-06-06") < ?b1&& ?b1< xsd:date("2017-06-07") )
+
+	?act2 a <http://purl.org/m-context/ontologies/domains/alzheimer#Bathroom>;
+	time:hasBeginningTime ?b2;
+	time:hasEndingTime ?e2.
+	FILTER (xsd:date("2017-06-06") < ?b2 && ?b2< xsd:date("2017-06-07"))
+
+	#Contains the activity
+	FILTER (?b1 < ?b2 && ?e1 > ?e2).
+
+	optional {
+	?act2 :hasActor ?user.
+	}
+
+	BIND (URI(CONCAT(
+	str(activity:), 
+	STRAFTER(str(?act1), str(activity:))
+	,"_", 
+	STRAFTER(str(?act2), str(activity:))
+	)) as ?new).
+	FILTER(NOT EXISTS {?new a [] .})  
+
+}
+
+
+
+
+# ---- RULES GENERATION bSASIC TEMPLATE ----
+
+prefix : <http://localhost:8890/mcas/rules#>
+prefix rules_ont: <http://purl.org/rules/activities#>
 prefix alzheimer: <http://purl.org/m-context/ontologies/domains/alzheimer#>
 
 insert data
 {
- graph <http://purl.org/rules/activities#>
+	graph <http://localhost:8890/mcas/rules#>
 	{
-<http://purl.org/rules/activities#rule/00006> a :Rule;
-:hasTrigger <http://purl.org/m-context/ontologies/domains/alzheimer#Eat>;
-:hasTrigger <http://purl.org/m-context/ontologies/domains/alzheimer#Sit>;
-:hasResult <alzheimer:HavingAMeal>;
-:hasPreferenceValue 5;
-:hasConstructor "I'm a constructor";
-:hasSelect "I'm a select".
+		<http://localhost:8890/mcas/rules#rule/00001> a rules_ont:Rule;
+		rules_ont:hasTrigger <http://purl.org/m-context/ontologies/domains/alzheimer#Eat>;
+		rules_ont:hasTrigger <http://purl.org/m-context/ontologies/domains/alzheimer#Sit>;
+		rules_ont:hasResult <alzheimer:HavingAMeal>;
+		rules_ont:hasPreferenceValue 5;
+		rules_ont:hasConstructor "I'm a constructor";
+		rules_ont:hasSelect "I'm a select".
 	}
 }
 
+
+
+# --- REAL CASE TEMPLATE ---
+
+# ---- RULES GENERATION ----
+
+prefix : <http://localhost:8890/mcas/rules#>
+prefix rules_ont: <http://purl.org/rules/activities#>
+prefix alzheimer: <http://purl.org/m-context/ontologies/domains/alzheimer#>
+
+insert data
+{
+	graph <http://localhost:8890/mcas/rules#>
+	{
+		<http://localhost:8890/mcas/rules#rule/00007> a rules_ont:Rule;
+		rules_ont:hasTrigger <http://purl.org/m-context/ontologies/domains/alzheimer#WakeUp>;
+		rules_ont:hasTrigger <http://purl.org/m-context/ontologies/domains/alzheimer#Bathroom>;
+		rules_ont:hasResult <alzheimer:Nocturia>;
+		rules_ont:hasPreferenceValue 5;
+		rules_ont:hasConstructor """
+			prefix : <http://purl.org/m-context/ontologies/mContext#>
+			prefix activity: <http://localhost:8890/mcas/activity#act/>
+			prefix time: <http://purl.org/m-context/ontologies/time#>
+
+			CONSTRUCT
+			{
+				GRAPH  <http://localhost:8890/mcas/activity#> {
+					?new a alzheimer:Nocturia;
+					    :hasSubActivity ?act1;
+					    :hasSubActivity ?act2;
+					    time:hasBeginningTime ?bt1;
+					    time:hasEndingTime ?et1;
+					    :hasActor ?user.
+					?act1 :isSubActivity ?new.
+					?act2 :isSubActivity ?new.
+				}
+				GRAPH  <http://localhost:8890/mcas/person#> {
+					?user :isInvolvedIn ?new.
+				}
+			}""";
+		rules_ont:hasSelect """
+			from <http://localhost:8890/mcas/person#>
+			from <http://localhost:8890/mcas/activity#>
+
+			from <http://localhost:8890/mcas/person#>
+from <http://localhost:8890/mcas/activity#>
+
+where {
+
+	?act1 a <http://purl.org/m-context/ontologies/domains/alzheimer#WakeUp>;
+	time:hasBeginningTime ?b1;
+	time:hasEndingTime ?e1.
+	FILTER (xsd:date("2017-06-06") < ?b1&& ?b1< xsd:date("2017-06-07") )
+
+	?act2 a <http://purl.org/m-context/ontologies/domains/alzheimer#Bathroom>;
+	time:hasBeginningTime ?b2;
+	time:hasEndingTime ?e2.
+	FILTER (xsd:date("2017-06-06") < ?b2 && ?b2< xsd:date("2017-06-07"))
+
+	#Contains the activity
+	FILTER (?b1 < ?b2 && ?e1 > ?e2).
+
+	optional {
+	?act2 :hasActor ?user.
+	}
+
+	BIND (URI(CONCAT(
+	str(activity:), 
+	STRAFTER(str(?act1), str(activity:))
+	,"_", 
+	STRAFTER(str(?act2), str(activity:))
+	)) as ?new).
+	FILTER(NOT EXISTS {?new a [] .})  
+
+}""".
+	}
+}
+
+
+
+## ----- ONE WRITTE -----
+
+
+prefix : <http://purl.org/m-context/ontologies/mContext#>
+prefix activity: <http://localhost:8890/mcas/activity#act/>
+prefix time: <http://purl.org/m-context/ontologies/time#>
+
+CONSTRUCT
+{
+	GRAPH  <http://localhost:8890/mcas/activity#> {
+		?new a alzheimer:Nocturia;
+		    :hasSubActivity ?act1;
+		    :hasSubActivity ?act2;
+		    time:hasBeginningTime ?bt1;
+		    time:hasEndingTime ?et1;
+		    :hasActor ?user.
+		?act1 :isSubActivity ?new.
+		?act2 :isSubActivity ?new.
+	}
+	GRAPH  <http://localhost:8890/mcas/person#> {
+		?user :isInvolvedIn ?new.
+	}
+}
+
+from <http://localhost:8890/mcas/person#>
+from <http://localhost:8890/mcas/activity#>
+
+from <http://localhost:8890/mcas/person#>
+from <http://localhost:8890/mcas/activity#>
+
+where {
+
+	?act1 a <http://purl.org/m-context/ontologies/domains/alzheimer#WakeUp>;
+	time:hasBeginningTime ?b1;
+	time:hasEndingTime ?e1.
+	FILTER (xsd:date("2017-06-06") < ?b1&& ?b1< xsd:date("2017-06-07") )
+
+	?act2 a <http://purl.org/m-context/ontologies/domains/alzheimer#Bathroom>;
+	time:hasBeginningTime ?b2;
+	time:hasEndingTime ?e2.
+	FILTER (xsd:date("2017-06-06") < ?b2 && ?b2< xsd:date("2017-06-07"))
+
+	#Contains the activity
+	FILTER (?b1 < ?b2 && ?e1 > ?e2).
+
+	optional {
+	?act2 :hasActor ?user.
+	}
+
+	BIND (URI(CONCAT(
+	str(activity:), 
+	STRAFTER(str(?act1), str(activity:))
+	,"_", 
+	STRAFTER(str(?act2), str(activity:))
+	)) as ?new).
+	FILTER(NOT EXISTS {?new a [] .})  
+
+}
+
+
+
+
+
+## ---- MULTILPLE WRITES example others--- 
+
+prefix : <http://purl.org/m-context/ontologies/mContext#>
+prefix activity: <http://localhost:8890/mcas/activity#act/>
+prefix time: <http://purl.org/m-context/ontologies/time#>
+
+construct{
+GRAPH  <http://localhost:8890/mcas/activity#> {
+  ?new a alzheimer:HavingAMeal;
+    :hasSubActivity ?act1;
+    :hasSubActivity ?act2;
+    time:hasBeginningTime ?bt1;
+    time:hasEndingTime ?et1;
+    :hasActor ?user.
+
+  ?act1 :isSubActivity ?new.
+  ?act2 :isSubActivity ?new.
+ }
+  GRAPH  <http://localhost:8890/mcas/person#> {
+    ?user :isInvolvedIn ?new.
+  }
+}
+
+from <http://localhost:8890/mcas/person#>
+from <http://localhost:8890/mcas/activity#>
+
+where {
+#?s ?o ?p.
+ BIND ("2017-06-06"^^xsd:dateTime as ?day).
+
+ ?act1 a <http://purl.org/m-context/ontologies/domains/alzheimer#Sit>;
+  time:hasBeginningTime ?b1;
+  time:hasEndingTime ?e1.
+
+ BIND (xsd:dateTime(?b1) as ?bt1).
+ BIND (xsd:dateTime(?e1) as ?et1).
+ FILTER(month(?bt1) = month(?day))
+  
+ ?act2 a <http://purl.org/m-context/ontologies/domains/alzheimer#Eat>;
+time:hasBeginningTime ?b2;   time:hasEndingTime ?e2.
+
+  BIND (xsd:dateTime(?b2) as ?bt2).
+  BIND (xsd:dateTime(?e2) as ?et2).
+  
+  FILTER (?bt1 < ?bt2 && ?et1 > ?et2).
+  
+ optional {
+  ?act2 :hasActor ?user.
+ }
+
+BIND (URI(CONCAT(
+str(activity:), 
+STRAFTER(str(?act1), str(activity:))
+,"_", 
+STRAFTER(str(?act2), str(activity:))
+)) as ?new).
+FILTER(NOT EXISTS {?new a [] .})  
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # ---- RULES QUERY ----
 
-select distinct ?o, ?c
-from <http://purl.org/rules/activities#>
-where{
-{
-# HERE IS WHERE I GET ALL DAY ACTIVITIES
-select distinct ?s
-from <http://localhost:8890/mcas/activity#>
-where {
-?o a ?s.
-#<http://purl.org/m-context/ontologies/time#hasEndingTime> ?bt.
-#FILTER (?bt < "2017-06-06"^^xsd:dateTime)
-}
-}
 
-?o <http://purl.org/rules/activities#hasTrigger> ?s.
-?o <http://purl.org/rules/activities#hasConstructor> ?c.
+prefix mcas:<http://localhost:8890/mcas/>
+select distinct ?o ?c ?t
+from <http://localhost:8890/mcas/rules#>
+from named <http://localhost:8890/mcas/activity#>
+WHERE
+	{ GRAPH <http://localhost:8890/mcas/activity#> { 
 
-}
-order by ?s
+		SELECT DISTINCT  ?s
+		WHERE
+			{ ?o  a   ?s }
+    	}
+    ?o  <http://purl.org/rules/activities#hasTrigger>  ?t ;
+        <http://purl.org/rules/activities#hasConstructor>  ?c
+	}
+ORDER BY ?s
+
+
+
+
+## FILTERED BY AN SPECIFIC DATE
+prefix xsd:<http://www.w3.org/2001/XMLSchema#>
+prefix mcas:<http://localhost:8890/mcas/>
+select distinct ?rule ?constructor ?select
+from <http://localhost:8890/mcas/rules#>
+from named <http://localhost:8890/mcas/activity#>
+WHERE
+	{
+
+    ?rule  <http://purl.org/rules/activities#hasTrigger>  ?trigger;
+<http://purl.org/rules/activities#hasConstructor> ?constructor;
+<http://purl.org/rules/activities#hasSelect> ?select
+
+GRAPH <http://localhost:8890/mcas/activity#> { 
+
+		SELECT DISTINCT  *
+		WHERE
+			{
+
+				?lowActivity  a   ?trigger;
+					<http://purl.org/m-context/ontologies/time#hasBeginningTime> ?begTime.
+# un día antes que el día que quiero, el día que quiero
+# FILTER (xsd:date("2017-06-06") < ?begTime  && ?begTime < xsd:date("2017-06-07") )
+				
+				# ALSO CAN BE
+				#?s <http://purl.org/m-context/ontologies/time#hasBeginningTime> ?p.
+				#BIND ("2017-06-06"^^xsd:dateTime as ?day).
+				#BIND (bif:datediff ('day',  ?day, ?p) as ?dayDifference).
+				#FILTER (?dayDifference = 0)
+				FILTER (xsd:date("2017-06-06") < ?begTime  && ?begTime < xsd:date("2017-06-07") )
+
+			}
+    	}
+	}
+ORDER BY ?lowActivity

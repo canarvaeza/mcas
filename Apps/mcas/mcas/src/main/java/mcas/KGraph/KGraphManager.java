@@ -62,6 +62,24 @@ public class KGraphManager {
 		return response;
 	}
 	
+	public static String getRules(VirtGraph vGraph) {
+		String graphToConsult = QueryConf.graphsBases.get("rules");
+		String subToConsult = "{\r\n" + 
+				"		\r\n" + 
+				"		select distinct ?s\r\n" + 
+				"		from <http://localhost:8890/mcas/activity#>\r\n" + 
+				"		where {\r\n" + 
+				"			?o a ?s.\r\n" + 
+				"			}\r\n" + 
+				"	}\r\n" + 
+				"\r\n" + 
+				"	?o <http://purl.org/rules/activities#hasTrigger> ?t.\r\n" + 
+				"	?o <http://purl.org/rules/activities#hasConstructor> ?c.\r\n" + 
+				"";
+		String response = Queries.getSpecificGraphData(vGraph, "distinct ?o ?c ?t", graphToConsult, subToConsult, null);
+		return response;
+	}
+	
 	public static String getAllGraph(VirtGraph vGraph, String graphToConsult) {
 		String response = Queries.getGraphData(vGraph, QueryConf.graphsBases.get(graphToConsult), null);
 		return response;
