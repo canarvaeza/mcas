@@ -13,7 +13,7 @@ public class MainController {
 
 	public static void main(String[] args) throws Exception {
 
-		String rdfFlux = ToRDF.data2RDF(root + "transformation/", "mcas-model-03.rml.ttl", "salida.ttl");
+//		String rdfFlux = ToRDF.data2RDF(root + "transformation/", "mcas-model-03.rml.ttl", "salida.ttl");
 
 		// String rdfFlux = "";
 

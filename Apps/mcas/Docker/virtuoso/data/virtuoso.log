@@ -913,3 +913,58 @@
 02:36:35 Server received signal 15
 02:36:35 Initiating quick shutdown
 02:36:35 Server shutdown complete
+
+		Tue Oct 16 2018
+12:57:51 OpenLink Virtuoso Universal Server
+12:57:51 Version 07.20.3217-pthreads for Linux as of Jan 26 2018
+12:57:51 uses parts of OpenSSL, PCRE, Html Tidy
+12:57:52 Database version 3126
+12:57:54 SQL Optimizer enabled (max 1000 layouts)
+12:57:58 Compiler unit is timed at 0.000426 msec
+12:58:08 Roll forward started
+12:58:08     49 transactions, 4293 bytes replayed (100 %)
+12:58:08 Roll forward complete
+12:58:10 Checkpoint started
+12:58:10 Checkpoint finished, log reused
+12:58:10 HTTP/WebDAV server online at 8890
+12:58:10 Server online at 1111 (pid 1)
+13:38:54 Server received signal 15
+13:38:54 Initiating quick shutdown
+13:38:54 Server shutdown complete
+
+		Tue Oct 16 2018
+21:03:35 OpenLink Virtuoso Universal Server
+21:03:36 Version 07.20.3217-pthreads for Linux as of Jan 26 2018
+21:03:36 uses parts of OpenSSL, PCRE, Html Tidy
+21:03:36 Database version 3126
+21:03:36 SQL Optimizer enabled (max 1000 layouts)
+21:03:38 Compiler unit is timed at 0.000952 msec
+21:03:44 Roll forward started
+21:03:44     90 transactions, 19650 bytes replayed (100 %)
+21:03:44 Roll forward complete
+21:03:46 Checkpoint started
+21:03:47 Checkpoint finished, log reused
+21:03:47 HTTP/WebDAV server online at 8890
+21:03:47 Server online at 1111 (pid 1)
+22:03:49 Checkpoint started
+22:03:49 Checkpoint finished, log reused
+22:09:06 Server received signal 15
+22:09:06 Initiating quick shutdown
+22:09:06 Server shutdown complete
+
+		Tue Oct 16 2018
+22:09:12 OpenLink Virtuoso Universal Server
+22:09:12 Version 07.20.3217-pthreads for Linux as of Jan 26 2018
+22:09:12 uses parts of OpenSSL, PCRE, Html Tidy
+22:09:12 Database version 3126
+22:09:12 SQL Optimizer enabled (max 1000 layouts)
+22:09:13 Compiler unit is timed at 0.000310 msec
+22:09:15 Roll forward started
+22:09:15     18 transactions, 1512 bytes replayed (100 %)
+22:09:15 Roll forward complete
+22:09:16 Checkpoint started
+22:09:16 Checkpoint finished, log reused
+22:09:16 HTTP/WebDAV server online at 8890
+22:09:16 Server online at 1111 (pid 1)
+23:41:14 Checkpoint started
+23:41:15 Checkpoint finished, log reused

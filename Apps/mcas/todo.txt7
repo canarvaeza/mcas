@@ -2,6 +2,7 @@ TODO:
 
 -USEFUL FUNC http://docs.openlinksw.com/virtuoso/ch-functions/
 
+*cambiar hasConstruct to hasInser in the ontology
 * Crear una actividad de forma automática
 * se supone que ya puedo hacer un llamado a la bd y traer info relevante, he mejorado la forma en la que se hacen consultas.
 * separar actividades en fecha, hora y fecha y hora (ya no creo que sea tan necesario)

@@ -14,7 +14,69 @@ import virtuoso.jena.driver.VirtuosoUpdateRequest;
 
 public class Queries {
 	/** inserts **/
+	
+	public static boolean constructNewRule(VirtGraph vGraph, String graphToUpdate, String queryContent) {
+		/*String str = "		prefix : <http://purl.org/m-context/ontologies/mContext#>\r\n" + 
+				"			prefix activity: <http://localhost:8890/mcas/activity#act/>\r\n" + 
+				"			prefix time: <http://purl.org/m-context/ontologies/time#>\r\n" + 
+				"\r\n" + 
+				"			INSERT\r\n" + 
+				"			{\r\n" + 
+				"				GRAPH  <http://localhost:8890/mcas/activity#> {\r\n" + 
+				"					?new a alzheimer:Nocturia;\r\n" + 
+				"					    :hasSubActivity ?act1;\r\n" + 
+				"					    :hasSubActivity ?act2;\r\n" + 
+				"					    time:hasBeginningTime ?bt1;\r\n" + 
+				"					    time:hasEndingTime ?et1;\r\n" + 
+				"					    :hasActor ?user.\r\n" + 
+				"					?act1 :isSubActivity ?new.\r\n" + 
+				"					?act2 :isSubActivity ?new.\r\n" + 
+				"				}\r\n" + 
+				"				GRAPH  <http://localhost:8890/mcas/person#> {\r\n" + 
+				"					?user :isInvolvedIn ?new.\r\n" + 
+				"				}\r\n" + 
+				"			}			\r\n" + 
+				"from <http://localhost:8890/mcas/person#>\r\n" + 
+				"			from <http://localhost:8890/mcas/activity#>\r\n" + 
+				"\r\n" + 
+				"			where {\r\n" + 
+				"\r\n" + 
+				"				?act1 a <http://purl.org/m-context/ontologies/domains/alzheimer#WakeUp>;\r\n" + 
+				"				time:hasBeginningTime ?b1;\r\n" + 
+				"				time:hasEndingTime ?e1.\r\n" + 
+				"				FILTER (xsd:date(\"2017-06-06\") < ?b1&& ?b1< xsd:date(\"2017-06-07\") )\r\n" + 
+				"\r\n" + 
+				"				?act2 a <http://purl.org/m-context/ontologies/domains/alzheimer#Bathroom>;\r\n" + 
+				"				time:hasBeginningTime ?b2;\r\n" + 
+				"				time:hasEndingTime ?e2.\r\n" + 
+				"				FILTER (xsd:date(\"2017-06-06\") < ?b2 && ?b2< xsd:date(\"2017-06-07\"))\r\n" + 
+				"\r\n" + 
+				"				#Contains the activity\r\n" + 
+				"				FILTER (?b1 < ?b2 && ?e1 > ?e2).\r\n" + 
+				"\r\n" + 
+				"				optional {\r\n" + 
+				"				?act2 :hasActor ?user.\r\n" + 
+				"				}\r\n" + 
+				"\r\n" + 
+				"				BIND (URI(CONCAT(\r\n" + 
+				"				str(activity:), \r\n" + 
+				"				STRAFTER(str(?act1), str(activity:))\r\n" + 
+				"				,\"_\", \r\n" + 
+				"				STRAFTER(str(?act2), str(activity:))\r\n" + 
+				"				)) as ?new).\r\n" + 
+				"				FILTER(NOT EXISTS {?new a [] .})  \r\n" + 
+				"\r\n" + 
+				"			}\r\n" + 
+				"";*/
+		
+		VirtuosoUpdateRequest vur = VirtuosoUpdateFactory.create(queryContent, vGraph);
+		vur.exec();
 
+		return true;
+		
+	}
+	
+	
 	/**
 	 * The Idea of this function is to save data to a single graph ex, only data to
 	 * person# graph.
@@ -143,8 +205,7 @@ public class Queries {
 				//.create("SELECT" + returnParameters +" FROM <" + graphToConsult + "> WHERE { " + subToConsult + "} order by ?s");
 				.create("prefix xsd:<http://www.w3.org/2001/XMLSchema#>\r\n" + 
 						"prefix mcas:<http://localhost:8890/mcas/>\r\n" + 
-						"select distinct ?rule ?constructor ?select ?lowActivity\r\n" + 
-						"\r\n" + 
+						"select distinct ?rule ?constructor ?select\r\n" + 
 						"from <http://localhost:8890/mcas/rules#>\r\n" + 
 						"from named <http://localhost:8890/mcas/activity#>\r\n" + 
 						"WHERE\r\n" + 
@@ -162,10 +223,15 @@ public class Queries {
 						"\r\n" + 
 						"				?lowActivity  a   ?trigger;\r\n" + 
 						"					<http://purl.org/m-context/ontologies/time#hasBeginningTime> ?begTime.\r\n" + 
-						"\r\n" + 
-						"				BIND (\"2017-06-07\"^^xsd:dateTime as ?day).\r\n" + 
-						"				BIND (bif:datediff ('day',  ?day, ?begTime) as ?dayDifference).\r\n" + 
-						"				FILTER (?dayDifference = 0)\r\n" + 
+						"# un día antes que el día que quiero, el día que quiero\r\n" + 
+						"# FILTER (xsd:date(\"2017-06-06\") < ?begTime  && ?begTime < xsd:date(\"2017-06-07\") )\r\n" + 
+						"				\r\n" + 
+						"				# ALSO CAN BE\r\n" + 
+						"				#?s <http://purl.org/m-context/ontologies/time#hasBeginningTime> ?p.\r\n" + 
+						"				#BIND (\"2017-06-06\"^^xsd:dateTime as ?day).\r\n" + 
+						"				#BIND (bif:datediff ('day',  ?day, ?p) as ?dayDifference).\r\n" + 
+						"				#FILTER (?dayDifference = 0)\r\n" + 
+						"				FILTER (xsd:date(\"2017-06-06\") < ?begTime  && ?begTime < xsd:date(\"2017-06-07\") )\r\n" + 
 						"\r\n" + 
 						"			}\r\n" + 
 						"    	}\r\n" + 
@@ -185,14 +251,19 @@ public class Queries {
 			QuerySolution result = results.nextSolution();
 			RDFNode graphName = result.get("graph");
 			// RDFNode s = result.get("s");
+			response = "";
 			RDFNode rule = result.get("rule");
 			RDFNode constructor =result.get("constructor");
 			RDFNode select = result.get("select");
 			response +=  rule + "\n" + constructor + "\n" + select + "\n";
 			System.out.println(rule + "\n" + constructor + "\n" + select + "\n");
+			constructNewRule(vGraph, "", response);
 		}
 
 		System.out.println("executed");
+		
+		constructNewRule(vGraph, "", response);
+		
 		return response;
 
 	}
