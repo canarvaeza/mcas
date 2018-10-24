@@ -30,8 +30,8 @@ public class KGraphManager {
 	public static boolean insertConnectedData(VirtGraph vGraph, String stream) {
 		String output = "";
 
-		try (Scanner scanner = new Scanner(stream)) {
-
+		try {
+			Scanner scanner = new Scanner(stream);
 			String rdfFragment = null;
 			String actualString = "";
 
@@ -47,7 +47,9 @@ public class KGraphManager {
 					rdfFragment = "" + line + "\n";
 				}
 			}
-		}
+		} catch (Exception e) {
+            e.printStackTrace(System.err);
+        }
 		
 		System.out.println(output);
 		 

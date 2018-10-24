@@ -27,7 +27,7 @@ public class TestToRDF2 {
 		boolean removeDuplicates = false; //set to true if you want to remove duplicates triples/quads from the output
 		String cwd = "C:\\Users\\dev\\Downloads\\wetransfer-beb93b\\"; //path to default directory for local files
 		String mappingFile = "C:\\Users\\dev\\Downloads\\wetransfer-beb93b\\mapping.rml.ttl"; //path to the mapping file that needs to be executed
-		List<String> triplesMaps = new ArrayList<>(); //list of triplesmaps to execute. When this list is empty all triplesmaps in the mapping file are executed
+		List<String> triplesMaps = new ArrayList<String>(); //list of triplesmaps to execute. When this list is empty all triplesmaps in the mapping file are executed
 		
 		InputStream mappingStream = new FileInputStream(mappingFile);
 		Model model = Rio.parse(mappingStream, "", RDFFormat.TURTLE);
