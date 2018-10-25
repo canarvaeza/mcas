@@ -145,6 +145,14 @@
 			<version>2.0.29</version>
 		</dependency>
 		
+		<!-- dependency used for CSV file format -->
+		<dependency>
+		    <groupId>com.opencsv</groupId>
+		    <artifactId>opencsv</artifactId>
+		    <version>4.0</version>
+		</dependency>
+
+		
 		<!-- Drools -->
 		<!--<dependency>
 			<groupId>org.kie</groupId>

@@ -1,5 +1,9 @@
 package mcas.KGraph;
 
+import java.io.IOException;
+import java.io.Reader;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.HashMap;
 
 import javax.swing.text.AbstractDocument.Content;
@@ -9,6 +13,8 @@ import org.apache.jena.query.QueryFactory;
 import org.apache.jena.query.QuerySolution;
 import org.apache.jena.query.ResultSet;
 import org.apache.jena.rdf.model.RDFNode;
+
+import com.opencsv.CSVReader;
 
 import virtuoso.jena.driver.VirtGraph;
 import virtuoso.jena.driver.VirtuosoQueryExecution;
@@ -21,11 +27,38 @@ import virtuoso.jena.driver.VirtuosoUpdateRequest;
  */
 public class Rules {
 
+	public static boolean insert_all_rules_sparql(VirtGraph vGraph, String dir) {
+		System.out.println("hola");
+        try (
+                Reader reader = Files.newBufferedReader(Paths.get(dir));
+                CSVReader csvReader = new CSVReader(reader);
+            ) {
+                // Reading Records One by One in a String array
+            	String[] header = csvReader.readNext();
+                String[] nextRecord = null;
+                while ((nextRecord = csvReader.readNext()) != null) {
+            	    HashMap<String, String> rule_content = new HashMap<String, String>();
+    	    		rule_content.put("prefixes", nextRecord[0]);
+    	    		rule_content.put("activity_prefix", nextRecord[1]);
+    	    		rule_content.put("new_activity_class", nextRecord[2]);
+    	    		rule_content.put("from", nextRecord[3]);
+    	    		rule_content.put("activities", nextRecord[4]);
+    	    		Rules.create_new_activity_rule(vGraph, rule_content);
+                }
+            } catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+        
+        return true;
+		
+	}
+	
     public static String create_activity_String(String activities) {
         
         int activities_counter = 1;
         String activity_string = "";
-        for (String activity : activities.split(",")) {
+        for (String activity : activities.split(";")) {
             String activity_template = 		"?act<*n*> a <*type*>;\r\n" + 
             "time:hasBeginningTime ?btime<*n*>;\r\n" + 
             "time:hasEndingTime ?etime<*n*>.\r\n" + 
@@ -41,13 +74,13 @@ public class Rules {
     
     public static String create_content_from_split(String type, String content) {
 		String final_content = "";
-		for (String element : content.split(",")) {
+		for (String element : content.split(";")) {
 			final_content = final_content.concat(String.format("%s %s\n", type, element));
 		}
 		return final_content;
 	}
 
-    public static boolean create_new_activity_rule(HashMap<String, String> rule_content) {
+    public static boolean create_new_activity_rule(VirtGraph vGraph, HashMap<String, String> rule_content) {
 		
     	String prefixes = rule_content.getOrDefault("prefixes", "");
     	String activity_prefix = rule_content.getOrDefault("activity_prefix", "");
@@ -106,9 +139,9 @@ public class Rules {
         ruleTemplate = ruleTemplate.replace("<*from*>", create_content_from_split("from", from));
         ruleTemplate = ruleTemplate.replace("<*activity*>", create_activity_String(activities));
         
-        System.out.println(ruleTemplate);
-        // VirtuosoUpdateRequest vur = VirtuosoUpdateFactory.create(ruleTemplate, vGraph);
-		// vur.exec();
+//        System.out.println(ruleTemplate);
+         VirtuosoUpdateRequest vur = VirtuosoUpdateFactory.create(ruleTemplate, vGraph);
+		 vur.exec();
 
 		return true;
     }

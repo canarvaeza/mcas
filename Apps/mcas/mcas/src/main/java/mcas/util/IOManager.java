@@ -2,6 +2,9 @@ package mcas.util;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.Reader;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -13,6 +16,8 @@ import org.apache.commons.io.FileUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import com.opencsv.CSVReader;
 
 public class IOManager {
 
@@ -30,9 +35,7 @@ public class IOManager {
 		
 		return content;
 	}
-	
-	
-	
+
 	
 	// TODO Json path https://github.com/json-path/JsonPath
 
