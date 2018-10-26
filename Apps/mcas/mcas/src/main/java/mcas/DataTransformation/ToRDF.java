@@ -65,8 +65,8 @@ public class ToRDF {
 		
 		boolean removeDuplicates = false; //set to true if you want to remove duplicates triples/quads from the output
 		String cwd = root; //path to default directory for local files
-		String mappingFile = root + mapping_name; //path to the mapping file that needs to be executed
-		List<String> triplesMaps = new ArrayList<>(); //list of triplesmaps to execute. When this list is empty all triplesmaps in the mapping file are executed
+		String mappingFile = Paths.get(root, mapping_name).toString(); //path to the mapping file that needs to be executed
+		List<String> triplesMaps = new ArrayList<String>(); //list of triplesmaps to execute. When this list is empty all triplesmaps in the mapping file are executed
 		
 		InputStream mappingStream;
 		try {

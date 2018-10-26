@@ -2,10 +2,17 @@ TODO:
 
 -USEFUL FUNC http://docs.openlinksw.com/virtuoso/ch-functions/
 
+<<<<<<< HEAD
 *POR ESTE LADO SE SUPONE QUE YA DEBERÍA PODER IMPLEMENTAR ALGO DE LAS PRUEBAS
 * Verificar lo de hasLocation y obtener una en la cual la localización es importante
 * Subir nueva versión de la ontología de reglas (cambio hasConstructor -> hasInsert)
 	* Será necesario crear actividades que tengan una localización
 * debe existir un optional para traer la info de las actividades realizadas
 *cambiar hasConstruct to hasInser in the ontology
+=======
+*cambiar ontolo reglas por hasContent
+* Llenar varias actividades
+* Crear una actividad de forma automática
+* se supone que ya puedo hacer un llamado a la bd y traer info relevante, he mejorado la forma en la que se hacen consultas.
+>>>>>>> 2052d8b58f6a59e7b73127d4219e4a297a6e264a
 * separar actividades en fecha, hora y fecha y hora (ya no creo que sea tan necesario)

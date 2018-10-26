@@ -1,0 +1,40 @@
+<*prefixes*>
+prefix activity: <*activity_prefix*>
+
+INSERT{
+GRAPH  <http://localhost:8890/mcas/activity#> {
+  ?new a <*new_activity_class*>;
+    :hasSubActivity ?act1;
+    :hasSubActivity ?act2;
+    time:hasBeginningTime ?btime1;
+    time:hasEndingTime ?btime2;
+    :hasActor ?user.
+
+  ?act1 :isSubActivity ?new.
+  ?act2 :isSubActivity ?new.
+ }
+  GRAPH  <http://localhost:8890/mcas/person#> {
+    ?user :isInvolvedIn ?new.
+  }
+}
+
+<*from*>
+
+WHERE {
+
+  <*activity*>
+
+	#Contains the activity
+	FILTER (?btime1 < ?btime2 && ?etime1 > ?etime2).
+  OPTIONAL {
+	  ?act2 :hasActor ?user.
+	}
+
+	BIND (URI(CONCAT(
+	str(activity:), 
+	STRAFTER(str(?act1), str(activity:))
+	,"_", 
+	STRAFTER(str(?act2), str(activity:))
+	)) as ?new).
+	FILTER(NOT EXISTS {?new a [] .})
+}

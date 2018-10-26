@@ -45,6 +45,7 @@ insert data
 			prefix : <http://purl.org/m-context/ontologies/mContext#>
 			prefix activity: <http://localhost:8890/mcas/activity#act/>
 			prefix time: <http://purl.org/m-context/ontologies/time#>
+			prefix alzheimer: <http://purl.org/m-context/ontologies/domains/alzheimer#>
 
 			INSERT
 			{
@@ -150,6 +151,7 @@ prefix : <http://purl.org/m-context/ontologies/mContext#>
 prefix activity: <http://localhost:8890/mcas/activity#act/>
 prefix time: <http://purl.org/m-context/ontologies/time#>
 
+#INSERT
 CONSTRUCT
 {
 	GRAPH  <http://localhost:8890/mcas/activity#> {
@@ -198,90 +200,6 @@ where {
 	FILTER(NOT EXISTS {?new a [] .})  
 
 }
-
-
-
-
-
-## ---- MULTILPLE WRITES example others--- 
-
-prefix : <http://purl.org/m-context/ontologies/mContext#>
-prefix activity: <http://localhost:8890/mcas/activity#act/>
-prefix time: <http://purl.org/m-context/ontologies/time#>
-
-construct{
-GRAPH  <http://localhost:8890/mcas/activity#> {
-  ?new a alzheimer:HavingAMeal;
-    :hasSubActivity ?act1;
-    :hasSubActivity ?act2;
-    time:hasBeginningTime ?bt1;
-    time:hasEndingTime ?et1;
-    :hasActor ?user.
-
-  ?act1 :isSubActivity ?new.
-  ?act2 :isSubActivity ?new.
- }
-  GRAPH  <http://localhost:8890/mcas/person#> {
-    ?user :isInvolvedIn ?new.
-  }
-}
-
-from <http://localhost:8890/mcas/person#>
-from <http://localhost:8890/mcas/activity#>
-
-where {
-#?s ?o ?p.
- BIND ("2017-06-06"^^xsd:dateTime as ?day).
-
- ?act1 a <http://purl.org/m-context/ontologies/domains/alzheimer#Sit>;
-  time:hasBeginningTime ?b1;
-  time:hasEndingTime ?e1.
-
- BIND (xsd:dateTime(?b1) as ?bt1).
- BIND (xsd:dateTime(?e1) as ?et1).
- FILTER(month(?bt1) = month(?day))
-  
- ?act2 a <http://purl.org/m-context/ontologies/domains/alzheimer#Eat>;
-time:hasBeginningTime ?b2;   time:hasEndingTime ?e2.
-
-  BIND (xsd:dateTime(?b2) as ?bt2).
-  BIND (xsd:dateTime(?e2) as ?et2).
-  
-  FILTER (?bt1 < ?bt2 && ?et1 > ?et2).
-  
- optional {
-  ?act2 :hasActor ?user.
- }
-
-BIND (URI(CONCAT(
-str(activity:), 
-STRAFTER(str(?act1), str(activity:))
-,"_", 
-STRAFTER(str(?act2), str(activity:))
-)) as ?new).
-FILTER(NOT EXISTS {?new a [] .})  
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 # ---- RULES QUERY ----

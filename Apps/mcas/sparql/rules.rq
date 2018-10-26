@@ -1,0 +1,17 @@
+prefix : <http://localhost:8890/mcas/rules#>
+prefix rules_ont: <http://purl.org/rules/activities#>
+prefix alzheimer: <http://purl.org/m-context/ontologies/domains/alzheimer#>
+
+insert data
+{
+	graph <http://localhost:8890/mcas/rules#>
+	{
+		<http://localhost:8890/mcas/rules#rule/00001> a rules_ont:Rule;
+		rules_ont:hasTrigger <http://purl.org/m-context/ontologies/domains/alzheimer#Eat>;
+		rules_ont:hasTrigger <http://purl.org/m-context/ontologies/domains/alzheimer#Sit>;
+		rules_ont:hasResult <alzheimer:HavingAMeal>;
+		rules_ont:hasPreferenceValue 5;
+		rules_ont:hasConstructor "I'm a constructor";
+		rules_ont:hasSelect "I'm a select".
+	}
+}

@@ -1,0 +1,8 @@
+	graph <*graph*>
+	{
+		<*graph+rule_id*>> a rules_ont:Rule.
+		<*triger*>
+		<*result*>
+		<*graph+rule_id*>> rules_ont:hasPreferenceValue "<*preference_value*>"^^xsd:integer.
+		<*graph+rule_id*>> rules_ont:hasContent """<*content*>""".
+	}
