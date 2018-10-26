@@ -84,6 +84,7 @@ insert data
 			prefix : <http://purl.org/m-context/ontologies/mContext#>
 			prefix activity: <http://localhost:8890/mcas/activity#act/>
 			prefix time: <http://purl.org/m-context/ontologies/time#>
+			prefix alzheimer: <http://purl.org/m-context/ontologies/domains/alzheimer#>
 
 			CONSTRUCT
 			{

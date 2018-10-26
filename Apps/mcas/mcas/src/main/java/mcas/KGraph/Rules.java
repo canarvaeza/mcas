@@ -28,7 +28,6 @@ import virtuoso.jena.driver.VirtuosoUpdateRequest;
 public class Rules {
 
 	public static boolean insert_all_rules_sparql(VirtGraph vGraph, String dir) {
-		System.out.println("hola");
         try (
                 Reader reader = Files.newBufferedReader(Paths.get(dir));
                 CSVReader csvReader = new CSVReader(reader);
@@ -36,14 +35,14 @@ public class Rules {
                 // Reading Records One by One in a String array
             	String[] header = csvReader.readNext();
                 String[] nextRecord = null;
+                
+
                 while ((nextRecord = csvReader.readNext()) != null) {
             	    HashMap<String, String> rule_content = new HashMap<String, String>();
-    	    		rule_content.put("prefixes", nextRecord[0]);
-    	    		rule_content.put("activity_prefix", nextRecord[1]);
-    	    		rule_content.put("new_activity_class", nextRecord[2]);
-    	    		rule_content.put("from", nextRecord[3]);
-    	    		rule_content.put("activities", nextRecord[4]);
-    	    		Rules.create_new_activity_rule(vGraph, rule_content);
+                    for (int i = 0; i < header.length; i++) {
+                    	rule_content.put(header[i], nextRecord[i]);
+    				}
+    	    		Rules.create_new_rule(vGraph, rule_content);
                 }
             } catch (IOException e) {
 				// TODO Auto-generated catch block
@@ -72,17 +71,75 @@ public class Rules {
         return activity_string;
     }
     
-    public static String create_content_from_split(String type, String content) {
+    public static String create_content_from_split(String type, String content, boolean end_in_point) {
 		String final_content = "";
 		for (String element : content.split(";")) {
-			final_content = final_content.concat(String.format("%s %s\n", type, element));
+			final_content = final_content.concat(String.format("%s %s", type, element));
+			if (end_in_point) {
+				final_content += ".\n";
+			}
+			else
+			{
+				final_content += '\n';
+			}
+			
 		}
 		return final_content;
 	}
-
-    public static boolean create_new_activity_rule(VirtGraph vGraph, HashMap<String, String> rule_content) {
+    
+    public static boolean create_new_rule(VirtGraph vGraph, HashMap<String, String> rule_content) {
+    	
+    	System.out.println(rule_content.toString());
+    	
+    	String rule_prefixes = rule_content.getOrDefault("rule_prefixes", ": <>");
+    	rule_content.remove("rule_prefixes");
+    	String rule_graph = rule_content.getOrDefault("graph", ": <>");
+    	rule_content.remove("graph");
+    	String preference_value = rule_content.getOrDefault("preference_value", ": <>");
+    	rule_content.remove("preference_value");
+    	
+    	String activities = rule_content.getOrDefault("activities", "");
+    	String new_activity_class = rule_content.getOrDefault("new_activity_class", "");
+    	String content = Rules.create_rule_content(rule_content);
+    	
+    	String graph_plus_rule_id = rule_graph.replace(">", "rule/0007");
+    	
+    	String rule_graph_template = "	graph <*graph*>\r\n" + 
+    			"	{\r\n" + 
+    			"		<*graph+rule_id*>> a rules_ont:Rule.\r\n" + 
+    			"       <*triger*>\r\n" + 
+    			"		<*result*>\r\n" + 
+    			"		<*graph+rule_id*>> rules_ont:hasPreferenceValue <*preference_value*>.\r\n" + 
+    			"		<*graph+rule_id*>> rules_ont:hasContent \"\"\"<*content*>\"\"\".\r\n" + 
+    			"	}";
+    	
+    	rule_graph_template = rule_graph_template.replace("<*graph*>", rule_graph);
+    	rule_graph_template = rule_graph_template.replace("<*graph+rule_id*>", graph_plus_rule_id);
+    	rule_graph_template = rule_graph_template.replace("<*triger*>", create_content_from_split(graph_plus_rule_id + "> rules_ont:hasTrigger", activities, true));
+    	rule_graph_template = rule_graph_template.replace("<*result*>", create_content_from_split(graph_plus_rule_id + "> rules_ont:hasResult ", new_activity_class, true));
+    	rule_graph_template = rule_graph_template.replace("<*preference_value*>", preference_value);
+    	rule_graph_template = rule_graph_template.replace("<*content*>", content);
+    	
+    	String rule_template = "<*prefixes*>\r\n" + 
+    			"INSERT DATA\r\n" + 
+    			"{\r\n" + 
+    			"    <*rule_graph*>\r\n" + 
+    			"}";
+    	
+    	rule_template = rule_template.replace("<*prefixes*>", create_content_from_split("prefix", rule_prefixes, false));
+    	rule_template = rule_template.replace("<*rule_graph*>", rule_graph_template);
+    	
+    	System.out.println(rule_template);
+    	
+        VirtuosoUpdateRequest vur = VirtuosoUpdateFactory.create(rule_template, vGraph);
+		vur.exec();
 		
-    	String prefixes = rule_content.getOrDefault("prefixes", "");
+    	return true;
+	}
+    
+    public static String create_rule_content(HashMap<String, String> rule_content) {
+		
+    	String prefixes = rule_content.getOrDefault("content_prefixes", "");
     	String activity_prefix = rule_content.getOrDefault("activity_prefix", "");
     	String new_activity_class = rule_content.getOrDefault("new_activity_class", "");
     	String from = rule_content.getOrDefault("from", "");
@@ -133,17 +190,14 @@ public class Rules {
 		"	FILTER(NOT EXISTS {?new a [] .})\r\n" + 
         "}";
 
-        ruleTemplate = ruleTemplate.replace("<*prefixes*>", create_content_from_split("prefix", prefixes));
+        ruleTemplate = ruleTemplate.replace("<*prefixes*>", create_content_from_split("prefix", prefixes, false));
         ruleTemplate = ruleTemplate.replace("<*activity_prefix*>", activity_prefix);
         ruleTemplate = ruleTemplate.replace("<*new_activity_class*>", new_activity_class);
-        ruleTemplate = ruleTemplate.replace("<*from*>", create_content_from_split("from", from));
+        ruleTemplate = ruleTemplate.replace("<*from*>", create_content_from_split("from", from, false));
         ruleTemplate = ruleTemplate.replace("<*activity*>", create_activity_String(activities));
-        
-//        System.out.println(ruleTemplate);
-         VirtuosoUpdateRequest vur = VirtuosoUpdateFactory.create(ruleTemplate, vGraph);
-		 vur.exec();
 
-		return true;
+//        System.out.println(ruleTemplate);
+		return ruleTemplate;
     }
 
 }
