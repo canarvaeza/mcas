@@ -6,7 +6,7 @@
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://purl.org/rules/activities"/>
+    <owl:Ontology rdf:about="http://purl.org/m-context/ontologies/domains/rules/activities"/>
     
 
 
@@ -21,73 +21,73 @@
     
 
 
-    <!-- http://purl.org/rules/activities#hasConstructor -->
+    <!-- http://purl.org/m-context/ontologies/domains/rules/activities#hasContent -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/rules/activities#hasConstructor">
-        <owl:inverseOf rdf:resource="http://purl.org/rules/activities#isConstruct"/>
+    <owl:ObjectProperty rdf:about="http://purl.org/m-context/ontologies/domains/rules/activities#hasContent">
+        <owl:inverseOf rdf:resource="http://purl.org/m-context/ontologies/domains/rules/activities#isContent"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://purl.org/rules/activities#hasContent -->
+    <!-- http://purl.org/m-context/ontologies/domains/rules/activities#hasInsert -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/rules/activities#hasContent">
-        <owl:inverseOf rdf:resource="http://purl.org/rules/activities#isContent"/>
+    <owl:ObjectProperty rdf:about="http://purl.org/m-context/ontologies/domains/rules/activities#hasInsert">
+        <owl:inverseOf rdf:resource="http://purl.org/m-context/ontologies/domains/rules/activities#isInsert"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://purl.org/rules/activities#hasResult -->
+    <!-- http://purl.org/m-context/ontologies/domains/rules/activities#hasResult -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/rules/activities#hasResult">
-        <owl:inverseOf rdf:resource="http://purl.org/rules/activities#isResult"/>
+    <owl:ObjectProperty rdf:about="http://purl.org/m-context/ontologies/domains/rules/activities#hasResult">
+        <owl:inverseOf rdf:resource="http://purl.org/m-context/ontologies/domains/rules/activities#isResult"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://purl.org/rules/activities#hasSelect -->
+    <!-- http://purl.org/m-context/ontologies/domains/rules/activities#hasSelect -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/rules/activities#hasSelect">
-        <owl:inverseOf rdf:resource="http://purl.org/rules/activities#isSelect"/>
+    <owl:ObjectProperty rdf:about="http://purl.org/m-context/ontologies/domains/rules/activities#hasSelect">
+        <owl:inverseOf rdf:resource="http://purl.org/m-context/ontologies/domains/rules/activities#isSelect"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://purl.org/rules/activities#hasTrigger -->
+    <!-- http://purl.org/m-context/ontologies/domains/rules/activities#hasTrigger -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/rules/activities#hasTrigger">
-        <owl:inverseOf rdf:resource="http://purl.org/rules/activities#isTrigger"/>
+    <owl:ObjectProperty rdf:about="http://purl.org/m-context/ontologies/domains/rules/activities#hasTrigger">
+        <owl:inverseOf rdf:resource="http://purl.org/m-context/ontologies/domains/rules/activities#isTrigger"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://purl.org/rules/activities#isConstruct -->
+    <!-- http://purl.org/m-context/ontologies/domains/rules/activities#isContent -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/rules/activities#isConstruct"/>
+    <owl:ObjectProperty rdf:about="http://purl.org/m-context/ontologies/domains/rules/activities#isContent"/>
     
 
 
-    <!-- http://purl.org/rules/activities#isContent -->
+    <!-- http://purl.org/m-context/ontologies/domains/rules/activities#isInsert -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/rules/activities#isContent"/>
+    <owl:ObjectProperty rdf:about="http://purl.org/m-context/ontologies/domains/rules/activities#isInsert"/>
     
 
 
-    <!-- http://purl.org/rules/activities#isResult -->
+    <!-- http://purl.org/m-context/ontologies/domains/rules/activities#isResult -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/rules/activities#isResult"/>
+    <owl:ObjectProperty rdf:about="http://purl.org/m-context/ontologies/domains/rules/activities#isResult"/>
     
 
 
-    <!-- http://purl.org/rules/activities#isSelect -->
+    <!-- http://purl.org/m-context/ontologies/domains/rules/activities#isSelect -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/rules/activities#isSelect"/>
+    <owl:ObjectProperty rdf:about="http://purl.org/m-context/ontologies/domains/rules/activities#isSelect"/>
     
 
 
-    <!-- http://purl.org/rules/activities#isTrigger -->
+    <!-- http://purl.org/m-context/ontologies/domains/rules/activities#isTrigger -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/rules/activities#isTrigger"/>
+    <owl:ObjectProperty rdf:about="http://purl.org/m-context/ontologies/domains/rules/activities#isTrigger"/>
     
 
 
@@ -102,17 +102,17 @@
     
 
 
-    <!-- http://purl.org/rules/activities#hasLiteral -->
+    <!-- http://purl.org/m-context/ontologies/domains/rules/activities#hasLiteral -->
 
-    <owl:DatatypeProperty rdf:about="http://purl.org/rules/activities#hasLiteral">
+    <owl:DatatypeProperty rdf:about="http://purl.org/m-context/ontologies/domains/rules/activities#hasLiteral">
         <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://purl.org/rules/activities#hasPreferenceValue -->
+    <!-- http://purl.org/m-context/ontologies/domains/rules/activities#hasPreferenceValue -->
 
-    <owl:DatatypeProperty rdf:about="http://purl.org/rules/activities#hasPreferenceValue">
+    <owl:DatatypeProperty rdf:about="http://purl.org/m-context/ontologies/domains/rules/activities#hasPreferenceValue">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     </owl:DatatypeProperty>
     
@@ -141,59 +141,59 @@
     
 
 
-    <!-- http://purl.org/rules/activities#Constructor -->
+    <!-- http://purl.org/m-context/ontologies/domains/rules/activities#Content -->
 
-    <owl:Class rdf:about="http://purl.org/rules/activities#Constructor">
-        <rdfs:subClassOf rdf:resource="http://purl.org/rules/activities#Content"/>
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/domains/rules/activities#Content">
+        <owl:disjointWith rdf:resource="http://purl.org/m-context/ontologies/domains/rules/activities#Rule"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/m-context/ontologies/domains/rules/activities#Insert -->
+
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/domains/rules/activities#Insert">
+        <rdfs:subClassOf rdf:resource="http://purl.org/m-context/ontologies/domains/rules/activities#Content"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/rules/activities#hasLiteral"/>
+                <owl:onProperty rdf:resource="http://purl.org/m-context/ontologies/domains/rules/activities#hasLiteral"/>
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <owl:disjointWith rdf:resource="http://purl.org/rules/activities#Select"/>
+        <owl:disjointWith rdf:resource="http://purl.org/m-context/ontologies/domains/rules/activities#Select"/>
     </owl:Class>
     
 
 
-    <!-- http://purl.org/rules/activities#Content -->
+    <!-- http://purl.org/m-context/ontologies/domains/rules/activities#Rule -->
 
-    <owl:Class rdf:about="http://purl.org/rules/activities#Content">
-        <owl:disjointWith rdf:resource="http://purl.org/rules/activities#Rule"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/rules/activities#Rule -->
-
-    <owl:Class rdf:about="http://purl.org/rules/activities#Rule">
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/domains/rules/activities#Rule">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/rules/activities#hasConstructor"/>
-                <owl:someValuesFrom rdf:resource="http://purl.org/rules/activities#Constructor"/>
+                <owl:onProperty rdf:resource="http://purl.org/m-context/ontologies/domains/rules/activities#hasInsert"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/m-context/ontologies/domains/rules/activities#Insert"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/rules/activities#hasResult"/>
+                <owl:onProperty rdf:resource="http://purl.org/m-context/ontologies/domains/rules/activities#hasResult"/>
                 <owl:someValuesFrom rdf:resource="http://purl.org/m-context/ontologies/activity#HighContextActivity"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/rules/activities#hasSelect"/>
-                <owl:someValuesFrom rdf:resource="http://purl.org/rules/activities#Select"/>
+                <owl:onProperty rdf:resource="http://purl.org/m-context/ontologies/domains/rules/activities#hasSelect"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/m-context/ontologies/domains/rules/activities#Select"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/rules/activities#hasTrigger"/>
+                <owl:onProperty rdf:resource="http://purl.org/m-context/ontologies/domains/rules/activities#hasTrigger"/>
                 <owl:someValuesFrom rdf:resource="http://purl.org/m-context/ontologies/activity#LowContextActivity"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/rules/activities#hasPreferenceValue"/>
+                <owl:onProperty rdf:resource="http://purl.org/m-context/ontologies/domains/rules/activities#hasPreferenceValue"/>
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -201,13 +201,13 @@
     
 
 
-    <!-- http://purl.org/rules/activities#Select -->
+    <!-- http://purl.org/m-context/ontologies/domains/rules/activities#Select -->
 
-    <owl:Class rdf:about="http://purl.org/rules/activities#Select">
-        <rdfs:subClassOf rdf:resource="http://purl.org/rules/activities#Content"/>
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/domains/rules/activities#Select">
+        <rdfs:subClassOf rdf:resource="http://purl.org/m-context/ontologies/domains/rules/activities#Content"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/rules/activities#hasLiteral"/>
+                <owl:onProperty rdf:resource="http://purl.org/m-context/ontologies/domains/rules/activities#hasLiteral"/>
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
             </owl:Restriction>
         </rdfs:subClassOf>

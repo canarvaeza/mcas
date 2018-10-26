@@ -18,10 +18,10 @@ public class MainController {
 		// String rdfFlux = "";
 
 		// generate random UUIDs
-		UUID idOne = UUID.randomUUID();
-		UUID idTwo = UUID.randomUUID();
-		System.out.println("UUID One: " + idOne);
-		System.out.println("UUID Two: " + idTwo);
+//		UUID idOne = UUID.randomUUID();
+//		UUID idTwo = UUID.randomUUID();
+//		System.out.println("UUID One: " + idOne);
+//		System.out.println("UUID Two: " + idTwo);
 
 		// String rdfFlux = "<http://localhost:8890/mcas/person#per/" + idOne
 		// + "> a <http://purl.org/m-context/ontologies/person#PersonMCAS>.\r\n"
@@ -44,7 +44,7 @@ public class MainController {
 
 //		KGraphManager.insertConnectedData(graph, rdfFlux);
 		
-		KGraphManager.getRules(graph);
+		KGraphManager.getRules(graph, "2017-06-07");
 		
 
 		//

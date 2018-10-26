@@ -16,7 +16,7 @@ public class Queries {
 	/** inserts **/
 	
 	public static boolean constructNewRule(VirtGraph vGraph, String graphToUpdate, String queryContent) {
-		/*String str = "		prefix : <http://purl.org/m-context/ontologies/mContext#>\r\n" + 
+		/*queryContent = "		prefix : <http://purl.org/m-context/ontologies/mContext#>\r\n" + 
 				"			prefix activity: <http://localhost:8890/mcas/activity#act/>\r\n" + 
 				"			prefix time: <http://purl.org/m-context/ontologies/time#>\r\n" + 
 				"\r\n" + 
@@ -68,7 +68,8 @@ public class Queries {
 				"\r\n" + 
 				"			}\r\n" + 
 				"";*/
-		
+//		queryContent = queryContent.replace("\\\"", "\"");
+		System.out.println(queryContent);
 		VirtuosoUpdateRequest vur = VirtuosoUpdateFactory.create(queryContent, vGraph);
 		vur.exec();
 
@@ -201,42 +202,7 @@ public class Queries {
 
 		String response = "";
 		//String lowActivities = "";
-		Query sparql = QueryFactory
-				//.create("SELECT" + returnParameters +" FROM <" + graphToConsult + "> WHERE { " + subToConsult + "} order by ?s");
-				.create("prefix xsd:<http://www.w3.org/2001/XMLSchema#>\r\n" + 
-						"prefix mcas:<http://localhost:8890/mcas/>\r\n" + 
-						"select distinct ?rule ?constructor ?select\r\n" + 
-						"from <http://localhost:8890/mcas/rules#>\r\n" + 
-						"from named <http://localhost:8890/mcas/activity#>\r\n" + 
-						"WHERE\r\n" + 
-						"	{\r\n" + 
-						"\r\n" + 
-						"    ?rule  <http://purl.org/rules/activities#hasTrigger>  ?trigger;\r\n" + 
-						"<http://purl.org/rules/activities#hasConstructor> ?constructor;\r\n" + 
-						"<http://purl.org/rules/activities#hasSelect> ?select\r\n" + 
-						"\r\n" + 
-						"GRAPH <http://localhost:8890/mcas/activity#> { \r\n" + 
-						"\r\n" + 
-						"		SELECT DISTINCT  *\r\n" + 
-						"		WHERE\r\n" + 
-						"			{\r\n" + 
-						"\r\n" + 
-						"				?lowActivity  a   ?trigger;\r\n" + 
-						"					<http://purl.org/m-context/ontologies/time#hasBeginningTime> ?begTime.\r\n" + 
-						"# un día antes que el día que quiero, el día que quiero\r\n" + 
-						"# FILTER (xsd:date(\"2017-06-06\") < ?begTime  && ?begTime < xsd:date(\"2017-06-07\") )\r\n" + 
-						"				\r\n" + 
-						"				# ALSO CAN BE\r\n" + 
-						"				#?s <http://purl.org/m-context/ontologies/time#hasBeginningTime> ?p.\r\n" + 
-						"				#BIND (\"2017-06-06\"^^xsd:dateTime as ?day).\r\n" + 
-						"				#BIND (bif:datediff ('day',  ?day, ?p) as ?dayDifference).\r\n" + 
-						"				#FILTER (?dayDifference = 0)\r\n" + 
-						"				FILTER (xsd:date(\"2017-06-06\") < ?begTime  && ?begTime < xsd:date(\"2017-06-07\") )\r\n" + 
-						"\r\n" + 
-						"			}\r\n" + 
-						"    	}\r\n" + 
-						"	}\r\n" + 
-						"ORDER BY ?lowActivity");
+		Query sparql = QueryFactory.create(subToConsult);
 		if (limit != null) {
 			System.out.println("Is not null");
 			sparql.setLimit(limit);
@@ -256,13 +222,13 @@ public class Queries {
 			RDFNode constructor =result.get("constructor");
 			RDFNode select = result.get("select");
 			response +=  rule + "\n" + constructor + "\n" + select + "\n";
-			System.out.println(rule + "\n" + constructor + "\n" + select + "\n");
+//			System.out.println(rule + "\n" + constructor + "\n" + select + "\n");
 			constructNewRule(vGraph, "", response);
 		}
 
 		System.out.println("executed");
 		
-		constructNewRule(vGraph, "", response);
+//		constructNewRule(vGraph, "", response);
 		
 		return response;
 

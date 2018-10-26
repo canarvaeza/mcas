@@ -14,8 +14,8 @@ insert data
 		rules_ont:hasTrigger <http://purl.org/m-context/ontologies/domains/alzheimer#Sit>;
 		rules_ont:hasResult <alzheimer:HavingAMeal>;
 		rules_ont:hasPreferenceValue 5;
-		rules_ont:hasConstructor "I'm a constructor";
-		rules_ont:hasSelect "I'm a select".
+		rules_ont:hasConstructor """I'm a constructor""";
+		rules_ont:hasSelect """I'm a select""".
 	}
 }
 
@@ -303,41 +303,65 @@ WHERE
 	}
 ORDER BY ?s
 
-
-
-
 ## FILTERED BY AN SPECIFIC DATE
-prefix xsd:<http://www.w3.org/2001/XMLSchema#>
-prefix mcas:<http://localhost:8890/mcas/>
-select distinct ?rule ?constructor ?select
-from <http://localhost:8890/mcas/rules#>
-from named <http://localhost:8890/mcas/activity#>
-WHERE
-	{
+# --- alternative 1
+prefix xsd:<http://www.w3.org/2001/XMLSchema#> 
+prefix mcas:<http://localhost:8890/mcas/> 
+select distinct ?rule ?constructor ?select 
+from <http://localhost:8890/mcas/rules#> 
+from named <http://localhost:8890/mcas/activity#> 
+WHERE 
+	{ 
+ 
+    ?rule  <http://purl.org/rules/activities#hasTrigger>  ?trigger; 
+<http://purl.org/rules/activities#hasConstructor> ?constructor; 
+<http://purl.org/rules/activities#hasSelect> ?select 
+ 
+GRAPH <http://localhost:8890/mcas/activity#> {  
+ 
+		SELECT DISTINCT  * 
+		WHERE 
+			{ 
+ 
+				?lowActivity  a   ?trigger; 
+					<http://purl.org/m-context/ontologies/time#hasBeginningTime> ?begTime. 
+# un día antes que el día que quiero, el día que quiero 
 
-    ?rule  <http://purl.org/rules/activities#hasTrigger>  ?trigger;
-<http://purl.org/rules/activities#hasConstructor> ?constructor;
-<http://purl.org/rules/activities#hasSelect> ?select
+				FILTER (xsd:date("2017-06-06") < ?begTime  && ?begTime < xsd:date("2017-06-07") ) 
+ 
+			} 
+    	} 
+	} 
+ORDER BY ?lowActivity
 
-GRAPH <http://localhost:8890/mcas/activity#> { 
+# --- alternative 2
 
-		SELECT DISTINCT  *
-		WHERE
-			{
-
-				?lowActivity  a   ?trigger;
-					<http://purl.org/m-context/ontologies/time#hasBeginningTime> ?begTime.
-# un día antes que el día que quiero, el día que quiero
-# FILTER (xsd:date("2017-06-06") < ?begTime  && ?begTime < xsd:date("2017-06-07") )
-				
-				# ALSO CAN BE
-				#?s <http://purl.org/m-context/ontologies/time#hasBeginningTime> ?p.
-				#BIND ("2017-06-06"^^xsd:dateTime as ?day).
-				#BIND (bif:datediff ('day',  ?day, ?p) as ?dayDifference).
-				#FILTER (?dayDifference = 0)
-				FILTER (xsd:date("2017-06-06") < ?begTime  && ?begTime < xsd:date("2017-06-07") )
-
-			}
-    	}
-	}
+prefix xsd:<http://www.w3.org/2001/XMLSchema#> 
+prefix mcas:<http://localhost:8890/mcas/> 
+select distinct ?rule ?constructor ?select 
+from <http://localhost:8890/mcas/rules#> 
+from named <http://localhost:8890/mcas/activity#> 
+WHERE 
+	{ 
+ 
+    ?rule  <http://purl.org/rules/activities#hasTrigger>  ?trigger; 
+<http://purl.org/rules/activities#hasConstructor> ?constructor; 
+<http://purl.org/rules/activities#hasSelect> ?select 
+ 
+GRAPH <http://localhost:8890/mcas/activity#> {  
+ 
+		SELECT DISTINCT  * 
+		WHERE 
+			{ 
+ 
+				?lowActivity  a   ?trigger; 
+					<http://purl.org/m-context/ontologies/time#hasBeginningTime> ?begTime. 
+				 
+				BIND ("<YY-MM-DD>"^^xsd:date as ?day). 
+				BIND (bif:datediff ('day',  ?day, ?begTime) as ?dayDifference). 
+				FILTER (?dayDifference = 0) 
+ 
+			} 
+    	} 
+	} 
 ORDER BY ?lowActivity

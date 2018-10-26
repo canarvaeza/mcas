@@ -1,0 +1,66 @@
+prefix : <http://localhost:8890/mcas/rules#>
+prefix rules_ont: <http://purl.org/rules/activities#>
+prefix alzheimer: <http://purl.org/m-context/ontologies/domains/alzheimer#>
+prefix location: <http://localhost:8890/mcas/location#>
+
+insert data
+{
+	graph <http://localhost:8890/mcas/rules#>
+	{
+		<http://localhost:8890/mcas/rules#rule/6548978> a rules_ont:Rule;
+		rules_ont:hasTrigger <http://purl.org/m-context/ontologies/domains/alzheimer#activiyLieDown>;
+		rules_ont:hasTrigger location:ClosedLocation;
+		rules_ont:hasResult alzheimer:Rest;
+		rules_ont:hasPreferenceValue 4;
+		rules_ont:hasConstructor """
+		prefix : <http://purl.org/m-context/ontologies/mContext#>
+                        prefix activity: <http://localhost:8890/mcas/activity#act/>
+                        prefix time: <http://purl.org/m-context/ontologies/time#>
+
+                        CONSTRUCT
+                        {
+                                GRAPH  <http://localhost:8890/mcas/activity#> {
+                                        ?new a alzheimer:Rest;
+                                            :hasSubActivity ?act1;
+                                            time:hasBeginningTime ?bt1;
+                                            time:hasEndingTime ?et1;
+                                            :hasActor ?user.
+                                        ?act1 :isSubActivity ?new.
+                                }
+                                GRAPH  <http://localhost:8890/mcas/person#> {
+                                        ?user :isInvolvedIn ?new.
+                                }
+                        }"
+		""";
+		rules_ont:hasSelect """
+		from <http://localhost:8890/mcas/person#>
+                        from <http://localhost:8890/mcas/activity#>
+
+                        where {
+                         BIND (""<YY-MM-DD>""^^xsd:dateTime as ?day).
+
+                         ?act1 a <http://purl.org/m-context/ontologies/domains/alzheimer#LieDown>;
+                          time:hasBeginningTime ?b1;
+                          time:hasEndingTime ?e1;
+                          mcas:hasLocation ?l1.
+
+                         BIND (xsd:dateTime(?b1) as ?bt1).
+                         BIND (xsd:dateTime(?e1) as ?et1).
+                         FILTER(month(?bt1) = month(?day))
+                          
+                         optional {
+                          ?act2 :hasActor ?user.
+                         }
+
+                        BIND (URI(CONCAT(
+                        str(activity:), 
+                        STRAFTER(str(?act1), str(activity:))
+                        ,""_""
+                        )) as ?new).
+                        FILTER(NOT EXISTS {?new a [] .})  
+                        }
+		""".
+	}
+}
+
+
