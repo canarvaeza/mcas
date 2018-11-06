@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package mcas.KGraph;
 
 import java.io.IOException;
