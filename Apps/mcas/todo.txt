@@ -1,7 +1,8 @@
-TODO:
+﻿TODO:
 
 -USEFUL FUNC http://docs.openlinksw.com/virtuoso/ch-functions/
-
+* Probar un ejemplo que tenga un lugar y una actividad de sensor (es actividad o depende de un sensor?)
+* Cómo voy a almacenar las cosas identificadas en los sensores?
 *cambiar ontolo reglas por hasContent
 * Llenar varias actividades
 * Crear una actividad de forma automática

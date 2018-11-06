@@ -10,6 +10,11 @@ public class QueryTemplates {
             "time:hasEndingTime ?etime<*n*>.\r\n" + 
             "FILTER (xsd:date(\"<*date_before*>\") < ?btime<*n*> && ??btime<*n*> < xsd:date(\"<*date*>\") )";
 	
+	final static String place_template = "?place<*n*> a <*type*>;\r\n" + 
+			"mcas:hasLocation ?location.\r\n" + 
+			"?location a ?location_type\r\n" + 
+			"FILTER (?location_type == <*location_type*>)";
+	
 	final static String rule_graph_template = "	graph <*graph*>\r\n" + 
 			"	{\r\n" + 
 			"		<*graph+rule_id*>> a rules_ont:Rule.\r\n" + 
@@ -55,7 +60,9 @@ public class QueryTemplates {
 			"	FILTER (?btime1 < ?btime2 && ?etime1 > ?etime2).\r\n" + 
 			"  OPTIONAL {\r\n" + 
 			"	  ?act2 :hasActor ?user.\r\n" + 
-			"	}\r\n" +
+			"	}\r\n" + 
+			"\r\n" + 
+			"  <*place*>\r\n" + 
 			"\r\n" + 
 			"	BIND (URI(CONCAT(\r\n" + 
 			"	str(activity:), \r\n" + 
@@ -64,11 +71,12 @@ public class QueryTemplates {
 			"	STRAFTER(str(?act2), str(activity:))\r\n" + 
 			"	)) as ?new).\r\n" + 
 			"	FILTER(NOT EXISTS {?new a [] .})\r\n" + 
-	        "}";
+			"}";
 	
 	public static final Map<String, String> queryTemplates = new HashMap<String, String>(){
 		{
 			put("activity_template", activity_template);
+			put("place_template", place_template);
 			put("rule_graph_template", rule_graph_template);
 			put("rule_template", rule_template);
 			put("rule_content", rule_content);
