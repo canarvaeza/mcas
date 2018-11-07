@@ -1,0 +1,4 @@
+?place<*n*> a <*type*>;
+mcas:hasLocation ?location.
+?location a ?location_type
+FILTER (?location_type == <*location_type*>)

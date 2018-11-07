@@ -30,6 +30,8 @@ WHERE {
 	  ?act2 :hasActor ?user.
 	}
 
+  <*place*>
+
 	BIND (URI(CONCAT(
 	str(activity:), 
 	STRAFTER(str(?act1), str(activity:))
