@@ -222,8 +222,8 @@ public class Queries {
 			RDFNode constructor =result.get("constructor");
 			RDFNode select = result.get("select");
 			response +=  rule + "\n" + constructor + "\n" + select + "\n";
-//			System.out.println(rule + "\n" + constructor + "\n" + select + "\n");
-			constructNewRule(vGraph, "", response);
+			System.out.println(rule + "\n" + constructor + "\n" + select + "\n");
+//			constructNewRule(vGraph, "", response);
 		}
 
 		System.out.println("executed");
