@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package mcas.KGraph;
 
 import java.io.IOException;
@@ -72,6 +71,7 @@ public class Rules {
             activity_template = activity_template.replace("<*type*>", activity);
 
             activity_string = activity_string.concat(String.format("%s\n\n", activity_template));
+            activities_counter += 1;
         }
         return activity_string;
     }

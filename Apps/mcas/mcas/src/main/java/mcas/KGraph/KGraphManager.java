@@ -11,6 +11,7 @@ import org.apache.jena.rdf.model.RDFNode;
 import virtuoso.jena.driver.*;
 
 import mcas.KGraph.QueryConf;
+import mcas.util.DatesManager;
 
 
 public class KGraphManager {
@@ -66,18 +67,16 @@ public class KGraphManager {
 	
 	public static String getRules(VirtGraph vGraph, String date) {
 		String graphToConsult = QueryConf.graphsBases.get("rules");
-		String subToConsult = "prefix xsd:<http://www.w3.org/2001/XMLSchema#> \r\n" +
-				"prefix bif:<bif:>  \r\n"+
+		String subToConsult = "prefix xsd:<http://www.w3.org/2001/XMLSchema#> \r\n" + 
 				"prefix mcas:<http://localhost:8890/mcas/> \r\n" + 
-				"select distinct ?rule ?constructor ?select \r\n" + 
+				"select distinct ?rule ?content\r\n" + 
 				"from <http://localhost:8890/mcas/rules#> \r\n" + 
 				"from named <http://localhost:8890/mcas/activity#> \r\n" + 
 				"WHERE \r\n" + 
 				"	{ \r\n" + 
 				" \r\n" + 
 				"    ?rule  <http://purl.org/rules/activities#hasTrigger>  ?trigger; \r\n" + 
-				"<http://purl.org/rules/activities#hasConstructor> ?constructor; \r\n" + 
-				"<http://purl.org/rules/activities#hasSelect> ?select \r\n" + 
+				"<http://purl.org/rules/activities#hasContent> ?content.\r\n" + 
 				" \r\n" + 
 				"GRAPH <http://localhost:8890/mcas/activity#> {  \r\n" + 
 				" \r\n" + 
@@ -87,19 +86,20 @@ public class KGraphManager {
 				" \r\n" + 
 				"				?lowActivity  a   ?trigger; \r\n" + 
 				"					<http://purl.org/m-context/ontologies/time#hasBeginningTime> ?begTime. \r\n" + 
-				"				 \r\n" + 
-				"				BIND (\"<YY-MM-DD>\"^^xsd:date as ?day). \r\n" + 
-				"				BIND (bif:datediff ('day',  ?day, ?begTime) as ?dayDifference). \r\n" + 
-				"				FILTER (?dayDifference = 0) \r\n" + 
+				"# un día antes que el día que quiero, el día que quiero \r\n" + 
+				"\r\n" + 
+				"				FILTER (xsd:date(\"<*date_before*>\") < ?begTime  && ?begTime < xsd:date(\"<*date*>\") ) \r\n" + 
 				" \r\n" + 
 				"			} \r\n" + 
 				"    	} \r\n" + 
 				"	} \r\n" + 
 				"ORDER BY ?lowActivity";
-		subToConsult = subToConsult.replace("<YY-MM-DD>", date);
+		String date_before = DatesManager.getNewDate(date, -1);
+		subToConsult = subToConsult.replace("<*date*>", date);
+		subToConsult = subToConsult.replace("<*date_before*>", date_before);
 //		System.out.println(subToConsult);
-		String response = Queries.getSpecificGraphData(vGraph, "distinct ?o ?c ?t", graphToConsult, subToConsult, null);
-		return response;
+		String response = Queries.getUsefulRulesContent(vGraph, subToConsult, date, date_before, null);
+		return "response";
 	}
 	
 	public static String getAllGraph(VirtGraph vGraph, String graphToConsult) {

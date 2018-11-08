@@ -225,15 +225,14 @@ ORDER BY ?s
 # --- alternative 1
 prefix xsd:<http://www.w3.org/2001/XMLSchema#> 
 prefix mcas:<http://localhost:8890/mcas/> 
-select distinct ?rule ?constructor ?select 
+select distinct ?rule ?content
 from <http://localhost:8890/mcas/rules#> 
 from named <http://localhost:8890/mcas/activity#> 
 WHERE 
 	{ 
  
     ?rule  <http://purl.org/rules/activities#hasTrigger>  ?trigger; 
-<http://purl.org/rules/activities#hasConstructor> ?constructor; 
-<http://purl.org/rules/activities#hasSelect> ?select 
+<http://purl.org/rules/activities#hasContent> ?content.
  
 GRAPH <http://localhost:8890/mcas/activity#> {  
  

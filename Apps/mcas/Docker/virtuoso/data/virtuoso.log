@@ -1054,3 +1054,55 @@
 03:27:26 Checkpoint finished, log reused
 04:27:28 Checkpoint started
 04:27:28 Checkpoint finished, log reused
+
+		Wed Nov 07 2018
+19:28:51 OpenLink Virtuoso Universal Server
+19:28:52 Version 07.20.3217-pthreads for Linux as of Jan 26 2018
+19:28:52 uses parts of OpenSSL, PCRE, Html Tidy
+19:28:52 Database version 3126
+19:28:52 SQL Optimizer enabled (max 1000 layouts)
+19:28:55 Compiler unit is timed at 0.000674 msec
+19:28:58 Roll forward started
+19:28:58     48 transactions, 4166 bytes replayed (100 %)
+19:28:58 Roll forward complete
+19:28:59 Checkpoint started
+19:29:00 Checkpoint finished, log reused
+19:29:00 HTTP/WebDAV server online at 8890
+19:29:00 Server online at 1111 (pid 1)
+20:29:01 Checkpoint started
+20:29:01 Checkpoint finished, log reused
+23:13:15 Checkpoint started
+23:13:16 Checkpoint finished, log reused
+
+		Thu Nov 08 2018
+00:13:16 Checkpoint started
+00:13:16 Checkpoint finished, log reused
+02:11:43 Checkpoint started
+02:11:43 Checkpoint finished, log reused
+12:53:51 Checkpoint started
+12:53:53 Checkpoint finished, log reused
+12:58:32 Server received signal 15
+12:58:32 Initiating quick shutdown
+12:58:32 Server shutdown complete
+
+		Thu Nov 08 2018
+13:40:53 OpenLink Virtuoso Universal Server
+13:40:53 Version 07.20.3217-pthreads for Linux as of Jan 26 2018
+13:40:53 uses parts of OpenSSL, PCRE, Html Tidy
+13:40:53 Database version 3126
+13:40:53 SQL Optimizer enabled (max 1000 layouts)
+13:40:59 Compiler unit is timed at 0.000230 msec
+13:41:11 Roll forward started
+13:41:11     20 transactions, 1684 bytes replayed (100 %)
+13:41:11 Roll forward complete
+13:41:13 Checkpoint started
+13:41:13 Checkpoint finished, log reused
+13:41:13 HTTP/WebDAV server online at 8890
+13:41:13 Server online at 1111 (pid 1)
+14:41:13 Checkpoint started
+14:41:13 Checkpoint finished, log reused
+15:41:15 Checkpoint started
+15:41:15 Checkpoint finished, log reused
+16:01:32 * Monitor: Locks are held for a long time
+16:41:16 Checkpoint started
+16:41:16 Checkpoint finished, log reused

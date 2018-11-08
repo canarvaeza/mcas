@@ -8,7 +8,7 @@ public class QueryTemplates {
 	final static String activity_template = "?act<*n*> a <*type*>;\r\n" + 
             "time:hasBeginningTime ?btime<*n*>;\r\n" + 
             "time:hasEndingTime ?etime<*n*>.\r\n" + 
-            "FILTER (xsd:date(\"<*date_before*>\") < ?btime<*n*> && ??btime<*n*> < xsd:date(\"<*date*>\") )";
+            "FILTER (xsd:date(\"<*date_before*>\") < ?btime<*n*> && ?btime<*n*> < xsd:date(\"<*date*>\") )";
 	
 	final static String place_template = "?place<*n*> a <*type*>;\r\n" + 
 			"mcas:hasLocation ?location.\r\n" + 

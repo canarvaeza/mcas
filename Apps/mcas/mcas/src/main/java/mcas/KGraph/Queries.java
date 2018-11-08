@@ -15,7 +15,7 @@ import virtuoso.jena.driver.VirtuosoUpdateRequest;
 public class Queries {
 	/** inserts **/
 	
-	public static boolean constructNewRule(VirtGraph vGraph, String graphToUpdate, String queryContent) {
+	public static boolean constructNewRule(VirtGraph vGraph, String graphToUpdate, String queryContent, String date, String date_before) {
 		/*queryContent = "		prefix : <http://purl.org/m-context/ontologies/mContext#>\r\n" + 
 				"			prefix activity: <http://localhost:8890/mcas/activity#act/>\r\n" + 
 				"			prefix time: <http://purl.org/m-context/ontologies/time#>\r\n" + 
@@ -68,8 +68,10 @@ public class Queries {
 				"\r\n" + 
 				"			}\r\n" + 
 				"";*/
-//		queryContent = queryContent.replace("\\\"", "\"");
-		System.out.println(queryContent);
+		queryContent = queryContent.replace("\\\"", "\"");
+		queryContent = queryContent.replace("<*date*>", date);
+		queryContent = queryContent.replace("<*date_before*>", date_before);
+//		System.out.println(queryContent);
 		VirtuosoUpdateRequest vur = VirtuosoUpdateFactory.create(queryContent, vGraph);
 		vur.exec();
 
@@ -141,6 +143,7 @@ public class Queries {
 			RDFNode s = result.get("s");
 			RDFNode p = result.get("p");
 			RDFNode o = result.get("o");
+			System.out.println(graphName);
 			System.out.println(s + " " + p + " " + o);
 		}
 
@@ -198,7 +201,7 @@ public class Queries {
 	 * @param limit
 	 * @return specific data from a graph
 	 */
-	public static String getSpecificGraphData(VirtGraph vGraph, String returnParameters, String graphToConsult, String subToConsult, Long limit) {
+	public static String getUsefulRulesContent(VirtGraph vGraph, String subToConsult, String date, String date_before, Long limit) {
 
 		String response = "";
 		//String lowActivities = "";
@@ -219,17 +222,14 @@ public class Queries {
 			// RDFNode s = result.get("s");
 			response = "";
 			RDFNode rule = result.get("rule");
-			RDFNode constructor =result.get("constructor");
-			RDFNode select = result.get("select");
-			response +=  rule + "\n" + constructor + "\n" + select + "\n";
-			System.out.println(rule + "\n" + constructor + "\n" + select + "\n");
-//			constructNewRule(vGraph, "", response);
+			RDFNode content =result.get("content");
+			response += content + "\n";
+//			System.out.println(rule + "\n" + content + "\n");
+			constructNewRule(vGraph, "", response, date, date_before);
 		}
 
 		System.out.println("executed");
-		
-//		constructNewRule(vGraph, "", response);
-		
+				
 		return response;
 
 	}
