@@ -3,10 +3,7 @@ package mcas.KGraph;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
-
-import org.apache.jena.query.*;
-import org.apache.jena.rdf.model.Literal;
-import org.apache.jena.rdf.model.RDFNode;
+import java.util.List;
 
 import virtuoso.jena.driver.*;
 
@@ -65,7 +62,7 @@ public class KGraphManager {
 		return response;
 	}
 	
-	public static String getRules(VirtGraph vGraph, String date) {
+	public static List<String> getRules(VirtGraph vGraph, String date) {
 		String graphToConsult = QueryConf.graphsBases.get("rules");
 		String subToConsult = "prefix xsd:<http://www.w3.org/2001/XMLSchema#> \r\n" + 
 				"prefix mcas:<http://localhost:8890/mcas/> \r\n" + 
@@ -98,8 +95,8 @@ public class KGraphManager {
 		subToConsult = subToConsult.replace("<*date*>", date);
 		subToConsult = subToConsult.replace("<*date_before*>", date_before);
 //		System.out.println(subToConsult);
-		String response = Queries.getUsefulRulesContent(vGraph, subToConsult, date, date_before, null);
-		return "response";
+		List<String> response = Queries.getUsefulRulesContent(vGraph, subToConsult, date, date_before, null);
+		return response;
 	}
 	
 	public static String getAllGraph(VirtGraph vGraph, String graphToConsult) {

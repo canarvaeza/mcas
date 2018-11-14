@@ -59,7 +59,7 @@ import mcas.util.IOManager;
 
 public class ToRDF {
 	
-	public static String data2RDF(String root, String mapping_name, String outputFile_name) {
+	public static String data2RDF(String root, String mapping_name, InputStream mappingStream, String outputFile_name) {
 		
 		String rdfFlux = null;
 		
@@ -68,9 +68,9 @@ public class ToRDF {
 		String mappingFile = Paths.get(root, mapping_name).toString(); //path to the mapping file that needs to be executed
 		List<String> triplesMaps = new ArrayList<String>(); //list of triplesmaps to execute. When this list is empty all triplesmaps in the mapping file are executed
 		
-		InputStream mappingStream;
+//		InputStream mappingStream;
 		try {
-			mappingStream = new FileInputStream(mappingFile);
+//			mappingStream = new FileInputStream(mappingFile);
 			Model model = Rio.parse(mappingStream, "", RDFFormat.TURTLE);
 			RDF4JStore rmlStore = new RDF4JStore(model);
 			

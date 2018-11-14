@@ -1,5 +1,8 @@
 package mcas.KGraph;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.jena.query.Query;
 import org.apache.jena.query.QueryFactory;
 import org.apache.jena.query.QuerySolution;
@@ -15,8 +18,10 @@ import virtuoso.jena.driver.VirtuosoUpdateRequest;
 public class Queries {
 	/** inserts **/
 	
-	public static boolean constructNewRule(VirtGraph vGraph, String graphToUpdate, String queryContent, String date, String date_before) {
-		/*queryContent = "		prefix : <http://purl.org/m-context/ontologies/mContext#>\r\n" + 
+	public static boolean constructNewRule(VirtGraph vGraph, String graphToUpdate, List<String> queries, String date, String date_before) {
+		for (String queryContent : queries) {
+			try {
+				/*queryContent = "		prefix : <http://purl.org/m-context/ontologies/mContext#>\r\n" + 
 				"			prefix activity: <http://localhost:8890/mcas/activity#act/>\r\n" + 
 				"			prefix time: <http://purl.org/m-context/ontologies/time#>\r\n" + 
 				"\r\n" + 
@@ -68,15 +73,19 @@ public class Queries {
 				"\r\n" + 
 				"			}\r\n" + 
 				"";*/
-		queryContent = queryContent.replace("\\\"", "\"");
-		queryContent = queryContent.replace("<*date*>", date);
-		queryContent = queryContent.replace("<*date_before*>", date_before);
-//		System.out.println(queryContent);
-		VirtuosoUpdateRequest vur = VirtuosoUpdateFactory.create(queryContent, vGraph);
-		vur.exec();
+				queryContent = queryContent.replace("\\\"", "\"");
+				queryContent = queryContent.replace("<*date*>", date);
+				queryContent = queryContent.replace("<*date_before*>", date_before);
+				//		System.out.println(queryContent);
+				VirtuosoUpdateRequest vur = VirtuosoUpdateFactory.create(queryContent, vGraph);
+				vur.exec();
+			} catch (Exception e) {
+				System.out.println(e);
+			}
+		}
 
 		return true;
-		
+
 	}
 	
 	
@@ -201,9 +210,9 @@ public class Queries {
 	 * @param limit
 	 * @return specific data from a graph
 	 */
-	public static String getUsefulRulesContent(VirtGraph vGraph, String subToConsult, String date, String date_before, Long limit) {
-
-		String response = "";
+	public static List<String> getUsefulRulesContent(VirtGraph vGraph, String subToConsult, String date, String date_before, Long limit) {
+		
+		List<String> rules_list = new ArrayList<String>();
 		//String lowActivities = "";
 		Query sparql = QueryFactory.create(subToConsult);
 		if (limit != null) {
@@ -220,17 +229,17 @@ public class Queries {
 			QuerySolution result = results.nextSolution();
 			RDFNode graphName = result.get("graph");
 			// RDFNode s = result.get("s");
-			response = "";
+			String response = "";
 			RDFNode rule = result.get("rule");
 			RDFNode content =result.get("content");
 			response += content + "\n";
 //			System.out.println(rule + "\n" + content + "\n");
-			constructNewRule(vGraph, "", response, date, date_before);
+			rules_list.add(response);
 		}
 
 		System.out.println("executed");
 				
-		return response;
+		return rules_list;
 
 	}
 	

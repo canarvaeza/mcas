@@ -1,10 +1,14 @@
 package mcas.Controller;
 
-import mcas.KGraph.KGraphManager;
-import mcas.KGraph.QueryConf;
 import virtuoso.jena.driver.VirtGraph;
 
 import java.nio.file.Paths;
+import java.util.List;
+
+import mcas.DataTransformation.ToRDF;
+import mcas.KGraph.*;
+import mcas.util.DatesManager;
+import mcas.util.Initializer;
 
 public class MainController {
 
@@ -15,11 +19,9 @@ public class MainController {
 	public static void main(String[] args) throws Exception {
 		
 		VirtGraph graph = new VirtGraph(QueryConf.connectionString, QueryConf.userName, QueryConf.passWord);
-		// ---- RULES INITIALIZER ---- 
-//		Rules.insert_all_rules_sparql(graph, Paths.get(RESOURCES_PATH, "rules", "rules.csv").toString());
 		
-//		String rdfFlux = ToRDF.data2RDF(Paths.get(RESOURCES_PATH,"transformation").toString(), "mcas-model-03.rml.ttl", "salida.ttl");
-
+		Initializer.initialize(true, false, graph, RESOURCES_PATH);
+		
 		// String rdfFlux = "";
 
 		// generate random UUIDs
@@ -46,11 +48,12 @@ public class MainController {
 
 		// CREATE THE VIRTUAL GRAPH
 
-		// QueryConf.queryGraphBase + "person#" first If I want to use specific graph
-		
-//		KGraphManager.insertConnectedData(graph, rdfFlux);
 
-		KGraphManager.getRules(graph, "2017-06-07");
+		String date = "2017-06-07";
+		List<String> rules = KGraphManager.getRules(graph, date);
+		String date_before = DatesManager.getNewDate(date, -1);
+		System.out.println(rules);
+		Queries.constructNewRule(graph, "", rules, date, date_before);
 		
 
 	}

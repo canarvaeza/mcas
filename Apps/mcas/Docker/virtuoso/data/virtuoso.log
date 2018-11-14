@@ -1106,3 +1106,58 @@
 16:01:32 * Monitor: Locks are held for a long time
 16:41:16 Checkpoint started
 16:41:16 Checkpoint finished, log reused
+17:07:18 Server received signal 15
+17:07:18 Initiating quick shutdown
+17:07:18 Server shutdown complete
+
+		Thu Nov 08 2018
+17:07:23 OpenLink Virtuoso Universal Server
+17:07:23 Version 07.20.3217-pthreads for Linux as of Jan 26 2018
+17:07:23 uses parts of OpenSSL, PCRE, Html Tidy
+17:07:23 Database version 3126
+17:07:23 SQL Optimizer enabled (max 1000 layouts)
+17:07:25 Compiler unit is timed at 0.001288 msec
+17:07:28 Roll forward started
+17:07:28     48 transactions, 4166 bytes replayed (100 %)
+17:07:28 Roll forward complete
+17:07:30 Checkpoint started
+17:07:30 Checkpoint finished, log reused
+17:07:30 HTTP/WebDAV server online at 8890
+17:07:30 Server online at 1111 (pid 1)
+
+		Sun Nov 11 2018
+15:07:42 Checkpoint started
+15:07:43 Checkpoint finished, log reused
+16:07:44 Checkpoint started
+16:07:44 Checkpoint finished, log reused
+
+		Wed Nov 14 2018
+12:39:57 OpenLink Virtuoso Universal Server
+12:39:57 Version 07.20.3217-pthreads for Linux as of Jan 26 2018
+12:39:57 uses parts of OpenSSL, PCRE, Html Tidy
+12:39:59 Database version 3126
+12:40:02 SQL Optimizer enabled (max 1000 layouts)
+12:40:06 Compiler unit is timed at 0.000297 msec
+12:40:15 Roll forward started
+12:40:16     95 transactions, 8319 bytes replayed (100 %)
+12:40:16 Roll forward complete
+12:40:17 Checkpoint started
+12:40:17 Checkpoint finished, log reused
+12:40:17 HTTP/WebDAV server online at 8890
+12:40:17 Server online at 1111 (pid 1)
+13:40:18 Checkpoint started
+13:40:18 Checkpoint finished, log reused
+14:40:20 Checkpoint started
+14:40:20 Checkpoint finished, log reused
+15:40:21 Checkpoint started
+15:40:21 Checkpoint finished, log reused
+16:40:21 Checkpoint started
+16:40:22 Checkpoint finished, log reused
+17:40:23 Checkpoint started
+17:40:23 Checkpoint finished, log reused
+18:40:25 Checkpoint started
+18:40:25 Checkpoint finished, log reused
+20:06:14 Checkpoint started
+20:06:14 Checkpoint finished, log reused
+21:06:20 Checkpoint started
+21:06:20 Checkpoint finished, log reused
