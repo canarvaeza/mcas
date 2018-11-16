@@ -10,10 +10,11 @@ public class QueryTemplates {
             "time:hasEndingTime ?etime<*n*>.\r\n" + 
             "FILTER (xsd:date(\"<*date_before*>\") < ?btime<*n*> && ?btime<*n*> < xsd:date(\"<*date*>\") )";
 	
-	final static String place_template = "?place<*n*> a <*type*>;\r\n" + 
-			"mcas:hasLocation ?location.\r\n" + 
+	final static String place_template = "?act1 <http://purl.org/m-context/ontologies/mContext#isDescribedBy> ?desc.\r\n" + 
+			"?desc <http://www.geonames.org/ontology#locatedIn> ?location.\r\n" + 
 			"?location a ?location_type\r\n" + 
-			"FILTER (?location_type == <*location_type*>)";
+			"\r\n" + 
+			"filter(?location_type = <*location_type*>)";
 	
 	final static String rule_graph_template = "	graph <*graph*>\r\n" + 
 			"	{\r\n" + 

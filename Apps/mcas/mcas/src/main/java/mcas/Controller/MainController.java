@@ -20,7 +20,7 @@ public class MainController {
 		
 		VirtGraph graph = new VirtGraph(QueryConf.connectionString, QueryConf.userName, QueryConf.passWord);
 		
-		Initializer.initialize(true, false, graph, RESOURCES_PATH);
+		Initializer.initialize(false, true, graph, RESOURCES_PATH);
 		
 		// String rdfFlux = "";
 
@@ -49,11 +49,11 @@ public class MainController {
 		// CREATE THE VIRTUAL GRAPH
 
 
-		String date = "2017-06-07";
-		List<String> rules = KGraphManager.getRules(graph, date);
-		String date_before = DatesManager.getNewDate(date, -1);
-		System.out.println(rules);
-		Queries.constructNewRule(graph, "", rules, date, date_before);
+//		String date = "2017-06-07";
+//		List<String> rules = KGraphManager.getRules(graph, date);
+//		String date_before = DatesManager.getNewDate(date, -1);
+////		System.out.println(rules);
+//		Queries.constructNewRule(graph, "", rules, date, date_before);
 		
 
 	}

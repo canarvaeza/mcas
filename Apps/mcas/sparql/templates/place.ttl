@@ -1,4 +1,5 @@
-?place<*n*> a <*type*>;
-mcas:hasLocation ?location.
+?act1 <http://purl.org/m-context/ontologies/mContext#isDescribedBy> ?desc.
+?desc <http://www.geonames.org/ontology#locatedIn> ?location.
 ?location a ?location_type
-FILTER (?location_type == <*location_type*>)
+
+filter(?location_type = <*location_type*>)

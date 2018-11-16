@@ -76,7 +76,7 @@ public class Queries {
 				queryContent = queryContent.replace("\\\"", "\"");
 				queryContent = queryContent.replace("<*date*>", date);
 				queryContent = queryContent.replace("<*date_before*>", date_before);
-				//		System.out.println(queryContent);
+				System.out.println(queryContent);
 				VirtuosoUpdateRequest vur = VirtuosoUpdateFactory.create(queryContent, vGraph);
 				vur.exec();
 			} catch (Exception e) {

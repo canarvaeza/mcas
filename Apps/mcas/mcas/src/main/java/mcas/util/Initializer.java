@@ -21,7 +21,7 @@ public class Initializer{
 		if(create_new_data) {
 
 			System.out.println("Creating flux data in virtuoso");
-			String[] files = {"input0.json","input1.json","input2.json","input3.json"};
+			String[] files = {"input0.json","input1.json","input2.json","input3.json", "input4.json"};
 			for (String file: files) {
 				try {
 					String mapping_template = TransformationTemplates.transformTemplates.get("mcas");

@@ -1,0 +1,80 @@
+{
+    "Activity": [
+      {
+        "Id": "localhost:8890/mcas/activity#act/000546",
+        "Type": "purl.org/m-context/ontologies/domains/alzheimer#Sit",
+        "Time": {
+          "Beginning": "2017-06-06T13:00:00Z",
+          "Ending": "2017-06-06T13:20:00Z"
+        },
+        "Person": [
+          {
+            "Id": "localhost:8890/mcas/person#per/00001"
+          }
+        ],
+        "Descriptor":[
+          {"Id": "localhost:8890/mcas/sensor#obs/000022"}
+        ]
+      },
+      {
+        "Id": "localhost:8890/mcas/activity#act/000547",
+        "Type": "purl.org/m-context/ontologies/domains/alzheimer#TvOn",
+        "Time": {
+          "Beginning": "2017-06-07T03:05:00Z",
+          "Ending": "2017-06-07T03:08:00Z"
+        },
+        "Person": [
+          {
+            "Id": "localhost:8890/mcas/person#per/00001"
+          }
+        ],
+        "Descriptor":[
+          {"Id": "localhost:8890/mcas/sensor#obs/000023"}
+        ]
+      }
+    ],
+    "Ssn": [
+      {
+        "Observation": [
+          {
+            "Id": "localhost:8890/mcas/sensor#obs/000022",
+            "Sensor": "localhost:8890/mcas/sensor#sen/bed/00001",
+            "Value": "1",
+            "Time": "2017-06-06T13:00:00Z",
+            "RecEntities": [
+              {
+                "Activity": "localhost:8890/mcas/activity#act/000546"
+              }
+            ],
+            "Location": "localhost:8890/mcas/location#loc/00011"
+          }
+        ]
+      },
+      {
+        "Observation": [
+          {
+            "Id": "localhost:8890/mcas/sensor#obs/000023",
+            "Sensor": "localhost:8890/mcas/sensor#sen/tv/00001",
+            "Value": "1",
+            "Time": "2017-06-06T13:00:00Z",
+            "RecEntities": [
+              {
+                "Activity": "localhost:8890/mcas/activity#act/000547"
+              }
+            ],
+            "Location": "localhost:8890/mcas/location#loc/00011"
+          }
+        ]
+      }
+    ],
+    "Location": [
+      {
+        "Id": "localhost:8890/mcas/location#loc/00011",
+        "Type": "purl.org/m-context/ontologies/domains/alzheimer#Home",
+        "Coordinates": {
+          "latitude": "50.414",
+          "longitude": "-35.699"
+        }
+      }
+    ]
+  }
