@@ -76,7 +76,7 @@ public class Queries {
 				queryContent = queryContent.replace("\\\"", "\"");
 				queryContent = queryContent.replace("<*date*>", date);
 				queryContent = queryContent.replace("<*date_before*>", date_before);
-				System.out.println(queryContent);
+//				System.out.println(queryContent);
 				VirtuosoUpdateRequest vur = VirtuosoUpdateFactory.create(queryContent, vGraph);
 				vur.exec();
 			} catch (Exception e) {
@@ -119,7 +119,7 @@ public class Queries {
 		System.out.println(queryContent);
 		System.out.println("\n creating content...");
 		String str = "insert data\r\n" + "{" + queryContent + "}";
-
+		System.out.println(str);
 		VirtuosoUpdateRequest vur = VirtuosoUpdateFactory.create(str, vGraph);
 		vur.exec();
 

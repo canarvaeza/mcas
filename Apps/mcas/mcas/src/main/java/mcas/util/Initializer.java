@@ -11,18 +11,31 @@ import mcas.KGraph.Rules;
 import virtuoso.jena.driver.VirtGraph;
 
 public class Initializer{
-
-	public static void initialize(boolean create_new_data, boolean create_rules,VirtGraph graph, String RESOURCES_PATH) {
-		if (create_rules) {
-			System.out.println("Creating new Rules");
-			Rules.insert_all_rules_sparql(graph, Paths.get(RESOURCES_PATH, "rules", "rules.csv").toString());
-		}
+	
+	public String[] files;
+	
+	public void setNewDataFiles (String[] files) {
+		this.files = files;
+	}
+	
+	public Initializer() {
+		
+	}
+	
+	/**
+	 * Method that initialise the Virtuoso DB
+	 * @param create_new_data -> If you wan to put data on the virtuoso DB
+	 * @param create_rules -> If you want to create rules on the virtuoso DB
+	 * @param graph -> The graph you want to change
+	 * @param RESOURCES_PATH -> The Resources path, should have a transformation and rules folder
+	 * @return boolean -> The service was successful
+	 */
+	public boolean initialize(boolean create_new_data, boolean create_rules,VirtGraph graph, String RESOURCES_PATH) {
 
 		if(create_new_data) {
 
 			System.out.println("Creating flux data in virtuoso");
-			String[] files = {"input0.json","input1.json","input2.json","input3.json", "input4.json", "Sensors.json", "Locations.json", "Persons.json"};
-			for (String file: files) {
+			for (String file: this.files) {
 				try {
 					String mapping_template = TransformationTemplates.transformTemplates.get("mcas");
 					mapping_template = mapping_template.replace("<*input_json_file*>", Paths.get(RESOURCES_PATH,"transformation", file).toString());
@@ -36,5 +49,10 @@ public class Initializer{
 				}
 			}
 		}
+		if (create_rules) {
+			System.out.println("Creating new Rules");
+			Rules.insert_all_rules_sparql(graph, Paths.get(RESOURCES_PATH, "rules", "rules.csv").toString());
+		}
+		return true;
 	}
 }

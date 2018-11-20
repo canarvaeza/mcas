@@ -40,7 +40,7 @@ public class QueryTemplates {
 			"    :hasSubActivity ?act1;\r\n" + 
 			"    :hasSubActivity ?act2;\r\n" + 
 			"    time:hasBeginningTime ?btime1;\r\n" + 
-			"    time:hasEndingTime ?btime2;\r\n" + 
+			"    time:hasEndingTime ?etime1;\r\n" + 
 			"    :hasActor ?user.\r\n" + 
 			"\r\n" + 
 			"  ?act1 :isSubActivity ?new.\r\n" + 

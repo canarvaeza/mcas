@@ -7,7 +7,7 @@ GRAPH  <http://localhost:8890/mcas/activity#> {
     :hasSubActivity ?act1;
     :hasSubActivity ?act2;
     time:hasBeginningTime ?btime1;
-    time:hasEndingTime ?btime2;
+    time:hasEndingTime ?etime1;
     :hasActor ?user.
 
   ?act1 :isSubActivity ?new.

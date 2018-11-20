@@ -1,0 +1,83 @@
+{
+    "Activity": [
+      {
+        "Id": "localhost:8890/mcas/activity#act/t00001",
+        "Type": "purl.org/m-context/ontologies/domains/alzheimer#Sit",
+        "Time": {
+          "Beginning": "2017-06-06T13:00:00Z",
+          "Ending": "2017-06-06T13:30:00Z"
+        },
+        "Person": [
+          {
+            "Id": "localhost:8890/mcas/person#per/0001"
+          }
+        ],
+        "Descriptor":[
+          {"Id": "localhost:8890/mcas/sensor#obs/00001"}
+        ]
+      },
+      {
+        "Id": "localhost:8890/mcas/activity#act/t00002",
+        "Type": "purl.org/m-context/ontologies/domains/alzheimer#Eat",
+        "Time": {
+          "Beginning": "2017-06-06T13:02:00Z",
+          "Ending": "2017-06-06T13:25:00Z"
+        },
+        "Person": [
+          {
+            "Id": "localhost:8890/mcas/person#per/0001"
+          }
+        ],
+        "Descriptor":[
+          {"Id": "localhost:8890/mcas/sensor#obs/00002"}
+        ]
+      }
+    ],
+    "Ssn": [
+      {
+        "Observation": [
+          {
+            "Id": "localhost:8890/mcas/sensor#obs/00001",
+            "Sensor": "localhost:8890/mcas/sensor#sen/pressure/00001",
+            "Value": "1",
+            "Time": "2017-06-06T13:00:00Z",
+            "RecEntities": [
+              {
+                "Activity": "localhost:8890/mcas/activity#act/t00001"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Observation": [
+          {
+            "Id": "localhost:8890/mcas/sensor#obs/00002",
+            "Sensor": "localhost:8890/mcas/sensor#sen/camera/00001",
+            "Value": "10",
+            "Time": "2017-06-06T13:02:00Z",
+            "RecEntities": [
+              {
+                "Activity": "localhost:8890/mcas/activity#act/t00002"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "Multimedia": [
+        {
+          "Id": "localhost:8890/mcas/multimedia#mul/00001",
+          "Format": "AVI",
+          "Type": "www.semanticweb.org/ontologies/multimedia#VideoFormat",
+          "Descriptor": {},
+          "RecEntities": [
+            {
+              "Activity": "localhost:8890/mcas/activity#act/t00002",
+              "Person": "localhost:8890/mcas/person#per/0001"
+            }
+          ],
+          "CreationTime": "2017-06-06T13:02:00Z"
+        }
+      ]
+}

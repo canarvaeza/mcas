@@ -30,29 +30,28 @@ import mcas.KGraph.QueryTemplates;
 public class Rules {
 
 	public static boolean insert_all_rules_sparql(VirtGraph vGraph, String dir) {
-        try (
-                Reader reader = Files.newBufferedReader(Paths.get(dir));
-                CSVReader csvReader = new CSVReader(reader);
-            ) {
-                // Reading Records One by One in a String array
-            	String[] header = csvReader.readNext();
-                String[] nextRecord = null;
-                
+		try {
+			Reader reader = Files.newBufferedReader(Paths.get(dir));
+			CSVReader csvReader = new CSVReader(reader);
+			// Reading Records One by One in a String array
+			String[] header = csvReader.readNext();
+			String[] nextRecord = null;
 
-                while ((nextRecord = csvReader.readNext()) != null) {
-            	    HashMap<String, String> rule_content = new HashMap<String, String>();
-                    for (int i = 0; i < header.length; i++) {
-                    	rule_content.put(header[i], nextRecord[i]);
-    				}
-//                    System.out.println(rule_content.toString());
-    	    		Rules.create_new_rule(vGraph, rule_content);
-                }
-            } catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+
+			while ((nextRecord = csvReader.readNext()) != null) {
+				HashMap<String, String> rule_content = new HashMap<String, String>();
+				for (int i = 0; i < header.length; i++) {
+					rule_content.put(header[i], nextRecord[i]);
+				}
+				//                    System.out.println(rule_content.toString());
+				Rules.create_new_rule(vGraph, rule_content);
 			}
-        
-        return true;
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return true;
 		
 	}
 	

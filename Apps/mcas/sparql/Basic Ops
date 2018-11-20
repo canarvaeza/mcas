@@ -5,6 +5,10 @@
 
 CREATE GRAPH <qq>
 CLEAR GRAPH <http://localhost:8890/mcas/rules#>
+CLEAR GRAPH <http://localhost:8890/mcas/person#>
+CLEAR GRAPH <http://localhost:8890/mcas/activity#>
+CLEAR GRAPH <http://localhost:8890/mcas/location#>
+CLEAR GRAPH <http://localhost:8890/mcas/sensor#>
 
 ## desde el ISQL
 sparql clear graph <http://vocab.org/relationship/>;

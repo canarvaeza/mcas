@@ -52,7 +52,7 @@ public class KGraphManager {
 			e.printStackTrace(System.err);
 		}
 		
-		System.out.println(output);
+//		System.out.println(output);
 		 
 		Queries.insertConnectedData(vGraph, output);
 		return true;
