@@ -35,7 +35,7 @@ public class KGraphManager {
 
 			while (scanner.hasNextLine()) {
 				String line = scanner.nextLine();
-				if (actualString.equals(getBeforeString(" ", line)) && scanner.hasNextLine()) {
+				if (actualString.equals(getBeforeString(" ", line))) {
 					rdfFragment += line + "\n";
 				} else {
 					if (rdfFragment != null) {
@@ -45,9 +45,12 @@ public class KGraphManager {
 					rdfFragment = "" + line + "\n";
 				}
 			}
+			output += createQuery("insert", actualString, rdfFragment);
+				
+			
 		} catch (Exception e) {
-            e.printStackTrace(System.err);
-        }
+			e.printStackTrace(System.err);
+		}
 		
 		System.out.println(output);
 		 
