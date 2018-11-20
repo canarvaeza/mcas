@@ -31,6 +31,10 @@
 ### ----- TIME ----- ###
 @prefix time: <http://purl.org/m-context/ontologies/time#>.
 
+### ------ PERSON ------ ###
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+
+
 ## ------------------------------------------###
 
 
@@ -41,7 +45,7 @@
 
 <#ActivityMapping>
     rml:logicalSource [
-        rml:source "C:/Users/dev/Documents/GitHub/mcas/Apps/mcas/mcas/src/main/resources/transformation/input3.json";
+        rml:source "<*input_json_file*>";
         rml:referenceFormulation ql:JSONPath;
         rml:iterator "$.Activity[*]"
     ];
@@ -95,7 +99,7 @@
 ## ------ SSN ------ ###
 <#DeviceMapping>
 	rml:logicalSource [
-		rml:source "C:/Users/dev/Documents/GitHub/mcas/Apps/mcas/mcas/src/main/resources/transformation/input3.json";
+		rml:source "<*input_json_file*>";
 	    rml:referenceFormulation ql:JSONPath;
 	    rml:iterator "$.Ssn[*].Device[*]"
     ];
@@ -114,11 +118,19 @@
         [
             rr:template "http://{Sensor[*]}";
         ]
+    ];
+	rr:predicateObjectMap [
+        rr:predicate gn:locatedIn;
+        rr:objectMap
+        [
+        
+            rr:template "http://{Location}";            
+        ] 
     ].
 
 <#SensorMapping>
 	rml:logicalSource [
-		rml:source "C:/Users/dev/Documents/GitHub/mcas/Apps/mcas/mcas/src/main/resources/transformation/input3.json";
+		rml:source "<*input_json_file*>";
 	    rml:referenceFormulation ql:JSONPath;
 	    rml:iterator "$.Ssn[*].Sensor[*]"
     ];
@@ -126,7 +138,7 @@
     #define la uri en el sistema
     rr:subjectMap [
     	rr:template "http://{Id}";
-    	rr:class sosa:Sensor
+    	rr:class sosa:Platform
     ];
 	    
     ## ----- BASIC ATRIBUTES ----- ##
@@ -137,12 +149,23 @@
         [
             rr:template "http://{Observe}";
         ]
+    ];
+
+	## ----- EXTERNAL ATRIBUTES ----- ##
+
+	rr:predicateObjectMap [
+        rr:predicate gn:locatedIn;
+        rr:objectMap
+        [
+        
+            rr:template "http://{Location}";            
+        ] 
     ].
 
 <#ObservationMapping>
     
     rml:logicalSource [
-		rml:source "C:/Users/dev/Documents/GitHub/mcas/Apps/mcas/mcas/src/main/resources/transformation/input3.json";
+		rml:source "<*input_json_file*>";
 	    rml:referenceFormulation ql:JSONPath;
 	    rml:iterator "$.Ssn[*].Observation[*]"
     ];
@@ -202,7 +225,7 @@
 
 <#MultimediaMapping>
 	rml:logicalSource [
-		rml:source "C:/Users/dev/Documents/GitHub/mcas/Apps/mcas/mcas/src/main/resources/transformation/input3.json";
+		rml:source "<*input_json_file*>";
 	    rml:referenceFormulation ql:JSONPath;
 	    rml:iterator "$.Multimedia[*]"
     ];
@@ -264,7 +287,7 @@
     
 <#DescriptorMapping>
 	rml:logicalSource [
-		rml:source "C:/Users/dev/Documents/GitHub/mcas/Apps/mcas/mcas/src/main/resources/transformation/input3.json";
+		rml:source "<*input_json_file*>";
 	    rml:referenceFormulation ql:JSONPath;
 	    rml:iterator "$.Multimedia[*].Descriptor"
 	];
@@ -288,7 +311,7 @@
 ### ----- LOCATION ----- ###
 <#LocationMapping>
 	rml:logicalSource [
-		rml:source "C:/Users/dev/Documents/GitHub/mcas/Apps/mcas/mcas/src/main/resources/transformation/input3.json";
+		rml:source "<*input_json_file*>";
 	    rml:referenceFormulation ql:JSONPath;
 	    rml:iterator "$.Location[*]"
     ];
@@ -320,3 +343,47 @@
       	rml:reference "Coordinates.longitude" 
     	]
   	].
+
+### ------ PERSON ------ ###
+
+<#PersonMapping>
+	rml:logicalSource [
+		rml:source "<*input_json_file*>";
+	    rml:referenceFormulation ql:JSONPath;
+	    rml:iterator "$.Person[*]"
+    ];
+    
+    #define la uri en el sistema
+    rr:subjectMap [
+    	rr:template "http://{Id}";
+    	rr:class foaf:Person
+    ];
+    
+    
+    ## ----- BASIC ATRIBUTES ----- ##
+    
+    rr:predicateObjectMap [
+    	rr:predicate foaf:firstname;
+    	rr:objectMap
+    	[
+    		rml:reference "Name"
+    	]
+    ];
+    
+    rr:predicateObjectMap [
+    	rr:predicate foaf:lastname;
+    	rr:objectMap
+    	[
+    		rml:reference "Last-name"
+    	]
+    ];
+    
+    ## ----- EXTERNAL ATRIBUTES ----- ##
+    
+    rr:predicateObjectMap [
+    	rr:predicate mcontext:hasRol;
+    	rr:objectMap
+    	[
+    		rr:template "http://{Role.Value}" ;
+    	]
+    ].

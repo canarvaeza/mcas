@@ -1,0 +1,20 @@
+{
+    "Location": [
+      {
+        "Id": "localhost:8890/mcas/location#loc/00001",
+        "Type": "purl.org/m-context/ontologies/domains/alzheimer#Home",
+        "Coordinates": {
+          "latitude": "50.414",
+          "longitude": "-35.699"
+        }
+      },
+      {
+        "Id": "localhost:8890/mcas/location#loc/00002",
+        "Type": "purl.org/m-context/ontologies/domains/alzheimer#Restaurant",
+        "Coordinates": {
+          "latitude": "45.009",
+          "longitude": "-30.000"
+        }
+      }
+    ]
+}
