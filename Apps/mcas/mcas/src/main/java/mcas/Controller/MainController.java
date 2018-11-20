@@ -2,10 +2,13 @@ package mcas.Controller;
 
 import virtuoso.jena.driver.VirtGraph;
 
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Paths;
 import java.util.List;
 
 import mcas.DataTransformation.ToRDF;
+import mcas.DataTransformation.TransformationTemplates;
 import mcas.KGraph.*;
 import mcas.util.DatesManager;
 import mcas.util.Initializer;
@@ -20,7 +23,8 @@ public class MainController {
 		
 		VirtGraph graph = new VirtGraph(QueryConf.connectionString, QueryConf.userName, QueryConf.passWord);
 		
-		Initializer.initialize(false, true, graph, RESOURCES_PATH);
+
+		Initializer.initialize(true, false, graph, RESOURCES_PATH);
 		
 		// String rdfFlux = "";
 
@@ -29,24 +33,6 @@ public class MainController {
 //		UUID idTwo = UUID.randomUUID();
 //		System.out.println("UUID One: " + idOne);
 //		System.out.println("UUID Two: " + idTwo);
-		
-		
-		
-		// String rdfFlux = "<http://localhost:8890/mcas/person#per/" + idOne
-		// + "> a <http://purl.org/m-context/ontologies/person#PersonMCAS>.\r\n"
-		// + "<http://localhost:8890/mcas/person#per/" + idOne + "> foaf:firstName
-		// \"Nicol\".\r\n"
-		// + "<http://localhost:8890/mcas/person#per/" + idOne + "> foaf:lastName
-		// \"Narvaez\".\r\n"
-		// + "<http://localhost:8890/mcas/person#per/" + idOne + "> foaf:gender
-		// \"female\".\r\n"
-		// + "<http://localhost:8890/mcas/person#per/" + idOne + "> foaf:accountName
-		// \"nicole89\".\r\n"
-		// + "<http://localhost:8890/mcas/person#per/" + idOne + "> foaf:age 7.";
-
-//		 System.out.println(rdfFlux);
-
-		// CREATE THE VIRTUAL GRAPH
 
 
 //		String date = "2017-06-07";

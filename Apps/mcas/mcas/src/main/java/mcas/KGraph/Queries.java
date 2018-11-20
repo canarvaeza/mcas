@@ -123,6 +123,7 @@ public class Queries {
 		VirtuosoUpdateRequest vur = VirtuosoUpdateFactory.create(str, vGraph);
 		vur.exec();
 
+		System.out.println("\n content created...");
 		return true;
 	}
 

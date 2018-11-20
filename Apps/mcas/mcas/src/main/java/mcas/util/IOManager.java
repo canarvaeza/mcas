@@ -23,8 +23,8 @@ public class IOManager {
 
 //	static String root = "C:/Users/dev/Documents/GitHub/mcas/Apps/mcas/mcas/src/main/resources/";
 
-	public static String loadFile (String root, String dir) {
-		File file = new File(root + dir);
+	public static String loadFile (String root) {
+		File file = new File(root);
 		String content = null;
 		try {
 			content = FileUtils.readFileToString(file, "utf-8");			

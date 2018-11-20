@@ -136,7 +136,7 @@ public class ToRDF {
 	
 	public static List<String> getTransformPrefixes(String root, String mapping_name) {
 
-		String fileContent = IOManager.loadFile(root, mapping_name);
+		String fileContent = IOManager.loadFile(Paths.get(root, mapping_name).toString());
 
 		List<String> prefixes = new ArrayList<String>();
 
