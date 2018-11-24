@@ -11,7 +11,8 @@ public class QueryTemplates {
             "FILTER (xsd:date(\"<*date_before*>\") < ?btime<*n*> && ?btime<*n*> < xsd:date(\"<*date*>\") )";
 	
 	final static String place_template = "?act1 <http://purl.org/m-context/ontologies/mContext#isDescribedBy> ?desc.\r\n" + 
-			"?desc <http://www.geonames.org/ontology#locatedIn> ?location.\r\n" + 
+			"?desc  <http://www.w3.org/ns/sosa/madeBySensor> ?sensor.\r\n" + 
+			"?sensor <http://www.geonames.org/ontology#locatedIn> ?location.\r\n" + 
 			"?location a ?location_type\r\n" + 
 			"\r\n" + 
 			"filter(?location_type = <*location_type*>)";
@@ -56,9 +57,7 @@ public class QueryTemplates {
 			"WHERE {\r\n" + 
 			"\r\n" + 
 			"  <*activity*>\r\n" + 
-			"\r\n" + 
-			"	#Contains the activity\r\n" + 
-			"	FILTER (?btime1 < ?btime2 && ?etime1 > ?etime2).\r\n" + 
+			"\r\n" +
 			"  OPTIONAL {\r\n" + 
 			"	  ?act2 :hasActor ?user.\r\n" + 
 			"	}\r\n" + 

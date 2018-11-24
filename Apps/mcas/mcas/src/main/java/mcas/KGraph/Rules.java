@@ -55,7 +55,7 @@ public class Rules {
 		
 	}
 	
-    public static String create_activity_String(String activities) {
+    public static String create_activity_String(String activities_string) {
         /*
          * ,,,,,,,Sin actividad,,,
 ,,,,,,,1 actividad,,,
@@ -63,7 +63,8 @@ public class Rules {
          */
         int activities_counter = 1;
         String activity_string = "";
-        for (String activity : activities.split(";")) {
+        String [] activities = activities_string.split(";");
+        for (String activity : activities) {
             String activity_template = QueryTemplates.queryTemplates.get("activity_template");
 
             activity_template = activity_template.replace("<*n*>", Integer.toString(activities_counter));
@@ -71,6 +72,11 @@ public class Rules {
 
             activity_string = activity_string.concat(String.format("%s\n\n", activity_template));
             activities_counter += 1;
+        }
+        if (activities.length > 1) {
+        	String filter = "	#Contains the activity\r\n" + 
+        			"	FILTER (?btime1 < ?btime2 && ?etime1 > ?etime2).";
+        	activity_string = activity_string.concat(filter);
         }
         return activity_string;
     }
@@ -83,7 +89,7 @@ public class Rules {
             String activity_template = QueryTemplates.queryTemplates.get("place_template");
 
             activity_template = activity_template.replace("<*n*>", Integer.toString(activities_counter));
-            activity_template = activity_template.replace("<*type*>", activity);
+            activity_template = activity_template.replace("<*location_type*>", activity);
 
             activity_string = activity_string.concat(String.format("%s\n\n", activity_template));
         }
