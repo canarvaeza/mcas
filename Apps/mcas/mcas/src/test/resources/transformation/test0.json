@@ -10,6 +10,9 @@
         "Person": [
           {
             "Id": "localhost:8890/mcas/person#per/0001"
+          },
+          {
+            "Id": "localhost:8890/mcas/person#per/0002"
           }
         ],
         "Descriptor":[
@@ -20,7 +23,7 @@
         "Id": "localhost:8890/mcas/activity#act/t00002",
         "Type": "purl.org/m-context/ontologies/domains/alzheimer#Eat",
         "Time": {
-          "Beginning": "2017-06-06T13:02:00Z",
+          "Beginning": "2017-06-06T13:01:00Z",
           "Ending": "2017-06-06T13:25:00Z"
         },
         "Person": [
@@ -29,7 +32,8 @@
           }
         ],
         "Descriptor":[
-          {"Id": "localhost:8890/mcas/sensor#obs/00002"}
+          {"Id": "localhost:8890/mcas/sensor#obs/00002"},
+          {"Id": "localhost:8890/mcas/multimedia#mul/00001"}
         ]
       }
     ],
