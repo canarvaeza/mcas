@@ -59,13 +59,12 @@ import mcas.util.IOManager;
 
 public class ToRDF {
 	
-	public static String data2RDF(String root, String mapping_name, InputStream mappingStream, String outputFile_name) {
+	public static String data2RDF(String root, InputStream mappingStream, String outputFile_name) {
 		
 		String rdfFlux = null;
 		
 		boolean removeDuplicates = false; //set to true if you want to remove duplicates triples/quads from the output
 		String cwd = root; //path to default directory for local files
-		String mappingFile = Paths.get(root, mapping_name).toString(); //path to the mapping file that needs to be executed
 		List<String> triplesMaps = new ArrayList<String>(); //list of triplesmaps to execute. When this list is empty all triplesmaps in the mapping file are executed
 		
 //		InputStream mappingStream;

@@ -138,7 +138,7 @@
     #define la uri en el sistema
     rr:subjectMap [
     	rr:template "http://{Id}";
-    	rr:class sosa:Platform
+    	rr:class sosa:Sensor
     ];
 	    
     ## ----- BASIC ATRIBUTES ----- ##

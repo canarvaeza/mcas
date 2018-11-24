@@ -24,8 +24,6 @@ WHERE {
 
   <*activity*>
 
-	#Contains the activity
-	FILTER (?btime1 < ?btime2 && ?etime1 > ?etime2).
   OPTIONAL {
 	  ?act2 :hasActor ?user.
 	}

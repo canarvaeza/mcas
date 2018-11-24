@@ -40,7 +40,7 @@ public class Initializer{
 					String mapping_template = TransformationTemplates.transformTemplates.get("mcas");
 					mapping_template = mapping_template.replace("<*input_json_file*>", Paths.get(RESOURCES_PATH,"transformation", file).toString());
 					InputStream mappingFile = org.apache.commons.io.IOUtils.toInputStream(mapping_template, StandardCharsets.UTF_8);
-					String rdfFlux = ToRDF.data2RDF(Paths.get(RESOURCES_PATH,"transformation").toString(), "mcas-model-03.rml.ttl", mappingFile, "salida.ttl");
+					String rdfFlux = ToRDF.data2RDF(Paths.get(RESOURCES_PATH,"transformation").toString(), mappingFile, "salida.ttl");
 					//					QueryConf.queryGraphBase + "person#" first If I want to use specific graph
 					KGraphManager.insertConnectedData(graph, rdfFlux);
 				} catch (Exception e) {

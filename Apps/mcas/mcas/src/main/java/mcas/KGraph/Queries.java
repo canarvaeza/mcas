@@ -21,58 +21,6 @@ public class Queries {
 	public static boolean constructNewRule(VirtGraph vGraph, String graphToUpdate, List<String> queries, String date, String date_before) {
 		for (String queryContent : queries) {
 			try {
-				/*queryContent = "		prefix : <http://purl.org/m-context/ontologies/mContext#>\r\n" + 
-				"			prefix activity: <http://localhost:8890/mcas/activity#act/>\r\n" + 
-				"			prefix time: <http://purl.org/m-context/ontologies/time#>\r\n" + 
-				"\r\n" + 
-				"			INSERT\r\n" + 
-				"			{\r\n" + 
-				"				GRAPH  <http://localhost:8890/mcas/activity#> {\r\n" + 
-				"					?new a alzheimer:Nocturia;\r\n" + 
-				"					    :hasSubActivity ?act1;\r\n" + 
-				"					    :hasSubActivity ?act2;\r\n" + 
-				"					    time:hasBeginningTime ?bt1;\r\n" + 
-				"					    time:hasEndingTime ?et1;\r\n" + 
-				"					    :hasActor ?user.\r\n" + 
-				"					?act1 :isSubActivity ?new.\r\n" + 
-				"					?act2 :isSubActivity ?new.\r\n" + 
-				"				}\r\n" + 
-				"				GRAPH  <http://localhost:8890/mcas/person#> {\r\n" + 
-				"					?user :isInvolvedIn ?new.\r\n" + 
-				"				}\r\n" + 
-				"			}			\r\n" + 
-				"from <http://localhost:8890/mcas/person#>\r\n" + 
-				"			from <http://localhost:8890/mcas/activity#>\r\n" + 
-				"\r\n" + 
-				"			where {\r\n" + 
-				"\r\n" + 
-				"				?act1 a <http://purl.org/m-context/ontologies/domains/alzheimer#WakeUp>;\r\n" + 
-				"				time:hasBeginningTime ?b1;\r\n" + 
-				"				time:hasEndingTime ?e1.\r\n" + 
-				"				FILTER (xsd:date(\"2017-06-06\") < ?b1&& ?b1< xsd:date(\"2017-06-07\") )\r\n" + 
-				"\r\n" + 
-				"				?act2 a <http://purl.org/m-context/ontologies/domains/alzheimer#Bathroom>;\r\n" + 
-				"				time:hasBeginningTime ?b2;\r\n" + 
-				"				time:hasEndingTime ?e2.\r\n" + 
-				"				FILTER (xsd:date(\"2017-06-06\") < ?b2 && ?b2< xsd:date(\"2017-06-07\"))\r\n" + 
-				"\r\n" + 
-				"				#Contains the activity\r\n" + 
-				"				FILTER (?b1 < ?b2 && ?e1 > ?e2).\r\n" + 
-				"\r\n" + 
-				"				optional {\r\n" + 
-				"				?act2 :hasActor ?user.\r\n" + 
-				"				}\r\n" + 
-				"\r\n" + 
-				"				BIND (URI(CONCAT(\r\n" + 
-				"				str(activity:), \r\n" + 
-				"				STRAFTER(str(?act1), str(activity:))\r\n" + 
-				"				,\"_\", \r\n" + 
-				"				STRAFTER(str(?act2), str(activity:))\r\n" + 
-				"				)) as ?new).\r\n" + 
-				"				FILTER(NOT EXISTS {?new a [] .})  \r\n" + 
-				"\r\n" + 
-				"			}\r\n" + 
-				"";*/
 				queryContent = queryContent.replace("\\\"", "\"");
 				queryContent = queryContent.replace("<*date*>", date);
 				queryContent = queryContent.replace("<*date_before*>", date_before);
