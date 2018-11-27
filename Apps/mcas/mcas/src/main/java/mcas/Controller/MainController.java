@@ -26,11 +26,11 @@ public class MainController {
 
 //		String[] files = {"input0.json","input1.json","input2.json","input3.json", "input4.json", "Sensors.json", "Locations.json", "Persons.json"}; // long
 //		String[] files = { "test0.json", "test1.json", "Sensors.json", "Locations.json", "Persons.json" }; // long
-		String[] files = { "test3.json", "test4.json", "Sensors.json"};
-////
+//		String[] files = { "test0.json"};
+//////
 		Initializer initializer = new Initializer();
-		initializer.setNewDataFiles(files);
-		initializer.initialize(true, true, graph, TEST_RESOURCES_PATH);
+//		initializer.setNewDataFiles(files);
+		initializer.initialize(false, true, graph, TEST_RESOURCES_PATH);
 
 		// String rdfFlux = "";
 

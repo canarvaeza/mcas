@@ -9,6 +9,7 @@ import java.util.UUID;
 
 import javax.swing.text.AbstractDocument.Content;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.jena.query.Query;
 import org.apache.jena.query.QueryFactory;
 import org.apache.jena.query.QuerySolution;
@@ -81,19 +82,31 @@ public class Rules {
         return activity_string;
     }
     
-    public static String create_place_String(String activities) {
+    /***
+     * We suppose you only can be in one place so if multiple locations are provided they are separated with ORs ||
+     * @param places
+     * @return
+     */
+    public static String create_place_String(String places) {
         
-        int activities_counter = 1;
-        String activity_string = "";
-        for (String activity : activities.split(";")) {
-            String activity_template = QueryTemplates.queryTemplates.get("place_template");
-
-            activity_template = activity_template.replace("<*n*>", Integer.toString(activities_counter));
-            activity_template = activity_template.replace("<*location_type*>", activity);
-
-            activity_string = activity_string.concat(String.format("%s\n\n", activity_template));
+        String [] placesList = places.split(";");
+        
+        String placeTemplate = QueryTemplates.queryTemplates.get("place_template");
+        
+        String filterPattern = StringUtils.substringBetween(placeTemplate, "filter(", ")");
+        String filterString = "";
+//        placeTemplate = placeTemplate.replace("<*n*>", Integer.toString(places_counter));
+        for (int i = 0; i < placesList.length; i++) {
+			String place = placesList[i];
+        	String filter = filterPattern;
+        	filter = filter.replace("<*location_type*>", place);
+        	filterString += filter;
+        	if (i != placesList.length-1) {
+				filterString += " || ";
+			}
         }
-        return activity_string;
+        placeTemplate = placeTemplate.replace(filterPattern, filterString);
+        return placeTemplate;
     }
     
     public static String create_content_from_split(String type, String content, boolean end_in_point) {
