@@ -109,6 +109,11 @@ public class Rules {
         return placeTemplate;
     }
     
+    public static String create_person_String(String person) {
+    	String personTemplate = QueryTemplates.queryTemplates.get("person_template");
+    	return personTemplate.replace("<*person_quantity*>", person);
+    }
+    
     public static String create_content_from_split(String type, String content, boolean end_in_point) {
 		String final_content = "";
 		for (String element : content.split(";")) {
@@ -138,7 +143,7 @@ public class Rules {
     	
     	String graph_plus_rule_id = rule_graph.replace(">", "rule/" + UUID.randomUUID());
     	
-    	
+    	// Setting triggers
     	String trigger = "";
     	if (!rule_content.getOrDefault("activities", "").equals("")) {
     		String activities = create_content_from_split(graph_plus_rule_id + "> rules_ont:hasTrigger", rule_content.getOrDefault("activities", ""), true);
@@ -151,6 +156,10 @@ public class Rules {
     	if (!rule_content.getOrDefault("place", "").equals("")) {
     		String place = create_content_from_split(graph_plus_rule_id + "> rules_ont:hasTrigger", rule_content.getOrDefault("place", ""), true);
     		trigger += place;
+    	};
+    	if (!rule_content.getOrDefault("person", "").equals("")) {
+    		String person = "".concat(String.format("%s> rules_ont:hasTrigger \"person %s\" .", graph_plus_rule_id, rule_content.getOrDefault("person", "")));
+    		trigger += person;
     	};
     	
     	String new_activity_class = rule_content.getOrDefault("new_activity_class", "");
@@ -220,6 +229,13 @@ public class Rules {
     		rule_content = rule_content.replace("<*place*>", create_place_String(places));
     	} else {
     		rule_content = rule_content.replace("<*place*>", "");
+    	};
+    	if (!content.getOrDefault("person", "").equals("")) {
+    		// TODO: estoy agregando people
+    		String person = content.getOrDefault("person", "").replace("person ", "");
+    		rule_content = rule_content.replace("<*person*>", create_person_String(person));
+    	} else {
+    		rule_content = rule_content.replace("<*person*>", "");
     	}
 
 //        System.out.println(ruleTemplate);

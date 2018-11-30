@@ -32,6 +32,12 @@ public class QueryTemplates {
 			"    <*rule_graph*>\r\n" + 
 			"}";
 	
+	final static String person_template = "{ SELECT ?act1          # do a check for the selected subject\r\n" + 
+			"    WHERE {?act1 <http://purl.org/m-context/ontologies/mContext#hasActor> ?o }\r\n" + 
+			"    GROUP BY ?act1            # count properties per subject\r\n" + 
+			"    HAVING (COUNT(?o) <*person_quantity*>) # only subjects with less than 5 properties \r\n" + 
+			"}";
+	
 	final static String rule_content = "<*prefixes*>\r\n" + 
 			"prefix activity: <*activity_prefix*>\r\n" + 
 			"\r\n" + 
@@ -57,12 +63,14 @@ public class QueryTemplates {
 			"WHERE {\r\n" + 
 			"\r\n" + 
 			"  <*activity*>\r\n" + 
-			"\r\n" +
-			"  OPTIONAL {\r\n" + 
-			"	  ?act2 :hasActor ?user.\r\n" + 
-			"	}\r\n" + 
+			"\r\n" + 
+			"OPTIONAL {\r\n" + 
+			"?act1 <http://purl.org/m-context/ontologies/mContext#hasActor> ?user.\r\n" + 
+			"}" + 
 			"\r\n" + 
 			"  <*place*>\r\n" + 
+			"\r\n" + 
+			"  <*person*>" + 
 			"\r\n" + 
 			"	BIND (URI(CONCAT(\r\n" + 
 			"	str(activity:), \r\n" + 
@@ -77,6 +85,7 @@ public class QueryTemplates {
 		{
 			put("activity_template", activity_template);
 			put("place_template", place_template);
+			put("person_template", person_template);
 			put("rule_graph_template", rule_graph_template);
 			put("rule_template", rule_template);
 			put("rule_content", rule_content);

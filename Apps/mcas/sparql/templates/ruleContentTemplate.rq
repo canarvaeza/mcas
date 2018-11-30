@@ -24,11 +24,13 @@ WHERE {
 
   <*activity*>
 
-  OPTIONAL {
-	  ?act2 :hasActor ?user.
-	}
+OPTIONAL {
+?act1 <http://purl.org/m-context/ontologies/mContext#hasActor> ?user.
+}
 
   <*place*>
+
+  <*person*>
 
 	BIND (URI(CONCAT(
 	str(activity:), 
