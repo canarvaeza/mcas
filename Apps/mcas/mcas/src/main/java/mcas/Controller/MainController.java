@@ -24,13 +24,12 @@ public class MainController {
 
 		VirtGraph graph = new VirtGraph(QueryConf.connectionString, QueryConf.userName, QueryConf.passWord);
 
-//		String[] files = {"input0.json","input1.json","input2.json","input3.json", "input4.json", "Sensors.json", "Locations.json", "Persons.json"}; // long
-//		String[] files = { "test0.json", "test1.json", "Sensors.json", "Locations.json", "Persons.json" }; // long
-//		String[] files = { "test0.json"};
-//////
+		String[] files = {"Sensors.json", "Locations.json", "Persons.json","test0.json","test1.json","test2.json","test3.json", "test4.json", "test5.json","test6.json"}; // long
+
+//
 		Initializer initializer = new Initializer();
-//		initializer.setNewDataFiles(files);
-		initializer.initialize(false, true, graph, TEST_RESOURCES_PATH);
+		initializer.setNewDataFiles(files);
+		initializer.initialize(true, true, graph, TEST_RESOURCES_PATH);
 
 		// String rdfFlux = "";
 
