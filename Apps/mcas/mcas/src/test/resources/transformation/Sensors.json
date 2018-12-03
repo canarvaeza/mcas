@@ -59,7 +59,7 @@
                 {
                     "Id": "localhost:8890/mcas/sensor#sen/temperature/00001",
                     "Observe": "None",
-                    "Location": "localhost:8890/mcas/location#loc/00001"
+                    "Location": "localhost:8890/mcas/location#loc/00004"
                 },
                 {
                     "Id": "localhost:8890/mcas/sensor#sen/pressure/00001",
@@ -69,11 +69,21 @@
                 {
                     "Id": "localhost:8890/mcas/sensor#sen/contact/00001",
                     "Observe": "None",
-                    "Location": "localhost:8890/mcas/location#loc/00001"
+                    "Location": "localhost:8890/mcas/location#loc/00003"
                 },
                 {
                     "Id": "localhost:8890/mcas/sensor#sen/pulse/00001",
                     "Observe": "None"
+                },
+                {
+                    "Id": "localhost:8890/mcas/sensor#sen/camera/00002",
+                    "Observe": "None",
+                    "Location": "localhost:8890/mcas/location#loc/00005"
+                },
+                {
+                    "Id": "localhost:8890/mcas/sensor#sen/microphone/00002",
+                    "Observe": "None",
+                    "Location": "localhost:8890/mcas/location#loc/00003"
                 }
                 
             ]

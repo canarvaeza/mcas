@@ -7,6 +7,27 @@
           "latitude": "50.414",
           "longitude": "-35.699"
         }
+      },{
+        "Id": "localhost:8890/mcas/location#loc/00003",
+        "Type": "purl.org/m-context/ontologies/domains/alzheimer#Place/Bathroom",
+        "Coordinates": {
+          "latitude": "50.414",
+          "longitude": "-35.699"
+        }
+      },{
+        "Id": "localhost:8890/mcas/location#loc/00004",
+        "Type": "purl.org/m-context/ontologies/domains/alzheimer#kitchen",
+        "Coordinates": {
+          "latitude": "50.414",
+          "longitude": "-35.699"
+        }
+      },{
+        "Id": "localhost:8890/mcas/location#loc/00005",
+        "Type": "purl.org/m-context/ontologies/domains/alzheimer#LivingRoom",
+        "Coordinates": {
+          "latitude": "50.414",
+          "longitude": "-35.699"
+        }
       },
       {
         "Id": "localhost:8890/mcas/location#loc/00002",
