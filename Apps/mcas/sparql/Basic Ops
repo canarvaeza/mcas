@@ -9,6 +9,7 @@ CLEAR GRAPH <http://localhost:8890/mcas/person#>
 CLEAR GRAPH <http://localhost:8890/mcas/activity#>
 CLEAR GRAPH <http://localhost:8890/mcas/location#>
 CLEAR GRAPH <http://localhost:8890/mcas/sensor#>
+CLEAR GRAPH <http://localhost:8890/mcas/multimedia#>
 
 ## desde el ISQL
 sparql clear graph <http://vocab.org/relationship/>;
