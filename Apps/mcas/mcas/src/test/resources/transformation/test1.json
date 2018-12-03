@@ -4,8 +4,8 @@
         "Id": "localhost:8890/mcas/activity#act/t00003",
         "Type": "purl.org/m-context/ontologies/domains/alzheimer#Sit",
         "Time": {
-          "Beginning": "2017-06-06T14:00:00Z",
-          "Ending": "2017-06-06T15:30:00Z"
+          "Beginning": "2018-10-06T14:00:00Z",
+          "Ending": "2018-10-06T15:30:00Z"
         },
         "Person": [
           {
@@ -23,8 +23,8 @@
         "Id": "localhost:8890/mcas/activity#act/t00004",
         "Type": "purl.org/m-context/ontologies/domains/alzheimer#TvOn",
         "Time": {
-          "Beginning": "2017-06-06T14:30:00Z",
-          "Ending": "2017-06-06T15:29:00Z"
+          "Beginning": "2018-10-06T14:30:00Z",
+          "Ending": "2018-10-06T15:29:00Z"
         },
         "Descriptor":[
           {"Id": "localhost:8890/mcas/sensor#obs/00003"}
@@ -38,7 +38,7 @@
             "Id": "localhost:8890/mcas/sensor#obs/00003",
             "Sensor": "localhost:8890/mcas/sensor#sen/power/00001",
             "Value": "1",
-            "Time": "2017-06-06T14:30:00Z",
+            "Time": "2018-10-06T14:30:00Z",
             "RecEntities": [
               {
                 "Activity": "localhost:8890/mcas/activity#act/t00004"
@@ -53,7 +53,7 @@
             "Id": "localhost:8890/mcas/sensor#obs/00004",
             "Sensor": "localhost:8890/mcas/sensor#sen/pressure/00001",
             "Value": "1",
-            "Time": "2017-06-06T14:00:00Z",
+            "Time": "2018-10-06T14:00:00Z",
             "RecEntities": [
               {
                 "Activity": "localhost:8890/mcas/activity#act/t00003"

@@ -4,8 +4,8 @@
         "Id": "localhost:8890/mcas/activity#act/t00007",
         "Type": "purl.org/m-context/ontologies/domains/alzheimer#LayDown",
         "Time": {
-          "Beginning": "2017-06-06T14:00:00Z",
-          "Ending": "2017-06-06T15:00:00Z"
+          "Beginning": "2018-10-06T14:00:00Z",
+          "Ending": "2018-10-06T15:00:00Z"
         },
         "Descriptor":[
           {"Id": "localhost:8890/mcas/sensor#obs/00007"}
@@ -15,8 +15,8 @@
         "Id": "localhost:8890/mcas/activity#act/t00008",
         "Type": "purl.org/m-context/ontologies/domains/alzheimer#LowPulse",
         "Time": {
-          "Beginning": "2017-06-06T14:15:00Z",
-          "Ending": "2017-06-06T14:55:00Z"
+          "Beginning": "2018-10-06T14:15:00Z",
+          "Ending": "2018-10-06T14:55:00Z"
         },
         "Descriptor":[
           {"Id": "localhost:8890/mcas/sensor#obs/00008"}
@@ -30,7 +30,7 @@
             "Id": "localhost:8890/mcas/sensor#obs/00007",
             "Sensor": "localhost:8890/mcas/sensor#sen/pressure/00001",
             "Value": "1",
-            "Time": "2017-06-06T14:00:00Z",
+            "Time": "2018-10-06T14:00:00Z",
             "RecEntities": [
               {
                 "Activity": "localhost:8890/mcas/activity#act/t00007"
@@ -41,7 +41,7 @@
             "Id": "localhost:8890/mcas/sensor#obs/00008",
             "Sensor": "localhost:8890/mcas/sensor#sen/pulse/00001",
             "Value": "0",
-            "Time": "2017-06-06T14:15:00Z",
+            "Time": "2018-10-06T14:15:00Z",
             "RecEntities": [
               {
                 "Activity": "localhost:8890/mcas/activity#act/t00008"

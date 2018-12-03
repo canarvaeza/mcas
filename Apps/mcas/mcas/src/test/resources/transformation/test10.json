@@ -1,0 +1,59 @@
+{
+  "Activity": [
+    {
+      "Id": "localhost:8890/mcas/activity#act/0065",
+      "Type": "purl.org/m-context/ontologies/domains/alzheimer#Eat",
+      "Time": {
+        "Beginning": "2018-10-06T19:01:00Z",
+        "Ending": "2018-10-06T19:14:00Z"
+      },
+      "Descriptor":[
+        {"Id": "localhost:8890/mcas/multimedia#description/0065"}
+      ]
+    },
+    {
+      "Id": "localhost:8890/mcas/activity#act/0075",
+      "Type": "purl.org/m-context/ontologies/domains/alzheimer#Sit",
+      "Time": {
+        "Beginning": "2018-10-06T19:00:00Z",
+        "Ending": "2018-10-06T19:15:00Z"
+      },
+      "Descriptor":[
+        {"Id": "localhost:8890/mcas/sensor#obs/0075"}
+      ]
+    }
+  ],
+  "Multimedia": [
+    {
+      "Descriptor": [
+        {
+          "Id": "localhost:8890/mcas/multimedia#description/0065",
+          "Descriptor": {},
+          "MediaResource": "localhost:8890/mcas/multimedia#mul/00006",
+          "RecEntities": [
+          {
+              "Activity": "localhost:8890/mcas/activity#act/0065"
+          }
+          ]
+      }
+      ]
+    }
+  ],
+  "Ssn": [
+    {
+      "Observation": [
+        {
+          "Id": "localhost:8890/mcas/sensor#obs/0075",
+          "Sensor": "localhost:8890/mcas/sensor#sen/pressure/00001",
+          "Value": "1",
+          "Time": "2018-10-06T19:00:00Z",
+          "RecEntities": [
+            {
+              "Activity": "localhost:8890/mcas/activity#act/0075"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

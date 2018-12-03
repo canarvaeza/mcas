@@ -4,12 +4,14 @@
       "Id": "localhost:8890/mcas/activity#act/t00010",
       "Type": "purl.org/m-context/ontologies/domains/alzheimer#Talk",
       "Time": {
-        "Beginning": "2017-06-06T19:20:00Z",
-        "Ending": "2017-06-06T19:30:00Z"
+        "Beginning": "2018-10-06T19:20:00Z",
+        "Ending": "2018-10-06T19:30:00Z"
       },
       "Person": [
         {
           "Id": "localhost:8890/mcas/person#per/0001"
+        },{
+          "Id": "localhost:8890/mcas/person#per/0003"
         }
       ],
       "Descriptor": [
@@ -26,29 +28,14 @@
           "Id": "localhost:8890/mcas/sensor#obs/00010",
           "Sensor": "localhost:8890/mcas/sensor#sen/cellphone/microphone/00001",
           "Value": "1",
-          "Time": "2017-06-06T19:20:00Z",
+          "Time": "2018-10-06T19:20:00Z",
           "RecEntities": [
             {
-              "Activity": "localhost:8890/mcas/activity#act/t00010"
+              "Activity": "localhost:8890/mcas/activity#act/t00011"
             }
           ]
         }
       ]
-    }
-  ],
-  "Multimedia": [
-    {
-      "Id": "localhost:8890/mcas/multimedia#mul/00003",
-      "Format": "MP3",
-      "Type": "www.semanticweb.org/ontologies/multimedia#AudioFormat",
-      "Descriptor": {},
-      "RecEntities": [
-        {
-          "Activity": "localhost:8890/mcas/activity#act/t00010",
-          "Person": "localhost:8890/mcas/person#per/0002"
-        }
-      ],
-      "CreationTime": "2017-06-06T19:30:00Z"
     }
   ]
 }
