@@ -249,7 +249,7 @@
     	rr:predicate ma:hasFormat;
     	rr:objectMap
     	[
-    		rr:template "http://{Format}";
+    		rr:template "{Format}";
 
 			#rr:parentTriplesMap <#SensorMapping>;
 		] 
@@ -260,23 +260,17 @@
     		rml:reference "CreationTime";
     		rr:datatype xsd:dateTime
     	]
-    ],[
-    	rr:predicate ma:hasMultimediaDescriptor;
-    	rr:objectMap
-    	[
-    		rr:parentTriplesMap <#DescriptorMapping>;
-    	]
-    ];
+    ],
     
     ## ----- EXTERNAL ATRIB ----- ##
-    
-    rr:predicateObjectMap [
-	    rr:predicate mcontext:describe;
+	[
+    	rr:predicate mcontext:hasCreator;
     	rr:objectMap
     	[
-    		rr:template "http://{RecEntities[*].Activity}";
+			rr:template "http://{Creator[*].Id}";
     	]
-    ],[
+    ],
+	[
     	rr:predicate gn:locatedIn;
     	rr:objectMap
     	[
@@ -286,15 +280,26 @@
     
     
 <#DescriptorMapping>
+
 	rml:logicalSource [
 		rml:source "<*input_json_file*>";
 	    rml:referenceFormulation ql:JSONPath;
-	    rml:iterator "$.Multimedia[*].Descriptor"
+	    rml:iterator "$.Multimedia[*].Descriptor[*]"
 	];
-
-	rr:subjectMap [ 
-	  rr:template "http://{Id}"
-	];
+    
+    #define la uri en el sistema
+    rr:subjectMap [
+    	rr:template "http://{Id}";
+    	rr:class ma:DescriptorMultimedia
+    ];
+    
+    rr:predicateObjectMap [
+	    rr:predicate mcontext:describe;
+    	rr:objectMap
+    	[
+    		rr:template "http://{RecEntities[*].Activity}";
+    	]
+    ];
 	
 	rr:predicateObjectMap [ 
 		rr:predicate multimedia:descriptionText;
@@ -303,7 +308,13 @@
 			rml:reference "Content";
 			rr:datatype xsd:string;
 		] 
-	].
+	];rr:predicateObjectMap [
+    	rr:predicate ma:isMultimediaDescriptor;
+    	rr:objectMap
+    	[
+    		rr:template "http://{MediaResource}"
+    	]
+    ].
 
 
 
