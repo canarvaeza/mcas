@@ -2,21 +2,8 @@ package mcas.util;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.Reader;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Scanner;
 
 import org.apache.commons.io.FileUtils;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import com.opencsv.CSVReader;
 
 public class IOManager {
 
@@ -28,7 +15,6 @@ public class IOManager {
 		try {
 			content = FileUtils.readFileToString(file, "utf-8");			
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -45,7 +31,6 @@ public class IOManager {
 	// List<String> rules = getRules("json/rules.json", "SWRL", "Stable");
 	//
 	// } catch (Exception e) {
-	// // TODO Auto-generated catch block
 	// e.printStackTrace();
 	// }
 	// }
@@ -76,7 +61,6 @@ public class IOManager {
 			}
 
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 

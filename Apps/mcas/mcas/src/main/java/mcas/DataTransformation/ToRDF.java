@@ -1,23 +1,14 @@
 package mcas.DataTransformation;
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.PrintStream;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-import javax.rmi.CORBA.UtilDelegate;
 
 /*
  * RML VERSION 3.0 
@@ -51,10 +42,8 @@ import be.ugent.rml.DataFetcher;
 import be.ugent.rml.Executor;
 import be.ugent.rml.Utils;
 import be.ugent.rml.records.RecordsFactory;
-import be.ugent.rml.store.RDF4JStore;
 import be.ugent.rml.store.QuadStore;
-import be.ugent.rml.functions.lib.*;
-
+import be.ugent.rml.store.RDF4JStore;
 import mcas.util.IOManager;
 
 public class ToRDF {
@@ -81,16 +70,12 @@ public class ToRDF {
 			//rdfFlux = rdfFlux.replaceAll("\\^\\^(.*)\\.", "^^<$1>."); // Because is not a prefix
 			
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (RDFParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (UnsupportedRDFormatException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

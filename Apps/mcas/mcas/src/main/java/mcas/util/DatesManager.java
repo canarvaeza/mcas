@@ -14,7 +14,6 @@ public class DatesManager {
 			c.add(Calendar.DATE, numbDays);
 			newDate = sdf.format(c.getTime());
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return newDate;

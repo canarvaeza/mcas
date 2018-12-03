@@ -1,26 +1,19 @@
 package mcas.Controller;
 
-import virtuoso.jena.driver.VirtGraph;
-
 import java.io.IOException;
-import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Paths;
-import java.time.Duration;
-import java.time.Instant;
 import java.util.List;
-
-import mcas.DataTransformation.ToRDF;
-import mcas.DataTransformation.TransformationTemplates;
-import mcas.KGraph.*;
-import mcas.util.DatesManager;
-import mcas.util.Initializer;
-
 import java.util.logging.FileHandler;
 import java.util.logging.Handler;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
+
+import mcas.KGraph.KGraphManager;
+import mcas.KGraph.Queries;
+import mcas.KGraph.QueryConf;
+import mcas.util.DatesManager;
+import mcas.util.Initializer;
+import virtuoso.jena.driver.VirtGraph;
 
 public class MainController {
 

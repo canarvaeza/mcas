@@ -7,24 +7,13 @@ import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.UUID;
 
-import javax.swing.text.AbstractDocument.Content;
-
-import org.apache.commons.lang3.StringUtils;
-import org.apache.jena.query.Query;
-import org.apache.jena.query.QueryFactory;
-import org.apache.jena.query.QuerySolution;
-import org.apache.jena.query.ResultSet;
-import org.apache.jena.rdf.model.RDFNode;
-
 import com.opencsv.CSVReader;
 
+import org.apache.commons.lang3.StringUtils;
+
 import virtuoso.jena.driver.VirtGraph;
-import virtuoso.jena.driver.VirtuosoQueryExecution;
-import virtuoso.jena.driver.VirtuosoQueryExecutionFactory;
 import virtuoso.jena.driver.VirtuosoUpdateFactory;
 import virtuoso.jena.driver.VirtuosoUpdateRequest;
-
-import mcas.KGraph.QueryTemplates;
 /**
  * Rules
  */
@@ -48,7 +37,6 @@ public class Rules {
 				Rules.create_new_rule(vGraph, rule_content);
 			}
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -231,7 +219,6 @@ public class Rules {
     		rule_content = rule_content.replace("<*place*>", "");
     	};
     	if (!content.getOrDefault("person", "").equals("")) {
-    		// TODO: estoy agregando people
     		String person = content.getOrDefault("person", "").replace("person ", "");
     		rule_content = rule_content.replace("<*person*>", create_person_String(person));
     	} else {

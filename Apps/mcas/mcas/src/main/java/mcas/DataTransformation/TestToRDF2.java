@@ -1,7 +1,6 @@
 package mcas.DataTransformation;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -16,9 +15,8 @@ import org.eclipse.rdf4j.rio.UnsupportedRDFormatException;
 import be.ugent.rml.DataFetcher;
 import be.ugent.rml.Executor;
 import be.ugent.rml.records.RecordsFactory;
-import be.ugent.rml.store.RDF4JStore;
 import be.ugent.rml.store.QuadStore;
-import be.ugent.rml.functions.lib.*;
+import be.ugent.rml.store.RDF4JStore;
 
 public class TestToRDF2 {
 	
