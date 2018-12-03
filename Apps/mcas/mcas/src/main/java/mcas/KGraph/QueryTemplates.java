@@ -11,11 +11,24 @@ public class QueryTemplates {
             "FILTER (xsd:date(\"<*date_before*>\") < ?btime<*n*> && ?btime<*n*> < xsd:date(\"<*date*>\") )";
 	
 	final static String place_template = "?act1 <http://purl.org/m-context/ontologies/mContext#isDescribedBy> ?desc.\r\n" + 
+			"\r\n" + 
+			"# -- this to get info from media location --\r\n" + 
+			"optional{\r\n" + 
+			"?desc <http://www.w3.org/ns/ma-ont#isMultimediaDescriptor> ?media.\r\n" + 
+			"?media <http://purl.org/m-context/ontologies/mContext#hasCreator> ?sensor.\r\n" + 
+			"?sensor <http://www.geonames.org/ontology#locatedIn> ?location.\r\n" + 
+			"?location a ?location_type\r\n" + 
+			"}\r\n" + 
+			"# -- this to get sensor location ---\r\n" + 
+			"optional{\r\n" + 
 			"?desc  <http://www.w3.org/ns/sosa/madeBySensor> ?sensor.\r\n" + 
 			"?sensor <http://www.geonames.org/ontology#locatedIn> ?location.\r\n" + 
 			"?location a ?location_type\r\n" + 
+			"}\r\n" + 
 			"\r\n" + 
-			"filter(?location_type = <*location_type*>)";
+			"\r\n" + 
+			"filter(?location_type = <*location_type*>)\r\n" + 
+			"";
 	
 	final static String rule_graph_template = "	graph <*graph*>\r\n" + 
 			"	{\r\n" + 
