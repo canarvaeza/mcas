@@ -1,7 +1,7 @@
 {
     "Activity": [
       {
-        "Id": "localhost:8890/mcas/activity#act/t00005",
+        "Id": "localhost:8890/mcas/activity#act/<*act1_id*>",
         "Type": "purl.org/m-context/ontologies/domains/alzheimer#WakeUp",
         "Time": {
           "Beginning": "2018-10-06T03:00:00Z",
@@ -13,18 +13,18 @@
           }
         ],
         "Descriptor":[
-          {"Id": "localhost:8890/mcas/sensor#obs/00004"}
+          {"Id": "localhost:8890/mcas/sensor#obs/<*des1_id*>"}
         ]
       },
       {
-        "Id": "localhost:8890/mcas/activity#act/t00006",
+        "Id": "localhost:8890/mcas/activity#act/t<*act2_id*>",
         "Type": "purl.org/m-context/ontologies/domains/alzheimer#Bathroom",
         "Time": {
           "Beginning": "2018-10-06T03:01:00Z",
           "Ending": "2018-10-06T03:04:00Z"
         },
         "Descriptor":[
-          {"Id": "localhost:8890/mcas/sensor#obs/00006"}
+          {"Id": "localhost:8890/mcas/sensor#obs/<*des2_id*>"}
         ]
       }
     ],
@@ -32,13 +32,13 @@
       {
         "Observation": [
           {
-            "Id": "localhost:8890/mcas/sensor#obs/00004",
+            "Id": "localhost:8890/mcas/sensor#obs/<*des1_id*>",
             "Sensor": "localhost:8890/mcas/sensor#sen/camera/00001",
             "Value": "6",
             "Time": "2018-10-06T03:00:00Z",
             "RecEntities": [
               {
-                "Activity": "localhost:8890/mcas/activity#act/t00005"
+                "Activity": "localhost:8890/mcas/activity#act/<*act1_id*>"
               }
             ]
           }
@@ -47,13 +47,13 @@
       {
         "Observation": [
           {
-            "Id": "localhost:8890/mcas/sensor#obs/00006",
+            "Id": "localhost:8890/mcas/sensor#obs/<*des2_id*>",
             "Sensor": "localhost:8890/mcas/sensor#sen/contact/00001",
             "Value": "1",
             "Time": "2018-10-06T03:01:00Z",
             "RecEntities": [
               {
-                "Activity": "localhost:8890/mcas/activity#act/t00006"
+                "Activity": "localhost:8890/mcas/activity#act/<*act2_id*>"
               }
             ]
           }

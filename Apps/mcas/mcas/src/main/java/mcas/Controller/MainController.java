@@ -2,6 +2,8 @@ package mcas.Controller;
 
 import java.io.IOException;
 import java.nio.file.Paths;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.List;
 import java.util.logging.FileHandler;
 import java.util.logging.Handler;
@@ -31,7 +33,7 @@ public class MainController {
 	}
 
 	public static void main(String[] args) throws Exception {
-		Logger logg_one_insert = newLogger("one_insert_logger");
+//		Logger logg_one_insert = newLogger("one_insert_logger");
 		Logger logg_multiple_insert = newLogger("multiple_insert_logger");
 
 		VirtGraph graph = new VirtGraph(QueryConf.connectionString, QueryConf.userName, QueryConf.passWord);
@@ -42,17 +44,18 @@ public class MainController {
 
 		Initializer initializer = new Initializer();
 		initializer.setNewDataFiles(files);
-		initializer.initialize(false, true, graph, TEST_RESOURCES_PATH);
-//		logg_multiple_insert.info("create multiple 100 times 700 data each");
-//		for (int j = 0; j < 100; j++) {
-//			Instant start = Instant.now();
-//			for (int i = 0; i < 100; i++) {
-//				initializer.initialize(false, true, graph, TEST_RESOURCES_PATH);
-//			}
-//			Instant finish = Instant.now();
-//			long timeElapsed = Duration.between(start, finish).toNanos();
-//			logg_multiple_insert.info(Long.toString(timeElapsed));
-//		}
+		initializer.initialize(false, false, graph, TEST_RESOURCES_PATH);
+		
+		logg_multiple_insert.info("create multiple 100 times 700 data each");
+		Instant start = Instant.now();
+		for (int j = 0; j < 1; j++) {
+			for (int i = 0; i < 1; i++) {
+				initializer.initialize(true, true, graph, TEST_RESOURCES_PATH);
+			}
+		}
+		Instant finish = Instant.now();
+		long timeElapsed = Duration.between(start, finish).toNanos();
+		logg_multiple_insert.info(Long.toString(timeElapsed));
 
 //		initializer.initialize(false, true, graph, TEST_RESOURCES_PATH);
 
@@ -63,12 +66,12 @@ public class MainController {
 //		UUID idTwo = UUID.randomUUID();
 //		System.out.println("UUID One: " + idOne);
 //		System.out.println("UUID Two: " + idTwo);
-
-		String date = "2018-10-06";
-		List<String> rules = KGraphManager.getRules(graph, date);
-		String date_before = DatesManager.getNewDate(date, -1);
-//		System.out.println(rules);
-		Queries.constructNewRule(graph, "", rules, date, date_before);
+//
+//		String date = "2018-10-06";
+//		List<String> rules = KGraphManager.getRules(graph, date);
+//		String date_before = DatesManager.getNewDate(date, -1);
+////		System.out.println(rules);
+//		Queries.constructNewRule(graph, "", rules, date, date_before);
 
 	}
 }
