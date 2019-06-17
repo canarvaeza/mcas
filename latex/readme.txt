@@ -1,1 +1,0 @@
-V1 - Tiene las dos arquitecturas, falta ponerle la descripción de la arquitectura de razonamiento.
