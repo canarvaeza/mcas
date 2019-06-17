@@ -1,0 +1,167 @@
+## ---- BASIC
+
+select *
+from <http://localhost:8890/mcas/activity#>
+where {
+  ?s ?p ?o.
+  FILTER (?s = <uri>)
+}
+
+
+## ---- filter by date
+
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+select *
+
+from <http://localhost:8890/mcas/activity#>
+where {
+ ?s a ?o.
+ #?s ?p ?o.
+ optional{
+ ?s <http://www.semanticweb.org/ontologies/timehasBeginningTime> ?beginning.
+ }.
+ optional{ 
+ ?s <http://www.semanticweb.org/ontologies/timehasEndingTime> ?ending.
+ }.
+# FILTER (?beginning > "2017-05-23T10:20:13z"^^xsd:dateTime)
+# FILTER (contains (?beginning, ?ending, "2017-05-23T10:20:13z"^^xsd:dateTime
+}
+
+
+## ---- Jump between graphs
+
+
+select distinct *
+from <http://localhost:8890/mcas/person#>
+from <http://localhost:8890/mcas/activity#>
+from <http://localhost:8890/mcas/multimedia#>
+from <http://localhost:8890/mcas/sensor#>
+
+where {
+
+ ?s rdf:type <http://purl.org/m-context/ontologies/person#PersonMCAS>;
+ mContext:isInvolvedIn ?a.
+ FILTER( ?s in (<http://localhost:8890/mcas/person#per/00001>))
+ ?a <http://www.semanticweb.org/ontologies/mcontext#isDescribedBy> ?d.
+ OPTIONAL {
+  
+  ?d a ?type
+ }
+
+}
+
+
+## --- QUE ACTIVIDADES ESTÁN DENTRO DE OTRA --- #
+
+prefix : <http://purl.org/m-context/ontologies/mContext#>
+prefix activity: <http://localhost:8890/mcas/activity#act/>
+prefix time: <http://purl.org/m-context/ontologies/time#>
+
+select *
+
+from <http://localhost:8890/mcas/person#>
+from <http://localhost:8890/mcas/activity#>
+
+where {
+
+{ select *
+  where {
+  BIND ("2017-06-06"^^xsd:dateTime as ?day).
+
+ ?act1 a <http://purl.org/m-context/ontologies/domains/alzheimer#Sit>;
+  time:hasBeginningTime ?bt1;
+  time:hasEndingTime ?et1.
+ FILTER(month(?bt1) = month(?day) && month(?bt1) = month(?day))
+ }
+}
+
+
+ ?act2 time:hasBeginningTime ?bt2;
+       time:hasEndingTime ?et2;
+       a ?class.
+ FILTER(month(?bt2) = month(?day) && month(?bt2) = month(?day))
+ FILTER(?bt1 < ?bt2 && ?et1 > ?et2)
+
+
+}
+order by ?act1
+
+
+
+## --- ACTIVIDADES ÚNICAS
+
+prefix : <http://purl.org/m-context/ontologies/mContext#>
+prefix activity: <http://localhost:8890/mcas/activity#act/>
+prefix time: <http://purl.org/m-context/ontologies/time#>
+
+select *
+
+from <http://localhost:8890/mcas/person#>
+from <http://localhost:8890/mcas/activity#>
+
+where {
+
+
+  BIND ("2017-06-06"^^xsd:dateTime as ?day).
+
+ ?act1 a <http://purl.org/m-context/ontologies/domains/alzheimer#Sit>;
+  time:hasBeginningTime ?bt1;
+  time:hasEndingTime ?et1.
+ FILTER(month(?bt1) = month(?day) && month(?bt1) = month(?day))
+ 
+MINUS {
+
+ ?act2 time:hasBeginningTime ?bt2;
+       time:hasEndingTime ?et2;
+       a ?class.
+ FILTER(month(?bt2) = month(?day) && month(?bt2) = month(?day))
+ FILTER(?bt1 < ?bt2 && ?et1 > ?et2)
+}
+
+}
+
+order by ?act1
+
+
+## ---- get PARENT CLASSES --- ##
+
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+select *
+from <http://localhost:8890/mcas/activity#>
+
+from <http://purl.org/m-context/ontologies/domains/alzheimer>
+where {
+  ?s mContext:hasActor <http://localhost:8890/mcas/person#per/00001>;
+     a ?type.
+  ?type rdfs:subClassOf* <http://purl.org/m-context/ontologies/activity#HighContextActivity>
+  optional{
+    
+    #FILTER (!?type = ?superclass)
+  }
+  
+  #FILTER (?s = <http://localhost:8890/mcas/activity#act/00001>)
+}
+
+## Get Parent Classes from person info.
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+select distinct*
+from <http://localhost:8890/mcas/person#>
+from <http://localhost:8890/mcas/activity#>
+from <http://purl.org/m-context/ontologies/domains/alzheimer>
+where {
+  ?s mContext:isInvolvedIn ?activity.
+  FILTER (?s = <http://localhost:8890/mcas/person#per/00001>).
+  #?activity a/rdfs:subClassOf* ?class.
+  ?activity a ?class.
+  
+  # Get all the classes parentclasses
+  #?class rdfs:subClassOf* ?class2.
+  #FILTER (!?class = ?class2).
+
+  # Get all classes with HCAct as parent
+  ?class rdfs:subClassOf* <http://purl.org/m-context/ontologies/activity#HighContextActivity>.
+  FILTER (!?class = ?class2).
+
+}

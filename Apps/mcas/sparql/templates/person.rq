@@ -1,0 +1,5 @@
+{ SELECT ?act1          # do a check for the selected subject
+    WHERE {?act1 <http://purl.org/m-context/ontologies/mContext#hasActor> ?o }
+    GROUP BY ?act1            # count properties per subject
+    HAVING (COUNT(?o) <*person_quantity*>) # only subjects with less than 5 properties 
+}

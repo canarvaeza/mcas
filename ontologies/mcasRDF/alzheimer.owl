@@ -1,0 +1,320 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://purl.org/m-context/ontologies/domains/alzheimer#"
+     xml:base="http://purl.org/m-context/ontologies/domains/alzheimer"
+     xmlns:schema="http://schema.org/"
+     xmlns:multimedia2="http://www.semanticweb.org/ontologies/multimedia#"
+     xmlns:role="http://purl.org/m-context/ontologies/role#"
+     xmlns:activity="http://purl.org/m-context/ontologies/activity#"
+     xmlns:ns="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:ma-ont="http://www.w3.org/ns/ma-ont#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#"
+     xmlns:mcontext1="http://www.semanticweb.org/ontologies/mcontext#"
+     xmlns:ontologies="http://www.semanticweb.org/ontologies/"
+     xmlns:ontology="http://www.geonames.org/ontology#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:sosa="http://www.w3.org/ns/sosa/"
+     xmlns:alzheimer="http://purl.org/m-context/ontologies/domains/alzheimer#"
+     xmlns:multimedia="http://purl.org/m-context/ontologies/multimedia#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:mcontext="http://purl.org/m-context/ontologies/mContext#"
+     xmlns:person="http://purl.org/m-context/ontologies/person#"
+     xmlns:sensor="http://purl.org/m-context/ontologies/sensor#"
+     xmlns:location="http://purl.org/m-context/ontologies/location#"
+     xmlns:time="http://purl.org/m-context/ontologies/time#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:object="http://purl.org/m-context/ontologies/object#">
+    <owl:Ontology rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer">
+        <owl:imports rdf:resource="http://purl.org/m-context/ontologies/mContext"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.geonames.org/ontology#locatedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.geonames.org/ontology#locatedIn"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/firstName -->
+
+    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/firstName"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/lastName -->
+
+    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/lastName"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/m-context/ontologies/domains/alzheimer#Cook -->
+
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#Cook">
+        <rdfs:subClassOf rdf:resource="http://purl.org/m-context/ontologies/activity#HighContextActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/m-context/ontologies/domains/alzheimer#Eat -->
+
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#Eat">
+        <rdfs:subClassOf rdf:resource="http://purl.org/m-context/ontologies/activity#LowContextActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/m-context/ontologies/domains/alzheimer#FamiliarRole -->
+
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#FamiliarRole">
+        <rdfs:subClassOf rdf:resource="http://purl.org/m-context/ontologies/role#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/m-context/ontologies/domains/alzheimer#HavingAMeal -->
+
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#HavingAMeal">
+        <rdfs:subClassOf rdf:resource="http://purl.org/m-context/ontologies/activity#HighContextActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/m-context/ontologies/domains/alzheimer#Hike -->
+
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#Hike">
+        <rdfs:subClassOf rdf:resource="http://purl.org/m-context/ontologies/activity#LowContextActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/m-context/ontologies/domains/alzheimer#Jump -->
+
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#Jump">
+        <rdfs:subClassOf rdf:resource="http://purl.org/m-context/ontologies/activity#LowContextActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/m-context/ontologies/domains/alzheimer#LieDown -->
+
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#LieDown">
+        <rdfs:subClassOf rdf:resource="http://purl.org/m-context/ontologies/activity#LowContextActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/m-context/ontologies/domains/alzheimer#MedicalRole -->
+
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#MedicalRole">
+        <rdfs:subClassOf rdf:resource="http://purl.org/m-context/ontologies/role#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/m-context/ontologies/domains/alzheimer#Rest -->
+
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#Rest">
+        <rdfs:subClassOf rdf:resource="http://purl.org/m-context/ontologies/activity#HighContextActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/m-context/ontologies/domains/alzheimer#Run -->
+
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#Run">
+        <rdfs:subClassOf rdf:resource="http://purl.org/m-context/ontologies/activity#LowContextActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/m-context/ontologies/domains/alzheimer#Sit -->
+
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#Sit">
+        <rdfs:subClassOf rdf:resource="http://purl.org/m-context/ontologies/activity#LowContextActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/m-context/ontologies/domains/alzheimer#Sleep -->
+
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#Sleep">
+        <rdfs:subClassOf rdf:resource="http://purl.org/m-context/ontologies/activity#HighContextActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/m-context/ontologies/domains/alzheimer#SocialRole -->
+
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#SocialRole">
+        <rdfs:subClassOf rdf:resource="http://purl.org/m-context/ontologies/role#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/m-context/ontologies/domains/alzheimer#Speak -->
+
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#Speak">
+        <rdfs:subClassOf rdf:resource="http://purl.org/m-context/ontologies/activity#HighContextActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/m-context/ontologies/domains/alzheimer#Standing -->
+
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#Standing">
+        <rdfs:subClassOf rdf:resource="http://purl.org/m-context/ontologies/activity#LowContextActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/m-context/ontologies/domains/alzheimer#Talk -->
+
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#Talk">
+        <rdfs:subClassOf rdf:resource="http://purl.org/m-context/ontologies/activity#LowContextActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/m-context/ontologies/domains/alzheimer#WatchTv -->
+
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#WatchTv">
+        <rdfs:subClassOf rdf:resource="http://purl.org/m-context/ontologies/activity#HighContextActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/m-context/ontologies/domains/alzheimer#CareGiver -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#CareGiver">
+        <rdf:type rdf:resource="http://purl.org/m-context/ontologies/domains/alzheimer#MedicalRole"/>
+        <rdfs:label>alz_role:CareGiver</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/m-context/ontologies/domains/alzheimer#Father -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#Father">
+        <rdf:type rdf:resource="http://purl.org/m-context/ontologies/domains/alzheimer#FamiliarRole"/>
+        <rdfs:label>alz_role:Father</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/m-context/ontologies/domains/alzheimer#Friend -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#Friend">
+        <rdf:type rdf:resource="http://purl.org/m-context/ontologies/domains/alzheimer#SocialRole"/>
+        <rdfs:label>alz_role:Friend</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/m-context/ontologies/domains/alzheimer#OcupationalTherapist -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#OcupationalTherapist">
+        <rdf:type rdf:resource="http://purl.org/m-context/ontologies/domains/alzheimer#MedicalRole"/>
+        <rdfs:label>alz_role:OcupationalTherapist</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/m-context/ontologies/domains/alzheimer#Son -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#Son">
+        <rdf:type rdf:resource="http://purl.org/m-context/ontologies/domains/alzheimer#FamiliarRole"/>
+        <rdfs:label>alz_role:Son</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/m-context/ontologies/domains/alzheimer#User -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#User">
+        <rdfs:label>alz_role:User</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#Eat"/>
+            <rdf:Description rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#Hike"/>
+            <rdf:Description rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#Jump"/>
+            <rdf:Description rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#LieDown"/>
+            <rdf:Description rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#Run"/>
+            <rdf:Description rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#Sit"/>
+            <rdf:Description rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#Standing"/>
+            <rdf:Description rdf:about="http://purl.org/m-context/ontologies/domains/alzheimer#Talk"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

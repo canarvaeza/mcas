@@ -1,0 +1,158 @@
+\subsection{Modelado de Contexto}
+\label{subsec:Prop_Modelado}
+
+Como se indica en la sección \ref{sec:MT_SensibilidadContexto} el uso de ontologías es una de las formas de modelado de contexto más usadas, y dadas las características presentadas en la sección \ref{sec:MT_Ontologias} es la estrategia de modelado que hemos seleccionado en este trabajo. Esta decisión se respalda en \textbf{\textit{(i)}}el estado del arte realizado por (CITA SURVEY) \cite{Iaz2014} quien indica que las ontologías son ampliamente usadas para modelar el contexto, \textbf{\textit{(ii)}} trabajos relacionados con Alzheimer y Sensibilidad al contexto (CITAS) que las usan como método de representación, y \textbf{\textit{(iii)}} conocimientos previos en el área por parte de los desarrolladores del trabajo. De forma más específica el uso de ontologías aporta a este trabajo los siguientes beneficios:
+
+\begin{itemize}
+    \item Definición explícita del contexto y los componentes necesarios para definir elementos contextuales de alto nivel.
+    \item Uso de razonamiento ontológico para la generación automática de conocimiento.
+    \item Uso de información proveniente de fuentes externas.
+    \item Implementación de bases de datos basadas en grafos para la recuperación de información.
+\end{itemize}
+
+Algunos trabajos han tratado la producción de ontologías de contexto en diferentes áreas del conocimiento \cite{Iaz2014} Iaz et al. presenta un estudio en donde identifica las ontologías de contexto más usadas y las califica de acuerdo a factores cómo la calidad de la representación del entorno del usuario y la facilidad de utilización/empleo y reuso. Ontologías de contexto como \cite{TODAS ESTAS TIENEN QUE IR CON CITA}CONON(2004) y CoBrA(2003) obtienen el cuarto y sexto puesto respectivamente, y mIO!(2010) y PiVOn(2010) obtienen los mejores lugares con el noveno y decimo, un factor de gran importancia son las tecnologías y estándares disponibles al momento de producir las ontologías anteriormente mencionadas por esta razón es pertinente evaluar propuestas presentadas en años recientes. (CARACTERÍSTICAS DE ESTAS 4 de forma muy general)
+
+Villalonga et al.\cite{Villalonga2015} propone una ontología de contexto que se centra en las actividades de un usuario y que divide el contexto en bajo (componentes mínimos del contexto) y alto nivel (combinación de varios contextos de bajo nivel), algunas de las clases que componen el contexto de bajo nivel son Emoción,  Lugar y Actividad; mientras que el alto nivel está compuesto por Actividades Físicas como Trabajar en la Oficina o Dormir. En este sistema los datos que ingresan son etiquetas realizadas a datos de sensor y a contenidos multimedia, sin embargo no se hace una representación de los contenidos en el modelado de contexto, las imágenes producto de los vídeos son tomados como salida de un sensor. El modelado de contexto también ha sido trabajado en el ámbito de las casas inteligentes, Men y Lu \cite{Meng2016} proponen una ontología de alto nivel que se centra en el contexto y que representa al usuario, los dispositivos, la red, el entorno, la localización, el tiempo y la historia. En el trabajo indican que los datos binarios hacen parte de una ontología de bajo nivel.(LEER MAS)
+Bravo et al.\cite{Bravo2017} propone una ontología que representa el contexto en una entidad educativa y que se divide en tres partes usuario, dispositivo (incluyendo sensores) y entorno. Y Cabrera et al. \cite{Cabrera2017} propone dividir la base de conocimiento en tres partes una ontología de alto nivel que representa las clases principales del contexto el tiempo, el perfil, el entorno, el rol, el estado, la localización, la actividad, los recursos y los agentes; una ontología de mediano nivel que permite usar recursos ontológicos externos como foaf o time ontology y una ontología de bajo nivel que es específica del dominio y extiende la información en el mediano nivel.
+En el área de e-health Fissan et al. \cite{Fissaa2017} presenta una ontología desarrollada en OWL-S que se centra en los servicios que puede entregar el sistema y que representa el contexto con las clases usuario, dispositivo, entorno e información médica. En la misma área se ha implementado una ontología basada en las 5Ws (Where....) que incluyen usuario, actividad, tiempo, dispositivo, servicio y localización; en este caso los contenidos de la ontología varian de acuerdo al dominio de la aplicación pero no se manejan dos capas \cite{Aguilar2017}.
+
+\todo{Revisar este párrafo}
+Los trabajos de Villalonga et al.\cite{Villalonga2015} y Cabrera et al. \cite{Cabrera2017} presentan ontologías que pueden ser usadas en este trabajo la ontología de 3 niveles de Villalonga es bastante grande y cuenta con información que no es relevante para esta propuesta incluso si se están modelando las mismas clases; en cuanto a la propuesta de dividir la ontología por medio del contexto parece facilitar las actividades de razonamiento que ejecuta la ontología pero igual mente no tiene suficientes conexiones entre las clases del contexto de alto nivel, limitando el razonamiento solo a descubrir información de la actividad y no relaciones que puedan ser pertinentes entre los elementos para llegar a un contexto mejor definido.  %REVISAR ESTE PÁRRAFO
+
+Gracias a los trabajos anteriormente mencionados fue posible identificar las clases más importantes a reflejar en el modelado de contexto el lugar, el tiempo y los usuarios hacen parte de la mayoría de los modelos; aunque en algunos casos el modelado del usuario se limita de definir un identificador del mismo mientras en otros presentan información de su rol en la actividad y sus datos personales. La representación de los dispositivos no se da en todos los trabajos pues en algunos no es importante modelar toda la información de los sensores, depende más del dominio en el cual se aplicará el sistema.
+Finalmente variables como las actividades y los servicios se usan en propuestas que desean incluir en la representación la forma como el sistema reaccionará con el cambio del contexto, lo cual no es necesario en todos los dominios.
+Se puede ver una diferencia entre lugar y entorno, en las propuestas un lugar tiene características como localización, tamaño y si es cerrado o abierto; mientras que el entorno guarda variables como la temperatura de un lugar o el número de personas que lo ocupan en un momento determinado. Dada esta diferenciación en algunos casos el entorno se modela como una subclase del lugar y en otros son dos clases totalmente diferentes.
+En cuanto a la composición de las ontologías estas son divididas en capas buscando facilitar su implementación en diferentes dominios. Aunque en algunas propuestas se indica el uso de una sola ontología, es claro que primero se deben plantear las clases que representan el contexto de forma general y luego se incorpora la nueva información, por lo tanto el uso de capas permite mejorar el proceso de incorporar nuevo conocimiento en la base de información. Teniendo en cuenta que una ontología general permite modelar diferentes eventos pero no es capaz de asistir a usuarios en actividades determinadas y que una ontología específica no permite reutilizar correctamente los recursos modelados \cite{Iaz2014} en este trabajo se usarán ontologías siendo una la capa de alto nivel y la otra la capa del dominio.    
+
+% Finalmente se tiene en cuenta la disponibilidad de las ontologías y se encuentra que solo 2 de las 6 propuestas ponen a disponibilidad las ontologías desarrolladas.
+
+Villalonga et al. \cite{Villalonga2015} indica que es posible usar combinaciones de contenidos multimedia para reconocer las actividades que realiza una entidad lo cual indica la necesidad de incluir multimedia como entidad y no como resultado de un sensor (PORQUÉ PONERLO COMO ENTIDAD Y NO COMO OUTPUT DE UN SENSOR), \cite{Lazarou2016} incluye datos producto de vídeo para la identificación de actividades.
+
+Una tabla con el resumen de la información anteriormente presentada se puede encontrar en la tabla \ref{tbl:Mod_Ontol}
+
+
+%IMPORT DE LA TABLA
+\input{tablas/Mod_Ontol}
+
+% Emoción
+% Lugar *****
+% Actividad (bajo y alto nivel) **
+% Usuario(ROL) ****
+% Dispositivo ***
+% Red *
+% Entorno **
+% Tiempo ****
+% Historia *
+% Agentes *
+% Servicio *
+
+
+% \cite{Iaz2014} Equally important is having an adequate level of action granularity (e.g., tasks,
+% activities, behaviors, etc.) for a specialized and incremental discovery. A formalized
+% and common representation of universal entities, such as time, geographical indoor
+% and outdoor locations, and environmental conditions, would greatly help in these pro-cesses.
+
+
+\subsubsection{Ontología del Contexto - mContext}
+\label{subsubsec:Prop_Mod_mContext}
+
+Las clases y relaciones serán representadas en una ontología mediante el lenguaje OWL2 del W3C en la herramienta protégé \footnote{https://protege.stanford.edu} con lo cual se obtiene la ontología de alto nivel pues contiene la estructura general y las clases necesarias para obtener el contexto en diferentes sistemas. Existen muchas formas de modelar una ontología, Noy y McGuinness \cite{noy2001ontology} presentan un proceso de 7 pasos que van desde la definición del dominio de la ontología hasta la identificación de las propiedades entre los elementos de la base de conocimiento, los pasos son
+\textbf{\textit{(i)}} determinar el dominio y límite la ontología, 
+\textbf{\textit{(iii)}} enumerar los términos relevantes dentro de la ontología,
+\textbf{\textit{(ii)}} considerar las ontologías que se pueden reutilizar,
+\textbf{\textit{(iv)}} definir la jerarquía de clases,
+\textbf{\textit{(v)}} definir las propiedades de las clases,
+\textbf{\textit{(vi)}} definir las características de las propiedades identificadas,
+\textbf{\textit{(vii)}} poblar la ontología con los individuos necesarios.
+
+Las posiciones de los pasos 2 y 3 han sido modificados de forma voluntaria pues creemos pertinente definir los términos relevantes antes de identificar fuentes de información externas que puedan ser empleadas. A continuación se presentan los resultado de cada una de las etapas para el modelado de la ontología de alto nivel, el desarrollo de la ontología de bajo nivel (Dominio) será tratada en la sección \ref{sec:CS_Ont_Dominio}.
+
+\textbf{\textit{(i) determinar el dominio y límite la ontología}}
+
+En esta etapa se debe responder a las siguientes preguntas 
+
+\begin{itemize}
+    \item ¿Cuál es el dominio que cubrirá la ontología? - Esta ontología representará el dominio del contexto computacional y estará centrado en el usuario por lo tanto no se presentará información específica acerca de dispositivos y redes.
+    \item ¿Para qué se va a usar la ontología? - La ontología permitirá conectar los componentes del dominio para facilitar las tareas de razonamiento y la adquisición de conocimiento.
+    \item ¿A qué tipo de preguntas debería responder la ontología? - esta ontología debería poder responder a preguntas cómo ¿En cuáles lugares estuvo el usuario el día miércoles?, ¿El usuario tenia compañía cuando sucedió esta actividad?, ¿Por cuanto tiempo desarrolló el usuario la actividad?. Serán preguntas relacionadas con el contexto que se ha identificado para el usuario.
+    \item ¿Quien usará y mantendrá la ontología? - La ontología será usada por sistemas que deban reflejar el contexto desde un ámbito centrado en los usuarios y que deseen contar con referencias a bases del conocimiento establecidas y soportadas. La ontología se pondrá a disposición de otros usuarios y estos podrán mantenerla de ser necesario.
+\end{itemize}
+
+\textbf{\textit{(iii) enumerar los términos relevantes dentro de la ontología}}
+
+\begin{figure}[!ht]
+\centering%
+\includegraphics[width=0.3\textwidth]{Cap3/Images/Contexto_Modelado_Terminos}%
+\caption{Terminos que relevantes de la ontología.} \label{fig:Contexto_Modelado_Terminos}
+\end{figure}
+
+Se realiza una lluvia de ideas teniendo en cuenta las acciones que desarrollan los usuarios de un sistema de contexto en diferentes casos de estudio luego algunas palabras son agrupadas y analizadas de acuerdo al conocimiento en el área. Las palabras resultantes se pueden observar en la figura \ref{fig:Contexto_Modelado_Terminos}
+
+
+\textbf{\textit{(ii) considerar las ontologías que se pueden reutilizar}}
+
+Luego de identificar los conceptos relevantes para la ontología se identifican los recursos usados en otras propuestas del estado del arte. Teniendo en cuenta que la búsqueda de ontologías en la actualidad no es tarea fácil dada la desactualización de las fuentes y los sistemas de búsqueda, se opta por el uso de fuentes encontradas en el sistema Linked Open Vocabularies (LOV) \footnote{http://lov.okfn.org/dataset/lov/} y propuestas por la W3C. A continuación se presenta la tabla \ref{tbl:Mod_Extern_Ontology} en donde se encuentran las ontologías usadas para ampliar los significados de las clases de la ontología de contexto.
+
+\todo[]{https://www.w3.org/TR/activitystreams-vocabulary/}
+Tener en cuenta y % https://www.w3.org/ns/activitystreams
+
+% http://ld-r.org/
+
+
+
+%IMPORT DE LA TABLA
+\input{tablas/Mod_Extern_Ontology}
+\todo{Meter en la tabla Rol con foaf (no estoy seguro)}
+
+% foaf = http://xmlns.com/foaf/spec/
+% ssn =  https://www.w3.org/TR/vocab-ssn/
+% time = https://www.w3.org/TR/owl-time/#time:dayOfWeek
+% multimedia=  https://www.w3.org/ns/ma-ont
+% location = http://www.geonames.org/ontology/documentation.html - http://schema.org/Place
+
+Teniendo en cuenta que una ontología de alto nivel trata de representar los conceptos de forma general, desde este punto la ontología se considera una ontología de dominio ya que dependiendo de cada sistema los esquemas pueden variar.
+
+\textbf{\textit{(iv) definir la jerarquía de clases}}
+
+Partiendo de los términos relevantes identificados en el paso (iii) de la metodología y siguiendo los indicios de las clases encontradas en el estado del arte se opta por modelar el contexto usando los siguientes conceptos \textbf{\textit{Persona, Rol, Actividad, Lugar, Sensor, Dispositivo, Servicio, Tiempo y Multimedia}}. Los términos que no se convierten en clases fueron analizados y seleccionados para convertirse en propiedades que describen o relacionan las entidades de la ontología.
+
+\todo{Actualizar la jerarquía poniendo con objeto}
+En la figura \ref{fig:Contexto_Modelado_Jerarquia} se presenta la jerarquía de la ontología de alto nivel. Dado que la ontología del dominio depende del caso de estudio esta se presenta con mayor detalle en la sección \ref{sec:CS_Ont_Dominio} en esta solo se mostrará la relación entre las nuevas clases incluidas.
+
+\begin{figure}[!hb]
+\centering%
+\includegraphics[width=\textwidth]{Cap3/Images/Contexto_Modelado_Jerarquia}%
+\caption{Jerarquía de las clases de la ontología.} \label{fig:Contexto_Modelado_Jerarquia}
+\end{figure}
+
+
+\textbf{\textit{(v, vi) definir las propiedades de las clases y sus características}}
+
+En esta etapa se identifican las propiedades de la ontología, se entienden propiedades como valores que describen entidades y relaciones existentes entre las entidades. En el diagrama \ref{fig:Contexto_Modelado_Relaciones} se puede ver la interacción entre las clases principales de la ontología por ejemplo un contenido multimedia describe una actividad y un dispositivo o una persona pueden crear contenidos multimedia.
+
+\todo{Actualizar a nueva versión con objeto, poner versión de protégé?}
+\begin{figure}[ht]
+\centering%
+\includegraphics[width=0.8\textwidth]{Cap3/Images/Contexto_Modelado_Relaciones}%
+\caption{Relaciones principales entre las clases de la ontología de contexto.} \label{fig:Contexto_Modelado_Relaciones}
+\end{figure}
+
+De otro lado en la figura \ref{fig:Contexto_Modelado_TipoDato} se presenta una pequeña parte de los valores que describen las clases y las características de estos valores. Por ejemplo la entidad persona tiene la propiedad nombre que es del tipo de dato Literal.
+
+\begin{figure}[ht]
+\centering%
+\includegraphics[width=0.9\textwidth]{Cap3/Images/Contexto_Modelado_Caract_Relaciones}%
+\caption{Características de las propiedades de la ontología.} \label{fig:Contexto_Modelado_TipoDato}
+\end{figure}
+
+
+
+\textbf{\textit{(vii) poblar la ontología con los individuos necesarios}}
+
+Esta etapa se desarrollará en la sección \ref{sec:CS_Ont_Dominio} cuando se desarrollen los componentes propios del dominio de la aplicación.
+
+
+% En la figura \ref{Contexto_Upper_Ontology} se puede ver un extracto de la ontología de alto nivel con componentes de ontologías externas.
+
+
+EN LA PÁGINA \textbf{http://www.visualdataweb.de/webvowl/#iri=http://purl.org/m-context/ontologies/mContext} SE PUEDE VER LA ONTOLOGÍA 

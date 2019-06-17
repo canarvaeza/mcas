@@ -1,0 +1,33 @@
+{
+  "Activity": [
+    {
+      "Id": "localhost:8890/mcas/activity#act/0041",
+      "Type": "purl.org/m-context/ontologies/domains/alzheimer#Abs",
+      "Time": {
+        "Beginning": "2018-10-06T05:00:00Z",
+        "Ending": "2018-10-06T05:15:00Z"
+      },
+      "Descriptor": [
+        {
+          "Id": "localhost:8890/mcas/multimedia#description/0041"
+        }
+      ]
+    }
+  ],
+  "Multimedia": [
+    {
+      "Descriptor": [
+        {
+          "Id": "localhost:8890/mcas/multimedia#description/0041",
+          "Descriptor": {},
+          "MediaResource": "localhost:8890/mcas/multimedia#mul/00003",
+          "RecEntities": [
+            {
+              "Activity": "localhost:8890/mcas/activity#act/0041"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+# create the rules
+
+http://vos.openlinksw.com/owiki/wiki/VOS/VirtSPARQLReasoningTutorial
+http://vos.openlinksw.com/owiki/wiki/VOS/VirtTipsAndTricksGuideImportOntology
+http://docs.openlinksw.com/virtuoso/rdfsparqlrulesubclassandsubprop/
+
+sparql clear graph <http://purl.org/m-context/ontologies/domains/alzheimer>;
+sparql load <http://purl.org/m-context/ontologies/domains/alzheimer> into <http://purl.org/m-context/ontologies/domains/alzheimer>;
+
+sparql clear graph <http://purl.org/m-context/ontologies/mContext>;
+sparql load <http://purl.org/m-context/ontologies/mContext> into <http://purl.org/m-context/ontologies/mContext>;
+
+
+rdfs_rule_set ('mContext:relationships', 'http://purl.org/m-context/ontologies/mContext') ;
+
+rdfs_rule_set ('alzheimer:relationships', 'http://purl.org/m-context/ontologies/domains/alzheimer') ;
+
+
+
+
+# get rules
+SELECT *
+FROM sys_rdf_schema
+
+
+ mContext:relationships	 http://purl.org/m-context/ontologies/mContext/relationship/	 <DB NULL>
+ urn:owl:inference:rules:tests	 http://purl.org/m-context/ontologies/mContext/relationship/

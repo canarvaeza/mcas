@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <group id="Folder Repository, directory=file:/C:/Users/dev/Documents/GitHub/mcas/Apps/mcas/mcas/src/main/resources/ont/mcas/, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="file:/C:/Users/dev/Documents/GitHub/mcas/Apps/mcas/mcas/src/main/resources/ont/mcas/">
+        <uri id="Automatically generated entry, Timestamp=1527008306227" name="http://www.semanticweb.org/ontologies/activity" uri="activity.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1527008306227" name="http://www.semanticweb.org/ontologies/domains/alzheimer" uri="domains/alzheimer.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1527008306227" name="http://www.semanticweb.org/ontologies/location" uri="location.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1527008306227" name="http://www.semanticweb.org/ontologies/mcontext" uri="mContext.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1527008306227" name="http://www.semanticweb.org/ontologies/multimedia" uri="multimedia.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1527008306227" name="http://www.semanticweb.org/ontologies/object" uri="object.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1527008306227" name="http://www.semanticweb.org/ontologies/person" uri="person.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1527008306227" name="http://www.semanticweb.org/ontologies/role" uri="role.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1527008306227" name="http://www.semanticweb.org/ontologies/sensor" uri="sensor.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1527008306227" name="http://www.semanticweb.org/ontologies/time" uri="time.owl"/>
+    </group>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1525005439805" name="http://www.w3.org/2002/07/owl" uri="inputModified.rdf"/>
+    </group>
+</catalog>

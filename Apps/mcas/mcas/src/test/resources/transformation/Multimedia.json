@@ -1,0 +1,71 @@
+{
+    "Multimedia": [
+        {
+            "Id": "localhost:8890/mcas/multimedia#mul/00001",
+            "Format": "AVI",
+            "Type": "www.semanticweb.org/ontologies/multimedia#VideoFormat",
+            "CreationTime": "2018-10-06T9:00:00Z"
+        },
+        {
+            "Id": "localhost:8890/mcas/multimedia#mul/00002",
+            "Format": "JPEG",
+            "Type": "www.semanticweb.org/ontologies/multimedia#ImageFormat",
+            "CreationTime": "2018-10-06T10:00:00Z"
+        },
+        {
+            "Id": "localhost:8890/mcas/multimedia#mul/00003",
+            "Format": "AVI",
+            "Type": "www.semanticweb.org/ontologies/multimedia#VideoFormat",
+            "CreationTime": "2018-10-06T5:00:00Z",
+            "Creator": [
+                {"Id":"localhost:8890/mcas/sensor#sen/camera/00002"}
+            ]
+        },
+        {
+            "Id": "localhost:8890/mcas/multimedia#mul/00004",
+            "Format": "MP4",
+            "Type": "www.semanticweb.org/ontologies/multimedia#VideoFormat",
+            "CreationTime": "2018-10-06T6:00:00Z"
+        },
+        {
+            "Id": "localhost:8890/mcas/multimedia#mul/00005",
+            "Format": "MP3",
+            "Type": "www.semanticweb.org/ontologies/multimedia#AudioFormat",
+            "CreationTime": "2018-10-06T5:36:00Z",
+            "Creator": [
+                {"Id":"localhost:8890/mcas/sensor#sen/microphone/00002"}
+            ]
+        },
+        {
+            "Id": "localhost:8890/mcas/multimedia#mul/00006",
+            "Format": "txt",
+            "Type": "www.semanticweb.org/ontologies/multimedia#TextFormat",
+            "CreationTime": "2018-10-06T19:00:00Z"
+        },
+        {
+            "Id": "localhost:8890/mcas/multimedia#mul/00007",
+            "Format": "JPEG",
+            "Type": "www.semanticweb.org/ontologies/multimedia#ImageFormat",
+            "CreationTime": "2018-10-06T20:35:00Z"
+        },
+        {
+            "Id": "localhost:8890/mcas/multimedia#mul/00008",
+            "Format": "MP3",
+            "Type": "www.semanticweb.org/ontologies/multimedia#AudioFormat",
+            "CreationTime": "2018-10-06T19:17:00Z"
+        },
+        {
+            "Id": "localhost:8890/mcas/multimedia#mul/00009",
+            "Format": "AVI",
+            "Type": "www.semanticweb.org/ontologies/multimedia#VideoFormat",
+            "CreationTime": "2018-10-06T13:02:00Z"
+        },
+        {
+            "Id": "localhost:8890/mcas/multimedia#mul/00010",
+            "Format": "MP3",
+            "Type": "www.semanticweb.org/ontologies/multimedia#AudioFormat",
+            "CreationTime": "2018-10-06T19:30:00Z"
+        }
+
+    ]
+}

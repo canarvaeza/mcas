@@ -1,0 +1,42 @@
+<*prefixes*>
+prefix activity: <*activity_prefix*>
+
+INSERT{
+GRAPH  <http://localhost:8890/mcas/activity#> {
+  ?new a <*new_activity_class*>;
+    :hasSubActivity ?act1;
+    :hasSubActivity ?act2;
+    time:hasBeginningTime ?btime1;
+    time:hasEndingTime ?etime1;
+    :hasActor ?user.
+
+  ?act1 :isSubActivity ?new.
+  ?act2 :isSubActivity ?new.
+ }
+  GRAPH  <http://localhost:8890/mcas/person#> {
+    ?user :isInvolvedIn ?new.
+  }
+}
+
+<*from*>
+
+WHERE {
+
+  <*activity*>
+
+OPTIONAL {
+?act1 <http://purl.org/m-context/ontologies/mContext#hasActor> ?user.
+}
+
+  <*place*>
+
+  <*person*>
+
+	BIND (URI(CONCAT(
+	str(activity:), 
+	STRAFTER(str(?act1), str(activity:))
+	,"_", 
+	STRAFTER(str(?act2), str(activity:))
+	)) as ?new).
+	FILTER(NOT EXISTS {?new a [] .})
+}

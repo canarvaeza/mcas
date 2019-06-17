@@ -1,0 +1,355 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://purl.org/m-context/ontologies/location#"
+     xml:base="http://purl.org/m-context/ontologies/location"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://purl.org/m-context/ontologies/location"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#alt -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#alt">
+        <rdfs:comment>The WGS84 altitude of a SpatialThing (decimal meters 
+above the local reference ellipsoid).</rdfs:comment>
+        <rdfs:label>altitude</rdfs:label>
+        <rdfs:label>geo:alt</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#lat -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#lat">
+        <rdfs:comment>The WGS84 latitude of a SpatialThing (decimal degrees).</rdfs:comment>
+        <rdfs:label>geo:lat</rdfs:label>
+        <rdfs:label>latitude</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#long -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#long">
+        <rdfs:comment>The WGS84 longitude of a SpatialThing (decimal degrees).</rdfs:comment>
+        <rdfs:label>geo:long</rdfs:label>
+        <rdfs:label>longitude</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#historyNote -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#historyNote"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.geonames.org/ontology#featureCode -->
+
+    <owl:ObjectProperty rdf:about="http://www.geonames.org/ontology#featureCode">
+        <rdfs:label>geonames:featureCode</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.geonames.org/ontology#locatedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.geonames.org/ontology#locatedIn">
+        <rdfs:range rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+        <rdfs:comment xml:lang="en">Indicates that the subject resource is located in the object feature</rdfs:comment>
+        <rdfs:label xml:lang="en">geonames:located in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.geonames.org/ontology#nearby -->
+
+    <owl:ObjectProperty rdf:about="http://www.geonames.org/ontology#nearby">
+        <rdfs:domain rdf:resource="http://www.geonames.org/ontology#Feature"/>
+        <rdfs:range rdf:resource="http://www.geonames.org/ontology#Feature"/>
+        <rdfs:comment xml:lang="en">A feature close to the reference feature</rdfs:comment>
+        <rdfs:label xml:lang="en">geonames:nearby</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.geonames.org/ontology#neighbour -->
+
+    <owl:ObjectProperty rdf:about="http://www.geonames.org/ontology#neighbour">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.geonames.org/ontology#Feature"/>
+        <rdfs:range rdf:resource="http://www.geonames.org/ontology#Feature"/>
+        <rdfs:comment xml:lang="en">A feature sharing a common boarder with the reference feature</rdfs:comment>
+        <rdfs:label xml:lang="en">geonames:neighbour</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.geonames.org/ontology#parentADM1 -->
+
+    <owl:ObjectProperty rdf:about="http://www.geonames.org/ontology#parentADM1">
+        <rdfs:subPropertyOf rdf:resource="http://www.geonames.org/ontology#parentFeature"/>
+        <rdfs:domain rdf:resource="http://www.geonames.org/ontology#Feature"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#featureCode"/>
+                <owl:hasValue rdf:resource="http://www.geonames.org/ontology#A.ADM1"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:label xml:lang="en">level 1 administrative parent</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.geonames.org/ontology#parentADM2 -->
+
+    <owl:ObjectProperty rdf:about="http://www.geonames.org/ontology#parentADM2">
+        <rdfs:subPropertyOf rdf:resource="http://www.geonames.org/ontology#parentFeature"/>
+        <rdfs:domain rdf:resource="http://www.geonames.org/ontology#Feature"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#featureCode"/>
+                <owl:hasValue rdf:resource="http://www.geonames.org/ontology#A.ADM2"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:label xml:lang="en">level 2 administrative parent</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.geonames.org/ontology#parentADM3 -->
+
+    <owl:ObjectProperty rdf:about="http://www.geonames.org/ontology#parentADM3">
+        <rdfs:subPropertyOf rdf:resource="http://www.geonames.org/ontology#parentFeature"/>
+        <rdfs:domain rdf:resource="http://www.geonames.org/ontology#Feature"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#featureCode"/>
+                <owl:hasValue rdf:resource="http://www.geonames.org/ontology#A.ADM3"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:label xml:lang="en">level 3 administrative parent</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.geonames.org/ontology#parentADM4 -->
+
+    <owl:ObjectProperty rdf:about="http://www.geonames.org/ontology#parentADM4">
+        <rdfs:subPropertyOf rdf:resource="http://www.geonames.org/ontology#parentFeature"/>
+        <rdfs:domain rdf:resource="http://www.geonames.org/ontology#Feature"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#featureCode"/>
+                <owl:hasValue rdf:resource="http://www.geonames.org/ontology#A.ADM4"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:label xml:lang="en">level 4 administrative parent</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.geonames.org/ontology#parentCountry -->
+
+    <owl:ObjectProperty rdf:about="http://www.geonames.org/ontology#parentCountry">
+        <rdfs:subPropertyOf rdf:resource="http://www.geonames.org/ontology#parentFeature"/>
+        <rdfs:domain rdf:resource="http://www.geonames.org/ontology#Feature"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.geonames.org/ontology#featureCode"/>
+                <owl:hasValue rdf:resource="http://www.geonames.org/ontology#A.PCLI"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:label xml:lang="en">parent country</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.geonames.org/ontology#parentFeature -->
+
+    <owl:ObjectProperty rdf:about="http://www.geonames.org/ontology#parentFeature">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.geonames.org/ontology#Feature"/>
+        <rdfs:range rdf:resource="http://www.geonames.org/ontology#Feature"/>
+        <rdfs:comment xml:lang="en">A feature parent of the current one, in either administrative or physical subdivision.</rdfs:comment>
+        <rdfs:label xml:lang="en">geonames:parent feature</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/identifier -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/identifier"/>
+    
+
+
+    <!-- http://www.geonames.org/ontology#alternateName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.geonames.org/ontology#alternateName">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <rdfs:domain rdf:resource="http://www.geonames.org/ontology#Feature"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.geonames.org/ontology#geonamesID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.geonames.org/ontology#geonamesID">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/identifier"/>
+        <rdfs:label xml:lang="en">geonames identifier</rdfs:label>
+        <skos:historyNote xml:lang="en">Added in version 3.1</skos:historyNote>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.geonames.org/ontology#name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.geonames.org/ontology#name">
+        <rdfs:domain rdf:resource="http://www.geonames.org/ontology#Feature"/>
+        <rdfs:comment xml:lang="en">The main international name of a feature. The value has no xml:lang tag.</rdfs:comment>
+        <rdfs:label xml:lang="en">name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#altLabel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2004/02/skos/core#altLabel"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/m-context/ontologies/location#ClosedLocation -->
+
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/location#ClosedLocation">
+        <rdfs:subClassOf rdf:resource="http://www.geonames.org/ontology#Feature"/>
+        <owl:disjointWith rdf:resource="http://purl.org/m-context/ontologies/location#OpenLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/m-context/ontologies/location#Location -->
+
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/location#Location"/>
+    
+
+
+    <!-- http://purl.org/m-context/ontologies/location#OpenLocation -->
+
+    <owl:Class rdf:about="http://purl.org/m-context/ontologies/location#OpenLocation">
+        <rdfs:subClassOf rdf:resource="http://www.geonames.org/ontology#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geonames.org/ontology#Feature -->
+
+    <owl:Class rdf:about="http://www.geonames.org/ontology#Feature">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing -->
+
+    <owl:Class rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing">
+        <rdfs:subClassOf rdf:resource="http://purl.org/m-context/ontologies/location#Location"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.geonames.org/ontology#A.ADM1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.geonames.org/ontology#A.ADM1"/>
+    
+
+
+    <!-- http://www.geonames.org/ontology#A.ADM2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.geonames.org/ontology#A.ADM2"/>
+    
+
+
+    <!-- http://www.geonames.org/ontology#A.ADM3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.geonames.org/ontology#A.ADM3"/>
+    
+
+
+    <!-- http://www.geonames.org/ontology#A.ADM4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.geonames.org/ontology#A.ADM4"/>
+    
+
+
+    <!-- http://www.geonames.org/ontology#A.PCLI -->
+
+    <owl:NamedIndividual rdf:about="http://www.geonames.org/ontology#A.PCLI"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

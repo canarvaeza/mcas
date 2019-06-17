@@ -1,0 +1,4 @@
+?act<*n*> a <*type*>;
+time:hasBeginningTime ?btime<*n*>;
+time:hasEndingTime ?etime<*n*>.
+FILTER (xsd:date("<*date_before*>") < ?btime<*n*> && ??btime<*n*> < xsd:date("<*date*>") )

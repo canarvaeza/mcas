@@ -1,0 +1,72 @@
+{
+  "Activity": [
+    {
+      "Id": "localhost:8890/mcas/activity#act/<*act1_id*>",
+      "Type": "purl.org/m-context/ontologies/domains/alzheimer#Talk",
+      "Time": {
+        "Beginning": "2018-10-06T10:00:00Z",
+        "Ending": "2018-10-06T10:02:00Z"
+      },
+      "Person": [
+        {
+          "Id": "localhost:8890/mcas/person#per/0001"
+        },
+        {
+          "Id": "localhost:8890/mcas/person#per/0003"
+        }
+      ],
+      "Descriptor": [
+        {
+          "Id": "localhost:8890/mcas/multimedia#description/<*des1_id*>"
+        }
+      ]
+    },
+    {
+      "Id": "localhost:8890/mcas/activity#act/<*act2_id*>",
+      "Type": "purl.org/m-context/ontologies/domains/alzheimer#Talk",
+      "Time": {
+        "Beginning": "2018-10-06T19:05:00Z",
+        "Ending": "2018-10-06T19:10:00Z"
+      },
+      "Person": [
+        {
+          "Id": "localhost:8890/mcas/person#per/0001"
+        },
+        {
+          "Id": "localhost:8890/mcas/person#per/0002"
+        }
+      ],
+      "Descriptor": [
+        {
+          "Id": "localhost:8890/mcas/multimedia#description/<*des2_id*>"
+        }
+      ]
+    }
+  ],
+  "Multimedia": [
+    {
+      "Descriptor": [
+        {
+          "Id": "localhost:8890/mcas/multimedia#description/<*des1_id*>",
+          "Descriptor": {},
+          "MediaResource": "localhost:8890/mcas/multimedia#mul/00002",
+          "RecEntities": [
+            {
+              "Activity": "localhost:8890/mcas/activity#act/<*act1_id*>"
+            }
+          ]
+        },
+        {
+          "Id": "localhost:8890/mcas/multimedia#description/<*des2_id*>",
+          "Descriptor": {},
+          "MediaResource": "localhost:8890/mcas/multimedia#mul/00008",
+          "RecEntities": [
+            {
+              "Activity": "localhost:8890/mcas/activity#act/<*act2_id*>"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

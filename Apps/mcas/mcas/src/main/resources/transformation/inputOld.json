@@ -1,0 +1,120 @@
+{
+  "Person": [
+    {
+      "Id": "xmlns.com/foaf/0.1/User/u001",
+      "Role": {
+        "Type": "User",
+        "Value": "www.semanticweb.org/ontologies/domains/alzheimer#"
+      },
+      "Name": "Cristian",
+      "Last-name": "Narvaez",
+      "Device": {
+        "Id": "www.w3.org/ns/sosa/iphone7/35-207306-844818-0"
+      },
+      "Activity": [
+        {
+          "Id": "www.semanticweb.org/ontologies/activity#activity/low/00001"
+        },
+        {
+          "Id": "www.semanticweb.org/ontologies/activity#activity/low/00002"
+        }
+      ]
+    },
+    {
+      "Id": "xmlns.com/foaf/0.1/User/u002",
+      "Role": {
+        "Type": "User",
+        "Value": "www.semanticweb.org/ontologies/domains/alzheimer#"
+      },
+      "Name": "Cristian",
+      "Last-name": "Narvaez",
+      "Device": {
+        "Id": "www.w3.org/ns/sosa/iphone7/35-207306-844818-0"
+      },
+      "Activity": [
+        {
+          "Id": "www.semanticweb.org/ontologies/activity#activity/low/00005"
+        },
+        {
+          "Id": "www.semanticweb.org/ontologies/activity#activity/low/000010"
+        }
+      ]
+    }
+  ],
+  "Multimedia": [
+    {
+      "Id": "www.semanticweb.org/ontologies/multimedia#multimedia/0001",
+      "Format": "AVI",
+      "Type": "www.semanticweb.org/ontologies/multimedia#VideoFormat",
+      "Descriptor": {},
+      "RecEntities": [
+        {
+          "Activity": "www.semanticweb.org/ontologies/activity#activity/low/00001"
+        }
+      ],
+      "CreationTime": "2017-06-06T12:36:12Z",
+      "Location": "www.semanticweb.org/ontologies/location#Location/0001"
+    }
+  ],
+  "Activity": [
+    {
+      "Id": "www.semanticweb.org/ontologies/activity#activity/low/00001",
+      "Type": "www.semanticweb.org/ontologies/domains/alzheimer#Eat",
+      "Time": {
+        "Beginning": "2017-06-06T12:36:12Z",
+        "Ending": "2017-06-06T12:38:12Z"
+      },
+      "Person": [
+        {
+          "Id": "xmlns.com/foaf/0.1/User/u001"
+        },
+        {
+          "Id": "xmlns.com/foaf/0.1/User/u002"
+        }
+      ]
+    },
+    {
+      "Id": "www.semanticweb.org/ontologies/activity#activity/low/00002",
+      "Type": "www.semanticweb.org/ontologies/domains/alzheimer#Sit",
+      "Time": {
+        "Beginning": "2017-06-06T12:36:12Z"
+      }
+    }
+  ],
+  "Ssn": [
+    {
+      "Device": {
+        "Id": "www.w3.org/ns/sosa/iphone7/35-207306-844818-0",
+        "Sensor": "www.w3.org/ns/sosa/sensor/35-207306-844818-0/BMP282",
+        "Location": "www.semanticweb.org/ontologies/location#Location/0001"
+      },
+      "Sensor": {
+        "Id": "www.w3.org/ns/sosa/sensor/35-207306-844818-0/BMP282",
+        "Observe": "www.w3.org/ns/sosa/sensor/35-207306-844818-0/BMP282/Gyroscope"
+      },
+      "Observation": [
+        {
+          "Id": "www.w3.org/ns/sosa/Observation/001",
+          "Sensor": "www.w3.org/ns/sosa/sensor/35-207306-844818-0/BMP282",
+          "Value": "[0.60034, 0.42556, 0.86662]",
+          "Time": "2017-06-06T12:36:12Z",
+          "RecEntities": [
+            {
+              "Activity": "www.semanticweb.org/ontologies/activity#activity/low/00002"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "Location": [
+    {
+      "Id": "www.semanticweb.org/ontologies/location#Location/0001",
+      "Type": "www.semanticweb.org/ontologies/location#ClosedLocation",
+      "Coordinates": {
+        "latitude": "40.414",
+        "longitude": "-3.699"
+      }
+    }
+  ]
+}

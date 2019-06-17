@@ -1,0 +1,2 @@
+SELECT *
+FROM sys_rdf_schema

@@ -1,0 +1,26 @@
+{
+    "Person": [
+        {
+            "Id": "localhost:8890/mcas/person#per/0001",
+            "Role": {
+                "Value": "purl.org/m-context/ontologies/domains/alzheimer#User"
+            },
+            "Name": "Cristian",
+            "Last-name": "Narvaez"
+        },
+        {
+            "Id": "localhost:8890/mcas/person#per/0002",
+            "Role": {
+                "Value": "purl.org/m-context/ontologies/domains/alzheimer#Companion"
+            },
+            "Name": "Teresa",
+            "Last-name": "Alarcón"
+        },
+        {
+            "Id": "localhost:8890/mcas/person#per/per/0003",
+            "Role": {
+                "Value": "purl.org/m-context/ontologies/domains/alzheimer#NoIdentified"
+            }
+        }
+    ]
+}

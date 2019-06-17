@@ -1,0 +1,162 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/dev/ontologies/contextSWRL"
+     xml:base="http://www.semanticweb.org/dev/ontologies/contextSWRL"
+     xmlns:contextswrl="http://www.semanticweb.org/dev/ontologies/contextSWRL#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/dev/ontologies/contextSWRL"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/dev/ontologies/contextSWRL#isInvolvedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dev/ontologies/contextSWRL#isInvolvedIn"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/dev/ontologies/contextSWRL#Activity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dev/ontologies/contextSWRL#Activity"/>
+    
+
+
+    <!-- http://www.semanticweb.org/dev/ontologies/contextSWRL#Eat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dev/ontologies/contextSWRL#Eat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dev/ontologies/contextSWRL#LowContextActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dev/ontologies/contextSWRL#LowContextActivity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dev/ontologies/contextSWRL#LowContextActivity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dev/ontologies/contextSWRL#Activity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dev/ontologies/contextSWRL#Person -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dev/ontologies/contextSWRL#Person"/>
+    
+
+
+    <!-- http://www.semanticweb.org/dev/ontologies/contextSWRL#Sit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dev/ontologies/contextSWRL#Sit">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dev/ontologies/contextSWRL#LowContextActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dev/ontologies/contextSWRL#Talk -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dev/ontologies/contextSWRL#Talk">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dev/ontologies/contextSWRL#LowContextActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/dev/ontologies/contextSWRL#lca55698 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dev/ontologies/contextSWRL#lca55698">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dev/ontologies/contextSWRL#Eat"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dev/ontologies/contextSWRL#lca56 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dev/ontologies/contextSWRL#lca56">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dev/ontologies/contextSWRL#Sit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dev/ontologies/contextSWRL#person000256 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dev/ontologies/contextSWRL#person000256">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dev/ontologies/contextSWRL#Person"/>
+        <contextswrl:isInvolvedIn rdf:resource="http://www.semanticweb.org/dev/ontologies/contextSWRL#lca55698"/>
+        <contextswrl:isInvolvedIn rdf:resource="http://www.semanticweb.org/dev/ontologies/contextSWRL#lca56"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/dev/ontologies/contextSWRL#Eat"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dev/ontologies/contextSWRL#Sit"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/dev/ontologies/contextSWRL#Talk"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

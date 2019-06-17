@@ -1,0 +1,13 @@
+java -jar target/RML-Processor-0.3.jar -m src/test/resources/propios/mcas-model.rml -o src/test/resources/propios/output.ttl
+
+java -jar target/RML-Processor-3.0.2.jar  -m src/test/resources/propios/mcas-model.rml -o src/test/resources/propios/output.ttl
+
+java -jar target/RML-Processor-0.3.jar -m src/test/resources/propios/mcas-model.rml -o src/test/resources/propios/output.ttl -f rdfxml 
+
+
+
+
+
+java -jar target/RML-Processor-3.0.2.jar  -m C:\Users\dev\Desktop\transformar\mcas-model.rml -o C:\Users\dev\Desktop\transformar\out.ttl -p direction=C:\Users\dev\Desktop\transformar\
+
+java -jar rmlmapper-1.0.0.jar -m mapping.rml.ttl -p direction=C:\Users\dev\Desktop\transformar\
